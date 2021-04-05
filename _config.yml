@@ -104,4 +104,5 @@ theme: landscape
 deploy:
   type: git
   repository: https://github.com/SuiteLHY/SuiteLHY.github.io
-  branch: main
+  branch: gh-pages
+  message: 【hexo-deployer-git】【one-command-deployment】Site updated on {{ now('YYYY-MM-DD HH:mm:ss') }}.
