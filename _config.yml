@@ -5,7 +5,7 @@
 # Site
 title: Suite's Blog
 subtitle: '我写下的——是世界'
-description: 'Suite的个人博客'
+description: '技术仓鼠, 菜菜鸭♂, 白嫖怪√'
 keywords:
 author: Suite
 language: en
@@ -13,7 +13,7 @@ timezone: ''
 
 # URL
 ## Set your site url here. For example, if you use GitHub Page, set url as 'https://username.github.io/project'
-url: http://example.com
+url: https://suitelhy.github.io/
 permalink: :year/:month/:day/:title/
 permalink_defaults:
 pretty_urls:
