@@ -1,2 +1,2 @@
 # SuiteLHY.github.io
-SuiteLHY's blog
+Suite's Blog

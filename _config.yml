@@ -3,11 +3,11 @@
 ## Source: https://github.com/hexojs/hexo/
 
 # Site
-title: Hexo
-subtitle: ''
-description: ''
+title: Suite's Blog
+subtitle: '我写下的——是世界'
+description: 'Suite的个人博客'
 keywords:
-author: John Doe
+author: Suite
 language: en
 timezone: ''
 
@@ -102,4 +102,6 @@ theme: landscape
 # Deployment
 ## Docs: https://hexo.io/docs/one-command-deployment
 deploy:
-  type: ''
+  type: git
+  repository: https://github.com/SuiteLHY/SuiteLHY.github.io
+  branch: main
