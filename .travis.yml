@@ -13,6 +13,8 @@ deploy:
   skip-cleanup: true
   github-token: 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
   keep-history: true
+  # [[译] Hexo git deployer 删除了提交历史记录该怎么整？](https://segmentfault.com/a/1190000018024460#)
+  script: sh _deploy/deploy.sh
   on:
     branch: master
   local-dir: public
