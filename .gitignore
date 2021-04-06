@@ -6,10 +6,7 @@ node_modules/
 public/
 .deploy*/
 
-# 脚本文件
-*.sh
-
-# IDEA
+# IDEA工程文件
 .idea/
 # (自定义)备份文件夹
 _backup/
