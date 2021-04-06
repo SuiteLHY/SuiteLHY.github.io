@@ -6,6 +6,9 @@ node_modules/
 public/
 .deploy*/
 
+# 主题文件夹
+themes/Kratos-Rebirth/
+
 # 脚本文件
 *.sh
 
