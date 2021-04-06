@@ -22,11 +22,12 @@ deploy:
 # === 指导 Github Travis CI 构建中 git 子模块的更新操作 === (Start)
 ## https://qa.1r1g.com/sf/ask/1097184511/
 
-git:
-  submodules: false
-before_install:
+#git:
+#  submodules: false
+#before_install:
 #  - sed -i 's/git@github.com:/https:\/\/github.com\//' .gitmodules
-  - sed -i 's/git@github.com:/https:\/\/github.com\//' .gitmodules
-  - git submodule update --init --recursive
+#  - git submodule update --init --recursive
+git:
+  submodules: true
 
 # === 指导 Github Travis CI 构建中 git 子模块的更新操作 === (End)
