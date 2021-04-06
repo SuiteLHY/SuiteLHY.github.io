@@ -12,14 +12,10 @@ script:
 deploy:
   provider: pages
   skip-cleanup: true
-#  github-token: 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
+  github-token: $GH_TOKEN
   keep-history: true
   # [[译] Hexo git deployer 删除了提交历史记录该怎么整？](https://segmentfault.com/a/1190000018024460#)
   script: sh _deploy/deploy.sh
   on:
     branch: master
   local-dir: public
-
-before_install:
-  - sed -i "s/gh_token/${GH_TOKEN}/g" ./_config.yml
-#  - sed -i "s/deploy.github-token/${GH_TOKEN}/g" ./.travis.yml
