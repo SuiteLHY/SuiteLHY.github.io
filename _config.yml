@@ -83,15 +83,22 @@ category_map:
   Hello,World: HelloWorld
   Hello, World: HelloWorld
   Hello, World!: HelloWorld
+  IT: InformationTechnology
   博客: Blog
   计算机工程: ComputerEngineering
   计算机科学: ComputerScience
   其他(暂未分类): Other
   日常记录: DailyRecord
   社会: Society
+  生命: Life
   信息技术(IT): InformationTechnology
+  信息技术: InformationTechnology
   站点记录: SiteRecord
+  指南手册: GuideHandbook
+  指导手册: GuideHandbook
+  指引手册: GuideHandbook
 tag_map:
+  IT: InformationTechnology
   博客: Blog
   道德: Moral
   道德学: Ethics
@@ -103,8 +110,13 @@ tag_map:
   伦理学: Ethics
   日常记录: DailyRecord
   社会: Society
+  生命: Life
   信息技术(IT): InformationTechnology
+  信息技术: InformationTechnology
   站点记录: SiteRecord
+  指南手册: GuideHandbook
+  指导手册: GuideHandbook
+  指引手册: GuideHandbook
 
 # Metadata elements
 ## https://developer.mozilla.org/en-US/docs/Web/HTML/Element/meta
