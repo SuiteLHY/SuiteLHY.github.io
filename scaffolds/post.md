@@ -1,10 +1,10 @@
 ---
 title: {{ title }}
 date: {{ date }}
-categories:
-tags:
+categories: 
+tags: 
 sticky: 0
-pic:
+pic: 
 comments: true
 toc: true
 only:
