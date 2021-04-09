@@ -81,8 +81,16 @@ category_map:
   Hello World: HelloWorld
   Hello World!: HelloWorld
   Hello,World: HelloWorld
+  Hello,World!: HelloWorld
   Hello, World: HelloWorld
   Hello, World!: HelloWorld
+  HelloWorld🐣: HelloWorld
+  Hello World🐣: HelloWorld
+  Hello World!🐣: HelloWorld
+  Hello,World🐣: HelloWorld
+  Hello,World!🐣: HelloWorld
+  Hello, World🐣: HelloWorld
+  Hello, World!🐣: HelloWorld
   IT: InformationTechnology
   博客: Blog
   计算机工程: ComputerEngineering
@@ -98,6 +106,7 @@ category_map:
   指导手册: GuideHandbook
   指引手册: GuideHandbook
 tag_map:
+  HelloWorld🐣: HelloWorld
   IT: InformationTechnology
   博客: Blog
   道德: Moral
