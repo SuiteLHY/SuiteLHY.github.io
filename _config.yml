@@ -6,7 +6,7 @@
 ## Docs: https://hexo.io/zh-cn/docs/configuration.html#%E7%BD%91%E7%AB%99
 title: '夜与花海'
 subtitle: '我写下的——是世界'
-description: '青春倚靠着时光，轻快的脚步在世间流韵；云上的光华从指间绽放，地上的人们自由而幸福。'
+description: '青春倚靠着时光，轻快的脚步在世间流韵； 云上光华从指间绽放，地上人们自由而幸福。'
 keywords:
 author: Suite
 language: en
@@ -44,7 +44,7 @@ external_link:
   exclude: ''
 filename_case: 0
 render_drafts: true
-post_asset_folder: false
+post_asset_folder: true
 relative_link: false
 future: true
 highlight:
@@ -75,15 +75,35 @@ index_generator:
 ## Reference: https://ijiaober.github.io/2014/08/05/hexo/hexo-04/
 ## Reference: https://www.cnblogs.com/holbrook/archive/2012/11/05/2755268.html
 ## Reference: https://zhuanlan.zhihu.com/p/77481557
-default_category: 其他(暂无分类)
+default_category: uncategorized
 category_map:
+  Hello World: HelloWorld
+  Hello World!: HelloWorld
+  Hello,World: HelloWorld
+  Hello, World: HelloWorld
+  Hello, World!: HelloWorld
+  博客: Blog
   计算机工程: ComputerEngineering
   计算机科学: ComputerScience
-  其他(暂无分类): Other
+  其他(暂未分类): Other
   日常记录: DailyRecord
+  社会: Society
   信息技术(IT): InformationTechnology
   站点记录: SiteRecord
 tag_map:
+  博客: Blog
+  道德: Moral
+  道德学: Ethics
+  道德哲学: Ethics
+  法律: Law
+  计算机工程: ComputerEngineering
+  计算机科学: ComputerScience
+  伦理: Ethics
+  伦理学: Ethics
+  日常记录: DailyRecord
+  社会: Society
+  信息技术(IT): InformationTechnology
+  站点记录: SiteRecord
 
 # Metadata elements
 ## https://developer.mozilla.org/en-US/docs/Web/HTML/Element/meta
