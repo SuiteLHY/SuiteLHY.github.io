@@ -1,3 +1,6 @@
 [submodule "themes/Kratos-Rebirth"]
 	path = themes/Kratos-Rebirth
 	url = https://github.com/SuiteLHY/Kratos-Rebirth
+[submodule "source/_posts"]
+	path = source/_posts
+	url = https://github.com/SuiteLHY/SuiteLHY.github.io-posts
