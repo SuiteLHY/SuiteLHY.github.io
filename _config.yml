@@ -32,6 +32,7 @@ category_dir: categories
 code_dir: downloads/code
 i18n_dir: :lang
 skip_render:
+  - _posts/README.md # Git子模块 → 博文管理 → 项目说明文件
 
 # Writing
 ## Docs: https://hexo.io/zh-cn/docs/configuration.html#%E6%96%87%E7%AB%A0
