@@ -8,7 +8,7 @@ pic:
 comments: true
 toc: true
 only:
-- home
-- category
-- tag
+  - home
+  - category
+  - tag
 ---
