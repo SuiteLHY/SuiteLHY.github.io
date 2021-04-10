@@ -3,4 +3,5 @@
 	url = https://github.com/SuiteLHY/Kratos-Rebirth
 [submodule "source/_posts"]
 	path = source/_posts
-	url = https://github.com/SuiteLHY/SuiteLHY.github.io-posts
+; 	url = https://github.com/SuiteLHY/SuiteLHY.github.io-posts
+	url = git@github.com/SuiteLHY/SuiteLHY.github.io-posts
