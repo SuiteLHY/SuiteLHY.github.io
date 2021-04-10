@@ -4,4 +4,4 @@
 [submodule "source/_posts"]
 	path = source/_posts
 ; 	url = https://github.com/SuiteLHY/SuiteLHY.github.io-posts
-	url = git@github.com/SuiteLHY/SuiteLHY.github.io-posts.git
+	url = git@github.com:SuiteLHY/SuiteLHY.github.io-posts.git
