@@ -6,10 +6,21 @@ cache: npm
 branches:
   only:
     - master # build master branch only
-# Use sed to replace the SSH URL with the public URL and personal token, then initialize submodules
+
+## Use sed to replace the SSH URL with the public URL and personal token, then initialize submodules
+#before_install:
+#  - sed -i 's/git@github.com:/https:\/\/SuiteLHY:$GH_TOKEN@github.com\//' .gitmodules
+#  - git submodule update --init --recursive
+
+#=== 【Travis CI】 private-dependencies → api-token === (start)
+## Docs: https://docs.travis-ci.com/user/private-dependencies/#api-token
+git:
+  submodules: false
 before_install:
-  - sed -i 's/git@github.com:/https:\/\/SuiteLHY:$GH_TOKEN@github.com\//' .gitmodules
+  - echo -e "\n\nmachine github.com\n login $GH_TOKEN\n" >~/.netrc
   - git submodule update --init --recursive
+#=== 【Travis CI】 private-dependencies → api-token === (end)
+
 script:
   - hexo clean
   - hexo generate # generate static files
