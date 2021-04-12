@@ -97,14 +97,12 @@ category_map:
   计算机科学: ComputerScience
   其他(暂未分类): Other
   日常记录: DailyRecord
+  手册: Handbook
   社会: Society
   生命: Life
   信息技术(IT): InformationTechnology
   信息技术: InformationTechnology
   站点记录: SiteRecord
-  指南手册: GuideHandbook
-  指导手册: GuideHandbook
-  指引手册: GuideHandbook
   知识: Knowledge
 tag_map:
   HelloWorld🐣: HelloWorld
@@ -119,14 +117,12 @@ tag_map:
   伦理: Ethics
   伦理学: Ethics
   日常记录: DailyRecord
+  手册: Handbook
   社会: Society
   生命: Life
   信息技术(IT): InformationTechnology
   信息技术: InformationTechnology
   站点记录: SiteRecord
-  指南手册: GuideHandbook
-  指导手册: GuideHandbook
-  指引手册: GuideHandbook
 
 # Metadata elements
 ## https://developer.mozilla.org/en-US/docs/Web/HTML/Element/meta
