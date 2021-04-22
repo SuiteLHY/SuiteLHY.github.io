@@ -50,6 +50,7 @@ only:
 * [🗎 - 文献: U+1F5CE - Unicode 字符百科](https://unicode-table.com/cn/1F5CE/)
 * [※ - 参考标志: U+203B - Unicode 字符百科](https://unicode-table.com/cn/203B/)
 * [☌ - 关联: U+260C - Unicode 字符百科](https://unicode-table.com/cn/260C/)
+* [🡇 - 向下重箭头: U+1F847 - Unicode 字符百科](https://unicode-table.com/cn/1F847/)
 
 {% endcollapse %}
 
