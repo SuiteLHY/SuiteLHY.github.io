@@ -113,7 +113,9 @@ tag_map:
   道德: Moral
   道德学: Ethics
   道德哲学: Ethics
+  地区: Region
   法律: Law
+  国家: Country
   计算机工程: ComputerEngineering
   计算机科学: ComputerScience
   伦理: Ethics
@@ -121,6 +123,7 @@ tag_map:
   理论手册: TheoryHandbook
   良心: Conscience
   良知: Conscience
+  美国: United_States_of_America
   日常记录: DailyRecord
   手册: Handbook
   实践手册: PracticeManual
