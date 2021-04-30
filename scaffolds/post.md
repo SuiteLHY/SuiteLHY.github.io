@@ -58,6 +58,8 @@ only:
 * [⤵ - 指向右侧然后向下弯曲的箭头 表情符号: U+2935 cudarrr - Unicode 字符百科](https://unicode-table.com/cn/2935/)
 * [⤶ - 指向下侧然后向左弯曲的箭头: U+2936 ldca - Unicode 字符百科](https://unicode-table.com/cn/2936/)
 * [⤷ - 指向下侧然后向右弯曲的箭头: U+2937 rdca - Unicode 字符百科](https://unicode-table.com/cn/2937/)
+* [— - Em 长划: U+2014 mdash - Unicode 字符百科](https://unicode-table.com/cn/2014/)
+* [连接号 - 维基百科，自由的百科全书](https://zh.wikipedia.org/wiki/%E8%BF%9E%E6%8E%A5%E5%8F%B7)
 
 {% endcollapse %}
 
