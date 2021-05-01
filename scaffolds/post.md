@@ -78,6 +78,6 @@ only:
 
 # 🔗外部链接
 
-* [Wikipedia's external link ltr-icon][Wikipedia__external_link_ltr-icon]<div style="display:inline-block !important;vertical-align:top !important;width:12px !important;height:fit-content(100%);padding:0 !important;border:0 !important;margin:0 !important;"><img src="https://zh.wikipedia.org/w/skins/Vector/resources/skins.vector.styles/images/external-link-ltr-icon.svg?48e54" alt="" style="display:inline-block;vertical-align:top !important;width:12px;height:12px;border:0 !important;margin:0 !important;" /></div>
+* [Wikipedia's external link ltr-icon][Wikipedia__external_link_ltr-icon]<span style="display:inline-block !important;vertical-align:top !important;width:12px !important;height:fit-content(100%);padding:0 !important;border:0 !important;margin:0 !important;"><img src="https://zh.wikipedia.org/w/skins/Vector/resources/skins.vector.styles/images/external-link-ltr-icon.svg?48e54" alt="" style="display:inline-block;vertical-align:top !important;width:12px;height:12px;border:0 !important;margin:0 !important;" /></span>
 
 [Wikipedia__external_link_ltr-icon]: https://zh.wikipedia.org/w/skins/Vector/resources/skins.vector.styles/images/external-link-ltr-icon.svg?48e54
