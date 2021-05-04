@@ -7,7 +7,7 @@
 title: '夜与花海'
 subtitle: '我写下的——是世界'
 description: '青春倚靠着时光，轻快的脚步在世间流韵； 云上光华从指间绽放，地上人们自由而幸福。'
-keywords:
+keywords: hexo,blog,Suite,SuiteLHY,夜与花海
 author: Suite
 language: en
 timezone: ''
@@ -62,10 +62,16 @@ prismjs:
   tab_replace: ''
 
 # Home page setting
+#
 # path: Root path for your blogs index page. (default = '')
 # per_page: Posts displayed per page. (0 = disable pagination)
 # order_by: Posts order. (Order by date descending by default)
 ## Docs: https://github.com/hexojs/hexo-generator-index#options
+#
+# yearly: Generate yearly archive.
+# monthly: Generate monthly archive.
+# daily: Generate daily archive.
+## Docs: https://www.npmjs.com/package/hexo-generator-archive#options
 index_generator:
   path: ''
   per_page: 10
@@ -137,9 +143,14 @@ tag_map:
   图片文件格式: ImageFileFormat
   图形文件格式: ImageFileFormat
   文化: Culture
+  网络社区: OnlineCommunity
+  互联网社区: OnlineCommunity
+  在线社区: OnlineCommunity
   心理学: Psychology
   信息技术(IT): InformationTechnology
   信息技术: InformationTechnology
+  艺术: Art
+  艺术家: Artist
   站点记录: SiteRecord
   政治: Politics
 
