@@ -24,7 +24,7 @@
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="https://avatars.githubusercontent.com/SuiteLHY">
 <meta property="article:published_time" content="2021-05-04T13:44:57.000Z">
-<meta property="article:modified_time" content="2021-05-05T17:03:30.299Z">
+<meta property="article:modified_time" content="2021-05-05T17:34:56.382Z">
 <meta property="article:author" content="Suite">
 <meta property="article:tag" content="信息技术">
 <meta property="article:tag" content="站点记录">
@@ -154,7 +154,7 @@
                         <i class="fa fa-edit"></i> 
                         
                         
-                            ~2.48K
+                            ~3.15K
                         
                         字
                     </li>
@@ -163,7 +163,7 @@
             </header>
             <div class="kratos-post-content">
                 <div id="expire-alert" class="alert alert-warning hidden" role="alert">
-                    本文最后编辑于 <time datetime="1620234210299"></time> 前，其中的内容可能需要更新。
+                    本文最后编辑于 <time datetime="1620236096382"></time> 前，其中的内容可能需要更新。
                 </div>
                 
                     <div class="kratos-post-inner-toc">
@@ -176,7 +176,7 @@
 <span id="more"></span>
 </blockquote>
 <h1 id="站点主题"><a href="#站点主题" class="headerlink" title="站点主题"></a>站点主题</h1><ul>
-<li><p>博客的根据分类或标签检索的文章列表异常：<span class="hint--info hint--rounded hint--top" data-hint="实测结果是按照发布时间倒序排序" ontouchstart>文章置顶功能失效</span>。</p>
+<li><p>根据分类或标签检索的文章列表异常：<span class="hint--info hint--rounded hint--top" data-hint="实测结果是按照发布时间倒序排序" ontouchstart>文章置顶功能失效</span>。</p>
   <div class="panel panel-danger">
     <div class="panel-title">相关BUG</div>
     <div class="panel-body">
@@ -241,7 +241,18 @@
     <div class="xHeading"><div class="xIcon"><i class="fa fa-plus"></i></div><span>解决方案&ensp;👆</span></div>
     <div class="xContent"><div class="inner">
         <ul>
-<li>【已解决】已向&thinsp;站点主题的开源作者<a target="_blank" rel="noopener" href="https://github.com/Candinya">Candinya🍭</a>&thinsp;提交&thinsp;<a target="_blank" rel="noopener" href="https://github.com/Candinya/Kratos-Rebirth/issues/61">ISSUE</a><span style="display:inline-block !important;vertical-align:top !important;width:12px !important;height:fit-content(100%);padding:0 !important;border:0 !important;margin:0 !important;"><img src="https://zh.wikipedia.org/w/skins/Vector/resources/skins.vector.styles/images/external-link-ltr-icon.svg?48e54" alt="" style="display:inline-block;vertical-align:top !important;width:12px;height:12px;border:0 !important;margin:0 !important;" /></span>。</li>
+<li><p>【已解决】已向&thinsp;站点主题的开源作者<a target="_blank" rel="noopener" href="https://github.com/Candinya">Candinya🍭</a>&thinsp;提交&thinsp;<a target="_blank" rel="noopener" href="https://github.com/Candinya/Kratos-Rebirth/issues/61">ISSUE</a><span style="display:inline-block !important;vertical-align:top !important;width:12px !important;height:fit-content(100%);padding:0 !important;border:0 !important;margin:0 !important;"><img src="https://zh.wikipedia.org/w/skins/Vector/resources/skins.vector.styles/images/external-link-ltr-icon.svg?48e54" alt="" style="display:inline-block;vertical-align:top !important;width:12px;height:12px;border:0 !important;margin:0 !important;" /></span>。</p>
+</li>
+<li><p>（在站点主题的配置文件<code>_config.yml</code>中）使用新的配置项<code>random_amount</code>&ensp;⤵</p>
+  <figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># JavaScript 相关配置</span></span><br><span class="line"><span class="comment">## 由于 Javascript 被压缩后难以有效编辑与生成，因而为了简化操作，将相关的配置项在生成文件时以独立的 json 文件写出，调用时使用 fetch API 获取。</span></span><br><span class="line"><span class="attr">jsconfig:</span></span><br><span class="line">  <span class="attr">main:</span></span><br><span class="line">    <span class="attr">pic:</span></span><br><span class="line">      <span class="attr">CDN:</span> <span class="literal">false</span> <span class="comment"># 表示不使用CDN加载图片</span></span><br><span class="line">      <span class="comment"># 注意：如果&quot;random_amount&quot;配置项的值大于随机图片的数量，则会在站点运行时出现找不到图片的显示问题</span></span><br><span class="line">      <span class="attr">random_amount:</span> <span class="number">104</span> <span class="comment"># 表示从1~104</span></span><br><span class="line">      <span class="comment"># 如果包含&lt;code&gt;//&lt;/code&gt;表示使用指定域名的绝对路径（例如第三方图床服务等），此时会忽略CDN配置项</span></span><br><span class="line">      <span class="attr">filename:</span> <span class="string">&quot;images/thumb/thumb_&#123;no&#125;.webp&quot;</span> <span class="comment"># 相对于主题根目录，表示文件名的格式，&#123;no&#125;用以指代随机的编号。</span></span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>注意：</p>
+<ul>
+<li>配置项<code>random_amount</code>的值&thinsp;应该等于&thinsp;随机图片的数量，且&thinsp;随机图片的序号&thinsp;从1开始递增且不间断。<br>⤷&ensp;如果”random_amount”配置项的值大于随机图片的数量，则会在站点运行时出现找不到图片的显示问题。</li>
+</ul>
+</blockquote>
+</li>
 </ul>
  
     </div></div>
