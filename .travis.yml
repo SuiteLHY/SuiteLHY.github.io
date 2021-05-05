@@ -18,7 +18,7 @@ before_install:
 
 script:
   - hexo clean
-  - hexo generate --force # generate static files
+  - hexo generate # generate static files
 deploy:
   provider: pages
   skip-cleanup: true
