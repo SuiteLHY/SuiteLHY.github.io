@@ -24,7 +24,7 @@
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="https://avatars.githubusercontent.com/SuiteLHY">
 <meta property="article:published_time" content="2021-05-04T13:44:57.000Z">
-<meta property="article:modified_time" content="2021-05-05T19:12:47.998Z">
+<meta property="article:modified_time" content="2021-05-06T07:11:20.769Z">
 <meta property="article:author" content="Suite">
 <meta property="article:tag" content="信息技术">
 <meta property="article:tag" content="站点记录">
@@ -154,7 +154,7 @@
                         <i class="fa fa-edit"></i> 
                         
                         
-                            ~3.15K
+                            ~3.80K
                         
                         字
                     </li>
@@ -163,7 +163,7 @@
             </header>
             <div class="kratos-post-content">
                 <div id="expire-alert" class="alert alert-warning hidden" role="alert">
-                    本文最后编辑于 <time datetime="1620241967998"></time> 前，其中的内容可能需要更新。
+                    本文最后编辑于 <time datetime="1620285080769"></time> 前，其中的内容可能需要更新。
                 </div>
                 
                     <div class="kratos-post-inner-toc">
@@ -256,7 +256,57 @@
 </ul>
  
     </div></div>
+    </div>
+
+<ul>
+<li><p>本地服务与在线服务的图片不一致问题</p>
+  <div class="panel panel-warning">
+    <div class="panel-title">问题简述</div>
+    <div class="panel-body">
+        <p>「文章随机图标的自定义配置」完成之后，在[在线服务]上检查时&thinsp;发现&thinsp;大多数文章的随机图标&thinsp;缺失。</p>
+
+    </div>
+    </div>
+
+  <div class="xControl">
+    <div class="xHeading"><div class="xIcon"><i class="fa fa-plus"></i></div><span>排查过程&ensp;&&ensp;解决方案&ensp;👆</span></div>
+    <div class="xContent"><div class="inner">
+        <ul>
+<li><p>最开始，<span class="hint--info hint--rounded hint--top" data-hint="（错误的习惯 orz）
+正确做法是：先检查浏览器控制台抛出的信息，以及网络资源的加载过程是否异常；
+再检查用于部署的Github仓库分支情况是否符合预期。" ontouchstart>先入为主地认为问题出在 Travis CI 的部署过程中</span>，浪费了很多时间……</p>
+</li>
+<li><p>之后，检查了用于部署的Github仓库分支<code>gh-pages</code>，发现只有建站时的20张图片&ensp;🡆&ensp;顺藤摸瓜找到了主分支<code>main</code>上对应的文件，也是这么个情况。</p>
+  <img src="/2021/05/04/%E6%9C%AC%E7%AB%99%E7%9A%84%E6%9B%B4%E6%96%B0%E5%92%8C%E7%BB%B4%E6%8A%A4%E8%AE%B0%E5%BD%95/%E7%AB%99%E7%82%B9%E4%B8%BB%E9%A2%98_%E6%9C%AC%E5%9C%B0%E6%9C%8D%E5%8A%A1%E4%B8%8E%E5%9C%A8%E7%BA%BF%E6%9C%8D%E5%8A%A1%E7%9A%84%E5%9B%BE%E7%89%87%E4%B8%8D%E4%B8%80%E8%87%B4%E9%97%AE%E9%A2%98__github.com_SuiteLHY_Kratos-Rebirth_tree_775dd0eaea3de533ea1d0092dfacd2dea658a40a_source_images_thumb.png" class="" title="确认主分支文件没有按照预期进行更新">
+
+<p>  ⤷&ensp;检查【站点主题】仓库根目录下的<code>.gitignore</code>配置文件，并修正相应的配置项&ensp;⤵</p>
+  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"># 站点图像</span><br><span class="line">#source&#x2F;images&#x2F;</span><br></pre></td></tr></table></figure>
+
+<p>  终于，图片如期所愿上传成功。&ensp;⤵</p>
+  <img src="/2021/05/04/%E6%9C%AC%E7%AB%99%E7%9A%84%E6%9B%B4%E6%96%B0%E5%92%8C%E7%BB%B4%E6%8A%A4%E8%AE%B0%E5%BD%95/%E7%AB%99%E7%82%B9%E4%B8%BB%E9%A2%98_%E6%9C%AC%E5%9C%B0%E6%9C%8D%E5%8A%A1%E4%B8%8E%E5%9C%A8%E7%BA%BF%E6%9C%8D%E5%8A%A1%E7%9A%84%E5%9B%BE%E7%89%87%E4%B8%8D%E4%B8%80%E8%87%B4%E9%97%AE%E9%A2%98__github.com_SuiteLHY_SuiteLHY.github.io_tree_gh-pages_images_thumb.png" class="" title="图片上传成功"></li>
+<li><p>最后，本地确认无误后提交代码，在线确认问题已解决。</p>
+<img src="/2021/05/04/%E6%9C%AC%E7%AB%99%E7%9A%84%E6%9B%B4%E6%96%B0%E5%92%8C%E7%BB%B4%E6%8A%A4%E8%AE%B0%E5%BD%95/%E7%AB%99%E7%82%B9%E4%B8%BB%E9%A2%98_%E6%9C%AC%E5%9C%B0%E6%9C%8D%E5%8A%A1%E4%B8%8E%E5%9C%A8%E7%BA%BF%E6%9C%8D%E5%8A%A1%E7%9A%84%E5%9B%BE%E7%89%87%E4%B8%8D%E4%B8%80%E8%87%B4%E9%97%AE%E9%A2%98__suitelhy.github.io_tags_Github_.png" class="" title="新的文章随机图标功能_展示效果" alt="线上确认问题已解决">
+
+</li>
+</ul>
+ 
+    </div></div>
+    </div>
+
+  <div class="xControl">
+    <div class="xHeading"><div class="xIcon"><i class="fa fa-plus"></i></div><span>经验教训&ensp;👆</span></div>
+    <div class="xContent"><div class="inner">
+        <ul>
+<li><p>避免先入为主。</p>
+</li>
+<li><p>线上问题：网页信息&ensp;🡆&ensp;Github仓库对应分支（主要检查是否与本地文件一致）&ensp;🡆&ensp;本地文件&ensp;🡆&ensp;凭经验结合文档记录排查问题&ensp;&amp;&ensp;Google搜索。</p>
+</li>
+</ul>
+ 
+    </div></div>
     </div></li>
+</ul>
+</li>
 </ul>
 <h1 id="站点所有权验证"><a href="#站点所有权验证" class="headerlink" title="站点所有权验证"></a>站点所有权验证</h1><div class="panel panel-info">
     <div class="panel-title">参考</div>
@@ -438,7 +488,7 @@
                         <a class="tag-none-link" href="/tags/InformationTechnology/" rel="tag">信息技术</a>, <a class="tag-none-link" href="/tags/%E5%BC%80%E5%8F%91%E6%97%A5%E5%BF%97/" rel="tag">开发日志</a>, <a class="tag-none-link" href="/tags/SiteRecord/" rel="tag">站点记录</a>
                     </div>
                     <div class="pull-date">
-                    <span>最后编辑：2021-05-05</span>
+                    <span>最后编辑：2021-05-06</span>
                     </div>
                 </div>
             </footer>
