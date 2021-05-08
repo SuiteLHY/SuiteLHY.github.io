@@ -155,6 +155,7 @@ tag_map:
   艺术: Art
   艺术家: Artist
   站点记录: SiteRecord
+  知识: Knowledge
   政治: Politics
 
 # Metadata elements
