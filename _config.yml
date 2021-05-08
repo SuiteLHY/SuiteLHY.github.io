@@ -116,6 +116,7 @@ tag_map:
   HelloWorld🐣: HelloWorld
   IT: InformationTechnology
   博客: Blog
+  程序员: Programmer
   道德: Moral
   道德学: Ethics
   道德哲学: Ethics
@@ -136,12 +137,14 @@ tag_map:
   实践手册: PracticeManual
   使用手册: Tutorial
   社会: Society
+  数据转换: Data_conversion
   生命: Life
   图像格式: ImageFileFormat
   图片格式: ImageFileFormat
   图像文件格式: ImageFileFormat
   图片文件格式: ImageFileFormat
   图形文件格式: ImageFileFormat
+  软件工程师: Software_Engineer
   文化: Culture
   网络社区: OnlineCommunity
   互联网社区: OnlineCommunity
