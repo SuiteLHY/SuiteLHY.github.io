@@ -139,8 +139,10 @@ tag_map:
   社会: Society
   数据转换: Data_conversion
   生命: Life
+  图像处理: Digital_Image_Processing
   图像格式: ImageFileFormat
   图片格式: ImageFileFormat
+  图像分析: Image_analysis
   图像文件格式: ImageFileFormat
   图片文件格式: ImageFileFormat
   图形文件格式: ImageFileFormat
@@ -156,6 +158,7 @@ tag_map:
   艺术家: Artist
   站点记录: SiteRecord
   知识: Knowledge
+  在线工具类网站: Online_tool_website
   政治: Politics
 
 # Metadata elements
