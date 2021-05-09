@@ -123,6 +123,7 @@ tag_map:
   地区: Region
   法律: Law
   国家: Country
+  功能需求: Functional_requirement
   计算机工程: ComputerEngineering
   计算机科学: ComputerScience
   伦理: Ethics
