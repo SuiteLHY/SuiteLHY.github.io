@@ -117,6 +117,7 @@ tag_map:
   IT: InformationTechnology
   博客: Blog
   程序员: Programmer
+  操作系统: Operating_system
   道德: Moral
   道德学: Ethics
   道德哲学: Ethics
@@ -132,8 +133,10 @@ tag_map:
   良心: Conscience
   良知: Conscience
   美国: United_States_of_America
+  内核（操作系统）: Kernel_(operating system)
   日常记录: DailyRecord
   手册: Handbook
+  算法效率: Algorithmic_efficiency
   数据库: Database
   实践手册: PracticeManual
   使用手册: Tutorial
