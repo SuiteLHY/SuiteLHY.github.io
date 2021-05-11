@@ -42,6 +42,14 @@ only:
 * [fit\-content\(\) \- CSS（层叠样式表） | MDN](https://developer.mozilla.org/zh-CN/docs/Web/CSS/fit-content)
 * 【★】【GFM】[GitHub Flavored Markdown Spec \- github\.github\.com](https://github.github.com/gfm/)
 * [HTML Color Picker](https://www.w3schools.com/colors/colors_picker.asp)
+* <font style="font-style:italic;"><b>「</b>本站_标准颜色<b>」</b></font>&ensp;⤵
+    + <font style="color:#CC0000;font-weight:bold;">『&thinsp;红&thinsp;』</font>&ensp;`#CC0000`
+    + <font style="color:#FF6699;font-weight:bold;">『&thinsp;粉&thinsp;』</font>&ensp;`#FF6699`
+    + <font style="color:#FCC000;font-weight:bold;">『&thinsp;橙&thinsp;』</font>&ensp;`#FCC000`
+    + <font style="color:#6AA84F;font-weight:bold;">『&thinsp;绿&thinsp;』</font>&ensp;`#6AA84F`
+    + <font style="color:#4343FF;font-weight:bold;">『&thinsp;蓝&thinsp;』</font>&ensp;`#4343FF`
+    + <font style="color:#9900FF;font-weight:bold;">『&thinsp;紫&thinsp;』</font>&ensp;`#9900FF`
+    + <font style="color:#808080;font-weight:bold;">『&thinsp;灰&thinsp;』</font>&ensp;`#808080`
 * [HTML中\&nbsp; \&ensp; \&emsp; \&thinsp;等6种空白空格的区别_电脑小技巧_上网技巧_QQ地带](http://www.oicqzone.com/pc/2015083122336.html)
 * [Markdown 教程 | 菜鸟教程](https://www.runoob.com/markdown/md-tutorial.html)
 * [👆 \- 白色指向反手指数 表情符号: U\+1F446 \- Unicode 字符百科](https://unicode-table.com/cn/1F446/)
