@@ -30,9 +30,9 @@ only:
 
 {% collapse "分类：解决问题✅" %}
 
-* [Markdown进阶（更改字体、颜色、大小，设置文字背景色，调整图片大小设置居中）_heimu24的博客-CSDN博客_markdown 颜色](https://blog.csdn.net/heimu24/article/details/81189700)
-* [(……) inline-block的元素垂直居中的问题 - SegmentFault 思否](https://segmentfault.com/q/1010000019710978)
-* [如何在GitHub风格的Markdown中添加脚注？ - ITranslater](https://www.itranslater.com/qa/details/2117469006360740864)
+* [Markdown进阶（更改字体、颜色、大小，设置文字背景色，调整图片大小设置居中）\_heimu24的博客\-CSDN博客\_markdown 颜色](https://blog.csdn.net/heimu24/article/details/81189700)
+* [inline\-block的元素垂直居中的问题 \- SegmentFault 思否](https://segmentfault.com/q/1010000019710978)
+* [如何在GitHub风格的Markdown中添加脚注？ \- ITranslater](https://www.itranslater.com/qa/details/2117469006360740864)
 
 {% endcollapse %}
 
