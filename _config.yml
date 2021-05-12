@@ -113,6 +113,8 @@ category_map:
   站点记录: SiteRecord
   知识: Knowledge
 tag_map:
+  Apache Tomcat: Apache-Tomcat
+  Tomcat: Apache-Tomcat
   HelloWorld🐣: HelloWorld
   IT: InformationTechnology
   博客: Blog
@@ -138,6 +140,8 @@ tag_map:
   密码散列函数: Cryptographic_hash_function
   内核（操作系统）: Kernel_(operating system)
   日常记录: DailyRecord
+  软件工程师: Software_Engineer
+  软件框架: Software_framework
   手册: Handbook
   算法效率: Algorithmic_efficiency
   数据库: Database
@@ -153,7 +157,6 @@ tag_map:
   图像文件格式: ImageFileFormat
   图片文件格式: ImageFileFormat
   图形文件格式: ImageFileFormat
-  软件工程师: Software_Engineer
   文化: Culture
   网络社区: OnlineCommunity
   互联网社区: OnlineCommunity
@@ -169,6 +172,8 @@ tag_map:
   在线工具类网站: Online_tool_website
   政治: Politics
   【密码散列函数】bcrypt: bcrypt
+  【Java】Spring Framework: Spring_Framework
+  【Java】Spring: Spring_Framework
 
 # Metadata elements
 ## https://developer.mozilla.org/en-US/docs/Web/HTML/Element/meta
