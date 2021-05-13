@@ -116,7 +116,7 @@ tag_map:
   Apache Tomcat: Apache-Tomcat
   Tomcat: Apache-Tomcat
   HelloWorld🐣: HelloWorld
-  IT: InformationTechnology
+  IT: Information_Technology
   博客: Blog
   程序员: Programmer
   操作系统: Operating_system
@@ -129,47 +129,50 @@ tag_map:
   国家: Country
   功能需求: Functional_requirement
   互联网: Internet
-  计算机工程: ComputerEngineering
-  计算机科学: ComputerScience
+  计算机工程: Computer_Engineering
+  计算机科学: Computer_Science
   伦理: Ethics
   伦理学: Ethics
-  理论手册: TheoryHandbook
+  理论手册: Theory_Handbook
   良心: Conscience
   良知: Conscience
   美国: United_States_of_America
   密码散列函数: Cryptographic_hash_function
-  内核（操作系统）: Kernel_(operating system)
-  日常记录: DailyRecord
+  内核（操作系统）: Kernel_(operating_system)
+  日常记录: Daily_Record
   软件工程师: Software_Engineer
   软件框架: Software_framework
   手册: Handbook
   算法效率: Algorithmic_efficiency
   数据库: Database
-  实践手册: PracticeManual
+  实践手册: Practice_Manual
   使用手册: Tutorial
   社会: Society
   数据转换: Data_conversion
   生命: Life
   图像处理: Digital_Image_Processing
-  图像格式: ImageFileFormat
-  图片格式: ImageFileFormat
+  图像格式: Image_File_Format
+  图片格式: Image_File_Format
   图像分析: Image_analysis
-  图像文件格式: ImageFileFormat
-  图片文件格式: ImageFileFormat
-  图形文件格式: ImageFileFormat
+  图像文件格式: Image_File_Format
+  图片文件格式: Image_File_Format
+  图形文件格式: Image_File_Format
   文化: Culture
-  网络社区: OnlineCommunity
-  互联网社区: OnlineCommunity
-  在线社区: OnlineCommunity
+  网络社区: Online_Community
+  互联网社区: Online_Community
+  在线社区: Online_Community
   网络营销: Digital_marketing
   心理学: Psychology
-  信息技术(IT): InformationTechnology
-  信息技术: InformationTechnology
+  信息技术(IT): Information_Technology
+  信息技术: Information_Technology
   艺术: Art
   艺术家: Artist
-  站点记录: SiteRecord
+  站点记录: Site_Record
   知识: Knowledge
   在线工具类网站: Online_tool_website
+  职业: Career
+  职业生涯规划: Career_planning
+  职业生涯管理: Career_management
   政治: Politics
   【密码散列函数】bcrypt: bcrypt
   【Java】Spring Framework: Spring_Framework
