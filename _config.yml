@@ -117,6 +117,7 @@ tag_map:
   Tomcat: Apache-Tomcat
   HelloWorld🐣: HelloWorld
   IT: Information_Technology
+  ORM: Object_Relational_Mapping
   博客: Blog
   程序员: Programmer
   操作系统: Operating_system
@@ -124,6 +125,7 @@ tag_map:
   道德学: Ethics
   道德哲学: Ethics
   地区: Region
+  对象关系映射: Object_Relational_Mapping
   法律: Law
   广告: Advertising
   国家: Country
