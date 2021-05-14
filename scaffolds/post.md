@@ -1,6 +1,7 @@
 ---
 title: {{ title }}
 date: {{ date }}
+lang: zh
 categories:
 tags:
 sticky: 0
