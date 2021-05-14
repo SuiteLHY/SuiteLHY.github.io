@@ -1,0 +1,809 @@
+<!DOCTYPE html>
+<html lang="zh">
+    <head>
+  <!-- 元数据 -->
+  <meta charset="utf-8">
+  <link rel="icon" href="https://avatars.githubusercontent.com/SuiteLHY">
+  <title>Apache Tomcat | 夜与花海</title>
+  <meta name="author" content="Suite" />
+  <meta http-equiv="Cache-Control" content="no-transform" />
+  <meta http-equiv="Cache-Control" content="no-siteapp" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="robots" content="index,follow" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+  <meta name="format-detection" content="telphone=no, email=no" />
+  
+    <meta name="keywords" content="Tomcat, 信息技术" />
+  
+  <meta name="description" content="Tomcat&amp;thinsp;是由&amp;thinsp;Apache&amp;thinsp;软件基金会属下&amp;thinsp;Jakarta&amp;thinsp;项目开发的&amp;thinsp;Servlet&amp;thinsp;容器，按照&amp;thinsp;Sun Microsystems&amp;thinsp;提供的技术规范，实现了对&amp;thinsp;Servlet&amp;thinsp;和&amp;thinsp;JavaServer Page（JSP）&amp;t">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Apache Tomcat">
+<meta property="og:url" content="https://suitelhy.github.io/zh/post/Apache-Tomcat/index.html">
+<meta property="og:site_name" content="夜与花海">
+<meta property="og:description" content="Tomcat&amp;thinsp;是由&amp;thinsp;Apache&amp;thinsp;软件基金会属下&amp;thinsp;Jakarta&amp;thinsp;项目开发的&amp;thinsp;Servlet&amp;thinsp;容器，按照&amp;thinsp;Sun Microsystems&amp;thinsp;提供的技术规范，实现了对&amp;thinsp;Servlet&amp;thinsp;和&amp;thinsp;JavaServer Page（JSP）&amp;t">
+<meta property="og:locale">
+<meta property="og:image" content="https://suitelhy.github.io/zh/post/Apache-Tomcat/tomcat.png">
+<meta property="article:published_time" content="2021-05-12T10:15:28.000Z">
+<meta property="article:modified_time" content="2021-05-14T09:52:31.145Z">
+<meta property="article:author" content="Suite">
+<meta property="article:tag" content="信息技术">
+<meta property="article:tag" content="Tomcat">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://suitelhy.github.io/zh/post/Apache-Tomcat/tomcat.png">
+<meta name="twitter:site" content="@null">
+  
+  <!-- 站点验证相关 -->
+  
+    
+      <meta name="google-site-verification" content="bZE7nUm9TG8--G23eE_vpUfb898ld93qzKhP7On5QRw" />
+    
+    
+    
+  
+  <!-- 样式表文件 -->
+  <link rel="stylesheet" id="kratos-css" href="/css/kratosr.min.css" type="text/css" media="all">
+  
+    <link rel="stylesheet" id="highlight-css" href="/css/highlight/night-eighties.min.css" type="text/css" media="all">
+  
+  
+  <link rel="stylesheet" id="fontawe-css" href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css" type="text/css" media="all">
+  <link rel="stylesheet" id="nprogress-css" href="https://cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.min.css" type="text/css" media="all">
+  
+  
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer@1.10.1/dist/APlayer.min.css">
+  
+  
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css">
+  
+  
+    <link rel="stylesheet" id="darkmode-css" href="/css/kr-dark.min.css" type="text/css" media="all">
+  
+  <!-- 不得不预先加载的一些JS文件 -->
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js"></script>
+  
+    <script src="https://cdn.jsdelivr.net/npm/qrcode_js@1.0.0/qrcode.min.js"></script>
+  
+<meta name="generator" content="Hexo 5.4.0"></head>
+
+
+    <body class="custom-background">
+        <div id="kratos-wrapper">
+    <div id="kratos-page">
+        <div id="kratos-header">
+            <header id="kratos-desktop-topnav" class="kratos-topnav">
+                <div class="container">
+                    <div class="nav-header">
+                        <nav id="kratos-menu-wrap">
+                            <ul id="kratos-primary-menu" class="sf-menu">
+                                
+                                    
+                                        <li><a href="/"><i class="fa fa-home"></i>首页</a></li>
+                                    
+                                
+                                    
+                                        <li><a href="/archives/"><i class="fa fa-file"></i>档案馆</a></li>
+                                    
+                                
+                                    
+                                        <li><a href="/friends/"><i class="fa fa-paw"></i>好伙伴</a></li>
+                                    
+                                
+                                    
+                                        <li>
+                                            <a><i class="fa fa-link"></i>链接</a>
+                                            <ul class="sub-menu">
+                                                
+                                                    
+                                                
+                                                    
+                                                        <li><a target="_blank" rel="noopener" href="https://github.com/SuiteLHY">本站作者</a></li>
+                                                    
+                                                
+                                                    
+                                                        <li><a target="_blank" rel="noopener" href="https://github.com/SuiteLHY/SuiteLHY.github.io">项目链接</a></li>
+                                                    
+                                                
+                                            </ul>
+                                        </li>
+                                    
+                                
+                            </ul>
+                        </nav>
+                    </div>
+                </div>
+            </header>
+            <header id="kratos-mobile-topnav" class="kratos-topnav">
+                <div class="container">
+                    <div class="color-logo"><a href="/">夜与花海</a></div>
+                    <div class="nav-toggle">
+                        <a class="kratos-nav-toggle js-kratos-nav-toggle">
+                            <i></i>
+                        </a>
+                    </div>
+                </div>
+            </header>
+        </div>
+        <div class="kratos-start kratos-hero-2">
+            <!-- <div class="kratos-overlay"></div> -->
+            <div class="kratos-cover kratos-cover-2 text-center">
+                <div class="desc desc2 animate-box">
+                    <a href="/">
+                        <h2>夜与花海</h2> <br />
+                        <span>我写下的——是世界</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div id="kratos-blog-post">
+            <div class="container">
+                <div id="main" class="row">
+                    
+
+        <section class="col-md-8">
+    <article>
+        <div class="kratos-hentry kratos-post-inner clearfix">
+            <header class="kratos-entry-header">
+                <h1 class="kratos-entry-title text-center">Apache Tomcat</h1>
+                
+                <ul class="kratos-post-meta text-center">
+                    <li><i class="fa fa-calendar"></i> 2021-05-12</li>
+                    <li><i class="fa fa-user"></i> 作者 Suite</li>
+                    <li>
+                        <i class="fa fa-edit"></i> 
+                        
+                        
+                            ~4.14K
+                        
+                        字
+                    </li>
+                    
+                </ul>
+            </header>
+            <div class="kratos-post-content">
+                <div id="expire-alert" class="alert alert-warning hidden" role="alert">
+                    本文最后编辑于 <time datetime="1620985951145"></time> 前，其中的内容可能需要更新。
+                </div>
+                
+                    <div class="kratos-post-inner-toc">
+                        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%AE%98%E6%96%B9%E8%B5%84%E6%BA%90"><span class="toc-number">1.</span> <span class="toc-text">官方资源</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%99%BE%E7%A7%91"><span class="toc-number">2.</span> <span class="toc-text">百科</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%8E%AF%E5%A2%83"><span class="toc-number">2.1.</span> <span class="toc-text">环境</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%BC%80%E5%8F%91%E7%8A%B6%E5%86%B5"><span class="toc-number">2.2.</span> <span class="toc-text">开发状况</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BA%A7%E5%93%81%E7%89%B9%E6%80%A7"><span class="toc-number">2.3.</span> <span class="toc-text">产品特性</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Tomcat-3-x"><span class="toc-number">2.3.1.</span> <span class="toc-text">Tomcat 3.x</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Tomcat-4-x"><span class="toc-number">2.3.2.</span> <span class="toc-text">Tomcat 4.x</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Tomcat-5-x"><span class="toc-number">2.3.3.</span> <span class="toc-text">Tomcat 5.x</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Tomcat-6-x"><span class="toc-number">2.3.4.</span> <span class="toc-text">Tomcat 6.x</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Tomcat-7-x"><span class="toc-number">2.3.5.</span> <span class="toc-text">Tomcat 7.x</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Tomcat-8-x"><span class="toc-number">2.3.6.</span> <span class="toc-text">Tomcat 8.x</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Tomcat-9-x"><span class="toc-number">2.3.7.</span> <span class="toc-text">Tomcat 9.x</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Tomcat-10-x"><span class="toc-number">2.3.8.</span> <span class="toc-text">Tomcat 10.x</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%89%88%E6%9C%AC%E5%8E%86%E5%8F%B2"><span class="toc-number">2.4.</span> <span class="toc-text">版本历史</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%F0%9F%93%96%E5%8F%82%E7%9C%8B"><span class="toc-number">3.</span> <span class="toc-text">📖参看</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E2%80%BB%E5%8F%82%E8%80%83%E5%92%8C%E5%BC%95%E7%94%A8"><span class="toc-number">4.</span> <span class="toc-text">※参考和引用</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%F0%9F%94%97%E5%A4%96%E9%83%A8%E9%93%BE%E6%8E%A5"><span class="toc-number">5.</span> <span class="toc-text">🔗外部链接</span></a></li></ol>
+                    </div>
+                
+                <hr />
+                <link rel="stylesheet" type="text&#x2F;css" href="https://cdn.jsdelivr.net/npm/hexo-tag-hint@0.3.1/dist/hexo-tag-hint.min.css"><blockquote>
+<p>Tomcat&thinsp;是由&thinsp;Apache&thinsp;软件基金会属下&thinsp;Jakarta&thinsp;项目开发的&thinsp;Servlet&thinsp;容器，按照&thinsp;Sun Microsystems&thinsp;提供的技术规范，实现了对&thinsp;Servlet&thinsp;和&thinsp;JavaServer Page（<code>JSP</code>）&thinsp;的支持，并提供了作为&thinsp;Web&thinsp;服务器的一些特有功能，如&thinsp;Tomcat&thinsp;管理和控制平台、安全局管理&thinsp;和&thinsp;Tomcat&thinsp;阀&thinsp;等。</p>
+<span id="more"></span>
+
+<p>由于&thinsp;Tomcat&thinsp;本身也内含了&thinsp;HTTP&thinsp;服务器，因此也可以视作单独的&thinsp;Web&thinsp;服务器。但是，不能将&thinsp;Tomcat&thinsp;和&thinsp;Apache HTTP&thinsp;服务器混淆，Apache HTTP&thinsp;服务器是用&thinsp;C&thinsp;语言实现的&thinsp;HTTPWeb&thinsp;服务器；这两个&thinsp;HTTP web server&thinsp;不是捆绑在一起的。Apache Tomcat&thinsp;包含了配置管理工具，也可以通过编辑&thinsp;XML&thinsp;格式的配置文件&thinsp;来进行配置。</p>
+<hr>
+<p>👆←🗎<sup id="cite_ref-1"><em><font color="#808080">[</font><a href="#cite_note-1">1</a><font color="#808080">]</font></em></sup></p>
+</blockquote>
+<h1 id="官方资源"><a href="#官方资源" class="headerlink" title="官方资源"></a><a target="_blank" rel="noopener" href="http://tomcat.apache.org/"><img src="tomcat.png" alt="Tomcat_Logo" width="39px" height="28px" style="display:inline-block;border:0 !important;" />官方资源</a></h1><ul>
+<li>【官网首页】<a target="_blank" rel="noopener" href="http://tomcat.apache.org/">Apache Tomcat® - Welcome! - tomcat.apache.org</a><span style="display:inline-block !important;vertical-align:top !important;width:12px !important;height:fit-content(100%);padding:0 !important;border:0 !important;margin:0 !important;"><img src="https://zh.wikipedia.org/w/skins/Vector/resources/skins.vector.styles/images/external-link-ltr-icon.svg?48e54" alt="" style="display:inline-block;vertical-align:top !important;width:12px;height:12px;border:0 !important;margin:0 !important;" /></span></li>
+</ul>
+<h1 id="百科"><a href="#百科" class="headerlink" title="百科"></a>百科</h1>
+<p style="text-align:center !important;">
+  <a target="_blank" rel="noopener" href="https://zh.wikipedia.org/wiki/Git" style="display:inline-block;height:50px;">
+    <img src="https://zh.wikipedia.org/static/images/project-logos/zhwiki-hans.png" alt="Wikipedia's logo" width="50px" height="50px" style="display:inline-block;margin:0px;">&thinsp;维基百科<span style="display:inline-block !important;vertical-align:top !important;width:12px !important;height:fit-content(100%);padding:0 !important;border:0 !important;margin:0 !important;"><img src="https://zh.wikipedia.org/w/skins/Vector/resources/skins.vector.styles/images/external-link-ltr-icon.svg?48e54" alt="" style="display:inline-block;vertical-align:top !important;width:12px;height:12px;border:0 !important;margin:0 !important;" /></span>
+  </a>
+</p>
+
+
+<h2 id="环境"><a href="#环境" class="headerlink" title="环境"></a>环境</h2><p>Tomcat&thinsp;提供了一个&thinsp;Jasper&thinsp;编译器&thinsp;用以将&thinsp;JSP&thinsp;编译成对应的&thinsp;Servlet。</p>
+<p>Tomcat&thinsp;的&thinsp;Servlet&thinsp;引擎通常与&thinsp;Apache&thinsp;或者&thinsp;其他&thinsp;Web&thinsp;服务器一起工作。除了用于开发过程中的调试以及那些对速度和事务处理只有很小要求的用户，很少会将&thinsp;Tomcat&thinsp;单独作为&thinsp;Web&thinsp;服务器。但随着版本的更新，正有越来越多的用户将其单独作为&thinsp;Web&thinsp;服务器用以那些对速度和可靠性有较高要求的环境中。</p>
+<h2 id="开发状况"><a href="#开发状况" class="headerlink" title="开发状况"></a>开发状况</h2><p>和其他&thinsp;Apache&thinsp;软件基金会旗下的项目一样，Tomcat&thinsp;是由该基金会的会员和其他志愿者开发与维护的，并且是一个被置于&thinsp;Apache&thinsp;协议之下的开源软件。用户可以根据该协议免费获得其源代码及可执行文件。最初被发布出来的版本是&thinsp;Tomcat 3.0.x。</p>
+<h2 id="产品特性"><a href="#产品特性" class="headerlink" title="产品特性"></a>产品特性</h2><h3 id="Tomcat-3-x"><a href="#Tomcat-3-x" class="headerlink" title="Tomcat 3.x"></a>Tomcat 3.x</h3><ul>
+<li>符合&thinsp;Servlet 2.2&thinsp;和&thinsp;JSP 1.1&thinsp;规范</li>
+<li>Servlet&thinsp;更新</li>
+<li>基础的&thinsp;HTTP&thinsp;功能</li>
+</ul>
+<h3 id="Tomcat-4-x"><a href="#Tomcat-4-x" class="headerlink" title="Tomcat 4.x"></a>Tomcat 4.x</h3><ul>
+<li>符合&thinsp;Servlet 2.3&thinsp;和&thinsp;JSP 1.2&thinsp;规范</li>
+<li>Servlet&thinsp;容器被重新设计，并被命名为&thinsp;Catalina</li>
+<li>JSP&thinsp;引擎被重新设计，并被命名为&thinsp;Jasper</li>
+<li>新的&thinsp;Coyote&thinsp;连接器</li>
+<li>支持&thinsp;JMX，使用&thinsp;JSP&thinsp;和&thinsp;基于&thinsp;Struts&thinsp;的管理系统</li>
+</ul>
+<h3 id="Tomcat-5-x"><a href="#Tomcat-5-x" class="headerlink" title="Tomcat 5.x"></a>Tomcat 5.x</h3><ul>
+<li>符合&thinsp;Servlet 2.4&thinsp;和&thinsp;JSP 2.0&thinsp;规范</li>
+<li>精简的垃圾收集系统</li>
+<li>更快的&thinsp;JSP&thinsp;解析&thinsp;和&thinsp;改进过的标签库处理</li>
+<li>Windows&thinsp;和&thinsp;Unix&thinsp;的本地操作系统集成，可以将&thinsp;Tomcat&thinsp;注册为系统服务</li>
+<li>重构过的应用程序发布环境</li>
+</ul>
+<h3 id="Tomcat-6-x"><a href="#Tomcat-6-x" class="headerlink" title="Tomcat 6.x"></a>Tomcat 6.x</h3><ul>
+<li>符合&thinsp;Servlet 2.5&thinsp;和&thinsp;JSP 2.1&thinsp;规范</li>
+<li>支持统一表达式语言2.1</li>
+<li>设计运行在&thinsp;Java SE 5.0&thinsp;及&thinsp;以后版本上</li>
+<li>通过&thinsp;CometProcessor&thinsp;接口&thinsp;实现了对&thinsp;Comet&thinsp;的支持</li>
+<li>不同于过去版本，未集成管理员（admin）控制台</li>
+</ul>
+<h3 id="Tomcat-7-x"><a href="#Tomcat-7-x" class="headerlink" title="Tomcat 7.x"></a>Tomcat 7.x</h3><ul>
+<li>支持&thinsp;Servlet 3.0</li>
+</ul>
+<h3 id="Tomcat-8-x"><a href="#Tomcat-8-x" class="headerlink" title="Tomcat 8.x"></a>Tomcat 8.x</h3><ul>
+<li>支持&thinsp;Servlet 3.1</li>
+</ul>
+<h3 id="Tomcat-9-x"><a href="#Tomcat-9-x" class="headerlink" title="Tomcat 9.x"></a>Tomcat 9.x</h3><ul>
+<li>支持&thinsp;Servlet 4.0</li>
+</ul>
+<h3 id="Tomcat-10-x"><a href="#Tomcat-10-x" class="headerlink" title="Tomcat 10.x"></a>Tomcat 10.x</h3><p>最新版的&thinsp;tomcat</p>
+<ul>
+<li>支持&thinsp;Servlet 5.0</li>
+</ul>
+<h2 id="版本历史"><a href="#版本历史" class="headerlink" title="版本历史"></a>版本历史</h2><ul>
+<li><a target="_blank" rel="noopener" href="https://zh.wikipedia.org/wiki/Apache_Tomcat#%E7%89%88%E6%9C%AC%E5%8E%86%E5%8F%B2">在维基百科上查看</a><span style="display:inline-block !important;vertical-align:top !important;width:12px !important;height:fit-content(100%);padding:0 !important;border:0 !important;margin:0 !important;"><img src="https://zh.wikipedia.org/w/skins/Vector/resources/skins.vector.styles/images/external-link-ltr-icon.svg?48e54" alt="" style="display:inline-block;vertical-align:top !important;width:12px;height:12px;border:0 !important;margin:0 !important;" /></span></li>
+</ul>
+<hr>
+<h1 id="📖参看"><a href="#📖参看" class="headerlink" title="📖参看"></a>📖参看</h1><div class="xControl active">
+    <div class="xHeading"><div class="xIcon"><i class="fa fa-plus"></i></div><span>主要参看📖</span></div>
+    <div class="xContent pre-open"><div class="inner">
+        <ul>
+<li><a target="_blank" rel="noopener" href="https://en.wikipedia.org/wiki/Apache_Tomcat">Apache Tomcat - Wikipedia</a></li>
+<li><a target="_blank" rel="noopener" href="https://zh.wikipedia.org/wiki/Apache_Tomcat">Apache Tomcat - 维基百科，自由的百科全书</a></li>
+<li><a target="_blank" rel="noopener" href="https://cwiki.apache.org/confluence/display/TOMCAT/Apache+Tomcat+Home#app-switcher">Tomcat项目的Wiki（英文）</a></li>
+</ul>
+ 
+    </div></div>
+    </div>
+
+<div class="xControl">
+    <div class="xHeading"><div class="xIcon"><i class="fa fa-plus"></i></div><span>分类：解决问题✅</span></div>
+    <div class="xContent"><div class="inner">
+        <ul>
+<li><a target="_blank" rel="noopener" href="https://blog.csdn.net/heimu24/article/details/81189700">Markdown进阶（更改字体、颜色、大小，设置文字背景色，调整图片大小设置居中）_heimu24的博客-CSDN博客_markdown 颜色</a></li>
+<li><a target="_blank" rel="noopener" href="https://segmentfault.com/q/1010000019710978">inline-block的元素垂直居中的问题 - SegmentFault 思否</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.itranslater.com/qa/details/2117469006360740864">如何在GitHub风格的Markdown中添加脚注？ - ITranslater</a></li>
+</ul>
+ 
+    </div></div>
+    </div>
+
+<div class="xControl">
+    <div class="xHeading"><div class="xIcon"><i class="fa fa-plus"></i></div><span>分类：工具🧰&ensp;|&ensp;查阅🔍</span></div>
+    <div class="xContent"><div class="inner">
+        <ul>
+<li><a target="_blank" rel="noopener" href="https://developer.mozilla.org/zh-CN/docs/Web/CSS/calc()">calc() - CSS（层叠样式表） | MDN</a></li>
+<li><a target="_blank" rel="noopener" href="https://developer.mozilla.org/zh-CN/docs/Web/CSS/fit-content">fit-content() - CSS（层叠样式表） | MDN</a></li>
+<li>【★】【GFM】<a target="_blank" rel="noopener" href="https://github.github.com/gfm/">GitHub Flavored Markdown Spec - github.github.com</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.w3schools.com/colors/colors_picker.asp">HTML Color Picker</a></li>
+<li><font style="font-style:italic;"><b>「</b>本站_标准颜色<b>」</b></font>&ensp;⤵<ul>
+<li><font style="color:#CC0000;font-weight:bold;">『&thinsp;红&thinsp;』</font>&ensp;<code>#CC0000</code></li>
+<li><font style="color:#FF6699;font-weight:bold;">『&thinsp;粉&thinsp;』</font>&ensp;<code>#FF6699</code></li>
+<li><font style="color:#FCC000;font-weight:bold;">『&thinsp;橙&thinsp;』</font>&ensp;<code>#FCC000</code></li>
+<li><font style="color:#6AA84F;font-weight:bold;">『&thinsp;绿&thinsp;』</font>&ensp;<code>#6AA84F</code></li>
+<li><font style="color:#4343FF;font-weight:bold;">『&thinsp;蓝&thinsp;』</font>&ensp;<code>#4343FF</code></li>
+<li><font style="color:#9900FF;font-weight:bold;">『&thinsp;紫&thinsp;』</font>&ensp;<code>#9900FF</code></li>
+<li><font style="color:#808080;font-weight:bold;">『&thinsp;灰&thinsp;』</font>&ensp;<code>#808080</code></li>
+</ul>
+</li>
+<li><a target="_blank" rel="noopener" href="http://www.oicqzone.com/pc/2015083122336.html">HTML中&amp;nbsp; &amp;ensp; &amp;emsp; &amp;thinsp;等6种空白空格的区别_电脑小技巧_上网技巧_QQ地带</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.runoob.com/markdown/md-tutorial.html">Markdown 教程 | 菜鸟教程</a></li>
+<li><a target="_blank" rel="noopener" href="https://unicode-table.com/cn/1F446/">👆 - 白色指向反手指数 表情符号: U+1F446 - Unicode 字符百科</a></li>
+<li><a target="_blank" rel="noopener" href="https://unicode-table.com/cn/1F4D6/">📖 - 打开书 表情符号: U+1F4D6 - Unicode 字符百科</a></li>
+<li><a target="_blank" rel="noopener" href="https://unicode-table.com/cn/1F517/">🔗 - 链接符号 表情符号: U+1F517 - Unicode 字符百科</a></li>
+<li><a target="_blank" rel="noopener" href="https://unicode-table.com/cn/1F587/">🖇 - 链接回形针 表情符号: U+1F587 - Unicode 字符百科</a></li>
+<li><a target="_blank" rel="noopener" href="https://unicode-table.com/cn/1F5CE/">🗎 - 文献: U+1F5CE - Unicode 字符百科</a></li>
+<li><a target="_blank" rel="noopener" href="https://unicode-table.com/cn/203B/">※ - 参考标志: U+203B - Unicode 字符百科</a></li>
+<li><a target="_blank" rel="noopener" href="https://unicode-table.com/cn/260C/">☌ - 关联: U+260C - Unicode 字符百科</a></li>
+<li><a target="_blank" rel="noopener" href="https://unicode-table.com/cn/1F845/">🡅 - 向上重箭头: U+1F845 - Unicode 字符百科</a></li>
+<li><a target="_blank" rel="noopener" href="https://unicode-table.com/cn/1F846/">🡆 - 向右重箭头: U+1F846 - Unicode 字符百科</a></li>
+<li><a target="_blank" rel="noopener" href="https://unicode-table.com/cn/1F847/">🡇 - 向下重箭头: U+1F847 - Unicode 字符百科</a></li>
+<li><a target="_blank" rel="noopener" href="https://unicode-table.com/cn/1F844/">🡄 - 向左重箭: U+1F844 - Unicode 字符百科</a></li>
+<li><a target="_blank" rel="noopener" href="https://unicode-table.com/cn/2934/">⤴ - 指向右侧然后向上弯曲的箭头 表情符号: U+2934 - Unicode 字符百科</a></li>
+<li><a target="_blank" rel="noopener" href="https://unicode-table.com/cn/2935/">⤵ - 指向右侧然后向下弯曲的箭头 表情符号: U+2935 cudarrr - Unicode 字符百科</a></li>
+<li><a target="_blank" rel="noopener" href="https://unicode-table.com/cn/2936/">⤶ - 指向下侧然后向左弯曲的箭头: U+2936 ldca - Unicode 字符百科</a></li>
+<li><a target="_blank" rel="noopener" href="https://unicode-table.com/cn/2937/">⤷ - 指向下侧然后向右弯曲的箭头: U+2937 rdca - Unicode 字符百科</a></li>
+<li><a target="_blank" rel="noopener" href="https://unicode-table.com/cn/1F3B5/">🎵 - 快乐的音符 表情符号: U+1F3B5 - Unicode 字符百科</a></li>
+<li><a target="_blank" rel="noopener" href="https://unicode-table.com/cn/21D4/">⇔ - 左右双箭头: U+21D4 hArr - Unicode 字符百科</a></li>
+<li><a target="_blank" rel="noopener" href="https://unicode-table.com/cn/21D2/">⇒ - 向右双箭头: U+21D2 rArr - Unicode 字符百科</a></li>
+<li><a target="_blank" rel="noopener" href="https://unicode-table.com/cn/2014/">— - Em 长划: U+2014 mdash - Unicode 字符百科</a></li>
+<li><a target="_blank" rel="noopener" href="https://unicode-table.com/cn/1F44D/">👍 - 竖起大拇指 表情符号: U+1F44D - Unicode 字符百科</a></li>
+<li><a target="_blank" rel="noopener" href="https://zh.wikipedia.org/wiki/%E6%A0%87%E7%82%B9%E7%AC%A6%E5%8F%B7">标点符号 - 维基百科，自由的百科全书</a></li>
+<li><a target="_blank" rel="noopener" href="https://zh.wikipedia.org/wiki/%E8%BF%9E%E6%8E%A5%E5%8F%B7">连接号 - 维基百科，自由的百科全书</a></li>
+</ul>
+ 
+    </div></div>
+    </div>
+
+<div class="xControl">
+    <div class="xHeading"><div class="xIcon"><i class="fa fa-plus"></i></div><span>分类：其他（二度及以上关联☌）</span></div>
+    <div class="xContent"><div class="inner">
+         
+    </div></div>
+    </div>
+
+<hr>
+<h1 id="※参考和引用"><a href="#※参考和引用" class="headerlink" title="※参考和引用"></a>※参考和引用</h1><ol>
+<li><a id="cite_note-1" href="#cite_ref-1" aria-label="跳转" title="跳转">^</a>&ensp;<a target="_blank" rel="noopener" href="https://zh.wikipedia.org/wiki/Apache_Tomcat">Apache Tomcat - 维基百科，自由的百科全书</a></li>
+</ol>
+<hr>
+<h1 id="🔗外部链接"><a href="#🔗外部链接" class="headerlink" title="🔗外部链接"></a>🔗外部链接</h1><ul>
+<li><a target="_blank" rel="noopener" href="https://zh.wikipedia.org/w/skins/Vector/resources/skins.vector.styles/images/external-link-ltr-icon.svg?48e54">Wikipedia&#39;s external link ltr-icon</a><span style="display:inline-block !important;vertical-align:top !important;width:12px !important;height:fit-content(100%);padding:0 !important;border:0 !important;margin:0 !important;"><img src="https://zh.wikipedia.org/w/skins/Vector/resources/skins.vector.styles/images/external-link-ltr-icon.svg?48e54" alt="" style="display:inline-block;vertical-align:top !important;width:12px;height:12px;border:0 !important;margin:0 !important;" /></span></li>
+<li><a target="_blank" rel="noopener" href="http://tomcat.apache.org/res/images/tomcat.png">tomcat.png (129×92) - tomcat.apache.org</a><span style="display:inline-block !important;vertical-align:top !important;width:12px !important;height:fit-content(100%);padding:0 !important;border:0 !important;margin:0 !important;"><img src="https://zh.wikipedia.org/w/skins/Vector/resources/skins.vector.styles/images/external-link-ltr-icon.svg?48e54" alt="" style="display:inline-block;vertical-align:top !important;width:12px;height:12px;border:0 !important;margin:0 !important;" /></span></li>
+</ul>
+
+            </div>
+            
+                <div class="kratos-copyright text-center clearfix">
+                    <h5>本作品采用 <a rel="license nofollow" target="_blank" href="https://creativecommons.org/licenses/by-sa/4.0/">知识共享署名-相同方式共享 4.0 国际许可协议</a> 进行许可</h5>
+                </div>
+            
+            <footer class="kratos-entry-footer clearfix">
+                
+                    <div class="post-like-donate text-center clearfix" id="post-like-donate">
+                    
+                    
+                        <a class="share" href="javascript:;"><i class="fa fa-share-alt"></i> 分享</a>
+                        <div class="share-wrap" style="display: none;">
+    <div class="share-group">
+        <a href="javascript:;" class="share-plain qq" onclick="share('qq');" rel="nofollow">
+            <div class="icon-wrap">
+                <i class="fa fa-qq"></i>
+            </div>
+        </a>
+        <a href="javascript:;" class="share-plain qzone" onclick="share('qzone');" rel="nofollow">
+            <div class="icon-wrap">
+                <i class="fa fa-star"></i>
+            </div>
+        </a>
+        <a href="javascript:;" class="share-plain weixin pop style-plain" rel="nofollow">
+            <div class="icon-wrap">
+                <i class="fa fa-weixin"></i>
+            </div>
+            <div class="share-int">
+                <div class="qrcode" id="wechat-qr"></div>
+                <p>打开微信“扫一扫”，打开网页后点击屏幕右上角分享按钮</p>
+            </div>
+        </a>
+        <a href="javascript:;" class="share-plain weibo" onclick="share('weibo');" rel="nofollow">
+            <div class="icon-wrap">
+                <i class="fa fa-weibo"></i>
+            </div>
+        </a>
+        <a href="javascript:;" class="share-plain facebook style-plain" onclick="share('facebook');" rel="nofollow">
+            <div class="icon-wrap">
+                <i class="fa fa-facebook"></i>
+            </div>
+        </a>
+        <a href="javascript:;" class="share-plain twitter style-plain" onclick="share('twitter');" rel="nofollow">
+            <div class="icon-wrap">
+                <i class="fa fa-twitter"></i>
+            </div>
+        </a>
+    </div>
+    <script type="text/javascript">
+        $(()=>{
+            new QRCode("wechat-qr", {
+                text: "https://suitelhy.github.io/zh/post/Apache-Tomcat/",
+                width: 150,
+                height: 150,
+                correctLevel : QRCode.CorrectLevel.H
+            });
+        });
+        function share(dest) {
+            const qqBase        = "https://connect.qq.com/widget/shareqq/index.html?";
+            const weiboBase     = "https://service.weibo.com/share/share.php?";
+            const qzoneBase     = "https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?";
+            const facebookBase  = "https://www.facebook.com/sharer/sharer.php?";
+            const twitterBase   = "https://twitter.com/intent/tweet?";
+            const hostUrl       = "https://suitelhy.github.io/zh/post/Apache-Tomcat/";
+            const title         = "「Apache Tomcat」";
+            const excerpt       = `Tomcat&thinsp;是由&thinsp;Apache&thinsp;软件基金会属下&thinsp;Jakarta&thinsp;项目开发的&thinsp;Servlet&thinsp;容器，按照&thinsp;Sun Microsystems&thinsp;提供的技术规范，实现了对&thinsp;Servlet&thinsp;和&thinsp;JavaServer Page（JSP）&thinsp;的支持，并提供了作为&thinsp;Web&thinsp;服务器的一些特有功能，如&thinsp;Tomcat&thinsp;管理和控制平台、安全局管理&thinsp;和&thinsp;Tomcat&thinsp;阀&thinsp;等。`;
+            let _URL;
+            switch (dest) {
+                case "qq"       : _URL = qqBase+"url="+hostUrl+"&title="+title+"&desc=&summary="+excerpt+"&site=cxpy";     break;
+                case "weibo"    : _URL = weiboBase+"url="+hostUrl+"&title="+title+excerpt;                                 break;
+                case "qzone"    : _URL = qzoneBase+"url="+hostUrl+"&title="+title+"&desc=&summary="+excerpt+"&site=cxpy";  break;
+                case "facebook" : _URL = facebookBase+"u="+hostUrl;                                                        break;
+                case "twitter"  : _URL = twitterBase+"text="+title+excerpt+"&url="+hostUrl;                                break;
+            }
+            window.open(_URL);
+        };
+    </script>
+</div>
+                    
+                    </div>
+                
+                <div class="footer-tag clearfix">
+                    <div class="pull-left">
+                    <i class="fa fa-tags"></i>
+                        <a class="tag-none-link" href="/tags/Apache-Tomcat/" rel="tag">Tomcat</a>, <a class="tag-none-link" href="/tags/Information-Technology/" rel="tag">信息技术</a>
+                    </div>
+                    <div class="pull-date">
+                    <span>最后编辑：2021-05-14</span>
+                    </div>
+                </div>
+            </footer>
+        </div>
+        
+            <nav class="navigation post-navigation clearfix" role="navigation">
+                
+                <div class="nav-previous clearfix">
+                    <a title=" 【密码散列函数】bcrypt" href="/zh/post/【密码散列函数】bcrypt/">&lt; 上一篇</a>
+                </div>
+                
+                
+                <div class="nav-next clearfix">
+                    <a title=" 【Java】Spring Framework" href="/zh/post/【Java】Spring-Framework/">下一篇 &gt;</a>
+                </div>
+                
+            </nav>
+        
+        
+    </article>
+</section>
+
+                
+            
+
+<section id="kratos-widget-area" class="col-md-4 hidden-xs hidden-sm">
+    <!-- 文章和页面根据splitter来分割，没有的话就从头开始设置为sticky -->
+    
+    
+                <aside id="krw-about" class="widget widget-kratos-about clearfix">
+    <div class="photo-background"></div>
+    <div class="photo-wrapper clearfix">
+        <div class="photo-wrapper-tip text-center">
+            <img class="about-photo" src="https://avatars.githubusercontent.com/SuiteLHY" />
+        </div>
+    </div>
+    <div class="textwidget">
+        <p class="text-center">青春倚靠着时光，轻快的脚步在世间流韵； 云上光华从指间绽放，地上人们自由而幸福。</p>
+    </div>
+</aside>
+            
+                    <div class="sticky-area">
+                
+                    <aside id="krw-toc" class="widget widget-kratos-toc clearfix">
+    <div class="photo-background"></div>
+    <h4 class="widget-title no-after">
+        <i class="fa fa-compass"></i>
+        文章目录
+        <span class="toc-progress-bar"></span>
+    </h4>
+    <div class="textwidget">
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%AE%98%E6%96%B9%E8%B5%84%E6%BA%90"><span class="toc-text">官方资源</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%99%BE%E7%A7%91"><span class="toc-text">百科</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%8E%AF%E5%A2%83"><span class="toc-text">环境</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%BC%80%E5%8F%91%E7%8A%B6%E5%86%B5"><span class="toc-text">开发状况</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BA%A7%E5%93%81%E7%89%B9%E6%80%A7"><span class="toc-text">产品特性</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Tomcat-3-x"><span class="toc-text">Tomcat 3.x</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Tomcat-4-x"><span class="toc-text">Tomcat 4.x</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Tomcat-5-x"><span class="toc-text">Tomcat 5.x</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Tomcat-6-x"><span class="toc-text">Tomcat 6.x</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Tomcat-7-x"><span class="toc-text">Tomcat 7.x</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Tomcat-8-x"><span class="toc-text">Tomcat 8.x</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Tomcat-9-x"><span class="toc-text">Tomcat 9.x</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Tomcat-10-x"><span class="toc-text">Tomcat 10.x</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%89%88%E6%9C%AC%E5%8E%86%E5%8F%B2"><span class="toc-text">版本历史</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%F0%9F%93%96%E5%8F%82%E7%9C%8B"><span class="toc-text">📖参看</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E2%80%BB%E5%8F%82%E8%80%83%E5%92%8C%E5%BC%95%E7%94%A8"><span class="toc-text">※参考和引用</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%F0%9F%94%97%E5%A4%96%E9%83%A8%E9%93%BE%E6%8E%A5"><span class="toc-text">🔗外部链接</span></a></li></ol>
+    </div>
+</aside>
+                
+                
+  <aside id="krw-categories" class="widget widget-kratos-categories clearfix">
+    <h4 class="widget-title"><i class="fa fa-folder"></i>分类目录</h4>
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/HelloWorld/">HelloWorld🐣</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/InformationTechnology/">信息技术</a><span class="category-list-count">11</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/InformationTechnology/Handbook/">手册</a><span class="category-list-count">4</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Other/">其他🗒</a><span class="category-list-count">7</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Blog/">博客</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Handbook/">手册</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/DailyRecord/">日常记录</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Life/">生命</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Knowledge/">知识</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Society/">社会</a><span class="category-list-count">27</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Society/InformationTechnology/">信息技术</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Society/ComputerScience/">计算机科学</a><span class="category-list-count">1</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Society/ComputerScience/InformationTechnology/">信息技术</a><span class="category-list-count">1</span></li></ul></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/SiteRecord/">站点记录</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/ComputerEngineering/">计算机工程</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/ComputerScience/">计算机科学</a><span class="category-list-count">25</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/ComputerScience/InformationTechnology/">信息技术</a><span class="category-list-count">12</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/ComputerScience/Handbook/">手册</a><span class="category-list-count">2</span></li></ul></li></ul>
+  </aside>
+
+
+            
+                
+  <aside id="krw-tags" class="widget widget-kratos-tags clearfix">
+    <h4 class="widget-title"><i class="fa fa-tags"></i>标签聚合</h4>
+      <div class="tag-clouds">
+        <a href="/tags/Git/" style="font-size: 0.76em;">Git</a> <a href="/tags/Github/" style="font-size: 0.72em;">Github</a> <a href="/tags/HelloWorld/" style="font-size: 0.68em;">HelloWorld🐣</a> <a href="/tags/Hexo/" style="font-size: 0.6em;">Hexo</a> <a href="/tags/Java/" style="font-size: 0.76em;">Java</a> <a href="/tags/Object-Relational-Mapping/" style="font-size: 0.6em;">ORM</a> <a href="/tags/Apache-Tomcat/" style="font-size: 0.6em;">Tomcat</a> <a href="/tags/%E3%80%8AThinking-in-Java%E3%80%8B/" style="font-size: 0.64em;">《Thinking in Java》</a> <a href="/tags/Spring-Framework/" style="font-size: 0.6em;">【Java】Spring Framework</a> <a href="/tags/bcrypt/" style="font-size: 0.6em;">【密码散列函数】bcrypt</a> <a href="/tags/Internet/" style="font-size: 0.72em;">互联网</a> <a href="/tags/Ethics/" style="font-size: 0.6em;">伦理</a> <a href="/tags/Tutorial/" style="font-size: 0.64em;">使用手册</a> <a href="/tags/Information-Technology/" style="font-size: 0.8em;">信息技术</a> <a href="/tags/Kernel-operating-system/" style="font-size: 0.6em;">内核（操作系统）</a> <a href="/tags/Functional-requirement/" style="font-size: 0.68em;">功能需求</a> <a href="/tags/Blog/" style="font-size: 0.68em;">博客</a> <a href="/tags/Country/" style="font-size: 0.72em;">国家</a>
+      </div>
+  </aside>
+
+            
+                
+  <aside id="krw-posts" class="widget widget-kratos-posts">
+  <h4 class="widget-title"><i class="fa fa-file"></i>最新文章</h4>
+  <div class="tab-content">
+      <ul class="list-group">
+        
+        
+          
+          
+            <a class="list-group-item" href="/zh/post/%E8%BD%AF%E4%BB%B6%E6%9E%B6%E6%9E%84-Software-architecture/"><i class="fa  fa-book"></i> 软件架构(Software architecture)</a>
+            
+          
+        
+          
+          
+            <a class="list-group-item" href="/zh/post/%E8%BD%AF%E4%BB%B6-Software/"><i class="fa  fa-book"></i> 软件(Software)</a>
+            
+          
+        
+          
+          
+            <a class="list-group-item" href="/zh/post/%E4%B8%AA%E4%BA%BA%E7%AE%80%E5%8E%86-%E4%B8%AA%E4%BA%BA%E4%BF%A1%E6%81%AF-%E8%81%94%E7%B3%BB%E6%96%B9%E5%BC%8F/"><i class="fa  fa-book"></i> 个人简历-个人信息-联系方式</a>
+            
+          
+        
+          
+          
+            <a class="list-group-item" href="/zh/post/%E5%AF%B9%E8%B1%A1%E5%85%B3%E7%B3%BB%E6%98%A0%E5%B0%84-Object-Relational-Mapping/"><i class="fa  fa-book"></i> 对象关系映射(Object Relational Mapping)</a>
+            
+          
+        
+          
+          
+            <a class="list-group-item" href="/zh/post/%E4%B8%AA%E4%BA%BA%E7%AE%80%E5%8E%86-%E8%81%8C%E4%B8%9A-%E4%B8%93%E4%B8%9A%E6%8A%80%E8%83%BD%E6%A0%91/"><i class="fa  fa-book"></i> 个人简历-职业-专业技能树</a>
+            
+          
+        
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+      </ul>
+  </div>
+  </aside>
+
+            
+    </div>
+</section>
+        
+        </div>
+    </div>
+</div>
+<footer>
+    <div id="footer"  class="ap-lrc"  >
+        <div class="kr-tool text-center">
+            <div class="tool">
+                
+                    <div class="box search-box">
+                        <a href="/search/">
+                            <span class="fa fa-search"></span>
+                        </a>
+                    </div>
+                
+                
+                    <div class="box theme-box" id="darkmode-switch">
+                        <span class="fa fa-adjust"></span>
+                    </div>
+                
+                
+            </div>
+            <div class="box gotop-box">
+                <span class="fa fa-chevron-up"></span>
+            </div>
+        </div>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6 col-md-offset-3 footer-list text-center">
+                    <ul class="kratos-social-icons">
+                        
+                        
+                        <li><a target="_blank" rel="nofollow" href="https://t.me/SuiteLHY"><i class="fa fa-telegram"></i></a></li>
+                        
+                        
+                        
+                        
+                        <li><a target="_blank" rel="nofollow" href="https://github.com/SuiteLHY"><i class="fa fa-github"></i></a></li>
+                        
+                    </ul>
+                    <ul class="kratos-copyright">
+                        <div>
+                            <li>&copy; 2021 夜与花海 版权所有.</li>
+                            <li>本站已运行<span id="span_dt">Loading...</span></li>
+                        </div>
+                        <div>
+                            <li>Theme <a href="https://github.com/Candinya/Kratos-Rebirth" target="_blank">Kratos:Rebirth</a></li>
+                            <li>Site built with&nbsp;<i class="fa fa-heart throb" style="color:#d43f57"></i>&nbsp;by Suite.</li>
+                        </div>
+                        <div>
+                            <li>Powered by <a href="https://hexo.io" target="_blank" rel="nofollow">Hexo</a></li>
+                            <li>Hosted on <a href="https://github.io" target="_blank">Github Pages</a></li>
+                        </div>
+                        <div>
+                            
+                            
+                        </div>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+</div>
+</div>
+
+        <script defer src="https://cdn.jsdelivr.net/npm/bootstrap@3.3.4/dist/js/bootstrap.min.js"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.js"></script>
+<script>const notMobile = (!(navigator.userAgent.match(/(phone|pad|pod|iPhone|iPod|ios|iPad|Android|Mobile|BlackBerry|IEMobile|MQQBrowser|JUC|Fennec|wOSBrowser|BrowserNG|WebOS|Symbian|Windows Phone)/i)));</script>
+
+    <div>
+        <canvas id="snow"></canvas>
+        <script async type="text/javascript" src="/js/snow.min.js"></script>
+    </div>
+
+<script async src="/js/candy.min.js"></script>
+
+    <script defer src="https://cdn.jsdelivr.net/npm/aplayer@1.10.1/dist/APlayer.min.js"></script>
+    
+    <script defer src="https://cdn.jsdelivr.net/npm/meting@2/dist/Meting.min.js"></script>
+    <meting-js
+        server="netease"
+        type="playlist"
+        id="900328786"
+        order="random"
+        fixed="true"
+    >
+    </meting-js>
+
+
+
+    <script defer src="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script>
+
+<script defer src="https://cdn.jsdelivr.net/npm/clipboard@2.0.6/dist/clipboard.min.js"></script>
+<script defer src="/js/kratosr.min.js"></script>
+<script defer src="/js/pjax.min.js"></script>
+
+
+    <script defer src="/js/kr-dark.min.js"></script>
+
+
+
+<!-- Extra support for third-party plguins  -->
+
+
+    </body>
+</html>

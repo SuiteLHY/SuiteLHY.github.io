@@ -1,0 +1,913 @@
+<!DOCTYPE html>
+<html lang="zh">
+    <head>
+  <!-- 元数据 -->
+  <meta charset="utf-8">
+  <link rel="icon" href="https://avatars.githubusercontent.com/SuiteLHY">
+  <title>数据库(Database) | 夜与花海</title>
+  <meta name="author" content="Suite" />
+  <meta http-equiv="Cache-Control" content="no-transform" />
+  <meta http-equiv="Cache-Control" content="no-siteapp" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="robots" content="index,follow" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+  <meta name="format-detection" content="telphone=no, email=no" />
+  
+    <meta name="keywords" content="数据库, 计算机科学" />
+  
+  <meta name="description" content="数据库，又称为数据管理系统，简而言之可视为电子化的文件柜——存储电子文件的处所，用户可以对文件中的资料运行新增、截取、更新、删除等操作。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="数据库(Database)">
+<meta property="og:url" content="https://suitelhy.github.io/zh/post/%E6%95%B0%E6%8D%AE%E5%BA%93-Database/index.html">
+<meta property="og:site_name" content="夜与花海">
+<meta property="og:description" content="数据库，又称为数据管理系统，简而言之可视为电子化的文件柜——存储电子文件的处所，用户可以对文件中的资料运行新增、截取、更新、删除等操作。">
+<meta property="og:locale">
+<meta property="og:image" content="https://suitelhy.github.io/zh/post/%E6%95%B0%E6%8D%AE%E5%BA%93-Database/DB_Logo.png">
+<meta property="article:published_time" content="2021-05-02T21:59:42.000Z">
+<meta property="article:modified_time" content="2021-05-14T09:52:31.357Z">
+<meta property="article:author" content="Suite">
+<meta property="article:tag" content="计算机科学">
+<meta property="article:tag" content="数据库">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://suitelhy.github.io/zh/post/%E6%95%B0%E6%8D%AE%E5%BA%93-Database/DB_Logo.png">
+<meta name="twitter:site" content="@null">
+  
+  <!-- 站点验证相关 -->
+  
+    
+      <meta name="google-site-verification" content="bZE7nUm9TG8--G23eE_vpUfb898ld93qzKhP7On5QRw" />
+    
+    
+    
+  
+  <!-- 样式表文件 -->
+  <link rel="stylesheet" id="kratos-css" href="/css/kratosr.min.css" type="text/css" media="all">
+  
+    <link rel="stylesheet" id="highlight-css" href="/css/highlight/night-eighties.min.css" type="text/css" media="all">
+  
+  
+  <link rel="stylesheet" id="fontawe-css" href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css" type="text/css" media="all">
+  <link rel="stylesheet" id="nprogress-css" href="https://cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.min.css" type="text/css" media="all">
+  
+  
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer@1.10.1/dist/APlayer.min.css">
+  
+  
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css">
+  
+  
+    <link rel="stylesheet" id="darkmode-css" href="/css/kr-dark.min.css" type="text/css" media="all">
+  
+  <!-- 不得不预先加载的一些JS文件 -->
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js"></script>
+  
+    <script src="https://cdn.jsdelivr.net/npm/qrcode_js@1.0.0/qrcode.min.js"></script>
+  
+<meta name="generator" content="Hexo 5.4.0"></head>
+
+
+    <body class="custom-background">
+        <div id="kratos-wrapper">
+    <div id="kratos-page">
+        <div id="kratos-header">
+            <header id="kratos-desktop-topnav" class="kratos-topnav">
+                <div class="container">
+                    <div class="nav-header">
+                        <nav id="kratos-menu-wrap">
+                            <ul id="kratos-primary-menu" class="sf-menu">
+                                
+                                    
+                                        <li><a href="/"><i class="fa fa-home"></i>首页</a></li>
+                                    
+                                
+                                    
+                                        <li><a href="/archives/"><i class="fa fa-file"></i>档案馆</a></li>
+                                    
+                                
+                                    
+                                        <li><a href="/friends/"><i class="fa fa-paw"></i>好伙伴</a></li>
+                                    
+                                
+                                    
+                                        <li>
+                                            <a><i class="fa fa-link"></i>链接</a>
+                                            <ul class="sub-menu">
+                                                
+                                                    
+                                                
+                                                    
+                                                        <li><a target="_blank" rel="noopener" href="https://github.com/SuiteLHY">本站作者</a></li>
+                                                    
+                                                
+                                                    
+                                                        <li><a target="_blank" rel="noopener" href="https://github.com/SuiteLHY/SuiteLHY.github.io">项目链接</a></li>
+                                                    
+                                                
+                                            </ul>
+                                        </li>
+                                    
+                                
+                            </ul>
+                        </nav>
+                    </div>
+                </div>
+            </header>
+            <header id="kratos-mobile-topnav" class="kratos-topnav">
+                <div class="container">
+                    <div class="color-logo"><a href="/">夜与花海</a></div>
+                    <div class="nav-toggle">
+                        <a class="kratos-nav-toggle js-kratos-nav-toggle">
+                            <i></i>
+                        </a>
+                    </div>
+                </div>
+            </header>
+        </div>
+        <div class="kratos-start kratos-hero-2">
+            <!-- <div class="kratos-overlay"></div> -->
+            <div class="kratos-cover kratos-cover-2 text-center">
+                <div class="desc desc2 animate-box">
+                    <a href="/">
+                        <h2>夜与花海</h2> <br />
+                        <span>我写下的——是世界</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div id="kratos-blog-post">
+            <div class="container">
+                <div id="main" class="row">
+                    
+
+        <section class="col-md-8">
+    <article>
+        <div class="kratos-hentry kratos-post-inner clearfix">
+            <header class="kratos-entry-header">
+                <h1 class="kratos-entry-title text-center">数据库(Database)</h1>
+                
+                <ul class="kratos-post-meta text-center">
+                    <li><i class="fa fa-calendar"></i> 2021-05-02</li>
+                    <li><i class="fa fa-user"></i> 作者 Suite</li>
+                    <li>
+                        <i class="fa fa-edit"></i> 
+                        
+                        
+                            ~4.94K
+                        
+                        字
+                    </li>
+                    
+                </ul>
+            </header>
+            <div class="kratos-post-content">
+                <div id="expire-alert" class="alert alert-warning hidden" role="alert">
+                    本文最后编辑于 <time datetime="1620985951357"></time> 前，其中的内容可能需要更新。
+                </div>
+                
+                    <div class="kratos-post-inner-toc">
+                        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%99%BE%E7%A7%91"><span class="toc-number">1.</span> <span class="toc-text">百科</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%8A%80%E6%9C%AF%E5%88%9D%E8%A1%B7"><span class="toc-number">1.1.</span> <span class="toc-text">技术初衷</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%95%B0%E6%8D%AE%E5%BA%93%E7%AE%A1%E7%90%86%E7%B3%BB%E7%BB%9F"><span class="toc-number">1.2.</span> <span class="toc-text">数据库管理系统</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%95%B0%E6%8D%AE%E5%BA%93%E7%9A%84%E5%88%86%E7%B1%BB"><span class="toc-number">1.3.</span> <span class="toc-text">数据库的分类</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%85%B3%E7%B3%BB%E6%95%B0%E6%8D%AE%E5%BA%93"><span class="toc-number">1.3.1.</span> <span class="toc-text">关系数据库</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%9D%9E%E5%85%B3%E7%B3%BB%E5%9E%8B%E6%95%B0%E6%8D%AE%E5%BA%93%EF%BC%88NoSQL%EF%BC%89"><span class="toc-number">1.3.2.</span> <span class="toc-text">非关系型数据库（NoSQL）</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E9%94%AE%E5%80%BC%E6%95%B0%E6%8D%AE%E5%BA%93"><span class="toc-number">1.3.2.1.</span> <span class="toc-text">键值数据库</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%95%B0%E6%8D%AE%E5%BA%93%E6%8A%80%E6%9C%AF%E7%9A%84%E5%8F%91%E5%B1%95"><span class="toc-number">1.4.</span> <span class="toc-text">数据库技术的发展</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%95%B0%E6%8D%AE%E5%BA%93%E6%A8%A1%E5%9E%8B"><span class="toc-number">1.5.</span> <span class="toc-text">数据库模型</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%9E%B6%E6%9E%84-Schema"><span class="toc-number">1.5.1.</span> <span class="toc-text">架构 (Schema)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B4%A2%E5%BC%95"><span class="toc-number">1.5.2.</span> <span class="toc-text">数据库索引</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%95%B0%E6%8D%AE%E5%BA%93%E4%BA%8B%E5%8A%A1"><span class="toc-number">1.5.3.</span> <span class="toc-text">数据库事务</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%BD%91%E7%8A%B6%E6%95%B0%E6%8D%AE%E6%A8%A1%E5%9E%8B%E7%9A%84%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84"><span class="toc-number">1.5.4.</span> <span class="toc-text">网状数据模型的数据结构</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%BD%91%E7%8A%B6%E6%A8%A1%E5%9E%8B"><span class="toc-number">1.5.4.1.</span> <span class="toc-text">网状模型</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%8F%82%E8%A7%81"><span class="toc-number">1.6.</span> <span class="toc-text">参见</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%F0%9F%93%96%E5%8F%82%E7%9C%8B"><span class="toc-number">2.</span> <span class="toc-text">📖参看</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E2%80%BB%E5%8F%82%E8%80%83%E5%92%8C%E5%BC%95%E7%94%A8"><span class="toc-number">3.</span> <span class="toc-text">※参考和引用</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%F0%9F%94%97%E5%A4%96%E9%83%A8%E9%93%BE%E6%8E%A5"><span class="toc-number">4.</span> <span class="toc-text">🔗外部链接</span></a></li></ol>
+                    </div>
+                
+                <hr />
+                <link rel="stylesheet" type="text&#x2F;css" href="https://cdn.jsdelivr.net/npm/hexo-tag-hint@0.3.1/dist/hexo-tag-hint.min.css"><blockquote>
+<p>数据库，又称为数据管理系统，简而言之可视为电子化的文件柜——存储电子文件的处所，用户可以对文件中的资料运行新增、截取、更新、删除等操作。</p>
+<span id="more"></span>
+
+<p>所谓“数据库”是以一定方式储存在一起、能予多个用户共享、具有尽可能小的冗余度、与应用程序彼此独立的数据集合。一个数据库由多个表空间（Tablespace）构成。</p>
+<hr>
+<p>👆←🗎<sup id="cite_ref-1"><em><font color="#808080">[</font><a href="#cite_note-1">1</a><font color="#808080">]</font></em></sup></p>
+</blockquote>
+<h1 id="百科"><a href="#百科" class="headerlink" title="百科"></a>百科</h1>
+<p style="text-align:center !important;">
+  <a target="_blank" rel="noopener" href="https://zh.wikipedia.org/wiki/Git" style="display:inline-block;height:50px;">
+    <img src="https://zh.wikipedia.org/static/images/project-logos/zhwiki-hans.png" alt="Wikipedia's logo" width="50px" height="50px" style="display:inline-block;margin:0px;">&thinsp;维基百科<span style="display:inline-block !important;vertical-align:top !important;width:12px !important;height:fit-content(100%);padding:0 !important;border:0 !important;margin:0 !important;"><img src="https://zh.wikipedia.org/w/skins/Vector/resources/skins.vector.styles/images/external-link-ltr-icon.svg?48e54" alt="" style="display:inline-block;vertical-align:top !important;width:12px;height:12px;border:0 !important;margin:0 !important;" /></span>
+  </a>
+</p>
+
+
+<h2 id="技术初衷"><a href="#技术初衷" class="headerlink" title="技术初衷"></a>技术初衷</h2><p>在操作系统出现之后，随着计算机应用范围的扩大、需要处理的数据迅速膨胀。</p>
+<blockquote>
+<p>最初，数据与程序一样，以简单的文件作为主要存储形式。以这种方式组织的数据在逻辑上更简单，但可扩展性差，访问这种数据的程序需要了解数据的具体组织格式。当系统数据量大或者用户访问量大时，应用程序还需要解决数据的完整性、一致性以及安全性等一系列的问题。因此，必须开发出一种系统软件，它应该能够像操作系统屏蔽了硬件访问复杂性那样，屏蔽数据访问的复杂性。</p>
+</blockquote>
+<p>⤷&ensp;由此产生了数据管理系统，即数据库。</p>
+<h2 id="数据库管理系统"><a href="#数据库管理系统" class="headerlink" title="数据库管理系统"></a>数据库管理系统</h2><p>数据库管理系统（英语：Database Management System，简称DBMS）是为管理数据库而设计的电脑软件系统，一般具有存储、截取、安全保障、备份等基础功能。</p>
+<ul>
+<li><p>数据库管理系统的分类：</p>
+<ul>
+<li>依据所支持的数据库模型来作分类，例如关系式、XML；</li>
+<li>依据所支持的电脑类型来作分类，例如服务器聚类、移动电话；</li>
+<li>依据所用查询语言来作分类，例如SQL、XQuery；</li>
+<li>依据性能冲量重点来作分类，例如最大规模、最高运行速度；</li>
+<li>其他的分类方式。</li>
+</ul>
+<blockquote>
+<p>不论使用哪种分类方式，一些DBMS能够跨类别，例如，同时支持多种查询语言。</p>
+</blockquote>
+</li>
+</ul>
+<hr>
+<h2 id="数据库的分类"><a href="#数据库的分类" class="headerlink" title="数据库的分类"></a>数据库的分类</h2><p>随着数据库技术与其他分支学科技术的结合，出现了多种新型数据库，例如：与分布处理技术结合产生的分布式数据库、与并行处理技术结合产生的并行数据库、与人工智能结合产生的演绎数据库、与多媒体技术结合产生的多媒体数据库。</p>
+<blockquote>
+<p>另外，数据库技术应用于特定的领域，出现了工程数据库、 地理数据库、统计数据库、空间数据库等特定领域数据库。</p>
+</blockquote>
+<h3 id="关系数据库"><a href="#关系数据库" class="headerlink" title="关系数据库"></a>关系数据库</h3><ul>
+<li>MySQL<ul>
+<li>MariaDB（MySQL的代替品，维基媒体基金会项目已从MySQL转向MariaDB）</li>
+<li>Percona Server（MySQL的代替品）</li>
+</ul>
+</li>
+<li>PostgreSQL</li>
+<li>Microsoft Access</li>
+<li>Microsoft SQL Server</li>
+<li>Google Fusion Tables</li>
+<li>FileMaker</li>
+<li>Oracle数据库</li>
+<li>Sybase</li>
+<li>dBASE</li>
+<li>Clipper</li>
+<li>FoxPro</li>
+<li>foshub</li>
+</ul>
+<p>几乎所有的数据库管理系统都配备了一个<a target="_blank" rel="noopener" href="https://zh.wikipedia.org/wiki/ODBC">开放式数据库连接</a><span style="display:inline-block !important;vertical-align:top !important;width:12px !important;height:fit-content(100%);padding:0 !important;border:0 !important;margin:0 !important;"><img src="https://zh.wikipedia.org/w/skins/Vector/resources/skins.vector.styles/images/external-link-ltr-icon.svg?48e54" alt="" style="display:inline-block;vertical-align:top !important;width:12px;height:12px;border:0 !important;margin:0 !important;" /></span>（ODBC）驱动程序，令各个数据库之间得以互相集成。</p>
+<h3 id="非关系型数据库（NoSQL）"><a href="#非关系型数据库（NoSQL）" class="headerlink" title="非关系型数据库（NoSQL）"></a>非关系型数据库（<a target="_blank" rel="noopener" href="https://zh.wikipedia.org/wiki/NoSQL">NoSQL</a><span style="display:inline-block !important;vertical-align:top !important;width:12px !important;height:fit-content(100%);padding:0 !important;border:0 !important;margin:0 !important;"><img src="https://zh.wikipedia.org/w/skins/Vector/resources/skins.vector.styles/images/external-link-ltr-icon.svg?48e54" alt="" style="display:inline-block;vertical-align:top !important;width:12px;height:12px;border:0 !important;margin:0 !important;" /></span>）</h3><ul>
+<li>BigTable（Google）</li>
+<li>Cassandra</li>
+<li>MongoDB</li>
+<li>CouchDB</li>
+<li>Redis</li>
+</ul>
+<h4 id="键值数据库"><a href="#键值数据库" class="headerlink" title="键值数据库"></a>键值数据库</h4><ul>
+<li>Apache Cassandra（为Facebook所使用）：高度可扩展</li>
+<li>Dynamo</li>
+<li>LevelDB（Google）</li>
+</ul>
+<h2 id="数据库技术的发展"><a href="#数据库技术的发展" class="headerlink" title="数据库技术的发展"></a>数据库技术的发展</h2><blockquote>
+<p>随着互联网的普及，数据库使用环境也随之发生变化，这种变化主要体现为XML和Java技术的大量使用、要求支持各种互联网环境下的应用服务器、极容易出现大量用户同时访问数据库、要求支持7x24小时不间断运行和高安全性等。</p>
+</blockquote>
+<p>为解决由于这些变化所带来的新问题，数据库管理系统也逐渐产生变化，包括：</p>
+<ol>
+<li><p>网络化的大型通用数据库管理系统的出现</p>
+<blockquote>
+<p>由于互联网应用的用户数量无法预测，这就要求数据库相比以前拥有能处理更大量的数据以及为更多的用户提供服务的能力，即更好的可伸缩性及高可用性，因此，能够支持Internet的数据库应用已经成为数据库系统的重要方面，学术界及各主流数据库公司都将大型通用数据管理系统作为主要发展方向。<br>例如Oracle公司从 8 版起全面支持互联网应用，微软公司更是将 SQL Server 作为 其整个 .NET计划中的一个重要的成分。</p>
+</blockquote>
+</li>
+<li><p>数据库安全系统及技术的提升</p>
+<blockquote>
+<p>由于数据库系统在现代计算机系统中的地位越来越趋于核心的地位，数据库系统的安全问题自然受到越来越多的关注。</p>
+<p>在目前各国所引用或制定的 一系列安全标准中，最重要的两个是由美国国防部制定的《可信计算机系统的评估标准》(简称TCSEC)和《可信计算机系统的评估标准关于可信数据库系统的解释》(简称 TDI)。目前，所有数据库的开发必须遵从相应的安全标准。</p>
+</blockquote>
+</li>
+<li><p>XML及Web数据管理技术的普及</p>
+<ul>
+<li><p>随着越来越多的Web应用，如电子商务、数字图书馆、信息服务等采用XML作为数据表现形式、越来越多网站采用XML作为信息发布的语言，以XML格式数据为主的半结构化数据逐步成为网上数据交换和数据表示的标准。</p>
+<blockquote>
+<p>而XML具有如下的一些特征：面向显示、半结构化和无结构、不同形式的数据源，动态变化以及数据海量等。<br>因此，支持这种结构松散、形式多样、动态变化的海量数据的存储、共享、管理、检索，成了数据库技术的大势所趋。</p>
+</blockquote>
+</li>
+<li><p>Web数据管理是一个很松散的概念，大体上它是指在Web环境下对各种复杂信息的有效组织与集成，进行方便而准确的信息查询和发布。</p>
+<blockquote>
+<p>当前Web数据管理的研究开发方向主要包括：半结构化数据管理、Web数据查询、Web信息集成、XML数据管理等。</p>
+</blockquote>
+</li>
+</ul>
+<p> 到目前为止，XML 与 Web 数据管理的研究工作中主要集中在如下的一些方面。</p>
+<blockquote>
+<ul>
+<li>半结构化数据</li>
+<li>Web数据查询</li>
+<li>XML相关标准</li>
+<li>XML数据管理</li>
+</ul>
+</blockquote>
+</li>
+<li><p>嵌入式移动数据库技术</p>
+<blockquote>
+<p>随着移动通信技术的迅速发展和投入使用，加上移动智能电话、移动计算机的大量普及，国内外许多研究机构都展开了对移动数据库的研究，并获取了许多有价值的成果。</p>
+</blockquote>
+<p> 移动数据库技术涉及数据库技术、分布式计算技术以及移动通信技术等多个学科领域，具有较高的学术起点。</p>
+</li>
+</ol>
+<h2 id="数据库模型"><a href="#数据库模型" class="headerlink" title="数据库模型"></a>数据库模型</h2><ul>
+<li>对象模型</li>
+<li>层次模型（轻量级数据访问协议）</li>
+<li>网状模型（大型数据储存）</li>
+<li>关系模型</li>
+<li>面向对象模型</li>
+<li>半结构化模型</li>
+<li>平面模型（表格模型，一般在形式上是一个二维数组。如表格模型数据Excel)</li>
+</ul>
+<h3 id="架构-Schema"><a href="#架构-Schema" class="headerlink" title="架构 (Schema)"></a>架构 (Schema)</h3><p>数据库的架构可以大致区分为三个概括层次：内层、概念层和外层。</p>
+<ul>
+<li>内层：最接近实际存储体，亦即有关资料的实际存储方式。</li>
+<li>外层：最接近用户，即有关个别用户观看资料的方式。</li>
+<li>概念层：介于两者之间的间接层。</li>
+</ul>
+<h3 id="数据库索引"><a href="#数据库索引" class="headerlink" title="数据库索引"></a>数据库索引</h3><blockquote>
+<p>资料索引的观念由来已久，像是一本书前面几页都有目录，目录也算是索引的一种，只是它的分类较广，例如车牌、身份证字号、条码等，都是一个索引的号码，当我们看到号码时，可以从号码中看出其中的端倪，若是要找的人、车或物品，也只要提供相关的号码，即可迅速查到正确的人事物。</p>
+</blockquote>
+<p>⤷&ensp;另外，索引跟字段有着相应的关系，索引即是由字段而来，其中字段有所谓的关键字段（Key Field），该字段具有唯一性，即其值不可重复，且不可为”空值（<code>null</code>）”。</p>
+<blockquote>
+<p>⤷&ensp;例如：在合并资料时，索引便是扮演欲附加字段资料之指向性用途的角色。故此索引为不可重复性且不可为空。</p>
+</blockquote>
+<h3 id="数据库事务"><a href="#数据库事务" class="headerlink" title="数据库事务"></a>数据库事务</h3><p>事务（transaction）包含一组数据库操作的逻辑工作单元，在事务中包含的数据库操作是不可分割的整体，这些操作要么一起做，要么一起回滚（Roll Back）到执行前的状态。</p>
+<div class="xControl active">
+    <div class="xHeading"><div class="xIcon"><i class="fa fa-plus"></i></div><span>事务的ACID特性：</span></div>
+    <div class="xContent pre-open"><div class="inner">
+        <ul>
+<li>原子性（atomicity）</li>
+<li>一致性（consistency）</li>
+<li>隔离性（isolation）</li>
+<li>持续性（durability）</li>
+</ul>
+ 
+    </div></div>
+    </div>
+
+<div class="xControl active">
+    <div class="xHeading"><div class="xIcon"><i class="fa fa-plus"></i></div><span>事务的并发性</span></div>
+    <div class="xContent pre-open"><div class="inner">
+        <p>事务的并发性是指多个事务的并行操作轮流交叉运行，事务的并发可能会访问和存储不正确的数据，破坏交易的隔离性和数据库的一致性。</p>
+ 
+    </div></div>
+    </div>
+
+<h3 id="网状数据模型的数据结构"><a href="#网状数据模型的数据结构" class="headerlink" title="网状数据模型的数据结构"></a>网状数据模型的数据结构</h3><h4 id="网状模型"><a href="#网状模型" class="headerlink" title="网状模型"></a>网状模型</h4><p>满足下面两个条件的基本层次联系的集合为网状模型。</p>
+<blockquote>
+<ol>
+<li>允许一个以上的结点无双亲；</li>
+<li>一个结点可以有多于一个的双亲。</li>
+</ol>
+</blockquote>
+<h2 id="参见"><a href="#参见" class="headerlink" title="参见"></a>参见</h2><ul>
+<li><a target="_blank" rel="noopener" href="https://zh.wikipedia.org/wiki/%E8%B3%87%E6%96%99%E5%BA%AB%E7%90%86%E8%AB%96">数据库理论</a><span style="display:inline-block !important;vertical-align:top !important;width:12px !important;height:fit-content(100%);padding:0 !important;border:0 !important;margin:0 !important;"><img src="https://zh.wikipedia.org/w/skins/Vector/resources/skins.vector.styles/images/external-link-ltr-icon.svg?48e54" alt="" style="display:inline-block;vertical-align:top !important;width:12px;height:12px;border:0 !important;margin:0 !important;" /></span></li>
+<li><a target="_blank" rel="noopener" href="https://zh.wikipedia.org/wiki/%E8%B3%87%E8%A8%8A%E7%A7%91%E6%8A%80%E7%A8%BD%E6%A0%B8">信息技术审核</a><span style="display:inline-block !important;vertical-align:top !important;width:12px !important;height:fit-content(100%);padding:0 !important;border:0 !important;margin:0 !important;"><img src="https://zh.wikipedia.org/w/skins/Vector/resources/skins.vector.styles/images/external-link-ltr-icon.svg?48e54" alt="" style="display:inline-block;vertical-align:top !important;width:12px;height:12px;border:0 !important;margin:0 !important;" /></span></li>
+<li><a target="_blank" rel="noopener" href="https://zh.wikipedia.org/wiki/%E8%BD%BB%E5%9E%8B%E7%9B%AE%E5%BD%95%E8%AE%BF%E9%97%AE%E5%8D%8F%E8%AE%AE">LDAP</a><span style="display:inline-block !important;vertical-align:top !important;width:12px !important;height:fit-content(100%);padding:0 !important;border:0 !important;margin:0 !important;"><img src="https://zh.wikipedia.org/w/skins/Vector/resources/skins.vector.styles/images/external-link-ltr-icon.svg?48e54" alt="" style="display:inline-block;vertical-align:top !important;width:12px;height:12px;border:0 !important;margin:0 !important;" /></span>（轻量级数据访问协议）</li>
+<li><a target="_blank" rel="noopener" href="https://zh.wikipedia.org/wiki/SQL">SQL</a><span style="display:inline-block !important;vertical-align:top !important;width:12px !important;height:fit-content(100%);padding:0 !important;border:0 !important;margin:0 !important;"><img src="https://zh.wikipedia.org/w/skins/Vector/resources/skins.vector.styles/images/external-link-ltr-icon.svg?48e54" alt="" style="display:inline-block;vertical-align:top !important;width:12px;height:12px;border:0 !important;margin:0 !important;" /></span>（结构化查询语言）</li>
+<li><a target="_blank" rel="noopener" href="https://zh.wikipedia.org/wiki/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%AE%A1%E7%90%86%E7%B3%BB%E7%BB%9F">数据库管理系统</a><span style="display:inline-block !important;vertical-align:top !important;width:12px !important;height:fit-content(100%);padding:0 !important;border:0 !important;margin:0 !important;"><img src="https://zh.wikipedia.org/w/skins/Vector/resources/skins.vector.styles/images/external-link-ltr-icon.svg?48e54" alt="" style="display:inline-block;vertical-align:top !important;width:12px;height:12px;border:0 !important;margin:0 !important;" /></span></li>
+</ul>
+<h1 id="📖参看"><a href="#📖参看" class="headerlink" title="📖参看"></a>📖参看</h1><div class="xControl active">
+    <div class="xHeading"><div class="xIcon"><i class="fa fa-plus"></i></div><span>主要参看📖</span></div>
+    <div class="xContent pre-open"><div class="inner">
+        <ul>
+<li><a target="_blank" rel="noopener" href="https://en.wikipedia.org/wiki/Database">Database - Wikipedia</a></li>
+<li><a target="_blank" rel="noopener" href="https://zh.wikipedia.org/wiki/%E6%95%B0%E6%8D%AE%E5%BA%93">数据库 - 维基百科，自由的百科全书</a></li>
+</ul>
+ 
+    </div></div>
+    </div>
+
+<div class="xControl">
+    <div class="xHeading"><div class="xIcon"><i class="fa fa-plus"></i></div><span>分类：解决问题✅</span></div>
+    <div class="xContent"><div class="inner">
+        <ul>
+<li><a target="_blank" rel="noopener" href="https://blog.csdn.net/heimu24/article/details/81189700">Markdown进阶（更改字体、颜色、大小，设置文字背景色，调整图片大小设置居中）_heimu24的博客-CSDN博客_markdown 颜色</a></li>
+<li><a target="_blank" rel="noopener" href="https://segmentfault.com/q/1010000019710978">(……) inline-block的元素垂直居中的问题 - SegmentFault 思否</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.itranslater.com/qa/details/2117469006360740864">如何在GitHub风格的Markdown中添加脚注？ - ITranslater</a></li>
+</ul>
+ 
+    </div></div>
+    </div>
+
+<div class="xControl">
+    <div class="xHeading"><div class="xIcon"><i class="fa fa-plus"></i></div><span>分类：工具🧰&ensp;|&ensp;查阅🔍</span></div>
+    <div class="xContent"><div class="inner">
+        <ul>
+<li><a target="_blank" rel="noopener" href="https://developer.mozilla.org/zh-CN/docs/Web/CSS/calc()">calc() - CSS（层叠样式表） | MDN</a></li>
+<li><a target="_blank" rel="noopener" href="https://developer.mozilla.org/zh-CN/docs/Web/CSS/fit-content">fit-content() - CSS（层叠样式表） | MDN</a></li>
+<li>【★】【GFM】<a target="_blank" rel="noopener" href="https://github.github.com/gfm/">GitHub Flavored Markdown Spec - github.github.com</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.w3schools.com/colors/colors_picker.asp">HTML Color Picker</a></li>
+<li><a target="_blank" rel="noopener" href="http://www.oicqzone.com/pc/2015083122336.html">HTML中&amp;nbsp; &amp;ensp; &amp;emsp; &amp;thinsp;等6种空白空格的区别_电脑小技巧_上网技巧_QQ地带</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.runoob.com/markdown/md-tutorial.html">Markdown 教程 | 菜鸟教程</a></li>
+<li><a target="_blank" rel="noopener" href="https://unicode-table.com/cn/1F446/">👆 - 白色指向反手指数 表情符号: U+1F446 - Unicode 字符百科</a></li>
+<li><a target="_blank" rel="noopener" href="https://unicode-table.com/cn/1F4D6/">📖 - 打开书 表情符号: U+1F4D6 - Unicode 字符百科</a></li>
+<li><a target="_blank" rel="noopener" href="https://unicode-table.com/cn/1F517/">🔗 - 链接符号 表情符号: U+1F517 - Unicode 字符百科</a></li>
+<li><a target="_blank" rel="noopener" href="https://unicode-table.com/cn/1F587/">🖇 - 链接回形针 表情符号: U+1F587 - Unicode 字符百科</a></li>
+<li><a target="_blank" rel="noopener" href="https://unicode-table.com/cn/1F5CE/">🗎 - 文献: U+1F5CE - Unicode 字符百科</a></li>
+<li><a target="_blank" rel="noopener" href="https://unicode-table.com/cn/203B/">※ - 参考标志: U+203B - Unicode 字符百科</a></li>
+<li><a target="_blank" rel="noopener" href="https://unicode-table.com/cn/260C/">☌ - 关联: U+260C - Unicode 字符百科</a></li>
+<li><a target="_blank" rel="noopener" href="https://unicode-table.com/cn/1F845/">🡅 - 向上重箭头: U+1F845 - Unicode 字符百科</a></li>
+<li><a target="_blank" rel="noopener" href="https://unicode-table.com/cn/1F846/">🡆 - 向右重箭头: U+1F846 - Unicode 字符百科</a></li>
+<li><a target="_blank" rel="noopener" href="https://unicode-table.com/cn/1F847/">🡇 - 向下重箭头: U+1F847 - Unicode 字符百科</a></li>
+<li><a target="_blank" rel="noopener" href="https://unicode-table.com/cn/1F844/">🡄 - 向左重箭: U+1F844 - Unicode 字符百科</a></li>
+<li><a target="_blank" rel="noopener" href="https://unicode-table.com/cn/2934/">⤴ - 指向右侧然后向上弯曲的箭头 表情符号: U+2934 - Unicode 字符百科</a></li>
+<li><a target="_blank" rel="noopener" href="https://unicode-table.com/cn/2935/">⤵ - 指向右侧然后向下弯曲的箭头 表情符号: U+2935 cudarrr - Unicode 字符百科</a></li>
+<li><a target="_blank" rel="noopener" href="https://unicode-table.com/cn/2936/">⤶ - 指向下侧然后向左弯曲的箭头: U+2936 ldca - Unicode 字符百科</a></li>
+<li><a target="_blank" rel="noopener" href="https://unicode-table.com/cn/2937/">⤷ - 指向下侧然后向右弯曲的箭头: U+2937 rdca - Unicode 字符百科</a></li>
+<li><a target="_blank" rel="noopener" href="https://unicode-table.com/cn/2014/">— - Em 长划: U+2014 mdash - Unicode 字符百科</a></li>
+<li><a target="_blank" rel="noopener" href="https://zh.wikipedia.org/wiki/%E6%A0%87%E7%82%B9%E7%AC%A6%E5%8F%B7">标点符号 - 维基百科，自由的百科全书</a></li>
+<li><a target="_blank" rel="noopener" href="https://zh.wikipedia.org/wiki/%E8%BF%9E%E6%8E%A5%E5%8F%B7">连接号 - 维基百科，自由的百科全书</a></li>
+</ul>
+ 
+    </div></div>
+    </div>
+
+<div class="xControl">
+    <div class="xHeading"><div class="xIcon"><i class="fa fa-plus"></i></div><span>分类：其他（二度及以上关联☌）</span></div>
+    <div class="xContent"><div class="inner">
+         
+    </div></div>
+    </div>
+
+<hr>
+<h1 id="※参考和引用"><a href="#※参考和引用" class="headerlink" title="※参考和引用"></a>※参考和引用</h1><ol>
+<li><a id="cite_note-1" href="#cite_ref-1" aria-label="跳转" title="跳转">^</a>&ensp;<a target="_blank" rel="noopener" href="https://zh.wikipedia.org/wiki/%E6%95%B0%E6%8D%AE%E5%BA%93">数据库 - 维基百科，自由的百科全书</a></li>
+</ol>
+<hr>
+<h1 id="🔗外部链接"><a href="#🔗外部链接" class="headerlink" title="🔗外部链接"></a>🔗外部链接</h1><ul>
+<li><a target="_blank" rel="noopener" href="https://zh.wikipedia.org/w/skins/Vector/resources/skins.vector.styles/images/external-link-ltr-icon.svg?48e54">Wikipedia&#39;s external link ltr-icon</a><span style="display:inline-block !important;vertical-align:top !important;width:12px !important;height:fit-content(100%);padding:0 !important;border:0 !important;margin:0 !important;"><img src="https://zh.wikipedia.org/w/skins/Vector/resources/skins.vector.styles/images/external-link-ltr-icon.svg?48e54" alt="" style="display:inline-block;vertical-align:top !important;width:12px;height:12px;border:0 !important;margin:0 !important;" /></span></li>
+<li><a target="_blank" rel="noopener" href="https://zh.wikipedia.org/wiki/ODBC">ODBC - 维基百科，自由的百科全书</a><span style="display:inline-block !important;vertical-align:top !important;width:12px !important;height:fit-content(100%);padding:0 !important;border:0 !important;margin:0 !important;"><img src="https://zh.wikipedia.org/w/skins/Vector/resources/skins.vector.styles/images/external-link-ltr-icon.svg?48e54" alt="" style="display:inline-block;vertical-align:top !important;width:12px;height:12px;border:0 !important;margin:0 !important;" /></span></li>
+<li><a target="_blank" rel="noopener" href="https://zh.wikipedia.org/wiki/NoSQL">NoSQL - 维基百科，自由的百科全书</a><span style="display:inline-block !important;vertical-align:top !important;width:12px !important;height:fit-content(100%);padding:0 !important;border:0 !important;margin:0 !important;"><img src="https://zh.wikipedia.org/w/skins/Vector/resources/skins.vector.styles/images/external-link-ltr-icon.svg?48e54" alt="" style="display:inline-block;vertical-align:top !important;width:12px;height:12px;border:0 !important;margin:0 !important;" /></span></li>
+<li><a target="_blank" rel="noopener" href="https://zh.wikipedia.org/wiki/%E9%94%AE-%E5%80%BC%E5%AD%98%E5%82%A8">键-值存储 - 维基百科，自由的百科全书</a><span style="display:inline-block !important;vertical-align:top !important;width:12px !important;height:fit-content(100%);padding:0 !important;border:0 !important;margin:0 !important;"><img src="https://zh.wikipedia.org/w/skins/Vector/resources/skins.vector.styles/images/external-link-ltr-icon.svg?48e54" alt="" style="display:inline-block;vertical-align:top !important;width:12px;height:12px;border:0 !important;margin:0 !important;" /></span></li>
+<li><a target="_blank" rel="noopener" href="https://zh.wikipedia.org/wiki/%E8%B3%87%E6%96%99%E5%BA%AB%E7%90%86%E8%AB%96">数据库理论 - 维基百科，自由的百科全书</a><span style="display:inline-block !important;vertical-align:top !important;width:12px !important;height:fit-content(100%);padding:0 !important;border:0 !important;margin:0 !important;"><img src="https://zh.wikipedia.org/w/skins/Vector/resources/skins.vector.styles/images/external-link-ltr-icon.svg?48e54" alt="" style="display:inline-block;vertical-align:top !important;width:12px;height:12px;border:0 !important;margin:0 !important;" /></span></li>
+<li><a target="_blank" rel="noopener" href="https://zh.wikipedia.org/wiki/%E8%B3%87%E8%A8%8A%E7%A7%91%E6%8A%80%E7%A8%BD%E6%A0%B8">信息技术审核 - 维基百科，自由的百科全书</a><span style="display:inline-block !important;vertical-align:top !important;width:12px !important;height:fit-content(100%);padding:0 !important;border:0 !important;margin:0 !important;"><img src="https://zh.wikipedia.org/w/skins/Vector/resources/skins.vector.styles/images/external-link-ltr-icon.svg?48e54" alt="" style="display:inline-block;vertical-align:top !important;width:12px;height:12px;border:0 !important;margin:0 !important;" /></span></li>
+<li><a target="_blank" rel="noopener" href="https://zh.wikipedia.org/wiki/%E8%BD%BB%E5%9E%8B%E7%9B%AE%E5%BD%95%E8%AE%BF%E9%97%AE%E5%8D%8F%E8%AE%AE">轻型目录访问协议 - 维基百科，自由的百科全书</a><span style="display:inline-block !important;vertical-align:top !important;width:12px !important;height:fit-content(100%);padding:0 !important;border:0 !important;margin:0 !important;"><img src="https://zh.wikipedia.org/w/skins/Vector/resources/skins.vector.styles/images/external-link-ltr-icon.svg?48e54" alt="" style="display:inline-block;vertical-align:top !important;width:12px;height:12px;border:0 !important;margin:0 !important;" /></span></li>
+<li><a target="_blank" rel="noopener" href="https://zh.wikipedia.org/wiki/SQL">SQL - 维基百科，自由的百科全书</a><span style="display:inline-block !important;vertical-align:top !important;width:12px !important;height:fit-content(100%);padding:0 !important;border:0 !important;margin:0 !important;"><img src="https://zh.wikipedia.org/w/skins/Vector/resources/skins.vector.styles/images/external-link-ltr-icon.svg?48e54" alt="" style="display:inline-block;vertical-align:top !important;width:12px;height:12px;border:0 !important;margin:0 !important;" /></span></li>
+<li><a target="_blank" rel="noopener" href="https://zh.wikipedia.org/wiki/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%AE%A1%E7%90%86%E7%B3%BB%E7%BB%9F">数据库管理系统 - 维基百科，自由的百科全书</a><span style="display:inline-block !important;vertical-align:top !important;width:12px !important;height:fit-content(100%);padding:0 !important;border:0 !important;margin:0 !important;"><img src="https://zh.wikipedia.org/w/skins/Vector/resources/skins.vector.styles/images/external-link-ltr-icon.svg?48e54" alt="" style="display:inline-block;vertical-align:top !important;width:12px;height:12px;border:0 !important;margin:0 !important;" /></span></li>
+<li><a target="_blank" rel="noopener" href="https://www.pngsucai.com/png/3011628.html">LOGO软件工程品牌-用快捷和sqite构建IOS数据库应用程序PNG图片素材免费下载_图片编号3011628-PNG素材网</a><span style="display:inline-block !important;vertical-align:top !important;width:12px !important;height:fit-content(100%);padding:0 !important;border:0 !important;margin:0 !important;"><img src="https://zh.wikipedia.org/w/skins/Vector/resources/skins.vector.styles/images/external-link-ltr-icon.svg?48e54" alt="" style="display:inline-block;vertical-align:top !important;width:12px;height:12px;border:0 !important;margin:0 !important;" /></span></li>
+</ul>
+
+            </div>
+            
+                <div class="kratos-copyright text-center clearfix">
+                    <h5>本作品采用 <a rel="license nofollow" target="_blank" href="https://creativecommons.org/licenses/by-sa/4.0/">知识共享署名-相同方式共享 4.0 国际许可协议</a> 进行许可</h5>
+                </div>
+            
+            <footer class="kratos-entry-footer clearfix">
+                
+                    <div class="post-like-donate text-center clearfix" id="post-like-donate">
+                    
+                    
+                        <a class="share" href="javascript:;"><i class="fa fa-share-alt"></i> 分享</a>
+                        <div class="share-wrap" style="display: none;">
+    <div class="share-group">
+        <a href="javascript:;" class="share-plain qq" onclick="share('qq');" rel="nofollow">
+            <div class="icon-wrap">
+                <i class="fa fa-qq"></i>
+            </div>
+        </a>
+        <a href="javascript:;" class="share-plain qzone" onclick="share('qzone');" rel="nofollow">
+            <div class="icon-wrap">
+                <i class="fa fa-star"></i>
+            </div>
+        </a>
+        <a href="javascript:;" class="share-plain weixin pop style-plain" rel="nofollow">
+            <div class="icon-wrap">
+                <i class="fa fa-weixin"></i>
+            </div>
+            <div class="share-int">
+                <div class="qrcode" id="wechat-qr"></div>
+                <p>打开微信“扫一扫”，打开网页后点击屏幕右上角分享按钮</p>
+            </div>
+        </a>
+        <a href="javascript:;" class="share-plain weibo" onclick="share('weibo');" rel="nofollow">
+            <div class="icon-wrap">
+                <i class="fa fa-weibo"></i>
+            </div>
+        </a>
+        <a href="javascript:;" class="share-plain facebook style-plain" onclick="share('facebook');" rel="nofollow">
+            <div class="icon-wrap">
+                <i class="fa fa-facebook"></i>
+            </div>
+        </a>
+        <a href="javascript:;" class="share-plain twitter style-plain" onclick="share('twitter');" rel="nofollow">
+            <div class="icon-wrap">
+                <i class="fa fa-twitter"></i>
+            </div>
+        </a>
+    </div>
+    <script type="text/javascript">
+        $(()=>{
+            new QRCode("wechat-qr", {
+                text: "https://suitelhy.github.io/zh/post/%E6%95%B0%E6%8D%AE%E5%BA%93-Database/",
+                width: 150,
+                height: 150,
+                correctLevel : QRCode.CorrectLevel.H
+            });
+        });
+        function share(dest) {
+            const qqBase        = "https://connect.qq.com/widget/shareqq/index.html?";
+            const weiboBase     = "https://service.weibo.com/share/share.php?";
+            const qzoneBase     = "https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?";
+            const facebookBase  = "https://www.facebook.com/sharer/sharer.php?";
+            const twitterBase   = "https://twitter.com/intent/tweet?";
+            const hostUrl       = "https://suitelhy.github.io/zh/post/%E6%95%B0%E6%8D%AE%E5%BA%93-Database/";
+            const title         = "「数据库(Database)」";
+            const excerpt       = `数据库，又称为数据管理系统，简而言之可视为电子化的文件柜——存储电子文件的处所，用户可以对文件中的资料运行新增、截取、更新、删除等操作。`;
+            let _URL;
+            switch (dest) {
+                case "qq"       : _URL = qqBase+"url="+hostUrl+"&title="+title+"&desc=&summary="+excerpt+"&site=cxpy";     break;
+                case "weibo"    : _URL = weiboBase+"url="+hostUrl+"&title="+title+excerpt;                                 break;
+                case "qzone"    : _URL = qzoneBase+"url="+hostUrl+"&title="+title+"&desc=&summary="+excerpt+"&site=cxpy";  break;
+                case "facebook" : _URL = facebookBase+"u="+hostUrl;                                                        break;
+                case "twitter"  : _URL = twitterBase+"text="+title+excerpt+"&url="+hostUrl;                                break;
+            }
+            window.open(_URL);
+        };
+    </script>
+</div>
+                    
+                    </div>
+                
+                <div class="footer-tag clearfix">
+                    <div class="pull-left">
+                    <i class="fa fa-tags"></i>
+                        <a class="tag-none-link" href="/tags/Database/" rel="tag">数据库</a>, <a class="tag-none-link" href="/tags/Computer-Science/" rel="tag">计算机科学</a>
+                    </div>
+                    <div class="pull-date">
+                    <span>最后编辑：2021-05-14</span>
+                    </div>
+                </div>
+            </footer>
+        </div>
+        
+            <nav class="navigation post-navigation clearfix" role="navigation">
+                
+                <div class="nav-previous clearfix">
+                    <a title=" Github实践手册" href="/zh/post/Github实践手册/">&lt; 上一篇</a>
+                </div>
+                
+                
+                <div class="nav-next clearfix">
+                    <a title=" 【图片格式】WebP" href="/zh/post/【图片格式】WebP/">下一篇 &gt;</a>
+                </div>
+                
+            </nav>
+        
+        
+    </article>
+</section>
+
+                
+            
+
+<section id="kratos-widget-area" class="col-md-4 hidden-xs hidden-sm">
+    <!-- 文章和页面根据splitter来分割，没有的话就从头开始设置为sticky -->
+    
+    
+                <aside id="krw-about" class="widget widget-kratos-about clearfix">
+    <div class="photo-background"></div>
+    <div class="photo-wrapper clearfix">
+        <div class="photo-wrapper-tip text-center">
+            <img class="about-photo" src="https://avatars.githubusercontent.com/SuiteLHY" />
+        </div>
+    </div>
+    <div class="textwidget">
+        <p class="text-center">青春倚靠着时光，轻快的脚步在世间流韵； 云上光华从指间绽放，地上人们自由而幸福。</p>
+    </div>
+</aside>
+            
+                    <div class="sticky-area">
+                
+                    <aside id="krw-toc" class="widget widget-kratos-toc clearfix">
+    <div class="photo-background"></div>
+    <h4 class="widget-title no-after">
+        <i class="fa fa-compass"></i>
+        文章目录
+        <span class="toc-progress-bar"></span>
+    </h4>
+    <div class="textwidget">
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%99%BE%E7%A7%91"><span class="toc-text">百科</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%8A%80%E6%9C%AF%E5%88%9D%E8%A1%B7"><span class="toc-text">技术初衷</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%95%B0%E6%8D%AE%E5%BA%93%E7%AE%A1%E7%90%86%E7%B3%BB%E7%BB%9F"><span class="toc-text">数据库管理系统</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%95%B0%E6%8D%AE%E5%BA%93%E7%9A%84%E5%88%86%E7%B1%BB"><span class="toc-text">数据库的分类</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%85%B3%E7%B3%BB%E6%95%B0%E6%8D%AE%E5%BA%93"><span class="toc-text">关系数据库</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%9D%9E%E5%85%B3%E7%B3%BB%E5%9E%8B%E6%95%B0%E6%8D%AE%E5%BA%93%EF%BC%88NoSQL%EF%BC%89"><span class="toc-text">非关系型数据库（NoSQL）</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E9%94%AE%E5%80%BC%E6%95%B0%E6%8D%AE%E5%BA%93"><span class="toc-text">键值数据库</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%95%B0%E6%8D%AE%E5%BA%93%E6%8A%80%E6%9C%AF%E7%9A%84%E5%8F%91%E5%B1%95"><span class="toc-text">数据库技术的发展</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%95%B0%E6%8D%AE%E5%BA%93%E6%A8%A1%E5%9E%8B"><span class="toc-text">数据库模型</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%9E%B6%E6%9E%84-Schema"><span class="toc-text">架构 (Schema)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B4%A2%E5%BC%95"><span class="toc-text">数据库索引</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%95%B0%E6%8D%AE%E5%BA%93%E4%BA%8B%E5%8A%A1"><span class="toc-text">数据库事务</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%BD%91%E7%8A%B6%E6%95%B0%E6%8D%AE%E6%A8%A1%E5%9E%8B%E7%9A%84%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84"><span class="toc-text">网状数据模型的数据结构</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%BD%91%E7%8A%B6%E6%A8%A1%E5%9E%8B"><span class="toc-text">网状模型</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%8F%82%E8%A7%81"><span class="toc-text">参见</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%F0%9F%93%96%E5%8F%82%E7%9C%8B"><span class="toc-text">📖参看</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E2%80%BB%E5%8F%82%E8%80%83%E5%92%8C%E5%BC%95%E7%94%A8"><span class="toc-text">※参考和引用</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%F0%9F%94%97%E5%A4%96%E9%83%A8%E9%93%BE%E6%8E%A5"><span class="toc-text">🔗外部链接</span></a></li></ol>
+    </div>
+</aside>
+                
+                
+  <aside id="krw-categories" class="widget widget-kratos-categories clearfix">
+    <h4 class="widget-title"><i class="fa fa-folder"></i>分类目录</h4>
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/HelloWorld/">HelloWorld🐣</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/InformationTechnology/">信息技术</a><span class="category-list-count">11</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/InformationTechnology/Handbook/">手册</a><span class="category-list-count">4</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Other/">其他🗒</a><span class="category-list-count">7</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Blog/">博客</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Handbook/">手册</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/DailyRecord/">日常记录</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Life/">生命</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Knowledge/">知识</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Society/">社会</a><span class="category-list-count">27</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Society/InformationTechnology/">信息技术</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Society/ComputerScience/">计算机科学</a><span class="category-list-count">1</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Society/ComputerScience/InformationTechnology/">信息技术</a><span class="category-list-count">1</span></li></ul></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/SiteRecord/">站点记录</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/ComputerEngineering/">计算机工程</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/ComputerScience/">计算机科学</a><span class="category-list-count">25</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/ComputerScience/InformationTechnology/">信息技术</a><span class="category-list-count">12</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/ComputerScience/Handbook/">手册</a><span class="category-list-count">2</span></li></ul></li></ul>
+  </aside>
+
+
+            
+                
+  <aside id="krw-tags" class="widget widget-kratos-tags clearfix">
+    <h4 class="widget-title"><i class="fa fa-tags"></i>标签聚合</h4>
+      <div class="tag-clouds">
+        <a href="/tags/Git/" style="font-size: 0.76em;">Git</a> <a href="/tags/Github/" style="font-size: 0.72em;">Github</a> <a href="/tags/HelloWorld/" style="font-size: 0.68em;">HelloWorld🐣</a> <a href="/tags/Hexo/" style="font-size: 0.6em;">Hexo</a> <a href="/tags/Java/" style="font-size: 0.76em;">Java</a> <a href="/tags/Object-Relational-Mapping/" style="font-size: 0.6em;">ORM</a> <a href="/tags/Apache-Tomcat/" style="font-size: 0.6em;">Tomcat</a> <a href="/tags/%E3%80%8AThinking-in-Java%E3%80%8B/" style="font-size: 0.64em;">《Thinking in Java》</a> <a href="/tags/Spring-Framework/" style="font-size: 0.6em;">【Java】Spring Framework</a> <a href="/tags/bcrypt/" style="font-size: 0.6em;">【密码散列函数】bcrypt</a> <a href="/tags/Internet/" style="font-size: 0.72em;">互联网</a> <a href="/tags/Ethics/" style="font-size: 0.6em;">伦理</a> <a href="/tags/Tutorial/" style="font-size: 0.64em;">使用手册</a> <a href="/tags/Information-Technology/" style="font-size: 0.8em;">信息技术</a> <a href="/tags/Kernel-operating-system/" style="font-size: 0.6em;">内核（操作系统）</a> <a href="/tags/Functional-requirement/" style="font-size: 0.68em;">功能需求</a> <a href="/tags/Blog/" style="font-size: 0.68em;">博客</a> <a href="/tags/Country/" style="font-size: 0.72em;">国家</a>
+      </div>
+  </aside>
+
+            
+                
+  <aside id="krw-posts" class="widget widget-kratos-posts">
+  <h4 class="widget-title"><i class="fa fa-file"></i>最新文章</h4>
+  <div class="tab-content">
+      <ul class="list-group">
+        
+        
+          
+          
+            <a class="list-group-item" href="/zh/post/%E8%BD%AF%E4%BB%B6%E6%9E%B6%E6%9E%84-Software-architecture/"><i class="fa  fa-book"></i> 软件架构(Software architecture)</a>
+            
+          
+        
+          
+          
+            <a class="list-group-item" href="/zh/post/%E8%BD%AF%E4%BB%B6-Software/"><i class="fa  fa-book"></i> 软件(Software)</a>
+            
+          
+        
+          
+          
+            <a class="list-group-item" href="/zh/post/%E4%B8%AA%E4%BA%BA%E7%AE%80%E5%8E%86-%E4%B8%AA%E4%BA%BA%E4%BF%A1%E6%81%AF-%E8%81%94%E7%B3%BB%E6%96%B9%E5%BC%8F/"><i class="fa  fa-book"></i> 个人简历-个人信息-联系方式</a>
+            
+          
+        
+          
+          
+            <a class="list-group-item" href="/zh/post/%E5%AF%B9%E8%B1%A1%E5%85%B3%E7%B3%BB%E6%98%A0%E5%B0%84-Object-Relational-Mapping/"><i class="fa  fa-book"></i> 对象关系映射(Object Relational Mapping)</a>
+            
+          
+        
+          
+          
+            <a class="list-group-item" href="/zh/post/%E4%B8%AA%E4%BA%BA%E7%AE%80%E5%8E%86-%E8%81%8C%E4%B8%9A-%E4%B8%93%E4%B8%9A%E6%8A%80%E8%83%BD%E6%A0%91/"><i class="fa  fa-book"></i> 个人简历-职业-专业技能树</a>
+            
+          
+        
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+      </ul>
+  </div>
+  </aside>
+
+            
+    </div>
+</section>
+        
+        </div>
+    </div>
+</div>
+<footer>
+    <div id="footer"  class="ap-lrc"  >
+        <div class="kr-tool text-center">
+            <div class="tool">
+                
+                    <div class="box search-box">
+                        <a href="/search/">
+                            <span class="fa fa-search"></span>
+                        </a>
+                    </div>
+                
+                
+                    <div class="box theme-box" id="darkmode-switch">
+                        <span class="fa fa-adjust"></span>
+                    </div>
+                
+                
+            </div>
+            <div class="box gotop-box">
+                <span class="fa fa-chevron-up"></span>
+            </div>
+        </div>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6 col-md-offset-3 footer-list text-center">
+                    <ul class="kratos-social-icons">
+                        
+                        
+                        <li><a target="_blank" rel="nofollow" href="https://t.me/SuiteLHY"><i class="fa fa-telegram"></i></a></li>
+                        
+                        
+                        
+                        
+                        <li><a target="_blank" rel="nofollow" href="https://github.com/SuiteLHY"><i class="fa fa-github"></i></a></li>
+                        
+                    </ul>
+                    <ul class="kratos-copyright">
+                        <div>
+                            <li>&copy; 2021 夜与花海 版权所有.</li>
+                            <li>本站已运行<span id="span_dt">Loading...</span></li>
+                        </div>
+                        <div>
+                            <li>Theme <a href="https://github.com/Candinya/Kratos-Rebirth" target="_blank">Kratos:Rebirth</a></li>
+                            <li>Site built with&nbsp;<i class="fa fa-heart throb" style="color:#d43f57"></i>&nbsp;by Suite.</li>
+                        </div>
+                        <div>
+                            <li>Powered by <a href="https://hexo.io" target="_blank" rel="nofollow">Hexo</a></li>
+                            <li>Hosted on <a href="https://github.io" target="_blank">Github Pages</a></li>
+                        </div>
+                        <div>
+                            
+                            
+                        </div>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+</div>
+</div>
+
+        <script defer src="https://cdn.jsdelivr.net/npm/bootstrap@3.3.4/dist/js/bootstrap.min.js"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.js"></script>
+<script>const notMobile = (!(navigator.userAgent.match(/(phone|pad|pod|iPhone|iPod|ios|iPad|Android|Mobile|BlackBerry|IEMobile|MQQBrowser|JUC|Fennec|wOSBrowser|BrowserNG|WebOS|Symbian|Windows Phone)/i)));</script>
+
+    <div>
+        <canvas id="snow"></canvas>
+        <script async type="text/javascript" src="/js/snow.min.js"></script>
+    </div>
+
+<script async src="/js/candy.min.js"></script>
+
+    <script defer src="https://cdn.jsdelivr.net/npm/aplayer@1.10.1/dist/APlayer.min.js"></script>
+    
+    <script defer src="https://cdn.jsdelivr.net/npm/meting@2/dist/Meting.min.js"></script>
+    <meting-js
+        server="netease"
+        type="playlist"
+        id="900328786"
+        order="random"
+        fixed="true"
+    >
+    </meting-js>
+
+
+
+    <script defer src="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script>
+
+<script defer src="https://cdn.jsdelivr.net/npm/clipboard@2.0.6/dist/clipboard.min.js"></script>
+<script defer src="/js/kratosr.min.js"></script>
+<script defer src="/js/pjax.min.js"></script>
+
+
+    <script defer src="/js/kr-dark.min.js"></script>
+
+
+
+<!-- Extra support for third-party plguins  -->
+
+
+    </body>
+</html>

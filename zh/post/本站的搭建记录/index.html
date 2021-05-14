@@ -1,0 +1,945 @@
+<!DOCTYPE html>
+<html lang="zh">
+    <head>
+  <!-- 元数据 -->
+  <meta charset="utf-8">
+  <link rel="icon" href="https://avatars.githubusercontent.com/SuiteLHY">
+  <title>本站的搭建记录 | 夜与花海</title>
+  <meta name="author" content="Suite" />
+  <meta http-equiv="Cache-Control" content="no-transform" />
+  <meta http-equiv="Cache-Control" content="no-siteapp" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="robots" content="index,follow" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+  <meta name="format-detection" content="telphone=no, email=no" />
+  
+    <meta name="keywords" content="Git, Github, Hexo, 信息技术, 开发日志, 站点记录" />
+  
+  <meta name="description" content="本站从零开始的填坑搭建记录。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="本站的搭建记录">
+<meta property="og:url" content="https://suitelhy.github.io/zh/post/%E6%9C%AC%E7%AB%99%E7%9A%84%E6%90%AD%E5%BB%BA%E8%AE%B0%E5%BD%95/index.html">
+<meta property="og:site_name" content="夜与花海">
+<meta property="og:description" content="本站从零开始的填坑搭建记录。">
+<meta property="og:locale">
+<meta property="og:image" content="https://avatars.githubusercontent.com/SuiteLHY">
+<meta property="article:published_time" content="2021-04-09T00:32:39.000Z">
+<meta property="article:modified_time" content="2021-05-14T09:52:31.357Z">
+<meta property="article:author" content="Suite">
+<meta property="article:tag" content="信息技术">
+<meta property="article:tag" content="Github">
+<meta property="article:tag" content="Git">
+<meta property="article:tag" content="站点记录">
+<meta property="article:tag" content="开发日志">
+<meta property="article:tag" content="Hexo">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://avatars.githubusercontent.com/SuiteLHY">
+<meta name="twitter:site" content="@null">
+  
+  <!-- 站点验证相关 -->
+  
+    
+      <meta name="google-site-verification" content="bZE7nUm9TG8--G23eE_vpUfb898ld93qzKhP7On5QRw" />
+    
+    
+    
+  
+  <!-- 样式表文件 -->
+  <link rel="stylesheet" id="kratos-css" href="/css/kratosr.min.css" type="text/css" media="all">
+  
+    <link rel="stylesheet" id="highlight-css" href="/css/highlight/night-eighties.min.css" type="text/css" media="all">
+  
+  
+  <link rel="stylesheet" id="fontawe-css" href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css" type="text/css" media="all">
+  <link rel="stylesheet" id="nprogress-css" href="https://cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.min.css" type="text/css" media="all">
+  
+  
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer@1.10.1/dist/APlayer.min.css">
+  
+  
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css">
+  
+  
+    <link rel="stylesheet" id="darkmode-css" href="/css/kr-dark.min.css" type="text/css" media="all">
+  
+  <!-- 不得不预先加载的一些JS文件 -->
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js"></script>
+  
+    <script src="https://cdn.jsdelivr.net/npm/qrcode_js@1.0.0/qrcode.min.js"></script>
+  
+<meta name="generator" content="Hexo 5.4.0"></head>
+
+
+    <body class="custom-background">
+        <div id="kratos-wrapper">
+    <div id="kratos-page">
+        <div id="kratos-header">
+            <header id="kratos-desktop-topnav" class="kratos-topnav">
+                <div class="container">
+                    <div class="nav-header">
+                        <nav id="kratos-menu-wrap">
+                            <ul id="kratos-primary-menu" class="sf-menu">
+                                
+                                    
+                                        <li><a href="/"><i class="fa fa-home"></i>首页</a></li>
+                                    
+                                
+                                    
+                                        <li><a href="/archives/"><i class="fa fa-file"></i>档案馆</a></li>
+                                    
+                                
+                                    
+                                        <li><a href="/friends/"><i class="fa fa-paw"></i>好伙伴</a></li>
+                                    
+                                
+                                    
+                                        <li>
+                                            <a><i class="fa fa-link"></i>链接</a>
+                                            <ul class="sub-menu">
+                                                
+                                                    
+                                                
+                                                    
+                                                        <li><a target="_blank" rel="noopener" href="https://github.com/SuiteLHY">本站作者</a></li>
+                                                    
+                                                
+                                                    
+                                                        <li><a target="_blank" rel="noopener" href="https://github.com/SuiteLHY/SuiteLHY.github.io">项目链接</a></li>
+                                                    
+                                                
+                                            </ul>
+                                        </li>
+                                    
+                                
+                            </ul>
+                        </nav>
+                    </div>
+                </div>
+            </header>
+            <header id="kratos-mobile-topnav" class="kratos-topnav">
+                <div class="container">
+                    <div class="color-logo"><a href="/">夜与花海</a></div>
+                    <div class="nav-toggle">
+                        <a class="kratos-nav-toggle js-kratos-nav-toggle">
+                            <i></i>
+                        </a>
+                    </div>
+                </div>
+            </header>
+        </div>
+        <div class="kratos-start kratos-hero-2">
+            <!-- <div class="kratos-overlay"></div> -->
+            <div class="kratos-cover kratos-cover-2 text-center">
+                <div class="desc desc2 animate-box">
+                    <a href="/">
+                        <h2>夜与花海</h2> <br />
+                        <span>我写下的——是世界</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div id="kratos-blog-post">
+            <div class="container">
+                <div id="main" class="row">
+                    
+
+        <section class="col-md-8">
+    <article>
+        <div class="kratos-hentry kratos-post-inner clearfix">
+            <header class="kratos-entry-header">
+                <h1 class="kratos-entry-title text-center">本站的搭建记录</h1>
+                
+                <ul class="kratos-post-meta text-center">
+                    <li><i class="fa fa-calendar"></i> 2021-04-09</li>
+                    <li><i class="fa fa-user"></i> 作者 Suite</li>
+                    <li>
+                        <i class="fa fa-edit"></i> 
+                        
+                        
+                            ~25.25K
+                        
+                        字
+                    </li>
+                    
+                </ul>
+            </header>
+            <div class="kratos-post-content">
+                <div id="expire-alert" class="alert alert-warning hidden" role="alert">
+                    本文最后编辑于 <time datetime="1620985951357"></time> 前，其中的内容可能需要更新。
+                </div>
+                
+                    <div class="kratos-post-inner-toc">
+                        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Hexo"><span class="toc-number">1.</span> <span class="toc-text">Hexo</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#Hexo%E6%8F%92%E4%BB%B6"><span class="toc-number">1.1.</span> <span class="toc-text">Hexo插件</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%AB%99%E7%82%B9%E5%8A%9F%E8%83%BD%E6%8B%93%E5%B1%95"><span class="toc-number">1.1.1.</span> <span class="toc-text">站点功能拓展</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%96%87%E7%AB%A0%E4%B9%A6%E5%86%99%E5%8A%9F%E8%83%BD%E6%8B%93%E5%B1%95"><span class="toc-number">1.1.2.</span> <span class="toc-text">文章书写功能拓展</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Travis-CI"><span class="toc-number">2.</span> <span class="toc-text">Travis CI</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%A7%81%E6%9C%89Git%E5%AD%90%E6%A8%A1%E5%9D%97%E7%9A%84API-Token"><span class="toc-number">2.1.</span> <span class="toc-text">私有Git子模块的API-Token</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Travis-CI%E5%B9%B3%E5%8F%B0%E6%97%A5%E5%BF%97"><span class="toc-number">2.2.</span> <span class="toc-text">Travis CI平台日志</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E8%AE%B0%E5%BD%95"><span class="toc-number">3.</span> <span class="toc-text">记录</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%AB%99%E7%82%B9%E4%B8%BB%E9%A2%98%E7%9A%84%E7%9B%B8%E5%85%B3%E8%AE%B0%E5%BD%95"><span class="toc-number">3.1.</span> <span class="toc-text">站点主题的相关记录</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%F0%9F%93%96%E5%8F%82%E7%9C%8B"><span class="toc-number">4.</span> <span class="toc-text">📖参看</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E2%80%BB%E5%8F%82%E8%80%83%E5%92%8C%E5%BC%95%E7%94%A8"><span class="toc-number">5.</span> <span class="toc-text">※参考和引用</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%F0%9F%94%97%E5%A4%96%E9%83%A8%E9%93%BE%E6%8E%A5"><span class="toc-number">6.</span> <span class="toc-text">🔗外部链接</span></a></li></ol>
+                    </div>
+                
+                <hr />
+                <link rel="stylesheet" type="text&#x2F;css" href="https://cdn.jsdelivr.net/npm/hexo-tag-hint@0.3.1/dist/hexo-tag-hint.min.css"><blockquote>
+<p>本站从零开始的<del>填坑</del>搭建记录。</p>
+<span id="more"></span>
+</blockquote>
+<div style="width:100%;height:50px;">
+
+<h1 id="Hexo"><a href="#Hexo" class="headerlink" title="Hexo"></a><a target="_blank" rel="noopener" href="https://hexo.io/zh-cn/"><img src="https://d33wubrfki0l68.cloudfront.net/6657ba50e702d84afb32fe846bed54fba1a77add/827ae/logo.svg" alt="Hexo&thinsp;官方&thinsp;logo" width="28px" height="28px" style="display:inline-block" />Hexo</a></h1></div>
+
+
+<div style="width:fit-content;height:40px;">
+  <p style="height:40px;margin-top:0px !important; margin-bottom:5px !important;">
+    <a target="_blank" rel="noopener" href="https://github.com/hexojs/hexo/releases/tag/5.4.0" style="display:inline-block;"><img src="https://img.shields.io/github/v/release/hexojs/hexo" alt="Github Release"></a>
+    &ensp;<a target="_blank" rel="noopener" href="https://github.com/hexojs/hexo" style="display:inline-block;"><img src="https://img.shields.io/github/watchers/hexojs/hexo?label=Watch&amp;style=social" alt="Github Watchers"></a>
+    &ensp;<a target="_blank" rel="noopener" href="https://github.com/hexojs/hexo" style="display:inline-block;"><img src="https://shields.io/github/stars/hexojs/hexo?style=social" alt="Github Stars"></a>
+  </p>
+</div>
+
+
+<blockquote>
+<p>Hexo 是一个快速、简洁且高效的博客框架。Hexo 使用 Markdown（或其他渲染引擎）解析文章，在几秒内，即可利用靓丽的主题生成静态网页。</p>
+</blockquote>
+<div style="width:fit-content;">
+  <iframe width="500" height="280" src="https://www.youtube-nocookie.com/embed/PsXWbI2Mqu0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
+
+<h2 id="Hexo插件"><a href="#Hexo插件" class="headerlink" title="Hexo插件"></a>Hexo插件</h2><h3 id="站点功能拓展"><a href="#站点功能拓展" class="headerlink" title="站点功能拓展"></a>站点功能拓展</h3><h3 id="文章书写功能拓展"><a href="#文章书写功能拓展" class="headerlink" title="文章书写功能拓展"></a>文章书写功能拓展</h3><ul>
+<li><p><a target="_blank" rel="noopener" href="https://github.com/MaxChang3/hexo-markmap">hexo-markmap</a><span style="display:inline-block !important;vertical-align:top !important;width:12px !important;height:fit-content(100%);padding:0 !important;border:0 !important;margin:0 !important;"><img src="https://zh.wikipedia.org/w/skins/Vector/resources/skins.vector.styles/images/external-link-ltr-icon.svg?48e54" alt="" style="display:inline-block;vertical-align:top !important;width:12px;height:12px;border:0 !important;margin:0 !important;" /></span></p>
+<blockquote>
+<p>Innsert a mindmap by markdown in your hexo blog by markmap.</p>
+<p>- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -</p>
+<p>在你的博客中使用markdown插入思维导图，使用markmap。</p>
+</blockquote>
+</li>
+<li><p><a target="_blank" rel="noopener" href="https://github.com/etigerstudio/hexo-tag-hint">hexo-tag-hint</a><span style="display:inline-block !important;vertical-align:top !important;width:12px !important;height:fit-content(100%);padding:0 !important;border:0 !important;margin:0 !important;"><img src="https://zh.wikipedia.org/w/skins/Vector/resources/skins.vector.styles/images/external-link-ltr-icon.svg?48e54" alt="" style="display:inline-block;vertical-align:top !important;width:12px;height:12px;border:0 !important;margin:0 !important;" /></span></p>
+<blockquote>
+<p><code>hexo-tag-hint</code> is a simplistic plugin for Hexo which enables presenting a floating bubble containing the hint text when the content text gets hovered or clicked (yes, mobile-ready!).</p>
+<p>- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - </p>
+<p>文本浮动气泡插件</p>
+</blockquote>
+</li>
+</ul>
+<h1 id="Travis-CI"><a href="#Travis-CI" class="headerlink" title="Travis CI"></a>Travis CI</h1><h2 id="私有Git子模块的API-Token"><a href="#私有Git子模块的API-Token" class="headerlink" title="私有Git子模块的API-Token"></a>私有Git子模块的API-Token</h2><blockquote>
+<p>出于后期站点运营管理的考虑，【博客站点主框架】应该和【博客站点主题】以及【博客文章仓库】分开管理，所以将【博客站点】设计为Git主模块，【博客站点主题】（Github上拉取的分支，在Github上为公开项目）和【博客文章仓库】（在Github上为私有项目）都作为Git子模块。</p>
+</blockquote>
+<p>问题就出在这其中：</p>
+<ol>
+<li><p>在&thinsp;Travis CI&thinsp;平台上，Git&thinsp;子模块的相关操作。</p>
+ <div class="panel panel-success">
+    <div class="panel-title">解决方案</div>
+    <div class="panel-body">
+        
+    </div>
+    </div></li>
+<li><p>Git子模块【博客文章仓库】在Github上为私有项目；在Travis CI平台上，需要根据所选的安全策略对其进行特殊处理。</p>
+ <div class="panel panel-success">
+    <div class="panel-title">解决方案</div>
+    <div class="panel-body">
+        <ul>
+<li><p>[&thinsp;<a target="_blank" rel="noopener" href="https://docs.travis-ci.com/user/private-dependencies/#api-token">Private Dependencies GitHub - Travis CI</a>&thinsp;]#<a target="_blank" rel="noopener" href="https://docs.travis-ci.com/user/private-dependencies/#api-token">API Token</a><span style="display:inline-block !important;vertical-align:top !important;width:12px !important;height:fit-content(100%);padding:0 !important;border:0 !important;margin:0 !important;"><img src="https://zh.wikipedia.org/w/skins/Vector/resources/skins.vector.styles/images/external-link-ltr-icon.svg?48e54" alt="" style="display:inline-block;vertical-align:top !important;width:12px;height:12px;border:0 !important;margin:0 !important;" /></span></p>
+<ul>
+<li><p><code>.travis.yml</code>相关部分：⤵</p>
+  <figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#=== 【Travis CI】 private-dependencies → api-token === (start)</span></span><br><span class="line"><span class="comment">## Docs: https://docs.travis-ci.com/user/private-dependencies/#api-token</span></span><br><span class="line"><span class="attr">git:</span></span><br><span class="line">  <span class="attr">submodules:</span> <span class="literal">false</span></span><br><span class="line"><span class="attr">before_install:</span></span><br><span class="line">  <span class="bullet">-</span> <span class="string">echo</span> <span class="string">-e</span> <span class="string">&quot;\n\nmachine github.com\n login $GH_TOKEN\n&quot;</span> <span class="string">&gt;~/.netrc</span></span><br><span class="line">  <span class="bullet">-</span> <span class="string">git</span> <span class="string">submodule</span> <span class="string">update</span> <span class="string">--init</span> <span class="string">--recursive</span></span><br><span class="line"><span class="comment">#=== 【Travis CI】 private-dependencies → api-token === (end)</span></span><br></pre></td></tr></table></figure></li>
+</ul>
+</li>
+</ul>
+
+    </div>
+    </div>
+
+ <div class="xControl active">
+    <div class="xHeading"><div class="xIcon"><i class="fa fa-plus"></i></div><span>相关&ensp;→&ensp;安全策略选择</span></div>
+    <div class="xContent pre-open"><div class="inner">
+        <table class="wikitable" style="margin-top:18px;margin-left:0;margin-right:0;font-size:14px;">
+  <tbody>
+    <tr align="center">
+      <th width="18%">Authentication</th>
+      <th width="12%">Protocol</th>
+      <th width="20%">Dependency URL format</th>
+      <th width="18%">Gives access to</th>
+      <th width="24%">Notes</th>
+    </tr>
+    <tr>
+      <td>Deploy Key</td>
+      <td>SSH</td>
+      <td>git@github.com/…</td>
+      <td>single repository</td>
+      <td>used by default for main repository</td>
+    </tr>
+    <tr>
+      <td>User Key</td>
+      <td>SSH</td>
+      <td>git@github.com/…</td>
+      <td>all repos user has access to</td>
+      <td>recommended for dependencies</td>
+    </tr>
+    <tr>
+      <td>Password</td>
+      <td>HTTPS</td>
+      <td>https://…</td>
+      <td>all repos user has access to</td>
+      <td>password can be encrypted</td>
+    </tr>
+    <tr>
+      <td>API token</td>
+      <td>HTTPS</td>
+      <td>https://…</td>
+      <td>all repos user has access to</td>
+      <td>token can be encrypted</td>
+    </tr>
+  </tbody>
+</table>
+ 
+    </div></div>
+    </div></li>
+</ol>
+<h2 id="Travis-CI平台日志"><a href="#Travis-CI平台日志" class="headerlink" title="Travis CI平台日志"></a>Travis CI平台日志</h2><ul>
+<li><p>日志记录</p>
+<ul>
+<li><span class="hint--info hint--rounded hint--top" data-hint="（虽然某些报错信息八竿子打不着……）" ontouchstart>Git子模块相关</span>
+
+  <div class="xControl">
+    <div class="xHeading"><div class="xIcon"><i class="fa fa-plus"></i></div><span>https://api.travis-ci.com/v3/job/496362702/log.txt</span></div>
+    <div class="xContent"><div class="inner">
+        <figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br><span class="line">150</span><br><span class="line">151</span><br><span class="line">152</span><br><span class="line">153</span><br><span class="line">154</span><br><span class="line">155</span><br><span class="line">156</span><br><span class="line">157</span><br><span class="line">158</span><br><span class="line">159</span><br><span class="line">160</span><br><span class="line">161</span><br><span class="line">162</span><br><span class="line">163</span><br><span class="line">164</span><br><span class="line">165</span><br><span class="line">166</span><br><span class="line">167</span><br><span class="line">168</span><br><span class="line">169</span><br><span class="line">170</span><br><span class="line">171</span><br><span class="line">172</span><br><span class="line">173</span><br><span class="line">174</span><br><span class="line">175</span><br><span class="line">176</span><br><span class="line">177</span><br><span class="line">178</span><br><span class="line">179</span><br><span class="line">180</span><br><span class="line">181</span><br><span class="line">182</span><br><span class="line">183</span><br><span class="line">184</span><br><span class="line">185</span><br><span class="line">186</span><br><span class="line">187</span><br><span class="line">188</span><br><span class="line">189</span><br><span class="line">190</span><br><span class="line">191</span><br><span class="line">192</span><br><span class="line">193</span><br><span class="line">194</span><br><span class="line">195</span><br><span class="line">196</span><br><span class="line">197</span><br><span class="line">198</span><br><span class="line">199</span><br><span class="line">200</span><br><span class="line">201</span><br><span class="line">202</span><br><span class="line">203</span><br><span class="line">204</span><br><span class="line">205</span><br><span class="line">206</span><br><span class="line">207</span><br><span class="line">208</span><br><span class="line">209</span><br><span class="line">210</span><br><span class="line">211</span><br><span class="line">212</span><br><span class="line">213</span><br><span class="line">214</span><br><span class="line">215</span><br><span class="line">216</span><br><span class="line">217</span><br><span class="line">218</span><br><span class="line">219</span><br><span class="line">220</span><br><span class="line">221</span><br><span class="line">222</span><br><span class="line">223</span><br><span class="line">224</span><br><span class="line">225</span><br><span class="line">226</span><br><span class="line">227</span><br><span class="line">228</span><br><span class="line">229</span><br><span class="line">230</span><br><span class="line">231</span><br><span class="line">232</span><br><span class="line">233</span><br><span class="line">234</span><br><span class="line">235</span><br><span class="line">236</span><br><span class="line">237</span><br><span class="line">238</span><br><span class="line">239</span><br><span class="line">240</span><br><span class="line">241</span><br><span class="line">242</span><br><span class="line">243</span><br><span class="line">244</span><br><span class="line">245</span><br><span class="line">246</span><br><span class="line">247</span><br><span class="line">248</span><br><span class="line">249</span><br><span class="line">250</span><br><span class="line">251</span><br><span class="line">252</span><br><span class="line">253</span><br><span class="line">254</span><br><span class="line">255</span><br><span class="line">256</span><br><span class="line">257</span><br><span class="line">258</span><br><span class="line">259</span><br><span class="line">260</span><br><span class="line">261</span><br><span class="line">262</span><br><span class="line">263</span><br><span class="line">264</span><br><span class="line">265</span><br><span class="line">266</span><br><span class="line">267</span><br><span class="line">268</span><br><span class="line">269</span><br><span class="line">270</span><br><span class="line">271</span><br><span class="line">272</span><br><span class="line">273</span><br><span class="line">274</span><br><span class="line">275</span><br><span class="line">276</span><br><span class="line">277</span><br><span class="line">278</span><br><span class="line">279</span><br><span class="line">280</span><br><span class="line">281</span><br><span class="line">282</span><br><span class="line">283</span><br><span class="line">284</span><br><span class="line">285</span><br><span class="line">286</span><br><span class="line">287</span><br><span class="line">288</span><br><span class="line">289</span><br><span class="line">290</span><br><span class="line">291</span><br><span class="line">292</span><br><span class="line">293</span><br><span class="line">294</span><br><span class="line">295</span><br><span class="line">296</span><br><span class="line">297</span><br><span class="line">298</span><br><span class="line">299</span><br><span class="line">300</span><br><span class="line">301</span><br><span class="line">302</span><br><span class="line">303</span><br><span class="line">304</span><br><span class="line">305</span><br><span class="line">306</span><br><span class="line">307</span><br><span class="line">308</span><br><span class="line">309</span><br><span class="line">310</span><br><span class="line">311</span><br><span class="line">312</span><br><span class="line">313</span><br><span class="line">314</span><br><span class="line">315</span><br><span class="line">316</span><br><span class="line">317</span><br><span class="line">318</span><br><span class="line">319</span><br><span class="line">320</span><br><span class="line">321</span><br><span class="line">322</span><br><span class="line">323</span><br><span class="line">324</span><br><span class="line">325</span><br><span class="line">326</span><br><span class="line">327</span><br><span class="line">328</span><br><span class="line">329</span><br><span class="line">330</span><br><span class="line">331</span><br><span class="line">332</span><br><span class="line">333</span><br><span class="line">334</span><br><span class="line">335</span><br><span class="line">336</span><br><span class="line">337</span><br><span class="line">338</span><br><span class="line">339</span><br><span class="line">340</span><br><span class="line">341</span><br><span class="line">342</span><br><span class="line">343</span><br><span class="line">344</span><br><span class="line">345</span><br><span class="line">346</span><br><span class="line">347</span><br><span class="line">348</span><br><span class="line">349</span><br><span class="line">350</span><br><span class="line">351</span><br><span class="line">352</span><br><span class="line">353</span><br><span class="line">354</span><br><span class="line">355</span><br><span class="line">356</span><br><span class="line">357</span><br><span class="line">358</span><br><span class="line">359</span><br><span class="line">360</span><br><span class="line">361</span><br><span class="line">362</span><br><span class="line">363</span><br><span class="line">364</span><br><span class="line">365</span><br><span class="line">366</span><br><span class="line">367</span><br><span class="line">368</span><br><span class="line">369</span><br><span class="line">370</span><br><span class="line">371</span><br><span class="line">372</span><br><span class="line">373</span><br><span class="line">374</span><br><span class="line">375</span><br><span class="line">376</span><br><span class="line">377</span><br><span class="line">378</span><br><span class="line">379</span><br><span class="line">380</span><br><span class="line">381</span><br><span class="line">382</span><br><span class="line">383</span><br><span class="line">384</span><br><span class="line">385</span><br><span class="line">386</span><br><span class="line">387</span><br><span class="line">388</span><br><span class="line">389</span><br></pre></td><td class="code"><pre><span class="line">travis_fold:start:worker_info</span><br><span class="line">[0K[33;1mWorker information[0m</span><br><span class="line">hostname: 152cce68-6f4a-4341-81fe-7eaeefdef51e@1.worker-com-oss-6955bf87c5-hxzlp.gce-production-3</span><br><span class="line">version: 6.2.22 https://github.com/travis-ci/worker/tree/858cb91994a513269f2fe9782c15fc113e966231</span><br><span class="line">instance: travis-job-ceb93927-64f3-4499-bb95-3f7320304628 travis-ci-sardonyx-xenial-1593004276-4d46c6b3 (via amqp)</span><br><span class="line">startup: 5.939950103s</span><br><span class="line">travis_fold:end:worker_info</span><br><span class="line">[0Ktravis_time:start:150bf000</span><br><span class="line">[0Ktravis_time:end:150bf000:start=1617710281006673902,finish=1617710281158064964,duration=151391062,event=no_world_writable_dirs</span><br><span class="line">[0Ktravis_time:start:014f489a</span><br><span class="line">[0Ktravis_time:end:014f489a:start=1617710281160985803,finish=1617710281164008949,duration=3023146,event=setup_filter</span><br><span class="line">[0Ktravis_time:start:12bb32c7</span><br><span class="line">[0Ktravis_time:end:12bb32c7:start=1617710281170122551,finish=1617710281179045631,duration=8923080,event=agent</span><br><span class="line">[0Ktravis_time:start:00c3fcda</span><br><span class="line">[0Ktravis_time:end:00c3fcda:start=1617710281181850435,finish=1617710281183926995,duration=2076560,event=check_unsupported</span><br><span class="line">[0Ktravis_time:start:1ecf0d73</span><br><span class="line">[0Ktravis_fold:start:system_info</span><br><span class="line">[0K[33;1mBuild system information[0m</span><br><span class="line">Build language: node_js</span><br><span class="line">Build dist: xenial</span><br><span class="line">Build id: 222256002</span><br><span class="line">Job id: 496362702</span><br><span class="line">Runtime kernel version: 4.15.0-1077-gcp</span><br><span class="line">travis-build version: 091d532a</span><br><span class="line">[34m[1mBuild image provisioning date and time[0m</span><br><span class="line">Wed Jun 24 13:36:52 UTC 2020</span><br><span class="line">[34m[1mOperating System Details[0m</span><br><span class="line">Distributor ID:	Ubuntu</span><br><span class="line">Description:	Ubuntu 16.04.6 LTS</span><br><span class="line">Release:	16.04</span><br><span class="line">Codename:	xenial</span><br><span class="line">[34m[1mSystemd Version[0m</span><br><span class="line">systemd 229</span><br><span class="line">[34m[1mCookbooks Version[0m</span><br><span class="line">3f92a99 https://github.com/travis-ci/travis-cookbooks/tree/3f92a99</span><br><span class="line">[34m[1mgit version[0m</span><br><span class="line">git version 2.27.0</span><br><span class="line">[34m[1mbash version[0m</span><br><span class="line">GNU bash, version 4.3.48(1)-release (x86_64-pc-linux-gnu)</span><br><span class="line">[34m[1mgcc version[0m</span><br><span class="line">gcc (Ubuntu 5.4.0-6ubuntu1~16.04.12) 5.4.0 20160609</span><br><span class="line">[34m[1mdocker version[0m</span><br><span class="line">Client:</span><br><span class="line"> Version:           18.06.0-ce</span><br><span class="line"> API version:       1.38</span><br><span class="line"> Go version:        go1.10.3</span><br><span class="line"> Git commit:        0ffa825</span><br><span class="line"> Built:             Wed Jul 18 19:11:02 2018</span><br><span class="line"> OS/Arch:           linux/amd64</span><br><span class="line"> Experimental:      false</span><br><span class="line"></span><br><span class="line">Server:</span><br><span class="line"> Engine:</span><br><span class="line">  Version:          18.06.0-ce</span><br><span class="line">  API version:      1.38 (minimum version 1.12)</span><br><span class="line">  Go version:       go1.10.3</span><br><span class="line">  Git commit:       0ffa825</span><br><span class="line">  Built:            Wed Jul 18 19:09:05 2018</span><br><span class="line">  OS/Arch:          linux/amd64</span><br><span class="line">  Experimental:     false</span><br><span class="line">[34m[1mclang version[0m</span><br><span class="line">clang version 7.0.0 (tags/RELEASE_700/final)</span><br><span class="line">[34m[1mjq version[0m</span><br><span class="line">jq-1.5</span><br><span class="line">[34m[1mbats version[0m</span><br><span class="line">Bats 0.4.0</span><br><span class="line">[34m[1mshellcheck version[0m</span><br><span class="line">0.7.0</span><br><span class="line">[34m[1mshfmt version[0m</span><br><span class="line">v2.6.3</span><br><span class="line">[34m[1mccache version[0m</span><br><span class="line">3.2.4</span><br><span class="line">[34m[1mcmake version[0m</span><br><span class="line">cmake version 3.12.4</span><br><span class="line">[34m[1mheroku version[0m</span><br><span class="line">heroku/7.42.1 linux-x64 node-v12.16.2</span><br><span class="line">[34m[1mimagemagick version[0m</span><br><span class="line">Version: ImageMagick 6.8.9-9 Q16 x86_64 2019-11-12 http://www.imagemagick.org</span><br><span class="line">[34m[1mmd5deep version[0m</span><br><span class="line">4.4</span><br><span class="line">[34m[1mmercurial version[0m</span><br><span class="line">version 4.8</span><br><span class="line">[34m[1mmysql version[0m</span><br><span class="line">mysql  Ver 14.14 Distrib 5.7.30, for Linux (x86_64) using  EditLine wrapper</span><br><span class="line">[34m[1mopenssl version[0m</span><br><span class="line">OpenSSL 1.0.2g  1 Mar 2016</span><br><span class="line">[34m[1mpacker version[0m</span><br><span class="line">1.3.3</span><br><span class="line">[34m[1mpostgresql client version[0m</span><br><span class="line">psql (PostgreSQL) 10.13 (Ubuntu 10.13-1.pgdg16.04+1)</span><br><span class="line">[34m[1mragel version[0m</span><br><span class="line">Ragel State Machine Compiler version 6.8 Feb 2013</span><br><span class="line">[34m[1msudo version[0m</span><br><span class="line">1.8.16</span><br><span class="line">[34m[1mgzip version[0m</span><br><span class="line">gzip 1.6</span><br><span class="line">[34m[1mzip version[0m</span><br><span class="line">Zip 3.0</span><br><span class="line">[34m[1mvim version[0m</span><br><span class="line">VIM - Vi IMproved 7.4 (2013 Aug 10, compiled Mar 18 2020 14:06:17)</span><br><span class="line">[34m[1miptables version[0m</span><br><span class="line">iptables v1.6.0</span><br><span class="line">[34m[1mcurl version[0m</span><br><span class="line">curl 7.47.0 (x86_64-pc-linux-gnu) libcurl/7.47.0 GnuTLS/3.4.10 zlib/1.2.8 libidn/1.32 librtmp/2.3</span><br><span class="line">[34m[1mwget version[0m</span><br><span class="line">GNU Wget 1.17.1 built on linux-gnu.</span><br><span class="line">[34m[1mrsync version[0m</span><br><span class="line">rsync  version 3.1.1  protocol version 31</span><br><span class="line">[34m[1mgimme version[0m</span><br><span class="line">v1.5.4</span><br><span class="line">[34m[1mnvm version[0m</span><br><span class="line">0.35.3</span><br><span class="line">[34m[1mperlbrew version[0m</span><br><span class="line">/home/travis/perl5/perlbrew/bin/perlbrew  - App::perlbrew/0.88</span><br><span class="line">[34m[1mphpenv version[0m</span><br><span class="line">rbenv 1.1.2-30-gc879cb0</span><br><span class="line">[34m[1mrvm version[0m</span><br><span class="line">rvm 1.29.10 (latest) by Michal Papis, Piotr Kuczynski, Wayne E. Seguin [https://rvm.io]</span><br><span class="line">[34m[1mdefault ruby version[0m</span><br><span class="line">ruby 2.5.3p105 (2018-10-18 revision 65156) [x86_64-linux]</span><br><span class="line">[34m[1mCouchDB version[0m</span><br><span class="line">couchdb 1.6.1</span><br><span class="line">[34m[1mElasticSearch version[0m</span><br><span class="line">5.5.0</span><br><span class="line">[34m[1mInstalled Firefox version[0m</span><br><span class="line">firefox 63.0.1</span><br><span class="line">[34m[1mMongoDB version[0m</span><br><span class="line">MongoDB 4.0.19</span><br><span class="line">[34m[1mPhantomJS version[0m</span><br><span class="line">2.1.1</span><br><span class="line">[34m[1mPre-installed PostgreSQL versions[0m</span><br><span class="line">9.4.26</span><br><span class="line">9.5.22</span><br><span class="line">9.6.18</span><br><span class="line">[34m[1mRedis version[0m</span><br><span class="line">redis-server 6.0.5</span><br><span class="line">[34m[1mPre-installed Go versions[0m</span><br><span class="line">1.11.1</span><br><span class="line">[34m[1mant version[0m</span><br><span class="line">Apache Ant(TM) version 1.9.6 compiled on July 20 2018</span><br><span class="line">[34m[1mmvn version[0m</span><br><span class="line">Apache Maven 3.6.3 (cecedd343002696d0abb50b32b541b8a6ba2883f)</span><br><span class="line">[34m[1mgradle version[0m</span><br><span class="line">Gradle 5.1.1!</span><br><span class="line">[34m[1mlein version[0m</span><br><span class="line">Leiningen 2.9.3 on Java 11.0.2 OpenJDK 64-Bit Server VM</span><br><span class="line">[34m[1mPre-installed Node.js versions[0m</span><br><span class="line">v10.21.0</span><br><span class="line">v11.0.0</span><br><span class="line">v12.18.1</span><br><span class="line">v4.9.1</span><br><span class="line">v6.17.1</span><br><span class="line">v8.12.0</span><br><span class="line">v8.17.0</span><br><span class="line">v8.9</span><br><span class="line">[34m[1mphpenv versions[0m</span><br><span class="line">  system</span><br><span class="line">  5.6</span><br><span class="line">  5.6.40</span><br><span class="line">  7.1</span><br><span class="line">  7.1.27</span><br><span class="line">  7.2</span><br><span class="line">* 7.2.15 (set by /home/travis/.phpenv/version)</span><br><span class="line">  hhvm</span><br><span class="line">  hhvm-stable</span><br><span class="line">[34m[1mcomposer --version[0m</span><br><span class="line">Composer version 1.8.4 2019-02-11 10:52:10</span><br><span class="line">[34m[1mPre-installed Ruby versions[0m</span><br><span class="line">ruby-2.3.8</span><br><span class="line">ruby-2.4.5</span><br><span class="line">ruby-2.5.3</span><br><span class="line">travis_fold:end:system_info</span><br><span class="line">[0K</span><br><span class="line">travis_time:end:1ecf0d73:start=1617710281186425795,finish=1617710281191703956,duration=5278161,event=show_system_info</span><br><span class="line">[0Ktravis_time:start:0c3432d8</span><br><span class="line">[0Ktravis_time:end:0c3432d8:start=1617710281194230517,finish=1617710281205894718,duration=11664201,event=rm_riak_source</span><br><span class="line">[0Ktravis_time:start:1022b38d</span><br><span class="line">[0Ktravis_time:end:1022b38d:start=1617710281217518192,finish=1617710281234813931,duration=17295739,event=fix_rwky_redis</span><br><span class="line">[0Ktravis_time:start:00e95f20</span><br><span class="line">[0Ktravis_time:end:00e95f20:start=1617710281241092498,finish=1617710281923508871,duration=682416373,event=wait_for_network</span><br><span class="line">[0Ktravis_time:start:110dc1ad</span><br><span class="line">[0Ktravis_time:end:110dc1ad:start=1617710281929444430,finish=1617710282163180006,duration=233735576,event=update_apt_keys</span><br><span class="line">[0Ktravis_time:start:10967e90</span><br><span class="line">[0Ktravis_time:end:10967e90:start=1617710282167400608,finish=1617710282220856131,duration=53455523,event=fix_hhvm_source</span><br><span class="line">[0Ktravis_time:start:04663298</span><br><span class="line">[0Ktravis_time:end:04663298:start=1617710282224839364,finish=1617710282227791584,duration=2952220,event=update_mongo_arch</span><br><span class="line">[0Ktravis_time:start:2738421a</span><br><span class="line">[0Ktravis_time:end:2738421a:start=1617710282232531573,finish=1617710282274939493,duration=42407920,event=fix_sudo_enabled_trusty</span><br><span class="line">[0Ktravis_time:start:1f113ef1</span><br><span class="line">[0Ktravis_time:end:1f113ef1:start=1617710282279423099,finish=1617710282282053577,duration=2630478,event=update_glibc</span><br><span class="line">[0Ktravis_time:start:01158e7d</span><br><span class="line">[0Ktravis_time:end:01158e7d:start=1617710282286952653,finish=1617710282295986206,duration=9033553,event=clean_up_path</span><br><span class="line">[0Ktravis_time:start:18113940</span><br><span class="line">[0Ktravis_time:end:18113940:start=1617710282301792699,finish=1617710282310668589,duration=8875890,event=fix_resolv_conf</span><br><span class="line">[0Ktravis_time:start:074fde8b</span><br><span class="line">[0Ktravis_time:end:074fde8b:start=1617710282317489895,finish=1617710282329032318,duration=11542423,event=fix_etc_hosts</span><br><span class="line">[0Ktravis_time:start:06003b20</span><br><span class="line">[0Ktravis_time:end:06003b20:start=1617710282333980228,finish=1617710282344912714,duration=10932486,event=fix_mvn_settings_xml</span><br><span class="line">[0Ktravis_time:start:04377a42</span><br><span class="line">[0Ktravis_time:end:04377a42:start=1617710282350794523,finish=1617710282362329955,duration=11535432,event=no_ipv6_localhost</span><br><span class="line">[0Ktravis_time:start:107f9670</span><br><span class="line">[0Ktravis_time:end:107f9670:start=1617710282368231044,finish=1617710282371785442,duration=3554398,event=fix_etc_mavenrc</span><br><span class="line">[0Ktravis_time:start:0492a09b</span><br><span class="line">[0Ktravis_time:end:0492a09b:start=1617710282377107180,finish=1617710282380866467,duration=3759287,event=fix_wwdr_certificate</span><br><span class="line">[0Ktravis_time:start:09214040</span><br><span class="line">[0Ktravis_time:end:09214040:start=1617710282384652034,finish=1617710282410695159,duration=26043125,event=put_localhost_first</span><br><span class="line">[0Ktravis_time:start:1e531d50</span><br><span class="line">[0Ktravis_time:end:1e531d50:start=1617710282414437909,finish=1617710282417996318,duration=3558409,event=home_paths</span><br><span class="line">[0Ktravis_time:start:0e5d90e8</span><br><span class="line">[0Ktravis_time:end:0e5d90e8:start=1617710282421848908,finish=1617710282434710739,duration=12861831,event=disable_initramfs</span><br><span class="line">[0Ktravis_time:start:053094a8</span><br><span class="line">[0Ktravis_time:end:053094a8:start=1617710282438556776,finish=1617710282830861337,duration=392304561,event=disable_ssh_roaming</span><br><span class="line">[0Ktravis_time:start:136c6158</span><br><span class="line">[0Ktravis_time:end:136c6158:start=1617710282835448833,finish=1617710282837850753,duration=2401920,event=debug_tools</span><br><span class="line">[0Ktravis_time:start:0068a768</span><br><span class="line">[0Ktravis_time:end:0068a768:start=1617710282842344444,finish=1617710282845812988,duration=3468544,event=uninstall_oclint</span><br><span class="line">[0Ktravis_time:start:1a7ffe12</span><br><span class="line">[0Ktravis_time:end:1a7ffe12:start=1617710282850101021,finish=1617710282853059277,duration=2958256,event=rvm_use</span><br><span class="line">[0Ktravis_time:start:0a318d31</span><br><span class="line">[0Ktravis_time:end:0a318d31:start=1617710282859366907,finish=1617710282867980129,duration=8613222,event=rm_etc_boto_cfg</span><br><span class="line">[0Ktravis_time:start:0c43b79b</span><br><span class="line">[0Ktravis_time:end:0c43b79b:start=1617710282871878442,finish=1617710282876227239,duration=4348797,event=rm_oraclejdk8_symlink</span><br><span class="line">[0Ktravis_time:start:2856c0ed</span><br><span class="line">[0Ktravis_time:end:2856c0ed:start=1617710282881925518,finish=1617710282982550974,duration=100625456,event=enable_i386</span><br><span class="line">[0Ktravis_time:start:05db3ce6</span><br><span class="line">[0Ktravis_time:end:05db3ce6:start=1617710282986932136,finish=1617710282992489673,duration=5557537,event=update_rubygems</span><br><span class="line">[0Ktravis_time:start:0024500c</span><br><span class="line">[0Ktravis_time:end:0024500c:start=1617710282997198288,finish=1617710283807994228,duration=810795940,event=ensure_path_components</span><br><span class="line">[0Ktravis_time:start:019ad4b8</span><br><span class="line">[0Ktravis_time:end:019ad4b8:start=1617710283812137854,finish=1617710283814928635,duration=2790781,event=redefine_curl</span><br><span class="line">[0Ktravis_time:start:1528968d</span><br><span class="line">[0Ktravis_time:end:1528968d:start=1617710283820464921,finish=1617710283919009049,duration=98544128,event=nonblock_pipe</span><br><span class="line">[0Ktravis_time:start:0930d69e</span><br><span class="line">[0Ktravis_time:end:0930d69e:start=1617710283922847483,finish=1617710289952236561,duration=6029389078,event=apt_get_update</span><br><span class="line">[0Ktravis_time:start:110f6412</span><br><span class="line">[0Ktravis_time:end:110f6412:start=1617710289956456895,finish=1617710289959091673,duration=2634778,event=deprecate_xcode_64</span><br><span class="line">[0Ktravis_time:start:02138baa</span><br><span class="line">[0Ktravis_time:end:02138baa:start=1617710289963868539,finish=1617710292720823745,duration=2756955206,event=update_heroku</span><br><span class="line">[0Ktravis_time:start:0cc90e10</span><br><span class="line">[0Ktravis_time:end:0cc90e10:start=1617710292725276007,finish=1617710292727864419,duration=2588412,event=shell_session_update</span><br><span class="line">[0Ktravis_time:start:1723302f</span><br><span class="line">[0Ktravis_fold:start:docker_mtu_and_registry_mirrors</span><br><span class="line">[0Ktravis_fold:end:docker_mtu_and_registry_mirrors</span><br><span class="line">[0Ktravis_time:end:1723302f:start=1617710292732562421,finish=1617710295309356682,duration=2576794261,event=set_docker_mtu_and_registry_mirrors</span><br><span class="line">[0Ktravis_time:start:11006820</span><br><span class="line">[0Ktravis_fold:start:resolvconf</span><br><span class="line">[0Ktravis_fold:end:resolvconf</span><br><span class="line">[0Ktravis_time:end:11006820:start=1617710295313382683,finish=1617710295389642279,duration=76259596,event=resolvconf</span><br><span class="line">[0Ktravis_time:start:122bd746</span><br><span class="line">[0Ktravis_time:end:122bd746:start=1617710295396498754,finish=1617710295558940486,duration=162441732,event=maven_central_mirror</span><br><span class="line">[0Ktravis_time:start:0f295fa5</span><br><span class="line">[0Ktravis_time:end:0f295fa5:start=1617710295563568281,finish=1617710295658042861,duration=94474580,event=maven_https</span><br><span class="line">[0Ktravis_time:start:0312f198</span><br><span class="line">[0Ktravis_time:end:0312f198:start=1617710295663353861,finish=1617710295666011163,duration=2657302,event=fix_ps4</span><br><span class="line">[0Ktravis_time:start:05f70cb4</span><br><span class="line">[0K</span><br><span class="line">travis_fold:start:git.checkout</span><br><span class="line">[0Ktravis_time:start:17a1b04e</span><br><span class="line">[0K$ git clone --depth=50 --branch=master https://github.com/SuiteLHY/SuiteLHY.github.io.git SuiteLHY/SuiteLHY.github.io</span><br><span class="line">Cloning into &#x27;SuiteLHY/SuiteLHY.github.io&#x27;...</span><br><span class="line">travis_time:end:17a1b04e:start=1617710295674097532,finish=1617710296329264757,duration=655167225,event=checkout</span><br><span class="line">[0K$ cd SuiteLHY/SuiteLHY.github.io</span><br><span class="line">$ git checkout -qf 0ddf22b1cdb5a19d216e76649bbf5211a3e5f3d6</span><br><span class="line">travis_fold:end:git.checkout</span><br><span class="line">[0K</span><br><span class="line">travis_fold:start:git.submodule</span><br><span class="line">[0Ktravis_time:start:06340ea8</span><br><span class="line">[0K$ git submodule update --init --recursive</span><br><span class="line">Submodule &#x27;themes/Kratos-Rebirth&#x27; (https://github.com/SuiteLHY/Kratos-Rebirth) registered for path &#x27;themes/Kratos-Rebirth&#x27;</span><br><span class="line">Cloning into &#x27;/home/travis/build/SuiteLHY/SuiteLHY.github.io/themes/Kratos-Rebirth&#x27;...</span><br><span class="line">Submodule path &#x27;themes/Kratos-Rebirth&#x27;: checked out &#x27;f9c90ae7ed635024e785f4a34b6d80e7e7a7bb08&#x27;</span><br><span class="line">travis_time:end:06340ea8:start=1617710296341465664,finish=1617710297538107398,duration=1196641734,event=checkout</span><br><span class="line">[0Ktravis_fold:end:git.submodule</span><br><span class="line">[0Ktravis_time:end:06340ea8:start=1617710296341465664,finish=1617710297541158373,duration=1199692709,event=checkout</span><br><span class="line">[0Ktravis_time:start:2c1fbca3</span><br><span class="line">[0K</span><br><span class="line">[33;1mSetting environment variables from repository settings[0m</span><br><span class="line">$ export GH_TOKEN=[secure]</span><br><span class="line"></span><br><span class="line">travis_time:end:2c1fbca3:start=1617710297545498640,finish=1617710297556567643,duration=11069003,event=env</span><br><span class="line">[0Ktravis_fold:start:nvm.install</span><br><span class="line">[0Ktravis_time:start:15ab485c</span><br><span class="line">[0K$ nvm install 10</span><br><span class="line">Downloading and installing node v10.24.0...</span><br><span class="line">Downloading https://nodejs.org/dist/v10.24.0/node-v10.24.0-linux-x64.tar.xz...</span><br><span class="line">Computing checksum with sha256sum</span><br><span class="line">Checksums matched!</span><br><span class="line">Now using node v10.24.0 (npm v6.14.11)</span><br><span class="line">travis_time:end:15ab485c:start=1617710298423894759,finish=1617710301094021425,duration=2670126666,event=setup</span><br><span class="line">[0Ktravis_fold:end:nvm.install</span><br><span class="line">[0K</span><br><span class="line">travis_fold:start:cache.1</span><br><span class="line">[0KSetting up build cache</span><br><span class="line">$ export CASHER_DIR=$&#123;TRAVIS_HOME&#125;/.casher</span><br><span class="line">travis_time:start:06318892</span><br><span class="line">[0K$ Installing caching utilities</span><br><span class="line">travis_time:end:06318892:start=1617710302236650159,finish=1617710302499532184,duration=262882025,event=setup_casher</span><br><span class="line">[0Ktravis_time:start:00373a2e</span><br><span class="line">[0Ktravis_time:end:00373a2e:start=1617710302506540626,finish=1617710302510283664,duration=3743038,event=setup_casher</span><br><span class="line">[0Ktravis_time:start:0649bbf4</span><br><span class="line">[0Kattempting to download cache archive[0m</span><br><span class="line">[32;1mfetching master/cache--linux-xenial-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855--node-10.tgz[0m</span><br><span class="line">[32;1mfound cache[0m</span><br><span class="line">travis_time:end:0649bbf4:start=1617710302514526146,finish=1617710303976735176,duration=1462209030,event=setup_casher</span><br><span class="line">[0Ktravis_fold:end:cache.1</span><br><span class="line">[0K</span><br><span class="line">travis_fold:start:cache.npm</span><br><span class="line">[0K</span><br><span class="line">travis_time:start:01392087</span><br><span class="line">[0Ktravis_time:end:01392087:start=1617710304166048666,finish=1617710304169295897,duration=3247231,event=setup_cache</span><br><span class="line">[0Ktravis_time:start:2773dcba</span><br><span class="line">[0Kadding /home/travis/.npm to cache[0m</span><br><span class="line">travis_time:end:2773dcba:start=1617710304174955441,finish=1617710305782382148,duration=1607426707,event=setup_cache</span><br><span class="line">[0Ktravis_fold:end:cache.npm</span><br><span class="line">[0K$ node --version</span><br><span class="line">v10.24.0</span><br><span class="line">$ npm --version</span><br><span class="line">6.14.11</span><br><span class="line">$ nvm --version</span><br><span class="line">0.37.2</span><br><span class="line"></span><br><span class="line">travis_fold:start:before_install</span><br><span class="line">[0Ktravis_time:start:0407f8a1</span><br><span class="line">[0K$ git submodule init &amp;&amp; git submodule update</span><br><span class="line">travis_time:end:0407f8a1:start=1617710306474611374,finish=1617710306521760419,duration=47149045,event=before_install</span><br><span class="line">[0Ktravis_fold:end:before_install</span><br><span class="line">[0Ktravis_fold:start:install.npm</span><br><span class="line">[0Ktravis_time:start:197bd51d</span><br><span class="line">[0K$ npm ci</span><br><span class="line"></span><br><span class="line">&gt; ejs@2.7.4 postinstall /home/travis/build/SuiteLHY/SuiteLHY.github.io/node_modules/ejs</span><br><span class="line">&gt; node ./postinstall.js</span><br><span class="line"></span><br><span class="line">added 197 packages in 1.614s</span><br><span class="line">travis_time:end:197bd51d:start=1617710306705477286,finish=1617710308729335852,duration=2023858566,event=install</span><br><span class="line">[0Ktravis_fold:end:install.npm</span><br><span class="line">[0K</span><br><span class="line">travis_time:start:331ba8db</span><br><span class="line">[0K$ hexo clean</span><br><span class="line">INFO  Validating config</span><br><span class="line">travis_time:end:331ba8db:start=1617710308733490906,finish=1617710309338977986,duration=605487080,event=script</span><br><span class="line">[0K[32;1mThe command &quot;hexo clean&quot; exited with 0.[0m</span><br><span class="line">travis_time:start:0d401613</span><br><span class="line">[0K$ hexo generate</span><br><span class="line">INFO  Validating config</span><br><span class="line">INFO  Start processing</span><br><span class="line">Deprecated as of 10.7.0. highlight(lang, code, ...args) has been deprecated.</span><br><span class="line">Deprecated as of 10.7.0. Please use highlight(code, options) instead.</span><br><span class="line">https://github.com/highlightjs/highlight.js/issues/2277</span><br><span class="line">Deprecated as of 10.7.0. highlight(lang, code, ...args) has been deprecated.</span><br><span class="line">Deprecated as of 10.7.0. Please use highlight(code, options) instead.</span><br><span class="line">https://github.com/highlightjs/highlight.js/issues/2277</span><br><span class="line">Deprecated as of 10.7.0. highlight(lang, code, ...args) has been deprecated.</span><br><span class="line">Deprecated as of 10.7.0. Please use highlight(code, options) instead.</span><br><span class="line">https://github.com/highlightjs/highlight.js/issues/2277</span><br><span class="line">Deprecated as of 10.7.0. highlight(lang, code, ...args) has been deprecated.</span><br><span class="line">Deprecated as of 10.7.0. Please use highlight(code, options) instead.</span><br><span class="line">https://github.com/highlightjs/highlight.js/issues/2277</span><br><span class="line">FATAL &#123; err:</span><br><span class="line">   TypeError: Cannot read property &#x27;main&#x27; of undefined</span><br><span class="line">       at Hexo.&lt;anonymous&gt; (/home/travis/build/SuiteLHY/SuiteLHY.github.io/themes/Kratos-Rebirth/scripts/genconfig.js:6:61)</span><br><span class="line">       at Hexo.tryCatcher (/home/travis/build/SuiteLHY/SuiteLHY.github.io/node_modules/bluebird/js/release/util.js:16:23)</span><br><span class="line">       at Hexo.&lt;anonymous&gt; (/home/travis/build/SuiteLHY/SuiteLHY.github.io/node_modules/bluebird/js/release/method.js:15:34)</span><br><span class="line">       at Promise.map.key (/home/travis/build/SuiteLHY/SuiteLHY.github.io/node_modules/hexo/lib/hexo/index.js:405:22)</span><br><span class="line">       at tryCatcher (/home/travis/build/SuiteLHY/SuiteLHY.github.io/node_modules/bluebird/js/release/util.js:16:23)</span><br><span class="line">       at MappingPromiseArray._promiseFulfilled (/home/travis/build/SuiteLHY/SuiteLHY.github.io/node_modules/bluebird/js/release/map.js:68:38)</span><br><span class="line">       at MappingPromiseArray.PromiseArray._iterate (/home/travis/build/SuiteLHY/SuiteLHY.github.io/node_modules/bluebird/js/release/promise_array.js:115:31)</span><br><span class="line">       at MappingPromiseArray.init (/home/travis/build/SuiteLHY/SuiteLHY.github.io/node_modules/bluebird/js/release/promise_array.js:79:10)</span><br><span class="line">       at MappingPromiseArray._asyncInit (/home/travis/build/SuiteLHY/SuiteLHY.github.io/node_modules/bluebird/js/release/map.js:37:10)</span><br><span class="line">       at _drainQueueStep (/home/travis/build/SuiteLHY/SuiteLHY.github.io/node_modules/bluebird/js/release/async.js:97:12)</span><br><span class="line">       at _drainQueue (/home/travis/build/SuiteLHY/SuiteLHY.github.io/node_modules/bluebird/js/release/async.js:86:9)</span><br><span class="line">       at Async._drainQueues (/home/travis/build/SuiteLHY/SuiteLHY.github.io/node_modules/bluebird/js/release/async.js:102:5)</span><br><span class="line">       at Immediate.Async.drainQueues [as _onImmediate] (/home/travis/build/SuiteLHY/SuiteLHY.github.io/node_modules/bluebird/js/release/async.js:15:14)</span><br><span class="line">       at runCallback (timers.js:705:18)</span><br><span class="line">       at tryOnImmediate (timers.js:676:5)</span><br><span class="line">       at processImmediate (timers.js:658:5) &#125; &#x27;Something\&#x27;s wrong. Maybe you can find the solution here: %s&#x27; &#x27;https://hexo.io/docs/troubleshooting.html&#x27;</span><br><span class="line">travis_time:end:0d401613:start=1617710309344746249,finish=1617710310183149105,duration=838402856,event=script</span><br><span class="line">[0K[31;1mThe command &quot;hexo generate&quot; exited with 2.[0m</span><br><span class="line">travis_fold:start:cache.2</span><br><span class="line">[0Kstore build cache</span><br><span class="line">travis_time:start:17a0725a</span><br><span class="line">[0Ktravis_time:end:17a0725a:start=1617710310190970550,finish=1617710310194166728,duration=3196178,event=cache</span><br><span class="line">[0Ktravis_time:start:03e339bc</span><br><span class="line">[0K[32;1mnothing changed[0m</span><br><span class="line">travis_time:end:03e339bc:start=1617710310198156711,finish=1617710311173343922,duration=975187211,event=cache</span><br><span class="line">[0Ktravis_fold:end:cache.2</span><br><span class="line">[0K</span><br><span class="line"></span><br><span class="line">Done. Your build exited with 1.</span><br></pre></td></tr></table></figure>
+ 
+    </div></div>
+    </div></li>
+</ul>
+</li>
+</ul>
+<h1 id="记录"><a href="#记录" class="headerlink" title="记录"></a>记录</h1><div class="xControl">
+    <div class="xHeading"><div class="xIcon"><i class="fa fa-plus"></i></div><span>1. 从零开始到发布本地服务📔</span></div>
+    <div class="xContent"><div class="inner">
+         
+    </div></div>
+    </div>
+
+<h2 id="站点主题的相关记录"><a href="#站点主题的相关记录" class="headerlink" title="站点主题的相关记录"></a>站点主题的相关记录</h2><div class="xControl">
+    <div class="xHeading"><div class="xIcon"><i class="fa fa-plus"></i></div><span>将站点主题的图片文件&thinsp;统一调整为&thinsp;WebP&thinsp;格式&ensp;👆</span></div>
+    <div class="xContent"><div class="inner">
+        <ul>
+<li><p>图片文件路径，相对于主题根目录：<code>themes\Kratos-Rebirth\source\images\</code>及其子文件</p>
+</li>
+<li><p>目的：</p>
+<ul>
+<li>统一文件格式，便于管理；（次要）</li>
+<li>节省存储空间√<del>紧跟潮流🎵</del>。（主要）</li>
+</ul>
+</li>
+<li><p>使用工具&ensp;——&ensp;<a target="_blank" rel="noopener" href="https://ezgif.com/">ezgif.com</a><span style="display:inline-block !important;vertical-align:top !important;width:12px !important;height:fit-content(100%);padding:0 !important;border:0 !important;margin:0 !important;"><img src="https://zh.wikipedia.org/w/skins/Vector/resources/skins.vector.styles/images/external-link-ltr-icon.svg?48e54" alt="" style="display:inline-block;vertical-align:top !important;width:12px;height:12px;border:0 !important;margin:0 !important;" /></span></p>
+<ul>
+<li><p>截图：</p>
+<p>  <img src="/zh/post/%E6%9C%AC%E7%AB%99%E7%9A%84%E6%90%AD%E5%BB%BA%E8%AE%B0%E5%BD%95/ezgif.com_jpg-to-webp__record_1.jpg" class="" title="pr-pr-pr-pr-pr-pr-pr-pr-pr-pr~🎵
+  " alt="JPG&amp;thinsp;格式&amp;thinsp;转换为&amp;thinsp;WebP&amp;thinsp;格式&amp;thinsp;以后，甚至可以节省&amp;thinsp;90%以上的存储空间。"></p>
+</li>
+</ul>
+</li>
+</ul>
+ 
+    </div></div>
+    </div>
+
+<hr>
+<h1 id="📖参看"><a href="#📖参看" class="headerlink" title="📖参看"></a>📖参看</h1><div class="xControl active">
+    <div class="xHeading"><div class="xIcon"><i class="fa fa-plus"></i></div><span>主要参看📖</span></div>
+    <div class="xContent pre-open"><div class="inner">
+        <ul>
+<li><a target="_blank" rel="noopener" href="https://hexo.io/zh-cn/docs/">Hexo 官方文档</a></li>
+<li><a target="_blank" rel="noopener" href="https://hexo.io/plugins/">Hexo 插件库</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.runoob.com/markdown/md-tutorial.html">Markdown 教程 | 菜鸟教程</a></li>
+<li><a target="_blank" rel="noopener" href="https://docs.github.com/cn/github/writing-on-github/basic-writing-and-formatting-syntax">Markdown → [ 基本撰写和格式语法 - GitHub Docs ]</a></li>
+<li>本站的站点主题作者 <a target="_blank" rel="noopener" href="https://github.com/Candinya">Candinya🍭</a> 编写的使用指南 —— [&thinsp;<a target="_blank" rel="noopener" href="https://candinya.com/posts/Kratos-Rebirth-Manual/">Kratos-Rebirth食用说明 | 糖菓·部落</a>&thinsp;]</li>
+<li><a target="_blank" rel="noopener" href="https://www.ruanyifeng.com/blog/2015/12/git-cheat-sheet.html">常用 Git 命令清单 - 阮一峰的网络日志</a></li>
+</ul>
+ 
+    </div></div>
+    </div>
+
+<div class="xControl active">
+    <div class="xHeading"><div class="xIcon"><i class="fa fa-plus"></i></div><span>主要参看📖（站内资源）</span></div>
+    <div class="xContent pre-open"><div class="inner">
+        <ul>
+<li><a href="/zh/post/%E6%9C%AC%E7%AB%99%E7%9A%84%E6%9B%B4%E6%96%B0%E5%92%8C%E7%BB%B4%E6%8A%A4%E8%AE%B0%E5%BD%95/" title="本站的更新和维护记录 | 夜与花海">本站的更新和维护记录 | 夜与花海</a>🖇</li>
+</ul>
+ 
+    </div></div>
+    </div>
+
+<div class="xControl">
+    <div class="xHeading"><div class="xIcon"><i class="fa fa-plus"></i></div><span>分类：解决问题✅</span></div>
+    <div class="xContent"><div class="inner">
+        <ul>
+<li><a target="_blank" rel="noopener" href="https://www.jibing57.com/2017/10/30/how-to-use-post-link-on-hexo/">Hexo引用站内文章 | Recording</a></li>
+<li>【★】[ <a target="_blank" rel="noopener" href="https://docs.travis-ci.com/user/private-dependencies/#api-token">Private Dependencies GitHub - Travis CI</a> ]#<a target="_blank" rel="noopener" href="https://docs.travis-ci.com/user/private-dependencies/#api-token">API Token</a></li>
+<li>【★】<a target="_blank" rel="noopener" href="https://segmentfault.com/a/1190000018024460#">(……) [译] Hexo git deployer 删除了提交历史记录该怎么整？ - SegmentFault 思否</a></li>
+<li>【★】<a target="_blank" rel="noopener" href="https://unicode-table.com/cn/1F423/">🐣 - 孵化小鸡 表情符号: U+1F423 - Unicode 字符百科</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.itranslater.com/qa/details/2117469006360740864">如何在GitHub风格的Markdown中添加脚注？ - ITranslater</a></li>
+</ul>
+ 
+    </div></div>
+    </div>
+
+<div class="xControl">
+    <div class="xHeading"><div class="xIcon"><i class="fa fa-plus"></i></div><span>分类：工具🧰&ensp;|&ensp;查阅🔍</span></div>
+    <div class="xContent"><div class="inner">
+        <ul>
+<li>【★】【GFM】<a target="_blank" rel="noopener" href="https://github.github.com/gfm/">GitHub Flavored Markdown Spec - github.github.com</a></li>
+<li>【☆】<a target="_blank" rel="noopener" href="https://translate.google.cn/">Google 翻译</a></li>
+<li>【☆】<a target="_blank" rel="noopener" href="https://www.w3schools.com/tags/tag_style.asp">[ HTML style tag ] - w3schools.com</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.w3schools.com/colors/colors_picker.asp">HTML Color Picker</a></li>
+<li><font style="font-style:italic;"><b>「</b>本站_标准颜色<b>」</b></font>&ensp;⤵<ul>
+<li><font style="color:#CC0000;font-weight:bold;">『&thinsp;红&thinsp;』</font>&ensp;<code>#CC0000</code></li>
+<li><font style="color:#FF6699;font-weight:bold;">『&thinsp;粉&thinsp;』</font>&ensp;<code>#FF6699</code></li>
+<li><font style="color:#FCC000;font-weight:bold;">『&thinsp;橙&thinsp;』</font>&ensp;<code>#FCC000</code></li>
+<li><font style="color:#6AA84F;font-weight:bold;">『&thinsp;绿&thinsp;』</font>&ensp;<code>#6AA84F</code></li>
+<li><font style="color:#4343FF;font-weight:bold;">『&thinsp;蓝&thinsp;』</font>&ensp;<code>#4343FF</code></li>
+<li><font style="color:#9900FF;font-weight:bold;">『&thinsp;紫&thinsp;』</font>&ensp;<code>#9900FF</code></li>
+<li><font style="color:#808080;font-weight:bold;">『&thinsp;灰&thinsp;』</font>&ensp;<code>#808080</code></li>
+</ul>
+</li>
+<li><a target="_blank" rel="noopener" href="http://www.oicqzone.com/pc/2015083122336.html">HTML中&amp;nbsp; &amp;ensp; &amp;emsp; &amp;thinsp;等6种空白空格的区别_电脑小技巧_上网技巧_QQ地带</a></li>
+<li><a target="_blank" rel="noopener" href="https://guides.github.com/pdfs/markdown-cheatsheet-online.pdf">markdown-cheatsheet-online | guides.github.com</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.jianshu.com/p/5158c5ac7aa6">markdown 需要转义的字符 - 简书</a></li>
+<li><a target="_blank" rel="noopener" href="https://en.wikipedia.org/wiki/Sentence_spacing_in_digital_media">Sentence spacing in digital media - Wikipedia</a></li>
+<li>【★】<a target="_blank" rel="noopener" href="https://unicode-table.com/cn/">Unicode 字符百科</a></li>
+<li>【★】<a target="_blank" rel="noopener" href="https://www.jianshu.com/p/75374e299ef8">软件版本号规范与命名原则 - 简书</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.runoob.com/markdown/md-tutorial.html">Markdown 教程 | 菜鸟教程</a></li>
+<li><a target="_blank" rel="noopener" href="https://unicode-table.com/cn/1F446/">👆 - 白色指向反手指数 表情符号: U+1F446 - Unicode 字符百科</a></li>
+<li><a target="_blank" rel="noopener" href="https://unicode-table.com/cn/1F4D6/">📖 - 打开书 表情符号: U+1F4D6 - Unicode 字符百科</a></li>
+<li><a target="_blank" rel="noopener" href="https://unicode-table.com/cn/1F517/">🔗 - 链接符号 表情符号: U+1F517 - Unicode 字符百科</a></li>
+<li><a target="_blank" rel="noopener" href="https://unicode-table.com/cn/1F587/">🖇 - 链接回形针 表情符号: U+1F587 - Unicode 字符百科</a></li>
+<li><a target="_blank" rel="noopener" href="https://unicode-table.com/cn/1F5CE/">🗎 - 文献: U+1F5CE - Unicode 字符百科</a></li>
+<li><a target="_blank" rel="noopener" href="https://unicode-table.com/cn/203B/">※ - 参考标志: U+203B - Unicode 字符百科</a></li>
+<li><a target="_blank" rel="noopener" href="https://unicode-table.com/cn/260C/">☌ - 关联: U+260C - Unicode 字符百科</a></li>
+<li><a target="_blank" rel="noopener" href="https://unicode-table.com/cn/1F845/">🡅 - 向上重箭头: U+1F845 - Unicode 字符百科</a></li>
+<li><a target="_blank" rel="noopener" href="https://unicode-table.com/cn/1F846/">🡆 - 向右重箭头: U+1F846 - Unicode 字符百科</a></li>
+<li><a target="_blank" rel="noopener" href="https://unicode-table.com/cn/1F847/">🡇 - 向下重箭头: U+1F847 - Unicode 字符百科</a></li>
+<li><a target="_blank" rel="noopener" href="https://unicode-table.com/cn/1F844/">🡄 - 向左重箭: U+1F844 - Unicode 字符百科</a></li>
+<li><a target="_blank" rel="noopener" href="https://unicode-table.com/cn/2934/">⤴ - 指向右侧然后向上弯曲的箭头 表情符号: U+2934 - Unicode 字符百科</a></li>
+<li><a target="_blank" rel="noopener" href="https://unicode-table.com/cn/2935/">⤵ - 指向右侧然后向下弯曲的箭头 表情符号: U+2935 cudarrr - Unicode 字符百科</a></li>
+<li><a target="_blank" rel="noopener" href="https://unicode-table.com/cn/2936/">⤶ - 指向下侧然后向左弯曲的箭头: U+2936 ldca - Unicode 字符百科</a></li>
+<li><a target="_blank" rel="noopener" href="https://unicode-table.com/cn/2937/">⤷ - 指向下侧然后向右弯曲的箭头: U+2937 rdca - Unicode 字符百科</a></li>
+<li><a target="_blank" rel="noopener" href="https://unicode-table.com/cn/1F3B5/">🎵 - 快乐的音符 表情符号: U+1F3B5 - Unicode 字符百科</a></li>
+<li><a target="_blank" rel="noopener" href="https://unicode-table.com/cn/21D4/">⇔ - 左右双箭头: U+21D4 hArr - Unicode 字符百科</a></li>
+<li><a target="_blank" rel="noopener" href="https://unicode-table.com/cn/21D2/">⇒ - 向右双箭头: U+21D2 rArr - Unicode 字符百科</a></li>
+<li><a target="_blank" rel="noopener" href="https://unicode-table.com/cn/2014/">— - Em 长划: U+2014 mdash - Unicode 字符百科</a></li>
+<li><a target="_blank" rel="noopener" href="https://zh.wikipedia.org/wiki/%E6%A0%87%E7%82%B9%E7%AC%A6%E5%8F%B7">标点符号 - 维基百科，自由的百科全书</a></li>
+<li><a target="_blank" rel="noopener" href="https://zh.wikipedia.org/wiki/%E8%BF%9E%E6%8E%A5%E5%8F%B7">连接号 - 维基百科，自由的百科全书</a></li>
+</ul>
+ 
+    </div></div>
+    </div>
+
+<div class="xControl">
+    <div class="xHeading"><div class="xIcon"><i class="fa fa-plus"></i></div><span>分类：其他（二度及以上关联☌）</span></div>
+    <div class="xContent"><div class="inner">
+        <ul>
+<li><a target="_blank" rel="noopener" href="https://docs.travis-ci.com/user/best-practices-security#recommendations-on-how-to-avoid-leaking-secrets-to-build-logs">Best Practices in Securing Your Data - Travis CI</a></li>
+<li>[ <a target="_blank" rel="noopener" href="https://docs.github.com/en/rest/guides/getting-started-with-the-rest-api#authentication">Getting started with the REST API - GitHub Docs</a> ]#<a target="_blank" rel="noopener" href="https://docs.github.com/en/rest/guides/getting-started-with-the-rest-api#authentication">Authentication</a></li>
+<li><a target="_blank" rel="noopener" href="https://my.oschina.net/antsky/blog/1475173">Github 中 Markdown 锚点链接如何写 - 码蚁de天空 - OSCHINA - 中文开源技术交流社区</a></li>
+<li><a target="_blank" rel="noopener" href="https://y0ngb1n.github.io/a/2270d168.html">Hexo 搭建个人博客 #04 主题的安装与自定义样式 | 杨斌的博客</a></li>
+<li><a target="_blank" rel="noopener" href="https://ijiaober.github.io/2014/08/05/hexo/hexo-04/">Hexo使用攻略：（四）Hexo的分类和标签设置 | { GoonX }</a></li>
+<li><a target="_blank" rel="noopener" href="https://stackoverflow.com/questions/47106191/how-to-display-raw-and-endraw-using-markdown">html - How to display {% raw %} and {% endraw %} using markdown? - Stack Overflow</a></li>
+<li>【★】<a target="_blank" rel="noopener" href="https://www.ruanyifeng.com/blog/2017/12/travis_ci_tutorial.html">持续集成服务 Travis CI 教程 - 阮一峰的网络日志</a></li>
+<li><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/77481557">个人博客如何设计分类和标签 - 知乎</a></li>
+<li><a target="_blank" rel="noopener" href="https://zh.wikipedia.org/wiki/%E5%85%AD%E5%BA%A6%E5%88%86%E9%9A%94%E7%90%86%E8%AE%BA">六度分隔理论 - 维基百科，自由的百科全书</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.codenong.com/12898278/">将通用代码添加为git子模块的问题：“索引中已存在” | 码农家园</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.cnblogs.com/holbrook/archive/2012/11/05/2755268.html">如何规划blog的标签（tag）和分类 - 心内求法 - 博客园</a></li>
+<li><a target="_blank" rel="noopener" href="http://jartto.wang/2017/12/28/cannot-nest-git-repository/">如何解决 Git 仓库嵌套问题 - Jartto&#39;s blog</a></li>
+<li><a target="_blank" rel="noopener" href="https://segmentfault.com/a/1190000017939431">Hexo 搭建个人博客 #05 利用 Travis CI 帮你自动部署 - SegmentFault 思否</a></li>
+<li><a target="_blank" rel="noopener" href="https://segmentfault.com/a/1190000009928515">关于 git-submodule 的一些基本操作 - SegmentFault 思否</a></li>
+</ul>
+ 
+    </div></div>
+    </div>
+
+<hr>
+<h1 id="※参考和引用"><a href="#※参考和引用" class="headerlink" title="※参考和引用"></a>※参考和引用</h1><ol>
+<li><a target="_blank" rel="noopener" href="https://zh.wikipedia.org/">维基百科，自由的百科全书</a></li>
+</ol>
+<hr>
+<h1 id="🔗外部链接"><a href="#🔗外部链接" class="headerlink" title="🔗外部链接"></a>🔗外部链接</h1><ul>
+<li><a target="_blank" rel="noopener" href="https://zh.wikipedia.org/w/skins/Vector/resources/skins.vector.styles/images/external-link-ltr-icon.svg?48e54">Wikipedia&#39;s external link ltr-icon</a><span style="display:inline-block !important;vertical-align:top !important;width:12px !important;height:fit-content(100%);padding:0 !important;border:0 !important;margin:0 !important;"><img src="https://zh.wikipedia.org/w/skins/Vector/resources/skins.vector.styles/images/external-link-ltr-icon.svg?48e54" alt="" style="display:inline-block;vertical-align:top !important;width:12px;height:12px;border:0 !important;margin:0 !important;" /></span></li>
+<li>【站点主题背景】<a target="_blank" rel="noopener" href="https://www.pixiv.net/artworks/65691480">#賢者の弟子を名乗る賢者 ペガサス飛行 - 藤原的插画 - pixiv</a><span style="display:inline-block !important;vertical-align:top !important;width:12px !important;height:fit-content(100%);padding:0 !important;border:0 !important;margin:0 !important;"><img src="https://zh.wikipedia.org/w/skins/Vector/resources/skins.vector.styles/images/external-link-ltr-icon.svg?48e54" alt="" style="display:inline-block;vertical-align:top !important;width:12px;height:12px;border:0 !important;margin:0 !important;" /></span></li>
+<li>【站点文章区域背景】<a target="_blank" rel="noopener" href="https://www.pixiv.net/artworks/74986080">#碧蓝航线 大凤 - Calder_洸的插画 - pixiv</a><span style="display:inline-block !important;vertical-align:top !important;width:12px !important;height:fit-content(100%);padding:0 !important;border:0 !important;margin:0 !important;"><img src="https://zh.wikipedia.org/w/skins/Vector/resources/skins.vector.styles/images/external-link-ltr-icon.svg?48e54" alt="" style="display:inline-block;vertical-align:top !important;width:12px;height:12px;border:0 !important;margin:0 !important;" /></span></li>
+<li>【站点文章区域背景】<a target="_blank" rel="noopener" href="https://www.pixiv.net/artworks/85195303">#オリジナル 🎃 - 花ヶ田 / hanagata的插画 - pixiv</a><span style="display:inline-block !important;vertical-align:top !important;width:12px !important;height:fit-content(100%);padding:0 !important;border:0 !important;margin:0 !important;"><img src="https://zh.wikipedia.org/w/skins/Vector/resources/skins.vector.styles/images/external-link-ltr-icon.svg?48e54" alt="" style="display:inline-block;vertical-align:top !important;width:12px;height:12px;border:0 !important;margin:0 !important;" /></span></li>
+<li>【站点作者头像区域背景】<a target="_blank" rel="noopener" href="https://www.pixiv.net/artworks/89576342">#崩坏3 20210503 - Asc11的插画 - pixiv</a><span style="display:inline-block !important;vertical-align:top !important;width:12px !important;height:fit-content(100%);padding:0 !important;border:0 !important;margin:0 !important;"><img src="https://zh.wikipedia.org/w/skins/Vector/resources/skins.vector.styles/images/external-link-ltr-icon.svg?48e54" alt="" style="display:inline-block;vertical-align:top !important;width:12px;height:12px;border:0 !important;margin:0 !important;" /></span></li>
+</ul>
+
+            </div>
+            
+                <div class="kratos-copyright text-center clearfix">
+                    <h5>本作品采用 <a rel="license nofollow" target="_blank" href="https://creativecommons.org/licenses/by-sa/4.0/">知识共享署名-相同方式共享 4.0 国际许可协议</a> 进行许可</h5>
+                </div>
+            
+            <footer class="kratos-entry-footer clearfix">
+                
+                    <div class="post-like-donate text-center clearfix" id="post-like-donate">
+                    
+                    
+                        <a class="share" href="javascript:;"><i class="fa fa-share-alt"></i> 分享</a>
+                        <div class="share-wrap" style="display: none;">
+    <div class="share-group">
+        <a href="javascript:;" class="share-plain qq" onclick="share('qq');" rel="nofollow">
+            <div class="icon-wrap">
+                <i class="fa fa-qq"></i>
+            </div>
+        </a>
+        <a href="javascript:;" class="share-plain qzone" onclick="share('qzone');" rel="nofollow">
+            <div class="icon-wrap">
+                <i class="fa fa-star"></i>
+            </div>
+        </a>
+        <a href="javascript:;" class="share-plain weixin pop style-plain" rel="nofollow">
+            <div class="icon-wrap">
+                <i class="fa fa-weixin"></i>
+            </div>
+            <div class="share-int">
+                <div class="qrcode" id="wechat-qr"></div>
+                <p>打开微信“扫一扫”，打开网页后点击屏幕右上角分享按钮</p>
+            </div>
+        </a>
+        <a href="javascript:;" class="share-plain weibo" onclick="share('weibo');" rel="nofollow">
+            <div class="icon-wrap">
+                <i class="fa fa-weibo"></i>
+            </div>
+        </a>
+        <a href="javascript:;" class="share-plain facebook style-plain" onclick="share('facebook');" rel="nofollow">
+            <div class="icon-wrap">
+                <i class="fa fa-facebook"></i>
+            </div>
+        </a>
+        <a href="javascript:;" class="share-plain twitter style-plain" onclick="share('twitter');" rel="nofollow">
+            <div class="icon-wrap">
+                <i class="fa fa-twitter"></i>
+            </div>
+        </a>
+    </div>
+    <script type="text/javascript">
+        $(()=>{
+            new QRCode("wechat-qr", {
+                text: "https://suitelhy.github.io/zh/post/%E6%9C%AC%E7%AB%99%E7%9A%84%E6%90%AD%E5%BB%BA%E8%AE%B0%E5%BD%95/",
+                width: 150,
+                height: 150,
+                correctLevel : QRCode.CorrectLevel.H
+            });
+        });
+        function share(dest) {
+            const qqBase        = "https://connect.qq.com/widget/shareqq/index.html?";
+            const weiboBase     = "https://service.weibo.com/share/share.php?";
+            const qzoneBase     = "https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?";
+            const facebookBase  = "https://www.facebook.com/sharer/sharer.php?";
+            const twitterBase   = "https://twitter.com/intent/tweet?";
+            const hostUrl       = "https://suitelhy.github.io/zh/post/%E6%9C%AC%E7%AB%99%E7%9A%84%E6%90%AD%E5%BB%BA%E8%AE%B0%E5%BD%95/";
+            const title         = "「本站的搭建记录」";
+            const excerpt       = `本站从零开始的填坑搭建记录。`;
+            let _URL;
+            switch (dest) {
+                case "qq"       : _URL = qqBase+"url="+hostUrl+"&title="+title+"&desc=&summary="+excerpt+"&site=cxpy";     break;
+                case "weibo"    : _URL = weiboBase+"url="+hostUrl+"&title="+title+excerpt;                                 break;
+                case "qzone"    : _URL = qzoneBase+"url="+hostUrl+"&title="+title+"&desc=&summary="+excerpt+"&site=cxpy";  break;
+                case "facebook" : _URL = facebookBase+"u="+hostUrl;                                                        break;
+                case "twitter"  : _URL = twitterBase+"text="+title+excerpt+"&url="+hostUrl;                                break;
+            }
+            window.open(_URL);
+        };
+    </script>
+</div>
+                    
+                    </div>
+                
+                <div class="footer-tag clearfix">
+                    <div class="pull-left">
+                    <i class="fa fa-tags"></i>
+                        <a class="tag-none-link" href="/tags/Git/" rel="tag">Git</a>, <a class="tag-none-link" href="/tags/Github/" rel="tag">Github</a>, <a class="tag-none-link" href="/tags/Hexo/" rel="tag">Hexo</a>, <a class="tag-none-link" href="/tags/Information-Technology/" rel="tag">信息技术</a>, <a class="tag-none-link" href="/tags/%E5%BC%80%E5%8F%91%E6%97%A5%E5%BF%97/" rel="tag">开发日志</a>, <a class="tag-none-link" href="/tags/Site-Record/" rel="tag">站点记录</a>
+                    </div>
+                    <div class="pull-date">
+                    <span>最后编辑：2021-05-14</span>
+                    </div>
+                </div>
+            </footer>
+        </div>
+        
+            <nav class="navigation post-navigation clearfix" role="navigation">
+                
+                
+                <div class="nav-next clearfix">
+                    <a title=" 信息技术" href="/zh/post/信息技术/">下一篇 &gt;</a>
+                </div>
+                
+            </nav>
+        
+        
+    </article>
+</section>
+
+                
+            
+
+<section id="kratos-widget-area" class="col-md-4 hidden-xs hidden-sm">
+    <!-- 文章和页面根据splitter来分割，没有的话就从头开始设置为sticky -->
+    
+    
+                <aside id="krw-about" class="widget widget-kratos-about clearfix">
+    <div class="photo-background"></div>
+    <div class="photo-wrapper clearfix">
+        <div class="photo-wrapper-tip text-center">
+            <img class="about-photo" src="https://avatars.githubusercontent.com/SuiteLHY" />
+        </div>
+    </div>
+    <div class="textwidget">
+        <p class="text-center">青春倚靠着时光，轻快的脚步在世间流韵； 云上光华从指间绽放，地上人们自由而幸福。</p>
+    </div>
+</aside>
+            
+                    <div class="sticky-area">
+                
+                    <aside id="krw-toc" class="widget widget-kratos-toc clearfix">
+    <div class="photo-background"></div>
+    <h4 class="widget-title no-after">
+        <i class="fa fa-compass"></i>
+        文章目录
+        <span class="toc-progress-bar"></span>
+    </h4>
+    <div class="textwidget">
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Hexo"><span class="toc-text">Hexo</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#Hexo%E6%8F%92%E4%BB%B6"><span class="toc-text">Hexo插件</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%AB%99%E7%82%B9%E5%8A%9F%E8%83%BD%E6%8B%93%E5%B1%95"><span class="toc-text">站点功能拓展</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%96%87%E7%AB%A0%E4%B9%A6%E5%86%99%E5%8A%9F%E8%83%BD%E6%8B%93%E5%B1%95"><span class="toc-text">文章书写功能拓展</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Travis-CI"><span class="toc-text">Travis CI</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%A7%81%E6%9C%89Git%E5%AD%90%E6%A8%A1%E5%9D%97%E7%9A%84API-Token"><span class="toc-text">私有Git子模块的API-Token</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Travis-CI%E5%B9%B3%E5%8F%B0%E6%97%A5%E5%BF%97"><span class="toc-text">Travis CI平台日志</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E8%AE%B0%E5%BD%95"><span class="toc-text">记录</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%AB%99%E7%82%B9%E4%B8%BB%E9%A2%98%E7%9A%84%E7%9B%B8%E5%85%B3%E8%AE%B0%E5%BD%95"><span class="toc-text">站点主题的相关记录</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%F0%9F%93%96%E5%8F%82%E7%9C%8B"><span class="toc-text">📖参看</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E2%80%BB%E5%8F%82%E8%80%83%E5%92%8C%E5%BC%95%E7%94%A8"><span class="toc-text">※参考和引用</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%F0%9F%94%97%E5%A4%96%E9%83%A8%E9%93%BE%E6%8E%A5"><span class="toc-text">🔗外部链接</span></a></li></ol>
+    </div>
+</aside>
+                
+                
+  <aside id="krw-categories" class="widget widget-kratos-categories clearfix">
+    <h4 class="widget-title"><i class="fa fa-folder"></i>分类目录</h4>
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/HelloWorld/">HelloWorld🐣</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/InformationTechnology/">信息技术</a><span class="category-list-count">11</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/InformationTechnology/Handbook/">手册</a><span class="category-list-count">4</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Other/">其他🗒</a><span class="category-list-count">7</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Blog/">博客</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Handbook/">手册</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/DailyRecord/">日常记录</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Life/">生命</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Knowledge/">知识</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Society/">社会</a><span class="category-list-count">27</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Society/InformationTechnology/">信息技术</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Society/ComputerScience/">计算机科学</a><span class="category-list-count">1</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Society/ComputerScience/InformationTechnology/">信息技术</a><span class="category-list-count">1</span></li></ul></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/SiteRecord/">站点记录</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/ComputerEngineering/">计算机工程</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/ComputerScience/">计算机科学</a><span class="category-list-count">25</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/ComputerScience/InformationTechnology/">信息技术</a><span class="category-list-count">12</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/ComputerScience/Handbook/">手册</a><span class="category-list-count">2</span></li></ul></li></ul>
+  </aside>
+
+
+            
+                
+  <aside id="krw-tags" class="widget widget-kratos-tags clearfix">
+    <h4 class="widget-title"><i class="fa fa-tags"></i>标签聚合</h4>
+      <div class="tag-clouds">
+        <a href="/tags/Git/" style="font-size: 0.76em;">Git</a> <a href="/tags/Github/" style="font-size: 0.72em;">Github</a> <a href="/tags/HelloWorld/" style="font-size: 0.68em;">HelloWorld🐣</a> <a href="/tags/Hexo/" style="font-size: 0.6em;">Hexo</a> <a href="/tags/Java/" style="font-size: 0.76em;">Java</a> <a href="/tags/Object-Relational-Mapping/" style="font-size: 0.6em;">ORM</a> <a href="/tags/Apache-Tomcat/" style="font-size: 0.6em;">Tomcat</a> <a href="/tags/%E3%80%8AThinking-in-Java%E3%80%8B/" style="font-size: 0.64em;">《Thinking in Java》</a> <a href="/tags/Spring-Framework/" style="font-size: 0.6em;">【Java】Spring Framework</a> <a href="/tags/bcrypt/" style="font-size: 0.6em;">【密码散列函数】bcrypt</a> <a href="/tags/Internet/" style="font-size: 0.72em;">互联网</a> <a href="/tags/Ethics/" style="font-size: 0.6em;">伦理</a> <a href="/tags/Tutorial/" style="font-size: 0.64em;">使用手册</a> <a href="/tags/Information-Technology/" style="font-size: 0.8em;">信息技术</a> <a href="/tags/Kernel-operating-system/" style="font-size: 0.6em;">内核（操作系统）</a> <a href="/tags/Functional-requirement/" style="font-size: 0.68em;">功能需求</a> <a href="/tags/Blog/" style="font-size: 0.68em;">博客</a> <a href="/tags/Country/" style="font-size: 0.72em;">国家</a>
+      </div>
+  </aside>
+
+            
+                
+  <aside id="krw-posts" class="widget widget-kratos-posts">
+  <h4 class="widget-title"><i class="fa fa-file"></i>最新文章</h4>
+  <div class="tab-content">
+      <ul class="list-group">
+        
+        
+          
+          
+            <a class="list-group-item" href="/zh/post/%E8%BD%AF%E4%BB%B6%E6%9E%B6%E6%9E%84-Software-architecture/"><i class="fa  fa-book"></i> 软件架构(Software architecture)</a>
+            
+          
+        
+          
+          
+            <a class="list-group-item" href="/zh/post/%E8%BD%AF%E4%BB%B6-Software/"><i class="fa  fa-book"></i> 软件(Software)</a>
+            
+          
+        
+          
+          
+            <a class="list-group-item" href="/zh/post/%E4%B8%AA%E4%BA%BA%E7%AE%80%E5%8E%86-%E4%B8%AA%E4%BA%BA%E4%BF%A1%E6%81%AF-%E8%81%94%E7%B3%BB%E6%96%B9%E5%BC%8F/"><i class="fa  fa-book"></i> 个人简历-个人信息-联系方式</a>
+            
+          
+        
+          
+          
+            <a class="list-group-item" href="/zh/post/%E5%AF%B9%E8%B1%A1%E5%85%B3%E7%B3%BB%E6%98%A0%E5%B0%84-Object-Relational-Mapping/"><i class="fa  fa-book"></i> 对象关系映射(Object Relational Mapping)</a>
+            
+          
+        
+          
+          
+            <a class="list-group-item" href="/zh/post/%E4%B8%AA%E4%BA%BA%E7%AE%80%E5%8E%86-%E8%81%8C%E4%B8%9A-%E4%B8%93%E4%B8%9A%E6%8A%80%E8%83%BD%E6%A0%91/"><i class="fa  fa-book"></i> 个人简历-职业-专业技能树</a>
+            
+          
+        
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+      </ul>
+  </div>
+  </aside>
+
+            
+    </div>
+</section>
+        
+        </div>
+    </div>
+</div>
+<footer>
+    <div id="footer"  class="ap-lrc"  >
+        <div class="kr-tool text-center">
+            <div class="tool">
+                
+                    <div class="box search-box">
+                        <a href="/search/">
+                            <span class="fa fa-search"></span>
+                        </a>
+                    </div>
+                
+                
+                    <div class="box theme-box" id="darkmode-switch">
+                        <span class="fa fa-adjust"></span>
+                    </div>
+                
+                
+            </div>
+            <div class="box gotop-box">
+                <span class="fa fa-chevron-up"></span>
+            </div>
+        </div>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6 col-md-offset-3 footer-list text-center">
+                    <ul class="kratos-social-icons">
+                        
+                        
+                        <li><a target="_blank" rel="nofollow" href="https://t.me/SuiteLHY"><i class="fa fa-telegram"></i></a></li>
+                        
+                        
+                        
+                        
+                        <li><a target="_blank" rel="nofollow" href="https://github.com/SuiteLHY"><i class="fa fa-github"></i></a></li>
+                        
+                    </ul>
+                    <ul class="kratos-copyright">
+                        <div>
+                            <li>&copy; 2021 夜与花海 版权所有.</li>
+                            <li>本站已运行<span id="span_dt">Loading...</span></li>
+                        </div>
+                        <div>
+                            <li>Theme <a href="https://github.com/Candinya/Kratos-Rebirth" target="_blank">Kratos:Rebirth</a></li>
+                            <li>Site built with&nbsp;<i class="fa fa-heart throb" style="color:#d43f57"></i>&nbsp;by Suite.</li>
+                        </div>
+                        <div>
+                            <li>Powered by <a href="https://hexo.io" target="_blank" rel="nofollow">Hexo</a></li>
+                            <li>Hosted on <a href="https://github.io" target="_blank">Github Pages</a></li>
+                        </div>
+                        <div>
+                            
+                            
+                        </div>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+</div>
+</div>
+
+        <script defer src="https://cdn.jsdelivr.net/npm/bootstrap@3.3.4/dist/js/bootstrap.min.js"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.js"></script>
+<script>const notMobile = (!(navigator.userAgent.match(/(phone|pad|pod|iPhone|iPod|ios|iPad|Android|Mobile|BlackBerry|IEMobile|MQQBrowser|JUC|Fennec|wOSBrowser|BrowserNG|WebOS|Symbian|Windows Phone)/i)));</script>
+
+    <div>
+        <canvas id="snow"></canvas>
+        <script async type="text/javascript" src="/js/snow.min.js"></script>
+    </div>
+
+<script async src="/js/candy.min.js"></script>
+
+    <script defer src="https://cdn.jsdelivr.net/npm/aplayer@1.10.1/dist/APlayer.min.js"></script>
+    
+    <script defer src="https://cdn.jsdelivr.net/npm/meting@2/dist/Meting.min.js"></script>
+    <meting-js
+        server="netease"
+        type="playlist"
+        id="900328786"
+        order="random"
+        fixed="true"
+    >
+    </meting-js>
+
+
+
+    <script defer src="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script>
+
+<script defer src="https://cdn.jsdelivr.net/npm/clipboard@2.0.6/dist/clipboard.min.js"></script>
+<script defer src="/js/kratosr.min.js"></script>
+<script defer src="/js/pjax.min.js"></script>
+
+
+    <script defer src="/js/kr-dark.min.js"></script>
+
+
+
+<!-- Extra support for third-party plguins  -->
+
+
+    </body>
+</html>
