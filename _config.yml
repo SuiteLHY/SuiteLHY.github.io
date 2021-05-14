@@ -9,15 +9,16 @@ subtitle: '我写下的——是世界'
 description: '青春倚靠着时光，轻快的脚步在世间流韵； 云上光华从指间绽放，地上人们自由而幸福。'
 keywords: hexo,blog,Suite,SuiteLHY,夜与花海
 author: Suite
-language: en
+language: zh
 timezone: ''
 
 # URL
 ## Set your site url here. For example, if you use GitHub Page, set url as 'https://username.github.io/project'
 ## Docs: https://hexo.io/zh-cn/docs/configuration.html#%E7%BD%91%E5%9D%80
 url: https://suitelhy.github.io/
-permalink: :year/:month/:day/:title/
+permalink: :lang/:layout/:title/
 permalink_defaults:
+  lang: zh
 pretty_urls:
   trailing_index: true # Set to false to remove trailing 'index.html' from permalinks
   trailing_html: true # Set to false to remove trailing '.html' from permalinks
