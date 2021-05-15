@@ -119,6 +119,7 @@ tag_map:
   HelloWorld🐣: HelloWorld
   IT: Information_Technology
   ORM: Object_Relational_Mapping
+  编程语言: Programming_language
   博客: Blog
   程序员: Programmer
   操作系统: Operating_system
@@ -131,9 +132,12 @@ tag_map:
   广告: Advertising
   国家: Country
   功能需求: Functional_requirement
+  雇佣: Employment
   互联网: Internet
+  脚本语言: Scripting_language
   计算机工程: Computer_Engineering
   计算机科学: Computer_Science
+  计算机语言: Computer_language
   伦理: Ethics
   伦理学: Ethics
   理论手册: Theory_Handbook
@@ -143,7 +147,9 @@ tag_map:
   密码散列函数: Cryptographic_hash_function
   内核（操作系统）: Kernel_(operating_system)
   日常记录: Daily_Record
+  软件: Software
   软件工程师: Software_Engineer
+  软件架构: Software_architecture
   软件框架: Software_framework
   手册: Handbook
   算法效率: Algorithmic_efficiency
@@ -159,6 +165,7 @@ tag_map:
   图像文件格式: Image_File_Format
   图片文件格式: Image_File_Format
   图形文件格式: Image_File_Format
+  外包: Outsourcing
   文化: Culture
   网络社区: Online_Community
   互联网社区: Online_Community
