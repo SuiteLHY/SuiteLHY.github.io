@@ -114,11 +114,16 @@ category_map:
   站点记录: SiteRecord
   知识: Knowledge
 tag_map:
-  Apache Tomcat: Apache-Tomcat
-  Tomcat: Apache-Tomcat
+  Apache Tomcat: Apache_Tomcat
+  Apache ZooKeeper: Apache_ZooKeeper
+  Elasticsearch: Elasticsearch
   HelloWorld🐣: HelloWorld
   IT: Information_Technology
   ORM: Object_Relational_Mapping
+  Tomcat: Apache-Tomcat
+  Wiki: wiki
+  wiki: wiki
+  ZooKeeper: Apache_ZooKeeper
   编程语言: Programming_language
   博客: Blog
   程序员: Programmer
