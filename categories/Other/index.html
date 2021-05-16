@@ -180,6 +180,11 @@
                             
                                 <!-- 当前仅支持valine/waline自带的统计功能 -->
                                 
+                                    <a id="/zh/post/%E4%B8%AA%E4%BA%BA%E7%AE%80%E5%8E%86-%E4%B8%AA%E4%BA%BA%E4%BF%A1%E6%81%AF-%E8%81%94%E7%B3%BB%E6%96%B9%E5%BC%8F/" class="leancloud_visitors" data-flag-title="个人简历-个人信息-联系方式">
+                                        <i class="fa fa-eye"></i>
+                                        <span class="leancloud-visitors-count"> </span> 次阅读
+                                    </a>
+                                
                             
                             
                                 <!-- 当前仅支持waline自带的统计功能 -->
@@ -235,6 +240,11 @@
                             
                                 <!-- 当前仅支持valine/waline自带的统计功能 -->
                                 
+                                    <a id="/zh/post/%E4%B8%AA%E4%BA%BA%E7%AE%80%E5%8E%86-%E8%81%8C%E4%B8%9A-%E4%B8%93%E4%B8%9A%E6%8A%80%E8%83%BD%E6%A0%91/" class="leancloud_visitors" data-flag-title="个人简历-职业-专业技能树">
+                                        <i class="fa fa-eye"></i>
+                                        <span class="leancloud-visitors-count"> </span> 次阅读
+                                    </a>
+                                
                             
                             
                                 <!-- 当前仅支持waline自带的统计功能 -->
@@ -289,6 +299,11 @@
                             </a>
                             
                                 <!-- 当前仅支持valine/waline自带的统计功能 -->
+                                
+                                    <a id="/zh/post/%E3%80%90%E7%A8%8B%E5%BA%8F%E5%91%98%E3%80%91%E7%A8%8B%E5%BA%8F%E5%91%98%E6%8A%80%E8%83%BD%E5%9B%BE%E8%B0%B1/" class="leancloud_visitors" data-flag-title="【程序员】程序员技能图谱">
+                                        <i class="fa fa-eye"></i>
+                                        <span class="leancloud-visitors-count"> </span> 次阅读
+                                    </a>
                                 
                             
                             
@@ -346,6 +361,11 @@
                             
                                 <!-- 当前仅支持valine/waline自带的统计功能 -->
                                 
+                                    <a id="/zh/post/%E8%BD%AF%E4%BB%B6%E5%B7%A5%E7%A8%8B%E5%B8%88-Software-engineer/" class="leancloud_visitors" data-flag-title="软件工程师(Software engineer)">
+                                        <i class="fa fa-eye"></i>
+                                        <span class="leancloud-visitors-count"> </span> 次阅读
+                                    </a>
+                                
                             
                             
                                 <!-- 当前仅支持waline自带的统计功能 -->
@@ -400,6 +420,11 @@
                             </a>
                             
                                 <!-- 当前仅支持valine/waline自带的统计功能 -->
+                                
+                                    <a id="/zh/post/%E7%A8%8B%E5%BA%8F%E5%91%98-Programmer/" class="leancloud_visitors" data-flag-title="程序员(Programmer)">
+                                        <i class="fa fa-eye"></i>
+                                        <span class="leancloud-visitors-count"> </span> 次阅读
+                                    </a>
                                 
                             
                             
@@ -456,6 +481,11 @@
                             
                                 <!-- 当前仅支持valine/waline自带的统计功能 -->
                                 
+                                    <a id="/zh/post/%E3%80%8AThe-Star-Spangled-Banner%E3%80%8B/" class="leancloud_visitors" data-flag-title="《The Star-Spangled Banner》">
+                                        <i class="fa fa-eye"></i>
+                                        <span class="leancloud-visitors-count"> </span> 次阅读
+                                    </a>
+                                
                             
                             
                                 <!-- 当前仅支持waline自带的统计功能 -->
@@ -507,6 +537,11 @@
                             
                                 <!-- 当前仅支持valine/waline自带的统计功能 -->
                                 
+                                    <a id="/zh/post/%E5%85%B6%E4%BB%96-%E6%9A%82%E6%9C%AA%E5%88%86%E7%B1%BB/" class="leancloud_visitors" data-flag-title="其他🗒">
+                                        <i class="fa fa-eye"></i>
+                                        <span class="leancloud-visitors-count"> </span> 次阅读
+                                    </a>
+                                
                             
                             
                                 <!-- 当前仅支持waline自带的统计功能 -->
@@ -528,6 +563,30 @@
 
     <div class="hidden">
         <!-- 加载文章阅读对应的统计功能，评论自带的那种 -->
+        
+            <div id="v-comments" class="post-comments"></div>
+<script>
+    var load_comm = () => {
+        const init = () => {
+            new Valine({
+                el: '#v-comments',
+                appId: '0R1Qrkfq3Hl2WSuluSWjwYt3-gzGzoHsz',
+                appKey: 'PvUtUxjAQYl2GWAS6m5qYyXh',
+                visitor: true,
+                enableQQ: false,
+                path: '/categories/Other/index.html'
+            });
+        }
+        if (typeof Valine == 'undefined') {
+            const src = 'https://cdn.jsdelivr.net/npm/valine@1.4.14/dist/Valine.min.js';
+            $.getScript(src, init);
+        } else {
+            init();
+        }
+    };
+</script>
+<noscript>Please enable JavaScript to view the <a target="_blank" rel="noopener" href="https://valine.js.org/">comments powered by Valine.</a></noscript>
+
         
     </div>
 

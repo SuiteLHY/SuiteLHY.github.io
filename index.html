@@ -188,6 +188,11 @@
                             
                                 <!-- 当前仅支持valine/waline自带的统计功能 -->
                                 
+                                    <a id="/zh/post/%E6%AC%A2%E8%BF%8E%E6%9D%A5%E5%88%B0%E3%80%90%E5%A4%9C%E4%B8%8E%E8%8A%B1%E6%B5%B7%E3%80%91%EF%BC%81/" class="leancloud_visitors" data-flag-title="欢迎来到【夜与花海】！">
+                                        <i class="fa fa-eye"></i>
+                                        <span class="leancloud-visitors-count"> </span> 次阅读
+                                    </a>
+                                
                             
                             
                                 <!-- 当前仅支持waline自带的统计功能 -->
@@ -222,6 +227,30 @@
 
     <div class="hidden">
         <!-- 加载文章阅读对应的统计功能，评论自带的那种 -->
+        
+            <div id="v-comments" class="post-comments"></div>
+<script>
+    var load_comm = () => {
+        const init = () => {
+            new Valine({
+                el: '#v-comments',
+                appId: '0R1Qrkfq3Hl2WSuluSWjwYt3-gzGzoHsz',
+                appKey: 'PvUtUxjAQYl2GWAS6m5qYyXh',
+                visitor: true,
+                enableQQ: false,
+                path: '/index.html'
+            });
+        }
+        if (typeof Valine == 'undefined') {
+            const src = 'https://cdn.jsdelivr.net/npm/valine@1.4.14/dist/Valine.min.js';
+            $.getScript(src, init);
+        } else {
+            init();
+        }
+    };
+</script>
+<noscript>Please enable JavaScript to view the <a target="_blank" rel="noopener" href="https://valine.js.org/">comments powered by Valine.</a></noscript>
+
         
     </div>
 

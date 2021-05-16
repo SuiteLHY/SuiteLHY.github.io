@@ -180,6 +180,11 @@ Java&thinsp;是一种广泛使用的计算机编程语言，拥有&thinsp;跨平
                             
                                 <!-- 当前仅支持valine/waline自带的统计功能 -->
                                 
+                                    <a id="/zh/post/Java/" class="leancloud_visitors" data-flag-title="Java">
+                                        <i class="fa fa-eye"></i>
+                                        <span class="leancloud-visitors-count"> </span> 次阅读
+                                    </a>
+                                
                             
                             
                                 <!-- 当前仅支持waline自带的统计功能 -->
@@ -234,6 +239,11 @@ Java&thinsp;是一种广泛使用的计算机编程语言，拥有&thinsp;跨平
                             </a>
                             
                                 <!-- 当前仅支持valine/waline自带的统计功能 -->
+                                
+                                    <a id="/zh/post/Git%E7%90%86%E8%AE%BA%E6%89%8B%E5%86%8C/" class="leancloud_visitors" data-flag-title="Git理论手册">
+                                        <i class="fa fa-eye"></i>
+                                        <span class="leancloud-visitors-count"> </span> 次阅读
+                                    </a>
                                 
                             
                             
@@ -290,6 +300,11 @@ Git is a free and open source distributed version control system designed to han
                             
                                 <!-- 当前仅支持valine/waline自带的统计功能 -->
                                 
+                                    <a id="/zh/post/Git/" class="leancloud_visitors" data-flag-title="Git">
+                                        <i class="fa fa-eye"></i>
+                                        <span class="leancloud-visitors-count"> </span> 次阅读
+                                    </a>
+                                
                             
                             
                                 <!-- 当前仅支持waline自带的统计功能 -->
@@ -345,6 +360,11 @@ Git is a free and open source distributed version control system designed to han
                             
                                 <!-- 当前仅支持valine/waline自带的统计功能 -->
                                 
+                                    <a id="/zh/post/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%A7%91%E5%AD%A6/" class="leancloud_visitors" data-flag-title="计算机科学">
+                                        <i class="fa fa-eye"></i>
+                                        <span class="leancloud-visitors-count"> </span> 次阅读
+                                    </a>
+                                
                             
                             
                                 <!-- 当前仅支持waline自带的统计功能 -->
@@ -370,6 +390,30 @@ Git is a free and open source distributed version control system designed to han
 
     <div class="hidden">
         <!-- 加载文章阅读对应的统计功能，评论自带的那种 -->
+        
+            <div id="v-comments" class="post-comments"></div>
+<script>
+    var load_comm = () => {
+        const init = () => {
+            new Valine({
+                el: '#v-comments',
+                appId: '0R1Qrkfq3Hl2WSuluSWjwYt3-gzGzoHsz',
+                appKey: 'PvUtUxjAQYl2GWAS6m5qYyXh',
+                visitor: true,
+                enableQQ: false,
+                path: '/categories/ComputerScience/page/4/index.html'
+            });
+        }
+        if (typeof Valine == 'undefined') {
+            const src = 'https://cdn.jsdelivr.net/npm/valine@1.4.14/dist/Valine.min.js';
+            $.getScript(src, init);
+        } else {
+            init();
+        }
+    };
+</script>
+<noscript>Please enable JavaScript to view the <a target="_blank" rel="noopener" href="https://valine.js.org/">comments powered by Valine.</a></noscript>
+
         
     </div>
 

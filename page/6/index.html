@@ -179,6 +179,11 @@
                             
                                 <!-- 当前仅支持valine/waline自带的统计功能 -->
                                 
+                                    <a id="/zh/post/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%EF%BC%88%E5%8F%AF%E5%A4%8D%E7%94%A8%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E8%BD%AF%E4%BB%B6%E7%9A%84%E5%9F%BA%E7%A1%80%EF%BC%89/" class="leancloud_visitors" data-flag-title="设计模式（可复用面向对象软件的基础）">
+                                        <i class="fa fa-eye"></i>
+                                        <span class="leancloud-visitors-count"> </span> 次阅读
+                                    </a>
+                                
                             
                             
                                 <!-- 当前仅支持waline自带的统计功能 -->
@@ -241,6 +246,11 @@ Spring&thinsp;框架&thinsp;是&thinsp;Java&thinsp;平台的&thinsp;一个开源
                             
                                 <!-- 当前仅支持valine/waline自带的统计功能 -->
                                 
+                                    <a id="/zh/post/%E3%80%90Java%E3%80%91Spring-Framework/" class="leancloud_visitors" data-flag-title="【Java】Spring Framework">
+                                        <i class="fa fa-eye"></i>
+                                        <span class="leancloud-visitors-count"> </span> 次阅读
+                                    </a>
+                                
                             
                             
                                 <!-- 当前仅支持waline自带的统计功能 -->
@@ -296,6 +306,11 @@ Tomcat&thinsp;是由&thinsp;Apache&thinsp;软件基金会属下&thinsp;Jakarta&t
                             
                                 <!-- 当前仅支持valine/waline自带的统计功能 -->
                                 
+                                    <a id="/zh/post/Apache-Tomcat/" class="leancloud_visitors" data-flag-title="Apache Tomcat">
+                                        <i class="fa fa-eye"></i>
+                                        <span class="leancloud-visitors-count"> </span> 次阅读
+                                    </a>
+                                
                             
                             
                                 <!-- 当前仅支持waline自带的统计功能 -->
@@ -321,6 +336,30 @@ Tomcat&thinsp;是由&thinsp;Apache&thinsp;软件基金会属下&thinsp;Jakarta&t
 
     <div class="hidden">
         <!-- 加载文章阅读对应的统计功能，评论自带的那种 -->
+        
+            <div id="v-comments" class="post-comments"></div>
+<script>
+    var load_comm = () => {
+        const init = () => {
+            new Valine({
+                el: '#v-comments',
+                appId: '0R1Qrkfq3Hl2WSuluSWjwYt3-gzGzoHsz',
+                appKey: 'PvUtUxjAQYl2GWAS6m5qYyXh',
+                visitor: true,
+                enableQQ: false,
+                path: '/page/6/index.html'
+            });
+        }
+        if (typeof Valine == 'undefined') {
+            const src = 'https://cdn.jsdelivr.net/npm/valine@1.4.14/dist/Valine.min.js';
+            $.getScript(src, init);
+        } else {
+            init();
+        }
+    };
+</script>
+<noscript>Please enable JavaScript to view the <a target="_blank" rel="noopener" href="https://valine.js.org/">comments powered by Valine.</a></noscript>
+
         
     </div>
 

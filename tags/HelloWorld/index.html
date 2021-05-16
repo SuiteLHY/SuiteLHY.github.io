@@ -179,6 +179,11 @@
                             
                                 <!-- 当前仅支持valine/waline自带的统计功能 -->
                                 
+                                    <a id="/en/post/%E3%80%90Linux%E7%AC%AC%E4%B8%80%E4%BD%9C%E8%80%85%E3%80%91Linus-Torvalds/" class="leancloud_visitors" data-flag-title="【Linux第一作者】Linus Torvalds">
+                                        <i class="fa fa-eye"></i>
+                                        <span class="leancloud-visitors-count"> </span> 次阅读
+                                    </a>
+                                
                             
                             
                                 <!-- 当前仅支持waline自带的统计功能 -->
@@ -234,6 +239,11 @@
                             
                                 <!-- 当前仅支持valine/waline自带的统计功能 -->
                                 
+                                    <a id="/zh/post/HelloWorld/" class="leancloud_visitors" data-flag-title="Hello, World🐣">
+                                        <i class="fa fa-eye"></i>
+                                        <span class="leancloud-visitors-count"> </span> 次阅读
+                                    </a>
+                                
                             
                             
                                 <!-- 当前仅支持waline自带的统计功能 -->
@@ -255,6 +265,30 @@
 
     <div class="hidden">
         <!-- 加载文章阅读对应的统计功能，评论自带的那种 -->
+        
+            <div id="v-comments" class="post-comments"></div>
+<script>
+    var load_comm = () => {
+        const init = () => {
+            new Valine({
+                el: '#v-comments',
+                appId: '0R1Qrkfq3Hl2WSuluSWjwYt3-gzGzoHsz',
+                appKey: 'PvUtUxjAQYl2GWAS6m5qYyXh',
+                visitor: true,
+                enableQQ: false,
+                path: '/tags/HelloWorld/index.html'
+            });
+        }
+        if (typeof Valine == 'undefined') {
+            const src = 'https://cdn.jsdelivr.net/npm/valine@1.4.14/dist/Valine.min.js';
+            $.getScript(src, init);
+        } else {
+            init();
+        }
+    };
+</script>
+<noscript>Please enable JavaScript to view the <a target="_blank" rel="noopener" href="https://valine.js.org/">comments powered by Valine.</a></noscript>
+
         
     </div>
 

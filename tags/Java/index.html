@@ -179,6 +179,11 @@
                             
                                 <!-- 当前仅支持valine/waline自带的统计功能 -->
                                 
+                                    <a id="/zh/post/%E3%80%90%E5%BC%80%E6%BA%90%E9%A1%B9%E7%9B%AE%E3%80%91%E3%80%90%E4%B8%AA%E4%BA%BA%E3%80%91%E5%8F%AE%E5%8F%AE/" class="leancloud_visitors" data-flag-title="【开源项目】【个人】叮叮">
+                                        <i class="fa fa-eye"></i>
+                                        <span class="leancloud-visitors-count"> </span> 次阅读
+                                    </a>
+                                
                             
                             
                                 <!-- 当前仅支持waline自带的统计功能 -->
@@ -234,6 +239,11 @@ Spring&thinsp;框架&thinsp;是&thinsp;Java&thinsp;平台的&thinsp;一个开源
                             
                                 <!-- 当前仅支持valine/waline自带的统计功能 -->
                                 
+                                    <a id="/zh/post/%E3%80%90Java%E3%80%91Spring-Framework/" class="leancloud_visitors" data-flag-title="【Java】Spring Framework">
+                                        <i class="fa fa-eye"></i>
+                                        <span class="leancloud-visitors-count"> </span> 次阅读
+                                    </a>
+                                
                             
                             
                                 <!-- 当前仅支持waline自带的统计功能 -->
@@ -288,6 +298,11 @@ Thinking in Java (ISBN 978-0131872486) is a book about the Java programming lang
                             </a>
                             
                                 <!-- 当前仅支持valine/waline自带的统计功能 -->
+                                
+                                    <a id="/zh/post/%E3%80%8AThinking-in-Java%E3%80%8B/" class="leancloud_visitors" data-flag-title="《Thinking in Java》">
+                                        <i class="fa fa-eye"></i>
+                                        <span class="leancloud-visitors-count"> </span> 次阅读
+                                    </a>
                                 
                             
                             
@@ -345,6 +360,11 @@ Thinking in Java (ISBN 978-0131872486) is a book about the Java programming lang
                             
                                 <!-- 当前仅支持valine/waline自带的统计功能 -->
                                 
+                                    <a id="/zh/post/%E3%80%8AThinking-in-Java%E3%80%8B-4th-Edition/" class="leancloud_visitors" data-flag-title="《Thinking in Java》（第4版） ← 整理手册">
+                                        <i class="fa fa-eye"></i>
+                                        <span class="leancloud-visitors-count"> </span> 次阅读
+                                    </a>
+                                
                             
                             
                                 <!-- 当前仅支持waline自带的统计功能 -->
@@ -399,6 +419,11 @@ Java 是一种广泛使用的计算机编程语言，拥有跨平台、面向�
                             </a>
                             
                                 <!-- 当前仅支持valine/waline自带的统计功能 -->
+                                
+                                    <a id="/zh/post/Java-%E7%90%86%E8%AE%BA%E6%89%8B%E5%86%8C/" class="leancloud_visitors" data-flag-title="Java 理论手册">
+                                        <i class="fa fa-eye"></i>
+                                        <span class="leancloud-visitors-count"> </span> 次阅读
+                                    </a>
                                 
                             
                             
@@ -455,6 +480,11 @@ Java&thinsp;是一种广泛使用的计算机编程语言，拥有&thinsp;跨平
                             
                                 <!-- 当前仅支持valine/waline自带的统计功能 -->
                                 
+                                    <a id="/zh/post/Java/" class="leancloud_visitors" data-flag-title="Java">
+                                        <i class="fa fa-eye"></i>
+                                        <span class="leancloud-visitors-count"> </span> 次阅读
+                                    </a>
+                                
                             
                             
                                 <!-- 当前仅支持waline自带的统计功能 -->
@@ -476,6 +506,30 @@ Java&thinsp;是一种广泛使用的计算机编程语言，拥有&thinsp;跨平
 
     <div class="hidden">
         <!-- 加载文章阅读对应的统计功能，评论自带的那种 -->
+        
+            <div id="v-comments" class="post-comments"></div>
+<script>
+    var load_comm = () => {
+        const init = () => {
+            new Valine({
+                el: '#v-comments',
+                appId: '0R1Qrkfq3Hl2WSuluSWjwYt3-gzGzoHsz',
+                appKey: 'PvUtUxjAQYl2GWAS6m5qYyXh',
+                visitor: true,
+                enableQQ: false,
+                path: '/tags/Java/index.html'
+            });
+        }
+        if (typeof Valine == 'undefined') {
+            const src = 'https://cdn.jsdelivr.net/npm/valine@1.4.14/dist/Valine.min.js';
+            $.getScript(src, init);
+        } else {
+            init();
+        }
+    };
+</script>
+<noscript>Please enable JavaScript to view the <a target="_blank" rel="noopener" href="https://valine.js.org/">comments powered by Valine.</a></noscript>
+
         
     </div>
 

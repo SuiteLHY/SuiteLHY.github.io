@@ -180,6 +180,11 @@ Smallpdf is a Swiss online web-based PDF software, founded in 2013. It offers fr
                             
                                 <!-- 当前仅支持valine/waline自带的统计功能 -->
                                 
+                                    <a id="/en/post/%E3%80%90%E5%9C%A8%E7%BA%BF%E5%B7%A5%E5%85%B7%E7%B1%BB%E7%BD%91%E7%AB%99%E3%80%91Smallpdf-com/" class="leancloud_visitors" data-flag-title="【在线工具类网站】Smallpdf.com">
+                                        <i class="fa fa-eye"></i>
+                                        <span class="leancloud-visitors-count"> </span> 次阅读
+                                    </a>
+                                
                             
                             
                                 <!-- 当前仅支持waline自带的统计功能 -->
@@ -234,6 +239,11 @@ Data conversion is the conversion of computer data from one format to another.
                             </a>
                             
                                 <!-- 当前仅支持valine/waline自带的统计功能 -->
+                                
+                                    <a id="/zh/post/Data-conversion/" class="leancloud_visitors" data-flag-title="文件数据转换(Data conversion)">
+                                        <i class="fa fa-eye"></i>
+                                        <span class="leancloud-visitors-count"> </span> 次阅读
+                                    </a>
                                 
                             
                             
@@ -290,6 +300,11 @@ Data conversion is the conversion of computer data from one format to another.
                             
                                 <!-- 当前仅支持valine/waline自带的统计功能 -->
                                 
+                                    <a id="/zh/post/WebP%E5%AE%9E%E8%B7%B5%E6%89%8B%E5%86%8C/" class="leancloud_visitors" data-flag-title="WebP实践手册">
+                                        <i class="fa fa-eye"></i>
+                                        <span class="leancloud-visitors-count"> </span> 次阅读
+                                    </a>
+                                
                             
                             
                                 <!-- 当前仅支持waline自带的统计功能 -->
@@ -345,6 +360,11 @@ WebP（发音：weppy）是一种同时提供了有损压缩与无损压缩（�
                             
                                 <!-- 当前仅支持valine/waline自带的统计功能 -->
                                 
+                                    <a id="/zh/post/%E3%80%90%E5%9B%BE%E7%89%87%E6%A0%BC%E5%BC%8F%E3%80%91WebP/" class="leancloud_visitors" data-flag-title="【图片格式】WebP">
+                                        <i class="fa fa-eye"></i>
+                                        <span class="leancloud-visitors-count"> </span> 次阅读
+                                    </a>
+                                
                             
                             
                                 <!-- 当前仅支持waline自带的统计功能 -->
@@ -366,6 +386,30 @@ WebP（发音：weppy）是一种同时提供了有损压缩与无损压缩（�
 
     <div class="hidden">
         <!-- 加载文章阅读对应的统计功能，评论自带的那种 -->
+        
+            <div id="v-comments" class="post-comments"></div>
+<script>
+    var load_comm = () => {
+        const init = () => {
+            new Valine({
+                el: '#v-comments',
+                appId: '0R1Qrkfq3Hl2WSuluSWjwYt3-gzGzoHsz',
+                appKey: 'PvUtUxjAQYl2GWAS6m5qYyXh',
+                visitor: true,
+                enableQQ: false,
+                path: '/tags/Data-conversion/index.html'
+            });
+        }
+        if (typeof Valine == 'undefined') {
+            const src = 'https://cdn.jsdelivr.net/npm/valine@1.4.14/dist/Valine.min.js';
+            $.getScript(src, init);
+        } else {
+            init();
+        }
+    };
+</script>
+<noscript>Please enable JavaScript to view the <a target="_blank" rel="noopener" href="https://valine.js.org/">comments powered by Valine.</a></noscript>
+
         
     </div>
 
