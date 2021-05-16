@@ -1,0 +1,1449 @@
+<!DOCTYPE html>
+<html lang="zh">
+    <head>
+  <!-- 元数据 -->
+  <meta charset="utf-8">
+  <link rel="icon" href="https://avatars.githubusercontent.com/SuiteLHY">
+  <title>软件设计模式(Software design pattern) | 夜与花海</title>
+  <meta name="author" content="Suite" />
+  <meta http-equiv="Cache-Control" content="no-transform" />
+  <meta http-equiv="Cache-Control" content="no-siteapp" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="robots" content="index,follow" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+  <meta name="format-detection" content="telphone=no, email=no" />
+  
+    <meta name="keywords" content="信息技术, 计算机科学, 软件, 软件设计模式" />
+  
+  <meta name="description" content="在软件工程中，设计模式（design pattern）是&amp;thinsp;对软件设计中&amp;thinsp;普遍存在（反复出现）的各种问题，所提出的解决方案。这个术语&amp;thinsp;是由&amp;thinsp;埃里希·伽玛（Erich Gamma）等人&amp;thinsp;在1990年代&amp;thinsp;从建筑设计领域&amp;thinsp;引入到计算机科学的。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="软件设计模式(Software design pattern)">
+<meta property="og:url" content="https://suitelhy.github.io/zh/post/%E8%BD%AF%E4%BB%B6%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F-Software-design-pattern/index.html">
+<meta property="og:site_name" content="夜与花海">
+<meta property="og:description" content="在软件工程中，设计模式（design pattern）是&amp;thinsp;对软件设计中&amp;thinsp;普遍存在（反复出现）的各种问题，所提出的解决方案。这个术语&amp;thinsp;是由&amp;thinsp;埃里希·伽玛（Erich Gamma）等人&amp;thinsp;在1990年代&amp;thinsp;从建筑设计领域&amp;thinsp;引入到计算机科学的。">
+<meta property="og:locale">
+<meta property="og:image" content="https://suitelhy.github.io/zh/post/%E8%BD%AF%E4%BB%B6%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F-Software-design-pattern/Wikipedia_en__Software_design_pattern.jpg">
+<meta property="article:published_time" content="2021-05-16T10:54:47.000Z">
+<meta property="article:modified_time" content="2021-05-16T10:35:48.241Z">
+<meta property="article:author" content="Suite">
+<meta property="article:tag" content="信息技术">
+<meta property="article:tag" content="计算机科学">
+<meta property="article:tag" content="软件">
+<meta property="article:tag" content="软件设计模式">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://suitelhy.github.io/zh/post/%E8%BD%AF%E4%BB%B6%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F-Software-design-pattern/Wikipedia_en__Software_design_pattern.jpg">
+<meta name="twitter:site" content="@null">
+  
+  <!-- 站点验证相关 -->
+  
+    
+      <meta name="google-site-verification" content="bZE7nUm9TG8--G23eE_vpUfb898ld93qzKhP7On5QRw" />
+    
+    
+    
+  
+  <!-- 样式表文件 -->
+  <link rel="stylesheet" id="kratos-css" href="/css/kratosr.min.css" type="text/css" media="all">
+  
+    <link rel="stylesheet" id="highlight-css" href="/css/highlight/night-eighties.min.css" type="text/css" media="all">
+  
+  
+  <link rel="stylesheet" id="fontawe-css" href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css" type="text/css" media="all">
+  <link rel="stylesheet" id="nprogress-css" href="https://cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.min.css" type="text/css" media="all">
+  
+  
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer@1.10.1/dist/APlayer.min.css">
+  
+  
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css">
+  
+  
+    <link rel="stylesheet" id="darkmode-css" href="/css/kr-dark.min.css" type="text/css" media="all">
+  
+  <!-- 不得不预先加载的一些JS文件 -->
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js"></script>
+  
+    <script src="https://cdn.jsdelivr.net/npm/qrcode_js@1.0.0/qrcode.min.js"></script>
+  
+<meta name="generator" content="Hexo 5.4.0"></head>
+
+
+    <body class="custom-background">
+        <div id="kratos-wrapper">
+    <div id="kratos-page">
+        <div id="kratos-header">
+            <header id="kratos-desktop-topnav" class="kratos-topnav">
+                <div class="container">
+                    <div class="nav-header">
+                        <nav id="kratos-menu-wrap">
+                            <ul id="kratos-primary-menu" class="sf-menu">
+                                
+                                    
+                                        <li><a href="/"><i class="fa fa-home"></i>首页</a></li>
+                                    
+                                
+                                    
+                                        <li><a href="/archives/"><i class="fa fa-file"></i>档案馆</a></li>
+                                    
+                                
+                                    
+                                        <li><a href="/friends/"><i class="fa fa-paw"></i>好伙伴</a></li>
+                                    
+                                
+                                    
+                                        <li>
+                                            <a><i class="fa fa-link"></i>链接</a>
+                                            <ul class="sub-menu">
+                                                
+                                                    
+                                                
+                                                    
+                                                        <li><a target="_blank" rel="noopener" href="https://github.com/SuiteLHY">本站作者</a></li>
+                                                    
+                                                
+                                                    
+                                                        <li><a target="_blank" rel="noopener" href="https://github.com/SuiteLHY/SuiteLHY.github.io">项目链接</a></li>
+                                                    
+                                                
+                                            </ul>
+                                        </li>
+                                    
+                                
+                            </ul>
+                        </nav>
+                    </div>
+                </div>
+            </header>
+            <header id="kratos-mobile-topnav" class="kratos-topnav">
+                <div class="container">
+                    <div class="color-logo"><a href="/">夜与花海</a></div>
+                    <div class="nav-toggle">
+                        <a class="kratos-nav-toggle js-kratos-nav-toggle">
+                            <i></i>
+                        </a>
+                    </div>
+                </div>
+            </header>
+        </div>
+        <div class="kratos-start kratos-hero-2">
+            <!-- <div class="kratos-overlay"></div> -->
+            <div class="kratos-cover kratos-cover-2 text-center">
+                <div class="desc desc2 animate-box">
+                    <a href="/">
+                        <h2>夜与花海</h2> <br />
+                        <span>我写下的——是世界</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div id="kratos-blog-post">
+            <div class="container">
+                <div id="main" class="row">
+                    
+
+        <section class="col-md-8">
+    <article>
+        <div class="kratos-hentry kratos-post-inner clearfix">
+            <header class="kratos-entry-header">
+                <h1 class="kratos-entry-title text-center">软件设计模式(Software design pattern)</h1>
+                
+                <ul class="kratos-post-meta text-center">
+                    <li><i class="fa fa-calendar"></i> 2021-05-16</li>
+                    <li><i class="fa fa-user"></i> 作者 Suite</li>
+                    <li>
+                        <i class="fa fa-edit"></i> 
+                        
+                        
+                            ~11.40K
+                        
+                        字
+                    </li>
+                    
+                </ul>
+            </header>
+            <div class="kratos-post-content">
+                <div id="expire-alert" class="alert alert-warning hidden" role="alert">
+                    本文最后编辑于 <time datetime="1621161348241"></time> 前，其中的内容可能需要更新。
+                </div>
+                
+                    <div class="kratos-post-inner-toc">
+                        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%99%BE%E7%A7%91"><span class="toc-number">1.</span> <span class="toc-text">百科</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%8F%91%E5%B1%95%E5%8E%86%E5%8F%B2"><span class="toc-number">1.1.</span> <span class="toc-text">发展历史</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%A1%A8%E8%BF%B0%E6%A0%BC%E5%BC%8F"><span class="toc-number">1.2.</span> <span class="toc-text">表述格式</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%88%86%E7%B1%BB"><span class="toc-number">1.3.</span> <span class="toc-text">分类</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8F%82%E9%98%85"><span class="toc-number">1.3.1.</span> <span class="toc-text">参阅</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%EF%BC%88%E8%AE%A1%E7%AE%97%E6%9C%BA%EF%BC%89-%E5%88%86%E7%B1%BB"><span class="toc-number">2.</span> <span class="toc-text">设计模式（计算机）-分类</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%EF%BC%88%E5%8F%AF%E5%A4%8D%E7%94%A8%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E8%BD%AF%E4%BB%B6%E7%9A%84%E5%9F%BA%E7%A1%80%EF%BC%89"><span class="toc-number">2.1.</span> <span class="toc-text">设计模式（可复用面向对象软件的基础）</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%87%BD%E6%95%B0%E5%BC%8F%E7%BC%96%E7%A8%8B"><span class="toc-number">2.2.</span> <span class="toc-text">函数式编程</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%B9%BA%E5%8D%8A%E7%BE%A4"><span class="toc-number">2.2.1.</span> <span class="toc-text">幺半群</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%87%BD%E5%AD%90-functor"><span class="toc-number">2.2.2.</span> <span class="toc-text">函子(functor)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%BA%94%E7%94%A8%E5%BC%8F-applicative"><span class="toc-number">2.2.3.</span> <span class="toc-text">应用式(applicative)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8D%95%E5%AD%90-monad"><span class="toc-number">2.2.4.</span> <span class="toc-text">单子(monad)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%AB%98%E9%98%B6%E5%87%BD%E6%95%B0-HOF"><span class="toc-number">2.2.5.</span> <span class="toc-text">高阶函数(HOF)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%9F%AF%E9%87%8C%E5%8C%96"><span class="toc-number">2.2.6.</span> <span class="toc-text">柯里化</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%87%BD%E6%95%B0%E5%A4%8D%E5%90%88"><span class="toc-number">2.2.7.</span> <span class="toc-text">函数复合</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%97%AD%E5%8C%85"><span class="toc-number">2.2.8.</span> <span class="toc-text">闭包</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%94%9F%E6%88%90%E5%99%A8"><span class="toc-number">2.2.9.</span> <span class="toc-text">生成器</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%B9%B6%E5%8F%91%E5%9E%8B%E6%A8%A1%E5%BC%8F"><span class="toc-number">2.3.</span> <span class="toc-text">并发型模式</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%BB%E5%8A%A8%E5%AF%B9%E8%B1%A1"><span class="toc-number">2.3.1.</span> <span class="toc-text">主动对象</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%98%BB%E6%AD%A2-Balking-pattern"><span class="toc-number">2.3.2.</span> <span class="toc-text">阻止(Balking pattern)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Binding-properties"><span class="toc-number">2.3.3.</span> <span class="toc-text">Binding properties</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8F%8C%E9%87%8D%E6%A3%80%E6%9F%A5%E9%94%81%E5%AE%9A%E6%A8%A1%E5%BC%8F"><span class="toc-number">2.3.4.</span> <span class="toc-text">双重检查锁定模式</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%BC%82%E6%AD%A5%E6%96%B9%E6%B3%95%E8%B0%83%E7%94%A8"><span class="toc-number">2.3.5.</span> <span class="toc-text">异步方法调用</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Future%E4%B8%8Epromise"><span class="toc-number">2.3.6.</span> <span class="toc-text">Future与promise</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Guarded-suspension"><span class="toc-number">2.3.7.</span> <span class="toc-text">Guarded suspension</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Join"><span class="toc-number">2.3.8.</span> <span class="toc-text">Join</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%94%81"><span class="toc-number">2.3.9.</span> <span class="toc-text">锁</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Messaging"><span class="toc-number">2.3.10.</span> <span class="toc-text">Messaging</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AE%88%E5%8D%AB"><span class="toc-number">2.3.11.</span> <span class="toc-text">守卫</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%A2%86%E5%AF%BC%E8%80%85-%E8%BF%BD%E9%9A%8F%E8%80%85"><span class="toc-number">2.3.12.</span> <span class="toc-text">领导者&#x2F;追随者</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%9B%91%E8%A7%86%E5%99%A8-Monitors"><span class="toc-number">2.3.13.</span> <span class="toc-text">监视器(Monitors)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Proactor"><span class="toc-number">2.3.14.</span> <span class="toc-text">Proactor</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8F%8D%E5%BA%94%E5%99%A8"><span class="toc-number">2.3.15.</span> <span class="toc-text">反应器</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%AF%BB%E5%86%99%E9%94%81"><span class="toc-number">2.3.16.</span> <span class="toc-text">读写锁</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%B0%83%E5%BA%A6"><span class="toc-number">2.3.17.</span> <span class="toc-text">调度</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%BA%BF%E7%A8%8B%E6%B1%A0"><span class="toc-number">2.3.18.</span> <span class="toc-text">线程池</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%BA%BF%E7%A8%8B%E5%B1%80%E9%83%A8%E5%AD%98%E5%82%A8-Thread-local-storage-%EF%BC%88TLS%EF%BC%89"><span class="toc-number">2.3.19.</span> <span class="toc-text">线程局部存储(Thread-local storage)（TLS）</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%9E%B6%E6%9E%84%E6%A8%A1%E5%BC%8F"><span class="toc-number">2.4.</span> <span class="toc-text">架构模式</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BA%91%E8%AE%A1%E7%AE%97-amp-%E5%88%86%E5%B8%83%E5%BC%8F%E8%AE%A1%E7%AE%97"><span class="toc-number">2.5.</span> <span class="toc-text">云计算 &amp; 分布式计算</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%96%AD%E8%B7%AF%E5%99%A8"><span class="toc-number">2.5.1.</span> <span class="toc-text">断路器</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#CQRS"><span class="toc-number">2.5.2.</span> <span class="toc-text">CQRS</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%A1%A5%E5%81%BF%E4%BA%A4%E6%98%93"><span class="toc-number">2.5.3.</span> <span class="toc-text">补偿交易</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%B4%A2%E5%BC%95%E8%A1%A8"><span class="toc-number">2.5.4.</span> <span class="toc-text">索引表</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%A2%86%E5%AF%BC%E8%80%85%E9%80%89%E4%B8%BE"><span class="toc-number">2.5.5.</span> <span class="toc-text">领导者选举</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#MapReduce"><span class="toc-number">2.5.6.</span> <span class="toc-text">MapReduce</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%89%A9%E5%8C%96%E8%A7%86%E5%9B%BE"><span class="toc-number">2.5.7.</span> <span class="toc-text">物化视图</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%AE%A1%E9%81%93"><span class="toc-number">2.5.8.</span> <span class="toc-text">管道</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%BF%87%E6%BB%A4%E5%99%A8"><span class="toc-number">2.5.9.</span> <span class="toc-text">过滤器</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8F%91%E5%B8%83-%E8%AE%A2%E9%98%85"><span class="toc-number">2.5.10.</span> <span class="toc-text">发布&#x2F;订阅</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%88%86%E7%89%87"><span class="toc-number">2.5.11.</span> <span class="toc-text">分片</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%8A%82%E6%B5%81"><span class="toc-number">2.5.12.</span> <span class="toc-text">节流</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%85%B6%E4%BB%96%E6%A8%A1%E5%BC%8F"><span class="toc-number">2.6.</span> <span class="toc-text">其他模式</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Blackboard"><span class="toc-number">2.6.1.</span> <span class="toc-text">Blackboard</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Business-delegate"><span class="toc-number">2.6.2.</span> <span class="toc-text">Business delegate</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Composite-entity"><span class="toc-number">2.6.3.</span> <span class="toc-text">Composite entity</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%A7%94%E6%89%98"><span class="toc-number">2.6.4.</span> <span class="toc-text">委托</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BE%9D%E8%B5%96%E6%B3%A8%E5%85%A5"><span class="toc-number">2.6.5.</span> <span class="toc-text">依赖注入</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Intercepting-filter"><span class="toc-number">2.6.6.</span> <span class="toc-text">Intercepting filter</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%83%B0%E6%80%A7%E5%8A%A0%E8%BD%BD"><span class="toc-number">2.6.7.</span> <span class="toc-text">惰性加载</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Method-chaining"><span class="toc-number">2.6.8.</span> <span class="toc-text">Method chaining</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%A8%A1%E6%8B%9F%E5%AF%B9%E8%B1%A1"><span class="toc-number">2.6.9.</span> <span class="toc-text">模拟对象</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%A9%BA%E5%AF%B9%E8%B1%A1"><span class="toc-number">2.6.10.</span> <span class="toc-text">空对象</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AF%B9%E8%B1%A1%E6%B1%A0"><span class="toc-number">2.6.11.</span> <span class="toc-text">对象池</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Servant"><span class="toc-number">2.6.12.</span> <span class="toc-text">Servant</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Twin"><span class="toc-number">2.6.13.</span> <span class="toc-text">Twin</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Type-tunnel"><span class="toc-number">2.6.14.</span> <span class="toc-text">Type tunnel</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%F0%9F%93%96%E5%8F%82%E7%9C%8B"><span class="toc-number">3.</span> <span class="toc-text">📖参看</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E2%80%BB%E5%8F%82%E8%80%83%E5%92%8C%E5%BC%95%E7%94%A8"><span class="toc-number">4.</span> <span class="toc-text">※参考和引用</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%F0%9F%94%97%E5%A4%96%E9%83%A8%E9%93%BE%E6%8E%A5"><span class="toc-number">5.</span> <span class="toc-text">🔗外部链接</span></a></li></ol>
+                    </div>
+                
+                <hr />
+                <link rel="stylesheet" type="text&#x2F;css" href="https://cdn.jsdelivr.net/npm/hexo-tag-hint@0.3.1/dist/hexo-tag-hint.min.css"><blockquote>
+<p>在软件工程中，设计模式（<code>design pattern</code>）是&thinsp;对软件设计中&thinsp;普遍存在（反复出现）的各种问题，所提出的解决方案。这个术语&thinsp;是由&thinsp;埃里希·伽玛（Erich Gamma）等人&thinsp;在1990年代&thinsp;从建筑设计领域&thinsp;引入到计算机科学的。</p>
+<span id="more"></span>
+
+<p>设计模式&thinsp;并不直接用来&thinsp;完成代码的编写，而是描述&thinsp;在各种不同情况下，要怎么解决问题&thinsp;的一种方案。面向对象设计模式&thinsp;通常&thinsp;以类别或对象&thinsp;来描述其中的关系和相互作用，但不涉及&thinsp;用来完成应用程序的特定类别或对象。设计模式&thinsp;能使&thinsp;不稳定依赖于相对稳定、具体依赖于相对抽象，避免&thinsp;会引起麻烦的紧耦合，以增强软件设计&thinsp;面对并适应变化的能力。</p>
+<p>并非&thinsp;所有的软件模式&thinsp;都是&thinsp;设计模式，设计模式&thinsp;特指&thinsp;软件“设计”层次上的问题。还有其他&thinsp;非设计模式的模式，如&thinsp;架构模式。同时，算法&thinsp;不能算是&thinsp;一种设计模式，因为&thinsp;算法&thinsp;主要是用来解决&thinsp;计算上的问题，而非&thinsp;设计上的问题。</p>
+<p>随着&thinsp;软件开发社区对设计模式的兴趣&thinsp;日益增长，已经出版了&thinsp;一些相关的专著，定期召开&thinsp;相应的研讨会，而且&thinsp;沃德·坎宁安（Ward Cunningham）&thinsp;为此发明了&thinsp;<code>WikiWiki</code>&thinsp;&thinsp;用来交流设计模式的经验。</p>
+<hr>
+<p>👆←🗎<sup id="cite_ref-1"><em><font color="#808080">[</font><a href="#cite_note-1">1</a><font color="#808080">]</font></em></sup></p>
+</blockquote>
+<h1 id="百科"><a href="#百科" class="headerlink" title="百科"></a>百科</h1>
+<p style="text-align:center !important;">
+  <a target="_blank" rel="noopener" href="https://zh.wikipedia.org/" style="display:inline-block;height:50px;">
+    <img src="https://zh.wikipedia.org/static/images/project-logos/zhwiki-hans.png" alt="Wikipedia's logo" width="50px" height="50px" style="display:inline-block;margin:0px;">&thinsp;维基百科<span style="display:inline-block !important;vertical-align:top !important;width:12px !important;height:fit-content(100%);padding:0 !important;border:0 !important;margin:0 !important;"><img src="https://zh.wikipedia.org/w/skins/Vector/resources/skins.vector.styles/images/external-link-ltr-icon.svg?48e54" alt="" style="display:inline-block;vertical-align:top !important;width:12px;height:12px;border:0 !important;margin:0 !important;" /></span>
+  </a>
+</p>
+
+
+<h2 id="发展历史"><a href="#发展历史" class="headerlink" title="发展历史"></a>发展历史</h2><p>建筑师&thinsp;克里斯托佛·亚历山大&thinsp;在1977&thinsp;/&thinsp;79年&thinsp;编制了一本汇集设计模式的书，但是&thinsp;这种设计模式的思想&thinsp;在建筑设计领域里的影响&thinsp;远没有&thinsp;后来在软件开发领域里传播的广泛。</p>
+<p>肯特·贝克和沃德·坎宁安&thinsp;在1987年，利用&thinsp;克里斯托佛·亚历山大在建筑设计领域里的思想&thinsp;开发了设计模式，并把此思想应用在&thinsp;Smalltalk&thinsp;中的图形用户接口（GUI）的生成中。一年后，埃里希·伽玛&thinsp;在他的苏黎世大学博士毕业论文中&thinsp;开始尝试把这种思想&thinsp;改写为适用于软件开发。与此同时&thinsp;James Coplien&thinsp;在1989年至1991年&thinsp;也在利用相同的思想&thinsp;致力于&thinsp;C++&thinsp;的开发，而后于1991年&thinsp;发表了他的著作《Advanced C++ Programming Styles and Idioms》。同年，Erich Gamma&thinsp;得到了博士学位，然后去了美国，在那与&thinsp;Richard Helm，Ralph Johnson，John Vlissides&thinsp;合作出版了《设计模式：可复用面向对象软件的基础》（Design Patterns - Elements of Reusable Object-Oriented Software） 一书，在此书中共收录了 23 种设计模式。</p>
+<p>这四位作者在软件开发领域里以“四人帮”（英语，Gang of Four，简称<code>GoF</code>）而闻名，并且他们在此书中的协作导致了软件设计模式的突破。有时，<code>GoF</code>也会用于代指《设计模式》这本书。</p>
+<h2 id="表述格式"><a href="#表述格式" class="headerlink" title="表述格式"></a>表述格式</h2><p>表述一个软件设计模式的格式根据作者的不同，划分和名称等都会有所不同。常用的<code>GoF</code>描述模式的格式大致分为以下这些部分：</p>
+<ul>
+<li><p>模式名：每一个模式都有自己的名字，模式的名字使得我们可以讨论我们的设计。</p>
+</li>
+<li><p>问题：在面向对象的系统设计过程中反复出现的特定场合，它导致我们采用某个模式。</p>
+</li>
+<li><p>解决方案：上述问题的解决方案，其内容给出了设计的各个组成部分，它们之间的关系、职责划分和协作方式。</p>
+</li>
+<li><p>别名：一个模式可以有超过一个以上的名称。这些名称应该要在这一节注明。</p>
+</li>
+<li><p>动机：在哪种情况使用该模式，是本节提供的方案（包括问题与来龙去脉）的责任。</p>
+</li>
+<li><p>适用性：模式适用于哪些情况、模式的背景等等。</p>
+</li>
+<li><p>结构：这部分常用类图与交互图阐述此模式。</p>
+</li>
+<li><p>参与者：这部分提供一份本模式用到的类与对象清单，与它们在设计下扮演的角色。</p>
+</li>
+<li><p>合作：描述在此模式下，类与对象间的交互。</p>
+</li>
+<li><p>影响：采用该模式对软件系统其他部分的影响，比如对系统的扩充性、可移植性的影响。影响也包括负面的影响。这部分应描述使用本模式后的结果、副作用、与权衡(trade-off)。</p>
+</li>
+<li><p>实现：这部分应描述实现该模式、该模式的部分方案、实现该模式的可能技术、或者建议实现模式的方法。</p>
+</li>
+<li><p>示例：简略描绘出如何以编程语言来使用模式。</p>
+</li>
+<li><p>已知应用：业界已知的实现示例。</p>
+</li>
+<li><p>相关模式：这部分包括其他相关模式，以及与其他类似模式的不同。</p>
+</li>
+</ul>
+<h2 id="分类"><a href="#分类" class="headerlink" title="分类"></a>分类</h2>
+
+<table class="wikitable">
+  <tbody>
+    <tr>
+      <th>划分类型</th>
+      <th width="24%">模式名称</th>
+      <th width="50%">描述</th>
+      <th>
+        《<a target="_blank" rel="noopener" href="https://zh.wikipedia.org/wiki/%E8%AE%BE%E8%AE%A1%E8%8C%83%E4%BE%8B" class="mw-redirect" title="设计范例">设计模式</a>》中提及
+      </th>
+      <th>
+        《<a target="_blank" rel="noopener" href="https://zh.wikipedia.org/wiki/%E4%BB%A3%E7%A2%BC%E5%A4%A7%E5%85%A8" title="代码大全">代码大全</a>》中提及<sup id="cite_ref-McConnell2004_1-0" class="reference"><a href="#cite_note-McConnell2004-1"></a></sup>
+      </th>
+    </tr>
+    <tr>
+      <td rowspan="10">
+        <b><a target="_blank" rel="noopener" href="https://zh.wikipedia.org/wiki/%E5%89%B5%E5%BB%BA%E5%9E%8B%E6%A8%A1%E5%BC%8F" title="创建型模式">创建型模式</a></b>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <a target="_blank" rel="noopener" href="https://zh.wikipedia.org/wiki/%E6%8A%BD%E8%B1%A1%E5%B7%A5%E5%8E%82%E6%A8%A1%E5%BC%8F" class="mw-redirect" title="">抽象工厂模式</a>
+      </td>
+      <td>
+        为一个产品族提供了统一的创建接口。当需要这个产品族的某一系列的时候，可以从抽象工厂中选出相应的系列创建一个具体的工厂类。
+      </td>
+      <td class="table-yes" style="text-align:center; background:#90FF90">
+        是
+      </td>
+      <td class="table-yes" style="text-align:center; background:#90FF90">
+        是
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <a target="_blank" rel="noopener" href="https://zh.wikipedia.org/wiki/%E5%B7%A5%E5%8E%82%E6%96%B9%E6%B3%95%E6%A8%A1%E5%BC%8F" class="mw-redirect" title="工厂方法模式">工厂方法模式</a>
+      </td>
+      <td>
+        定义一个接口用于创建对象，但是让子类决定初始化哪个类。工厂方法把一个类的初始化下放到子类。
+      </td>
+      <td class="table-yes" style="text-align:center; background:#90FF90">
+        是
+      </td>
+      <td class="table-yes" style="text-align:center; background:#90FF90">是
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <a target="_blank" rel="noopener" href="https://zh.wikipedia.org/wiki/%E7%94%9F%E6%88%90%E5%99%A8%E6%A8%A1%E5%BC%8F" title="生成器模式">生成器模式</a>
+      </td>
+      <td>
+        将一个复杂对象的构建与它的表示分离，使得同样的构建过程可以创建不同的表示。
+      </td>
+      <td class="table-yes" style="text-align:center; background:#90FF90">
+        是
+      </td>
+      <td class="table-no" style="text-align:center; background:#FF9090">
+        否
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <a target="_blank" rel="noopener" href="https://zh.wikipedia.org/wiki/%E6%83%B0%E6%80%A7%E5%88%9D%E5%A7%8B%E6%A8%A1%E5%BC%8F" title="惰性初始模式">惰性初始模式</a>
+      </td>
+      <td>
+        推迟对象的创建、数据的计算等需要耗费较多资源的操作，只有在第一次访问的时候才执行。
+      </td>
+      <td class="table-no" style="text-align:center; background:#FF9090">
+        否
+      </td>
+      <td class="table-no" style="text-align:center; background:#FF9090">
+        否
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <a target="_blank" rel="noopener" href="https://zh.wikipedia.org/wiki/%E5%AF%B9%E8%B1%A1%E6%B1%A0%E6%A8%A1%E5%BC%8F" title="对象池模式">对象池模式</a>
+      </td>
+      <td>
+        通过回收利用对象避免获取和释放资源所需的昂贵成本。
+      </td>
+      <td class="table-no" style="text-align:center; background:#FF9090">
+        否
+      </td>
+      <td class="table-no" style="text-align:center; background:#FF9090">
+        否
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <a target="_blank" rel="noopener" href="https://zh.wikipedia.org/wiki/%E5%8E%9F%E5%9E%8B%E6%A8%A1%E5%BC%8F" title="原型模式">原型模式</a>
+      </td>
+      <td>
+        用原型实例指定创建对象的种类，并且通过拷贝这些原型,创建新的对象。
+      </td>
+      <td class="table-yes" style="text-align:center; background:#90FF90">
+        是
+      </td>
+      <td class="table-no" style="text-align:center; background:#FF9090">
+        否
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <a target="_blank" rel="noopener" href="https://zh.wikipedia.org/wiki/%E5%8D%95%E4%BE%8B%E6%A8%A1%E5%BC%8F" title="单例模式">单例模式</a>
+      </td>
+      <td>
+        确保一个类只有一个实例，并提供对该实例的全局访问。
+      </td>
+      <td class="table-yes" style="text-align:center; background:#90FF90">
+        是
+      </td>
+      <td class="table-yes" style="text-align:center; background:#90FF90">
+        是
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <span class="ilh-all" data-orig-title="多例模式" data-lang-code="en" data-lang-name="英语" data-foreign-title="Multiton pattern"><span class="ilh-page"><a target="_blank" rel="noopener" href="https://zh.wikipedia.org/w/index.php?title=%E5%A4%9A%E4%BE%8B%E6%A8%A1%E5%BC%8F&amp;action=edit&amp;redlink=1" class="new" original-title="多例模式（页面不存在）">多例模式</a></span><span class="noprint ilh-comment">（<span class="ilh-lang">英语</span><span class="ilh-colon">：</span><span class="ilh-link"><a target="_blank" rel="noopener" href="https://en.wikipedia.org/wiki/Multiton_pattern" class="extiw" title="en:Multiton pattern"><span lang="en" dir="auto">Multiton pattern</span></a></span>）</span></span>
+      </td>
+      <td>
+        确保一个类只有命名的实例，并提供对这些实例的全局访问。
+      </td>
+      <td class="table-no" style="text-align:center; background:#FF9090">
+        否
+      </td>
+      <td class="table-no" style="text-align:center; background:#FF9090">
+        否
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <a target="_blank" rel="noopener" href="https://zh.wikipedia.org/wiki/RAII" title="RAII">资源获取为初始化</a>
+      </td>
+      <td>
+        通过绑定到合适对象的生命周期来确保资源被适当地释放。
+      </td>
+      <td class="table-no" style="text-align:center; background:#FF9090">
+        否
+      </td>
+      <td class="table-no" style="text-align:center; background:#FF9090">
+        否
+      </td>
+    </tr>
+    <tr>
+      <td rowspan="8">
+        <b><a target="_blank" rel="noopener" href="https://zh.wikipedia.org/wiki/%E7%B5%90%E6%A7%8B%E5%9E%8B%E6%A8%A1%E5%BC%8F" title="结构型模式">结构型模式</a></b>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <a target="_blank" rel="noopener" href="https://zh.wikipedia.org/wiki/%E9%80%82%E9%85%8D%E5%99%A8%E6%A8%A1%E5%BC%8F" title="适配器模式">适配器模式</a>
+      </td>
+      <td>
+        将某个类的接口转换成客户端期望的另一个接口表示。适配器模式可以消除由于接口不匹配所造成的类兼容性问题。
+      </td>
+      <td class="table-yes" style="text-align:center; background:#90FF90">
+        是
+      </td>
+      <td class="table-yes" style="text-align:center; background:#90FF90">
+        是
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <a target="_blank" rel="noopener" href="https://zh.wikipedia.org/wiki/%E6%A9%8B%E6%8E%A5%E6%A8%A1%E5%BC%8F" title="桥接模式">桥接模式</a>
+      </td>
+      <td>
+        将一个抽象与实现解耦，以便两者可以独立的变化。
+      </td>
+      <td class="table-yes" style="text-align:center; background:#90FF90">
+        是
+      </td>
+      <td class="table-yes" style="text-align:center; background:#90FF90">
+        是
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <span class="ilh-all" data-orig-title="组合模式" data-lang-code="en" data-lang-name="英语" data-foreign-title="Composite pattern"><span class="ilh-page"><a target="_blank" rel="noopener" href="https://zh.wikipedia.org/w/index.php?title=%E7%BB%84%E5%90%88%E6%A8%A1%E5%BC%8F&amp;action=edit&amp;redlink=1" class="new" original-title="组合模式（页面不存在）">组合模式</a></span><span class="noprint ilh-comment">（<span class="ilh-lang">英语</span><span class="ilh-colon">：</span><span class="ilh-link"><a target="_blank" rel="noopener" href="https://en.wikipedia.org/wiki/Composite_pattern" class="extiw" title="en:Composite pattern"><span lang="en" dir="auto">Composite pattern</span></a></span>）</span></span>
+      </td>
+      <td>
+        把多个对象组成树状结构来表示局部与整体，这样用户可以一样的对待单个对象和对象的组合。
+      </td>
+      <td class="table-yes" style="text-align:center; background:#90FF90">
+        是
+      </td>
+      <td class="table-yes" style="text-align:center; background:#90FF90">
+        是
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <a target="_blank" rel="noopener" href="https://zh.wikipedia.org/wiki/%E4%BF%AE%E9%A5%B0%E6%A8%A1%E5%BC%8F" title="修饰模式">修饰模式</a>
+      </td>
+      <td>
+        向某个对象动态地添加更多的功能。修饰模式是除类继承外另一种扩展功能的方法。
+      </td>
+      <td class="table-yes" style="text-align:center; background:#90FF90">
+        是
+      </td>
+      <td class="table-yes" style="text-align:center; background:#90FF90">
+        是
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <a target="_blank" rel="noopener" href="https://zh.wikipedia.org/wiki/%E5%A4%96%E8%A7%80%E6%A8%A1%E5%BC%8F" title="外观模式">外观模式</a>
+      </td>
+      <td>
+        为子系统中的一组接口提供一个一致的界面， 外观模式定义了一个高层接口，这个接口使得这一子系统更加容易使用。
+      </td>
+      <td class="table-yes" style="text-align:center; background:#90FF90">
+        是
+      </td>
+      <td class="table-yes" style="text-align:center; background:#90FF90">
+        是
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <a target="_blank" rel="noopener" href="https://zh.wikipedia.org/wiki/%E4%BA%AB%E5%85%83%E6%A8%A1%E5%BC%8F" title="享元模式">享元</a>
+      </td>
+      <td>
+        通过共享以便有效的支持大量小颗粒对象。
+      </td>
+      <td class="table-yes" style="text-align:center; background:#90FF90">
+        是
+      </td>
+      <td class="table-no" style="text-align:center; background:#FF9090">
+        否
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <a target="_blank" rel="noopener" href="https://zh.wikipedia.org/wiki/%E4%BB%A3%E7%90%86%E6%A8%A1%E5%BC%8F" title="代理模式">代理</a>
+      </td>
+      <td>
+        为其他对象提供一个代理以控制对这个对象的访问。
+      </td>
+      <td class="table-yes" style="text-align:center; background:#90FF90">
+        是
+      </td>
+      <td class="table-no" style="text-align:center; background:#FF9090">
+        否
+      </td>
+    </tr>
+    <tr>
+      <td rowspan="15">
+        <b><a target="_blank" rel="noopener" href="https://zh.wikipedia.org/wiki/%E8%A1%8C%E7%82%BA%E5%9E%8B%E6%A8%A1%E5%BC%8F" title="行为型模式">行为型模式</a></b>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <span class="ilh-all" data-orig-title="黑板系统" data-lang-code="en" data-lang-name="英语" data-foreign-title="Blackboard (design pattern)"><span class="ilh-page"><a target="_blank" rel="noopener" href="https://zh.wikipedia.org/w/index.php?title=%E9%BB%91%E6%9D%BF%E7%B3%BB%E7%BB%9F&amp;action=edit&amp;redlink=1" class="new" original-title="黑板系统（页面不存在）">黑板</a></span><span class="noprint ilh-comment">（<span class="ilh-lang">英语</span><span class="ilh-colon">：</span><span class="ilh-link"><a target="_blank" rel="noopener" href="https://en.wikipedia.org/wiki/Blackboard_(design_pattern)" class="extiw" title="en:Blackboard (design pattern)"><span lang="en" dir="auto">Blackboard (design pattern)</span></a></span>）</span></span>
+      </td>
+      <td>
+        广义的观察者在系统范围内交流信息，允许多位读者和写者。
+      </td>
+      <td class="table-no" style="text-align:center; background:#FF9090">
+        否
+      </td>
+      <td class="table-no" style="text-align:center; background:#FF9090">
+        否
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <a target="_blank" rel="noopener" href="https://zh.wikipedia.org/wiki/%E8%B4%A3%E4%BB%BB%E9%93%BE%E6%A8%A1%E5%BC%8F" title="责任链模式">责任链</a>
+      </td>
+      <td>
+        为解除请求的发送者和接收者之间耦合，而使多个对象都有机会处理这个请求。将这些对象连成一条链，并沿着这条链传递该请求，直到有一个对象处理它。
+      </td>
+      <td class="table-yes" style="text-align:center; background:#90FF90">
+        是
+      </td>
+      <td class="table-no" style="text-align:center; background:#FF9090">
+        否
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <a target="_blank" rel="noopener" href="https://zh.wikipedia.org/wiki/%E5%91%BD%E4%BB%A4%E6%A8%A1%E5%BC%8F" title="命令模式">命令</a>
+      </td>
+      <td>
+        将一个请求封装为一个对象，从而使你可用不同的请求对客户进行参数化；对请求排队或记录请求日志，以及支持可取消的操作。
+      </td>
+      <td class="table-yes" style="text-align:center; background:#90FF90">
+        是
+      </td>
+      <td class="table-no" style="text-align:center; background:#FF9090">
+        否
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <span class="ilh-all" data-orig-title="解释器模式" data-lang-code="en" data-lang-name="英语" data-foreign-title="Interpreter pattern"><span class="ilh-page"><a target="_blank" rel="noopener" href="https://zh.wikipedia.org/w/index.php?title=%E8%A7%A3%E9%87%8A%E5%99%A8%E6%A8%A1%E5%BC%8F&amp;action=edit&amp;redlink=1" class="new" original-title="解释器模式（页面不存在）">解释器</a></span><span class="noprint ilh-comment">（<span class="ilh-lang">英语</span><span class="ilh-colon">：</span><span class="ilh-link"><a target="_blank" rel="noopener" href="https://en.wikipedia.org/wiki/Interpreter_pattern" class="extiw" title="en:Interpreter pattern"><span lang="en" dir="auto">Interpreter pattern</span></a></span>）</span></span>
+      </td>
+      <td>
+        给定一个语言, 定义它的文法的一种表示，并定义一个解释器, 该解释器使用该表示来解释语言中的句子。
+      </td>
+      <td class="table-yes" style="text-align:center; background:#90FF90">
+        是
+      </td>
+      <td class="table-no" style="text-align:center; background:#FF9090">
+        否
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <a target="_blank" rel="noopener" href="https://zh.wikipedia.org/wiki/%E8%BF%AD%E4%BB%A3%E5%99%A8%E6%A8%A1%E5%BC%8F" title="迭代器模式">迭代器</a>
+      </td>
+      <td>
+        提供一种方法顺序访问一个聚合对象中各个元素, 而又不需暴露该对象的内部表示。
+      </td>
+      <td class="table-yes" style="text-align:center; background:#90FF90">
+        是
+      </td>
+      <td class="table-yes" style="text-align:center; background:#90FF90">
+        是
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <a target="_blank" rel="noopener" href="https://zh.wikipedia.org/wiki/%E4%B8%AD%E4%BB%8B%E8%80%85%E6%A8%A1%E5%BC%8F" title="中介者模式">中介者</a>
+      </td>
+      <td>
+        包装了一系列对象相互作用的方式，使得这些对象不必相互明显作用，从而使它们可以松散偶合。当某些对象之间的作用发生改变时，不会立即影响其他的一些对象之间的作用，保证这些作用可以彼此独立的变化。
+      </td>
+      <td class="table-yes" style="text-align:center; background:#90FF90">
+        是
+      </td>
+      <td class="table-no" style="text-align:center; background:#FF9090">
+        否
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <span class="ilh-all" data-orig-title="备忘录模式" data-lang-code="en" data-lang-name="英语" data-foreign-title="Memento pattern"><span class="ilh-page"><a target="_blank" rel="noopener" href="https://zh.wikipedia.org/w/index.php?title=%E5%A4%87%E5%BF%98%E5%BD%95%E6%A8%A1%E5%BC%8F&amp;action=edit&amp;redlink=1" class="new" original-title="备忘录模式（页面不存在）">备忘录</a></span><span class="noprint ilh-comment">（<span class="ilh-lang">英语</span><span class="ilh-colon">：</span><span class="ilh-link"><a target="_blank" rel="noopener" href="https://en.wikipedia.org/wiki/Memento_pattern" class="extiw" title="en:Memento pattern"><span lang="en" dir="auto">Memento pattern</span></a></span>）</span></span>
+      </td>
+      <td>
+        备忘录对象是一个用来存储另外一个对象内部状态的快照的对象。备忘录模式的用意是在不破坏封装的条件下，将一个对象的状态捉住，并外部化，存储起来，从而可以在将来合适的时候把这个对象还原到存储起来的状态。
+      </td>
+      <td class="table-yes" style="text-align:center; background:#90FF90">
+        是
+      </td>
+      <td class="table-no" style="text-align:center; background:#FF9090">
+        否
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <a target="_blank" rel="noopener" href="https://zh.wikipedia.org/wiki/%E7%A9%BA%E5%AF%B9%E8%B1%A1%E6%A8%A1%E5%BC%8F" title="空对象模式">空对象</a>
+      </td>
+      <td>
+        通过提供默认对象来避免空引用。
+      </td>
+      <td class="table-no" style="text-align:center; background:#FF9090">
+        否
+      </td>
+      <td class="table-yes" style="text-align:center; background:#90FF90">
+        是
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <a target="_blank" rel="noopener" href="https://zh.wikipedia.org/wiki/%E8%A7%82%E5%AF%9F%E8%80%85%E6%A8%A1%E5%BC%8F" title="观察者模式">观察者模式</a>
+      </td>
+      <td>
+        在对象间定义一个一对多的联系性，由此当一个对象改变了状态，所有其他相关的对象会被通知并且自动刷新。
+      </td>
+      <td class="table-yes" style="text-align:center; background:#90FF90">
+        是
+      </td>
+      <td class="table-yes" style="text-align:center; background:#90FF90">
+        是
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <span class="ilh-all" data-orig-title="规格模式" data-lang-code="en" data-lang-name="英语" data-foreign-title="Specification pattern"><span class="ilh-page"><a target="_blank" rel="noopener" href="https://zh.wikipedia.org/w/index.php?title=%E8%A7%84%E6%A0%BC%E6%A8%A1%E5%BC%8F&amp;action=edit&amp;redlink=1" class="new" original-title="规格模式（页面不存在）">规格</a></span><span class="noprint ilh-comment">（<span class="ilh-lang">英语</span><span class="ilh-colon">：</span><span class="ilh-link"><a target="_blank" rel="noopener" href="https://en.wikipedia.org/wiki/Specification_pattern" class="extiw" title="en:Specification pattern"><span lang="en" dir="auto">Specification pattern</span></a></span>）</span></span>
+      </td>
+      <td>
+        以布尔形式表示的可重绑定的商业逻辑。
+      </td>
+      <td class="table-no" style="text-align:center; background:#FF9090">
+        否
+      </td>
+      <td class="table-no" style="text-align:center; background:#FF9090">
+        否
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <span class="ilh-all" data-orig-title="状态模式" data-lang-code="en" data-lang-name="英语" data-foreign-title="State pattern"><span class="ilh-page"><a target="_blank" rel="noopener" href="https://zh.wikipedia.org/w/index.php?title=%E7%8A%B6%E6%80%81%E6%A8%A1%E5%BC%8F&amp;action=edit&amp;redlink=1" class="new" original-title="状态模式（页面不存在）">状态</a></span><span class="noprint ilh-comment">（<span class="ilh-lang">英语</span><span class="ilh-colon">：</span><span class="ilh-link"><a target="_blank" rel="noopener" href="https://en.wikipedia.org/wiki/State_pattern" class="extiw" title="en:State pattern"><span lang="en" dir="auto">State pattern</span></a></span>）</span></span>
+      </td>
+      <td>
+        让一个对象在其内部状态改变的时候，其行为也随之改变。状态模式需要对每一个系统可能获取的状态创立一个状态类的子类。当系统的状态变化时，系统便改变所选的子类。
+      </td>
+      <td class="table-yes" style="text-align:center; background:#90FF90">
+        是
+      </td>
+      <td class="table-no" style="text-align:center; background:#FF9090">
+        否
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <a target="_blank" rel="noopener" href="https://zh.wikipedia.org/wiki/%E7%AD%96%E7%95%A5%E6%A8%A1%E5%BC%8F" title="策略模式">策略</a>
+      </td>
+      <td>
+        定义一个算法的系列，将其各个分装，并且使他们有交互性。策略模式使得算法在用户使用的时候能独立的改变。
+      </td>
+      <td class="table-yes" style="text-align:center; background:#90FF90">
+        是
+      </td>
+      <td class="table-yes" style="text-align:center; background:#90FF90">
+        是
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <a target="_blank" rel="noopener" href="https://zh.wikipedia.org/wiki/%E6%A8%A1%E6%9D%BF%E6%96%B9%E6%B3%95%E6%A8%A1%E5%BC%8F" class="mw-redirect" title="模板方法模式">模板方法</a>
+      </td>
+      <td>
+        模板方法模式准备一个抽象类，将部分逻辑以具体方法及具体构造子类的形式实现，然后声明一些抽象方法来迫使子类实现剩余的逻辑。不同的子类可以以不同的方式实现这些抽象方法，从而对剩余的逻辑有不同的实现。先构建一个顶级逻辑框架，而将逻辑的细节留给具体的子类去实现。
+      </td>
+      <td class="table-yes" style="text-align:center; background:#90FF90">
+        是
+      </td>
+      <td class="table-yes" style="text-align:center; background:#90FF90">
+        是
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <a target="_blank" rel="noopener" href="https://zh.wikipedia.org/wiki/%E8%AE%BF%E9%97%AE%E8%80%85%E6%A8%A1%E5%BC%8F" title="访问者模式">访问者</a>
+      </td>
+      <td>
+        封装一些施加于某种数据结构元素之上的操作。一旦这些操作需要修改，接受这个操作的数据结构可以保持不变。访问者模式适用于数据结构相对未定的系统，它把数据结构和作用于结构上的操作之间的耦合解脱开，使得操作集合可以相对自由的演化。
+      </td>
+      <td class="table-yes" style="text-align:center; background:#90FF90">
+        是
+      </td>
+      <td class="table-no" style="text-align:center; background:#FF9090">
+        否
+      </td>
+    </tr>
+    <tr>
+      <td rowspan="11">
+        <b><a target="_blank" rel="noopener" href="https://zh.wikipedia.org/wiki/%E4%BD%B5%E7%99%BC%E5%9E%8B%E6%A8%A1%E5%BC%8F" title="并发型模式">并发型模式</a></b>
+      </td>
+      <td>
+        <a target="_blank" rel="noopener" href="https://zh.wikipedia.org/w/index.php?title=%E4%B8%BB%E5%8A%A8%E5%AF%B9%E8%B1%A1&amp;action=edit&amp;redlink=1" class="new" title="主动对象（页面不存在）">主动对象</a>
+      </td>
+      <td></td>
+      <td class="table-no" style="text-align:center; background:#FF9090">
+        否
+      </td>
+      <td class="table-no" style="text-align:center; background:#FF9090">
+        否
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <a target="_blank" rel="noopener" href="https://zh.wikipedia.org/w/index.php?title=%E9%98%BB%E7%A2%8D%E6%A8%A1%E5%BC%8F&amp;action=edit&amp;redlink=1" class="new" title="阻碍模式（页面不存在）">阻碍</a>
+      </td>
+      <td>
+      </td>
+      <td class="table-no" style="text-align:center; background:#FF9090">
+        否
+      </td>
+      <td class="table-no" style="text-align:center; background:#FF9090">
+        否
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <a target="_blank" rel="noopener" href="https://zh.wikipedia.org/wiki/%E5%8F%8C%E9%87%8D%E6%A3%80%E6%9F%A5%E9%94%81%E5%AE%9A%E6%A8%A1%E5%BC%8F" title="双重检查锁定模式">双重检查锁定</a>
+      </td>
+      <td>
+      </td>
+      <td class="table-no" style="text-align:center; background:#FF9090">
+        否
+      </td>
+      <td class="table-no" style="text-align:center; background:#FF9090">
+        否
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <a target="_blank" rel="noopener" href="https://zh.wikipedia.org/w/index.php?title=%E5%AE%88%E5%8D%AB%E6%A8%A1%E5%BC%8F&amp;action=edit&amp;redlink=1" class="new" title="守卫模式（页面不存在）">守卫</a>
+      </td>
+      <td>
+      </td>
+      <td class="table-no" style="text-align:center; background:#FF9090">
+        否
+      </td>
+      <td class="table-no" style="text-align:center; background:#FF9090">
+        否
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <a target="_blank" rel="noopener" href="https://zh.wikipedia.org/w/index.php?title=%E9%A2%86%E5%AF%BC%E8%80%85/%E8%BF%BD%E9%9A%8F%E8%80%85%E6%A8%A1%E5%BC%8F&amp;action=edit&amp;redlink=1" class="new" title="领导者/追随者模式（页面不存在）">领导者/追随者</a>
+      </td>
+      <td>
+      </td>
+      <td class="table-no" style="text-align:center; background:#FF9090">
+        否
+      </td>
+      <td class="table-no" style="text-align:center; background:#FF9090">
+        否
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <a target="_blank" rel="noopener" href="https://zh.wikipedia.org/wiki/%E7%AE%A1%E7%A8%8B" class="mw-redirect" title="管程">监测对象模式</a>
+      </td>
+      <td>
+      </td>
+      <td class="table-no" style="text-align:center; background:#FF9090">
+        否
+      </td>
+      <td class="table-no" style="text-align:center; background:#FF9090">
+        否
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <a target="_blank" rel="noopener" href="https://zh.wikipedia.org/wiki/%E8%AF%BB%E5%86%99%E9%94%81%E6%A8%A1%E5%BC%8F" class="mw-redirect" title="读写锁模式">读写锁</a>
+      </td>
+      <td>
+      </td>
+      <td class="table-no" style="text-align:center; background:#FF9090">
+        否
+      </td>
+      <td class="table-no" style="text-align:center; background:#FF9090">
+        否
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <a target="_blank" rel="noopener" href="https://zh.wikipedia.org/w/index.php?title=%E8%B0%83%E5%BA%A6%E6%A8%A1%E5%BC%8F&amp;action=edit&amp;redlink=1" class="new" title="调度模式（页面不存在）">调度</a>
+      </td>
+      <td>
+      </td>
+      <td class="table-no" style="text-align:center; background:#FF9090">
+        否
+      </td>
+      <td class="table-no" style="text-align:center; background:#FF9090">
+        否
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <a target="_blank" rel="noopener" href="https://zh.wikipedia.org/w/index.php?title=%E7%BA%BF%E7%A8%8B%E6%B1%A0%E6%A8%A1%E5%BC%8F&amp;action=edit&amp;redlink=1" class="new" title="线程池模式（页面不存在）">线程池模式</a>
+      </td>
+      <td>
+      </td>
+      <td class="table-no" style="text-align:center; background:#FF9090">
+        否
+      </td>
+      <td class="table-no" style="text-align:center; background:#FF9090">
+        否
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <a target="_blank" rel="noopener" href="https://zh.wikipedia.org/w/index.php?title=%E7%BA%BF%E7%A8%8B%E7%89%B9%E5%AE%9A%E5%AD%98%E5%82%A8%E6%A8%A1%E5%BC%8F&amp;action=edit&amp;redlink=1" class="new" title="线程特定存储模式（页面不存在）">线程特定存储</a>
+      </td>
+      <td>
+      </td>
+      <td class="table-no" style="text-align:center; background:#FF9090">
+        否
+      </td>
+      <td class="table-no" style="text-align:center; background:#FF9090">
+        否
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <a target="_blank" rel="noopener" href="https://zh.wikipedia.org/wiki/%E5%8F%8D%E5%BA%94%E5%99%A8%E6%A8%A1%E5%BC%8F" title="反应器模式">反应器</a>
+      </td>
+      <td>
+      </td>
+      <td class="table-no" style="text-align:center; background:#FF9090">
+        否
+      </td>
+      <td class="table-no" style="text-align:center; background:#FF9090">
+        否
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+
+
+<h3 id="参阅"><a href="#参阅" class="headerlink" title="参阅"></a>参阅</h3><ul>
+<li>设计范例</li>
+<li>反模式，对某个问题经常出现的、在设计中应该尽量避免的、坏的设计方案。</li>
+<li>模式挖掘</li>
+<li>软件重构</li>
+<li>程序设计实践</li>
+</ul>
+<h1 id="设计模式（计算机）-分类"><a href="#设计模式（计算机）-分类" class="headerlink" title="设计模式（计算机）-分类"></a>设计模式（计算机）-分类</h1><h2 id="设计模式（可复用面向对象软件的基础）"><a href="#设计模式（可复用面向对象软件的基础）" class="headerlink" title="设计模式（可复用面向对象软件的基础）"></a>设计模式（可复用面向对象软件的基础）</h2><div class="xControl active">
+    <div class="xHeading"><div class="xIcon"><i class="fa fa-plus"></i></div><span>参看（站内资源）&thinsp;👆</span></div>
+    <div class="xContent pre-open"><div class="inner">
+        <p><a href="/zh/post/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%EF%BC%88%E5%8F%AF%E5%A4%8D%E7%94%A8%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E8%BD%AF%E4%BB%B6%E7%9A%84%E5%9F%BA%E7%A1%80%EF%BC%89/" title="设计模式（可复用面向对象软件的基础）">设计模式（可复用面向对象软件的基础）</a><sup>🖇</sup></p>
+ 
+    </div></div>
+    </div>
+
+<h2 id="函数式编程"><a href="#函数式编程" class="headerlink" title="函数式编程"></a>函数式编程</h2><h3 id="幺半群"><a href="#幺半群" class="headerlink" title="幺半群"></a>幺半群</h3><h3 id="函子-functor"><a href="#函子-functor" class="headerlink" title="函子(functor)"></a>函子(<code>functor</code>)</h3><h3 id="应用式-applicative"><a href="#应用式-applicative" class="headerlink" title="应用式(applicative)"></a>应用式(<code>applicative</code>)</h3><h3 id="单子-monad"><a href="#单子-monad" class="headerlink" title="单子(monad)"></a>单子(<code>monad</code>)</h3><h3 id="高阶函数-HOF"><a href="#高阶函数-HOF" class="headerlink" title="高阶函数(HOF)"></a>高阶函数(<code>HOF</code>)</h3><h3 id="柯里化"><a href="#柯里化" class="headerlink" title="柯里化"></a>柯里化</h3><h3 id="函数复合"><a href="#函数复合" class="headerlink" title="函数复合"></a>函数复合</h3><h3 id="闭包"><a href="#闭包" class="headerlink" title="闭包"></a>闭包</h3><h3 id="生成器"><a href="#生成器" class="headerlink" title="生成器"></a>生成器</h3><h2 id="并发型模式"><a href="#并发型模式" class="headerlink" title="并发型模式"></a>并发型模式</h2><h3 id="主动对象"><a href="#主动对象" class="headerlink" title="主动对象"></a>主动对象</h3><h3 id="阻止-Balking-pattern"><a href="#阻止-Balking-pattern" class="headerlink" title="阻止(Balking pattern)"></a>阻止(<code>Balking pattern</code>)</h3><h3 id="Binding-properties"><a href="#Binding-properties" class="headerlink" title="Binding properties"></a>Binding properties</h3><h3 id="双重检查锁定模式"><a href="#双重检查锁定模式" class="headerlink" title="双重检查锁定模式"></a>双重检查锁定模式</h3><h3 id="异步方法调用"><a href="#异步方法调用" class="headerlink" title="异步方法调用"></a>异步方法调用</h3><h3 id="Future与promise"><a href="#Future与promise" class="headerlink" title="Future与promise"></a>Future与promise</h3><h3 id="Guarded-suspension"><a href="#Guarded-suspension" class="headerlink" title="Guarded suspension"></a>Guarded suspension</h3><h3 id="Join"><a href="#Join" class="headerlink" title="Join"></a>Join</h3><h3 id="锁"><a href="#锁" class="headerlink" title="锁"></a>锁</h3><h3 id="Messaging"><a href="#Messaging" class="headerlink" title="Messaging"></a>Messaging</h3><h3 id="守卫"><a href="#守卫" class="headerlink" title="守卫"></a>守卫</h3><h3 id="领导者-追随者"><a href="#领导者-追随者" class="headerlink" title="领导者/追随者"></a>领导者/追随者</h3><h3 id="监视器-Monitors"><a href="#监视器-Monitors" class="headerlink" title="监视器(Monitors)"></a>监视器(<code>Monitors</code>)</h3><h3 id="Proactor"><a href="#Proactor" class="headerlink" title="Proactor"></a>Proactor</h3><h3 id="反应器"><a href="#反应器" class="headerlink" title="反应器"></a>反应器</h3><h3 id="读写锁"><a href="#读写锁" class="headerlink" title="读写锁"></a>读写锁</h3><h3 id="调度"><a href="#调度" class="headerlink" title="调度"></a>调度</h3><h3 id="线程池"><a href="#线程池" class="headerlink" title="线程池"></a>线程池</h3><h3 id="线程局部存储-Thread-local-storage-（TLS）"><a href="#线程局部存储-Thread-local-storage-（TLS）" class="headerlink" title="线程局部存储(Thread-local storage)（TLS）"></a>线程局部存储(<code>Thread-local storage</code>)（TLS）</h3><h2 id="架构模式"><a href="#架构模式" class="headerlink" title="架构模式"></a>架构模式</h2><div class="xControl active">
+    <div class="xHeading"><div class="xIcon"><i class="fa fa-plus"></i></div><span>参看（站内资源）&thinsp;👆</span></div>
+    <div class="xContent pre-open"><div class="inner">
+        <p><a href="/zh/post/%E6%9E%B6%E6%9E%84%E6%A8%A1%E5%BC%8F-Architectural-pattern/" title="架构模式">架构模式</a><sup>🖇</sup></p>
+ 
+    </div></div>
+    </div>
+
+<h2 id="云计算-amp-分布式计算"><a href="#云计算-amp-分布式计算" class="headerlink" title="云计算 &amp; 分布式计算"></a>云计算 &amp; 分布式计算</h2><blockquote>
+<p>在计算机科学中，分布式计算（英语：Distributed computing），又译为分散式运算。这个研究领域，主要研究分布式系统（Distributed system）如何进行计算。分布式系统是一组电脑，透过网络相互连接传递消息与通信后并协调它们的行为而形成的系统。[1]组件之间彼此进行交互以实现一个共同的目标。把需要进行大量计算的工程数据分割成小块，由多台计算机分别计算，再上传运算结果后，将结果统一合并得出数据结论的科学。分布式系统的例子来自有所不同的面向服务的架构，大型多人在线游戏，对等网络应用。</p>
+</blockquote>
+<h3 id="断路器"><a href="#断路器" class="headerlink" title="断路器"></a>断路器</h3><h3 id="CQRS"><a href="#CQRS" class="headerlink" title="CQRS"></a>CQRS</h3><h3 id="补偿交易"><a href="#补偿交易" class="headerlink" title="补偿交易"></a>补偿交易</h3><h3 id="索引表"><a href="#索引表" class="headerlink" title="索引表"></a>索引表</h3><h3 id="领导者选举"><a href="#领导者选举" class="headerlink" title="领导者选举"></a>领导者选举</h3><h3 id="MapReduce"><a href="#MapReduce" class="headerlink" title="MapReduce"></a>MapReduce</h3><h3 id="物化视图"><a href="#物化视图" class="headerlink" title="物化视图"></a>物化视图</h3><h3 id="管道"><a href="#管道" class="headerlink" title="管道"></a>管道</h3><h3 id="过滤器"><a href="#过滤器" class="headerlink" title="过滤器"></a>过滤器</h3><h3 id="发布-订阅"><a href="#发布-订阅" class="headerlink" title="发布/订阅"></a>发布/订阅</h3><blockquote>
+<p>在软件架构中，发布-订阅是一种消息范式，消息的发送者（称为发布者）不会将消息直接发送给特定的接收者（称为订阅者）。而是将发布的消息分为不同的类别，无需了解哪些订阅者（如果有的话）可能存在。同样的，订阅者可以表达对一个或多个类别的兴趣，只接收感兴趣的消息，无需了解哪些发布者（如果有的话）存在。</p>
+<p>发布/订阅是消息队列范式的兄弟，通常是更大的面向消息中间件系统的一部分。大多数消息系统在API中同时支持消息队列模型和发布/订阅模型，例如Java消息服务（JMS）。</p>
+<p>这种模式提供了更大的网络可扩展性和更动态的网络拓扑，同时也降低了对发布者和发布数据的结构修改的灵活性。</p>
+</blockquote>
+<h3 id="分片"><a href="#分片" class="headerlink" title="分片"></a>分片</h3><h3 id="节流"><a href="#节流" class="headerlink" title="节流"></a>节流</h3><h2 id="其他模式"><a href="#其他模式" class="headerlink" title="其他模式"></a>其他模式</h2><h3 id="Blackboard"><a href="#Blackboard" class="headerlink" title="Blackboard"></a>Blackboard</h3><h3 id="Business-delegate"><a href="#Business-delegate" class="headerlink" title="Business delegate"></a>Business delegate</h3><h3 id="Composite-entity"><a href="#Composite-entity" class="headerlink" title="Composite entity"></a>Composite entity</h3><h3 id="委托"><a href="#委托" class="headerlink" title="委托"></a>委托</h3><h3 id="依赖注入"><a href="#依赖注入" class="headerlink" title="依赖注入"></a>依赖注入</h3><h3 id="Intercepting-filter"><a href="#Intercepting-filter" class="headerlink" title="Intercepting filter"></a>Intercepting filter</h3><h3 id="惰性加载"><a href="#惰性加载" class="headerlink" title="惰性加载"></a>惰性加载</h3><h3 id="Method-chaining"><a href="#Method-chaining" class="headerlink" title="Method chaining"></a>Method chaining</h3><h3 id="模拟对象"><a href="#模拟对象" class="headerlink" title="模拟对象"></a>模拟对象</h3><h3 id="空对象"><a href="#空对象" class="headerlink" title="空对象"></a>空对象</h3><h3 id="对象池"><a href="#对象池" class="headerlink" title="对象池"></a>对象池</h3><h3 id="Servant"><a href="#Servant" class="headerlink" title="Servant"></a>Servant</h3><h3 id="Twin"><a href="#Twin" class="headerlink" title="Twin"></a>Twin</h3><h3 id="Type-tunnel"><a href="#Type-tunnel" class="headerlink" title="Type tunnel"></a>Type tunnel</h3><hr>
+<h1 id="📖参看"><a href="#📖参看" class="headerlink" title="📖参看"></a>📖参看</h1><div class="xControl active">
+    <div class="xHeading"><div class="xIcon"><i class="fa fa-plus"></i></div><span>主要参看📖</span></div>
+    <div class="xContent pre-open"><div class="inner">
+        <ul>
+<li><a target="_blank" rel="noopener" href="https://en.wikipedia.org/wiki/Software_design_pattern">Software design pattern - Wikipedia</a></li>
+<li><a target="_blank" rel="noopener" href="https://zh.wikipedia.org/wiki/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F_(%E8%AE%A1%E7%AE%97%E6%9C%BA)">设计模式 (计算机) - 维基百科，自由的百科全书</a></li>
+</ul>
+ 
+    </div></div>
+    </div>
+
+<div class="xControl">
+    <div class="xHeading"><div class="xIcon"><i class="fa fa-plus"></i></div><span>分类：解决问题✅</span></div>
+    <div class="xContent"><div class="inner">
+        <ul>
+<li><a target="_blank" rel="noopener" href="https://blog.csdn.net/heimu24/article/details/81189700">Markdown进阶（更改字体、颜色、大小，设置文字背景色，调整图片大小设置居中）_heimu24的博客-CSDN博客_markdown 颜色</a></li>
+<li><a target="_blank" rel="noopener" href="https://segmentfault.com/q/1010000019710978">inline-block的元素垂直居中的问题 - SegmentFault 思否</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.itranslater.com/qa/details/2117469006360740864">如何在GitHub风格的Markdown中添加脚注？ - ITranslater</a></li>
+</ul>
+ 
+    </div></div>
+    </div>
+
+<div class="xControl">
+    <div class="xHeading"><div class="xIcon"><i class="fa fa-plus"></i></div><span>分类：工具🧰&ensp;|&ensp;查阅🔍</span></div>
+    <div class="xContent"><div class="inner">
+        <ul>
+<li><a target="_blank" rel="noopener" href="https://developer.mozilla.org/zh-CN/docs/Web/CSS/calc()">calc() - CSS（层叠样式表） | MDN</a></li>
+<li><a target="_blank" rel="noopener" href="https://developer.mozilla.org/zh-CN/docs/Web/CSS/fit-content">fit-content() - CSS（层叠样式表） | MDN</a></li>
+<li>【★】【GFM】<a target="_blank" rel="noopener" href="https://github.github.com/gfm/">GitHub Flavored Markdown Spec - github.github.com</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.w3schools.com/colors/colors_picker.asp">HTML Color Picker</a></li>
+<li><font style="font-style:italic;"><b>「</b>本站_标准颜色<b>」</b></font>&ensp;⤵<ul>
+<li><font style="color:#CC0000;font-weight:bold;">『&thinsp;红&thinsp;』</font>&ensp;<code>#CC0000</code></li>
+<li><font style="color:#FF6699;font-weight:bold;">『&thinsp;粉&thinsp;』</font>&ensp;<code>#FF6699</code></li>
+<li><font style="color:#FCC000;font-weight:bold;">『&thinsp;橙&thinsp;』</font>&ensp;<code>#FCC000</code></li>
+<li><font style="color:#6AA84F;font-weight:bold;">『&thinsp;绿&thinsp;』</font>&ensp;<code>#6AA84F</code></li>
+<li><font style="color:#4343FF;font-weight:bold;">『&thinsp;蓝&thinsp;』</font>&ensp;<code>#4343FF</code></li>
+<li><font style="color:#9900FF;font-weight:bold;">『&thinsp;紫&thinsp;』</font>&ensp;<code>#9900FF</code></li>
+<li><font style="color:#808080;font-weight:bold;">『&thinsp;灰&thinsp;』</font>&ensp;<code>#808080</code></li>
+</ul>
+</li>
+<li><a target="_blank" rel="noopener" href="http://www.oicqzone.com/pc/2015083122336.html">HTML中&amp;nbsp; &amp;ensp; &amp;emsp; &amp;thinsp;等6种空白空格的区别_电脑小技巧_上网技巧_QQ地带</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.runoob.com/markdown/md-tutorial.html">Markdown 教程 | 菜鸟教程</a></li>
+<li><a target="_blank" rel="noopener" href="https://unicode-table.com/cn/1F446/">👆 - 白色指向反手指数 表情符号: U+1F446 - Unicode 字符百科</a></li>
+<li><a target="_blank" rel="noopener" href="https://unicode-table.com/cn/1F4D6/">📖 - 打开书 表情符号: U+1F4D6 - Unicode 字符百科</a></li>
+<li><a target="_blank" rel="noopener" href="https://unicode-table.com/cn/1F517/">🔗 - 链接符号 表情符号: U+1F517 - Unicode 字符百科</a></li>
+<li><a target="_blank" rel="noopener" href="https://unicode-table.com/cn/1F587/">🖇 - 链接回形针 表情符号: U+1F587 - Unicode 字符百科</a></li>
+<li><a target="_blank" rel="noopener" href="https://unicode-table.com/cn/1F5CE/">🗎 - 文献: U+1F5CE - Unicode 字符百科</a></li>
+<li><a target="_blank" rel="noopener" href="https://unicode-table.com/cn/203B/">※ - 参考标志: U+203B - Unicode 字符百科</a></li>
+<li><a target="_blank" rel="noopener" href="https://unicode-table.com/cn/260C/">☌ - 关联: U+260C - Unicode 字符百科</a></li>
+<li><a target="_blank" rel="noopener" href="https://unicode-table.com/cn/1F845/">🡅 - 向上重箭头: U+1F845 - Unicode 字符百科</a></li>
+<li><a target="_blank" rel="noopener" href="https://unicode-table.com/cn/1F846/">🡆 - 向右重箭头: U+1F846 - Unicode 字符百科</a></li>
+<li><a target="_blank" rel="noopener" href="https://unicode-table.com/cn/1F847/">🡇 - 向下重箭头: U+1F847 - Unicode 字符百科</a></li>
+<li><a target="_blank" rel="noopener" href="https://unicode-table.com/cn/1F844/">🡄 - 向左重箭: U+1F844 - Unicode 字符百科</a></li>
+<li><a target="_blank" rel="noopener" href="https://unicode-table.com/cn/2934/">⤴ - 指向右侧然后向上弯曲的箭头 表情符号: U+2934 - Unicode 字符百科</a></li>
+<li><a target="_blank" rel="noopener" href="https://unicode-table.com/cn/2935/">⤵ - 指向右侧然后向下弯曲的箭头 表情符号: U+2935 cudarrr - Unicode 字符百科</a></li>
+<li><a target="_blank" rel="noopener" href="https://unicode-table.com/cn/2936/">⤶ - 指向下侧然后向左弯曲的箭头: U+2936 ldca - Unicode 字符百科</a></li>
+<li><a target="_blank" rel="noopener" href="https://unicode-table.com/cn/2937/">⤷ - 指向下侧然后向右弯曲的箭头: U+2937 rdca - Unicode 字符百科</a></li>
+<li><a target="_blank" rel="noopener" href="https://unicode-table.com/cn/1F3B5/">🎵 - 快乐的音符 表情符号: U+1F3B5 - Unicode 字符百科</a></li>
+<li><a target="_blank" rel="noopener" href="https://unicode-table.com/cn/21D4/">⇔ - 左右双箭头: U+21D4 hArr - Unicode 字符百科</a></li>
+<li><a target="_blank" rel="noopener" href="https://unicode-table.com/cn/21D2/">⇒ - 向右双箭头: U+21D2 rArr - Unicode 字符百科</a></li>
+<li><a target="_blank" rel="noopener" href="https://unicode-table.com/cn/2014/">— - Em 长划: U+2014 mdash - Unicode 字符百科</a></li>
+<li><a target="_blank" rel="noopener" href="https://unicode-table.com/cn/1F44D/">👍 - 竖起大拇指 表情符号: U+1F44D - Unicode 字符百科</a></li>
+<li><a target="_blank" rel="noopener" href="https://zh.wikipedia.org/wiki/%E6%A0%87%E7%82%B9%E7%AC%A6%E5%8F%B7">标点符号 - 维基百科，自由的百科全书</a></li>
+<li><a target="_blank" rel="noopener" href="https://zh.wikipedia.org/wiki/%E8%BF%9E%E6%8E%A5%E5%8F%B7">连接号 - 维基百科，自由的百科全书</a></li>
+</ul>
+ 
+    </div></div>
+    </div>
+
+<div class="xControl">
+    <div class="xHeading"><div class="xIcon"><i class="fa fa-plus"></i></div><span>分类：其他（二度及以上关联☌）</span></div>
+    <div class="xContent"><div class="inner">
+         
+    </div></div>
+    </div>
+
+<hr>
+<h1 id="※参考和引用"><a href="#※参考和引用" class="headerlink" title="※参考和引用"></a>※参考和引用</h1><ol>
+<li><a id="cite_note-1" href="#cite_ref-1" aria-label="跳转" title="跳转">^</a>&ensp;<a target="_blank" rel="noopener" href="https://zh.wikipedia.org/wiki/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F_(%E8%AE%A1%E7%AE%97%E6%9C%BA)">设计模式 (计算机) - 维基百科，自由的百科全书</a></li>
+</ol>
+<hr>
+<h1 id="🔗外部链接"><a href="#🔗外部链接" class="headerlink" title="🔗外部链接"></a>🔗外部链接</h1><ul>
+<li><a target="_blank" rel="noopener" href="https://zh.wikipedia.org/w/skins/Vector/resources/skins.vector.styles/images/external-link-ltr-icon.svg?48e54">Wikipedia&#39;s external link ltr-icon</a><span style="display:inline-block !important;vertical-align:top !important;width:12px !important;height:fit-content(100%);padding:0 !important;border:0 !important;margin:0 !important;"><img src="https://zh.wikipedia.org/w/skins/Vector/resources/skins.vector.styles/images/external-link-ltr-icon.svg?48e54" alt="" style="display:inline-block;vertical-align:top !important;width:12px;height:12px;border:0 !important;margin:0 !important;" /></span></li>
+</ul>
+
+            </div>
+            
+                <div class="kratos-copyright text-center clearfix">
+                    <h5>本作品采用 <a rel="license nofollow" target="_blank" href="https://creativecommons.org/licenses/by-sa/4.0/">知识共享署名-相同方式共享 4.0 国际许可协议</a> 进行许可</h5>
+                </div>
+            
+            <footer class="kratos-entry-footer clearfix">
+                
+                    <div class="post-like-donate text-center clearfix" id="post-like-donate">
+                    
+                    
+                        <a class="share" href="javascript:;"><i class="fa fa-share-alt"></i> 分享</a>
+                        <div class="share-wrap" style="display: none;">
+    <div class="share-group">
+        <a href="javascript:;" class="share-plain qq" onclick="share('qq');" rel="nofollow">
+            <div class="icon-wrap">
+                <i class="fa fa-qq"></i>
+            </div>
+        </a>
+        <a href="javascript:;" class="share-plain qzone" onclick="share('qzone');" rel="nofollow">
+            <div class="icon-wrap">
+                <i class="fa fa-star"></i>
+            </div>
+        </a>
+        <a href="javascript:;" class="share-plain weixin pop style-plain" rel="nofollow">
+            <div class="icon-wrap">
+                <i class="fa fa-weixin"></i>
+            </div>
+            <div class="share-int">
+                <div class="qrcode" id="wechat-qr"></div>
+                <p>打开微信“扫一扫”，打开网页后点击屏幕右上角分享按钮</p>
+            </div>
+        </a>
+        <a href="javascript:;" class="share-plain weibo" onclick="share('weibo');" rel="nofollow">
+            <div class="icon-wrap">
+                <i class="fa fa-weibo"></i>
+            </div>
+        </a>
+        <a href="javascript:;" class="share-plain facebook style-plain" onclick="share('facebook');" rel="nofollow">
+            <div class="icon-wrap">
+                <i class="fa fa-facebook"></i>
+            </div>
+        </a>
+        <a href="javascript:;" class="share-plain twitter style-plain" onclick="share('twitter');" rel="nofollow">
+            <div class="icon-wrap">
+                <i class="fa fa-twitter"></i>
+            </div>
+        </a>
+    </div>
+    <script type="text/javascript">
+        $(()=>{
+            new QRCode("wechat-qr", {
+                text: "https://suitelhy.github.io/zh/post/%E8%BD%AF%E4%BB%B6%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F-Software-design-pattern/",
+                width: 150,
+                height: 150,
+                correctLevel : QRCode.CorrectLevel.H
+            });
+        });
+        function share(dest) {
+            const qqBase        = "https://connect.qq.com/widget/shareqq/index.html?";
+            const weiboBase     = "https://service.weibo.com/share/share.php?";
+            const qzoneBase     = "https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?";
+            const facebookBase  = "https://www.facebook.com/sharer/sharer.php?";
+            const twitterBase   = "https://twitter.com/intent/tweet?";
+            const hostUrl       = "https://suitelhy.github.io/zh/post/%E8%BD%AF%E4%BB%B6%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F-Software-design-pattern/";
+            const title         = "「软件设计模式(Software design pattern)」";
+            const excerpt       = `在软件工程中，设计模式（design pattern）是&thinsp;对软件设计中&thinsp;普遍存在（反复出现）的各种问题，所提出的解决方案。这个术语&thinsp;是由&thinsp;埃里希·伽玛（Erich Gamma）等人&thinsp;在1990年代&thinsp;从建筑设计领域&thinsp;引入到计算机科学的。`;
+            let _URL;
+            switch (dest) {
+                case "qq"       : _URL = qqBase+"url="+hostUrl+"&title="+title+"&desc=&summary="+excerpt+"&site=cxpy";     break;
+                case "weibo"    : _URL = weiboBase+"url="+hostUrl+"&title="+title+excerpt;                                 break;
+                case "qzone"    : _URL = qzoneBase+"url="+hostUrl+"&title="+title+"&desc=&summary="+excerpt+"&site=cxpy";  break;
+                case "facebook" : _URL = facebookBase+"u="+hostUrl;                                                        break;
+                case "twitter"  : _URL = twitterBase+"text="+title+excerpt+"&url="+hostUrl;                                break;
+            }
+            window.open(_URL);
+        };
+    </script>
+</div>
+                    
+                    </div>
+                
+                <div class="footer-tag clearfix">
+                    <div class="pull-left">
+                    <i class="fa fa-tags"></i>
+                        <a class="tag-none-link" href="/tags/Information-Technology/" rel="tag">信息技术</a>, <a class="tag-none-link" href="/tags/Computer-Science/" rel="tag">计算机科学</a>, <a class="tag-none-link" href="/tags/Software/" rel="tag">软件</a>, <a class="tag-none-link" href="/tags/Software-design-pattern/" rel="tag">软件设计模式</a>
+                    </div>
+                    <div class="pull-date">
+                    <span>最后编辑：2021-05-16</span>
+                    </div>
+                </div>
+            </footer>
+        </div>
+        
+            <nav class="navigation post-navigation clearfix" role="navigation">
+                
+                <div class="nav-previous clearfix">
+                    <a title=" 设计模式（可复用面向对象软件的基础）" href="/zh/post/设计模式（可复用面向对象软件的基础）/">&lt; 上一篇</a>
+                </div>
+                
+                
+                <div class="nav-next clearfix">
+                    <a title=" 【社会】【职业】职场记录-杂录" href="/zh/post/【社会】【职业】职场记录-杂录/">下一篇 &gt;</a>
+                </div>
+                
+            </nav>
+        
+        
+    </article>
+</section>
+
+                
+            
+
+<section id="kratos-widget-area" class="col-md-4 hidden-xs hidden-sm">
+    <!-- 文章和页面根据splitter来分割，没有的话就从头开始设置为sticky -->
+    
+    
+                <aside id="krw-about" class="widget widget-kratos-about clearfix">
+    <div class="photo-background"></div>
+    <div class="photo-wrapper clearfix">
+        <div class="photo-wrapper-tip text-center">
+            <img class="about-photo" src="https://avatars.githubusercontent.com/SuiteLHY" />
+        </div>
+    </div>
+    <div class="textwidget">
+        <p class="text-center">青春倚靠着时光，轻快的脚步在世间流韵； 云上光华从指间绽放，地上人们自由而幸福。</p>
+    </div>
+</aside>
+            
+                    <div class="sticky-area">
+                
+                    <aside id="krw-toc" class="widget widget-kratos-toc clearfix">
+    <div class="photo-background"></div>
+    <h4 class="widget-title no-after">
+        <i class="fa fa-compass"></i>
+        文章目录
+        <span class="toc-progress-bar"></span>
+    </h4>
+    <div class="textwidget">
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%99%BE%E7%A7%91"><span class="toc-text">百科</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%8F%91%E5%B1%95%E5%8E%86%E5%8F%B2"><span class="toc-text">发展历史</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%A1%A8%E8%BF%B0%E6%A0%BC%E5%BC%8F"><span class="toc-text">表述格式</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%88%86%E7%B1%BB"><span class="toc-text">分类</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8F%82%E9%98%85"><span class="toc-text">参阅</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%EF%BC%88%E8%AE%A1%E7%AE%97%E6%9C%BA%EF%BC%89-%E5%88%86%E7%B1%BB"><span class="toc-text">设计模式（计算机）-分类</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%EF%BC%88%E5%8F%AF%E5%A4%8D%E7%94%A8%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E8%BD%AF%E4%BB%B6%E7%9A%84%E5%9F%BA%E7%A1%80%EF%BC%89"><span class="toc-text">设计模式（可复用面向对象软件的基础）</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%87%BD%E6%95%B0%E5%BC%8F%E7%BC%96%E7%A8%8B"><span class="toc-text">函数式编程</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%B9%BA%E5%8D%8A%E7%BE%A4"><span class="toc-text">幺半群</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%87%BD%E5%AD%90-functor"><span class="toc-text">函子(functor)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%BA%94%E7%94%A8%E5%BC%8F-applicative"><span class="toc-text">应用式(applicative)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8D%95%E5%AD%90-monad"><span class="toc-text">单子(monad)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%AB%98%E9%98%B6%E5%87%BD%E6%95%B0-HOF"><span class="toc-text">高阶函数(HOF)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%9F%AF%E9%87%8C%E5%8C%96"><span class="toc-text">柯里化</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%87%BD%E6%95%B0%E5%A4%8D%E5%90%88"><span class="toc-text">函数复合</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%97%AD%E5%8C%85"><span class="toc-text">闭包</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%94%9F%E6%88%90%E5%99%A8"><span class="toc-text">生成器</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%B9%B6%E5%8F%91%E5%9E%8B%E6%A8%A1%E5%BC%8F"><span class="toc-text">并发型模式</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%BB%E5%8A%A8%E5%AF%B9%E8%B1%A1"><span class="toc-text">主动对象</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%98%BB%E6%AD%A2-Balking-pattern"><span class="toc-text">阻止(Balking pattern)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Binding-properties"><span class="toc-text">Binding properties</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8F%8C%E9%87%8D%E6%A3%80%E6%9F%A5%E9%94%81%E5%AE%9A%E6%A8%A1%E5%BC%8F"><span class="toc-text">双重检查锁定模式</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%BC%82%E6%AD%A5%E6%96%B9%E6%B3%95%E8%B0%83%E7%94%A8"><span class="toc-text">异步方法调用</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Future%E4%B8%8Epromise"><span class="toc-text">Future与promise</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Guarded-suspension"><span class="toc-text">Guarded suspension</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Join"><span class="toc-text">Join</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%94%81"><span class="toc-text">锁</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Messaging"><span class="toc-text">Messaging</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AE%88%E5%8D%AB"><span class="toc-text">守卫</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%A2%86%E5%AF%BC%E8%80%85-%E8%BF%BD%E9%9A%8F%E8%80%85"><span class="toc-text">领导者&#x2F;追随者</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%9B%91%E8%A7%86%E5%99%A8-Monitors"><span class="toc-text">监视器(Monitors)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Proactor"><span class="toc-text">Proactor</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8F%8D%E5%BA%94%E5%99%A8"><span class="toc-text">反应器</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%AF%BB%E5%86%99%E9%94%81"><span class="toc-text">读写锁</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%B0%83%E5%BA%A6"><span class="toc-text">调度</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%BA%BF%E7%A8%8B%E6%B1%A0"><span class="toc-text">线程池</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%BA%BF%E7%A8%8B%E5%B1%80%E9%83%A8%E5%AD%98%E5%82%A8-Thread-local-storage-%EF%BC%88TLS%EF%BC%89"><span class="toc-text">线程局部存储(Thread-local storage)（TLS）</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%9E%B6%E6%9E%84%E6%A8%A1%E5%BC%8F"><span class="toc-text">架构模式</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BA%91%E8%AE%A1%E7%AE%97-amp-%E5%88%86%E5%B8%83%E5%BC%8F%E8%AE%A1%E7%AE%97"><span class="toc-text">云计算 &amp; 分布式计算</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%96%AD%E8%B7%AF%E5%99%A8"><span class="toc-text">断路器</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#CQRS"><span class="toc-text">CQRS</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%A1%A5%E5%81%BF%E4%BA%A4%E6%98%93"><span class="toc-text">补偿交易</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%B4%A2%E5%BC%95%E8%A1%A8"><span class="toc-text">索引表</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%A2%86%E5%AF%BC%E8%80%85%E9%80%89%E4%B8%BE"><span class="toc-text">领导者选举</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#MapReduce"><span class="toc-text">MapReduce</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%89%A9%E5%8C%96%E8%A7%86%E5%9B%BE"><span class="toc-text">物化视图</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%AE%A1%E9%81%93"><span class="toc-text">管道</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%BF%87%E6%BB%A4%E5%99%A8"><span class="toc-text">过滤器</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8F%91%E5%B8%83-%E8%AE%A2%E9%98%85"><span class="toc-text">发布&#x2F;订阅</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%88%86%E7%89%87"><span class="toc-text">分片</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%8A%82%E6%B5%81"><span class="toc-text">节流</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%85%B6%E4%BB%96%E6%A8%A1%E5%BC%8F"><span class="toc-text">其他模式</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Blackboard"><span class="toc-text">Blackboard</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Business-delegate"><span class="toc-text">Business delegate</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Composite-entity"><span class="toc-text">Composite entity</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%A7%94%E6%89%98"><span class="toc-text">委托</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BE%9D%E8%B5%96%E6%B3%A8%E5%85%A5"><span class="toc-text">依赖注入</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Intercepting-filter"><span class="toc-text">Intercepting filter</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%83%B0%E6%80%A7%E5%8A%A0%E8%BD%BD"><span class="toc-text">惰性加载</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Method-chaining"><span class="toc-text">Method chaining</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%A8%A1%E6%8B%9F%E5%AF%B9%E8%B1%A1"><span class="toc-text">模拟对象</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%A9%BA%E5%AF%B9%E8%B1%A1"><span class="toc-text">空对象</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AF%B9%E8%B1%A1%E6%B1%A0"><span class="toc-text">对象池</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Servant"><span class="toc-text">Servant</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Twin"><span class="toc-text">Twin</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Type-tunnel"><span class="toc-text">Type tunnel</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%F0%9F%93%96%E5%8F%82%E7%9C%8B"><span class="toc-text">📖参看</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E2%80%BB%E5%8F%82%E8%80%83%E5%92%8C%E5%BC%95%E7%94%A8"><span class="toc-text">※参考和引用</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%F0%9F%94%97%E5%A4%96%E9%83%A8%E9%93%BE%E6%8E%A5"><span class="toc-text">🔗外部链接</span></a></li></ol>
+    </div>
+</aside>
+                
+                
+  <aside id="krw-categories" class="widget widget-kratos-categories clearfix">
+    <h4 class="widget-title"><i class="fa fa-folder"></i>分类目录</h4>
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/HelloWorld/">HelloWorld🐣</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/InformationTechnology/">信息技术</a><span class="category-list-count">12</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/InformationTechnology/Handbook/">手册</a><span class="category-list-count">4</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Other/">其他🗒</a><span class="category-list-count">7</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Blog/">博客</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Handbook/">手册</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/DailyRecord/">日常记录</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Life/">生命</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Knowledge/">知识</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Society/">社会</a><span class="category-list-count">30</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Society/InformationTechnology/">信息技术</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Society/ComputerScience/">计算机科学</a><span class="category-list-count">1</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Society/ComputerScience/InformationTechnology/">信息技术</a><span class="category-list-count">1</span></li></ul></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/SiteRecord/">站点记录</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/ComputerEngineering/">计算机工程</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/ComputerScience/">计算机科学</a><span class="category-list-count">34</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/ComputerScience/InformationTechnology/">信息技术</a><span class="category-list-count">18</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/ComputerScience/Handbook/">手册</a><span class="category-list-count">2</span></li></ul></li></ul>
+  </aside>
+
+
+            
+                
+  <aside id="krw-tags" class="widget widget-kratos-tags clearfix">
+    <h4 class="widget-title"><i class="fa fa-tags"></i>标签聚合</h4>
+      <div class="tag-clouds">
+        <a href="/tags/Git/" style="font-size: 0.76em;">Git</a> <a href="/tags/GitHub/" style="font-size: 0.6em;">GitHub</a> <a href="/tags/Github/" style="font-size: 0.72em;">Github</a> <a href="/tags/HelloWorld/" style="font-size: 0.68em;">HelloWorld🐣</a> <a href="/tags/Hexo/" style="font-size: 0.6em;">Hexo</a> <a href="/tags/Java/" style="font-size: 0.76em;">Java</a> <a href="/tags/Object-Relational-Mapping/" style="font-size: 0.64em;">ORM</a> <a href="/tags/Apache-Tomcat/" style="font-size: 0.6em;">Tomcat</a> <a href="/tags/%E3%80%8AThinking-in-Java%E3%80%8B/" style="font-size: 0.64em;">《Thinking in Java》</a> <a href="/tags/Spring-Framework/" style="font-size: 0.64em;">【Java】Spring Framework</a> <a href="/tags/bcrypt/" style="font-size: 0.6em;">【密码散列函数】bcrypt</a> <a href="/tags/Internet/" style="font-size: 0.72em;">互联网</a> <a href="/tags/Ethics/" style="font-size: 0.6em;">伦理</a> <a href="/tags/Tutorial/" style="font-size: 0.64em;">使用手册</a> <a href="/tags/Information-Technology/" style="font-size: 0.8em;">信息技术</a> <a href="/tags/Kernel-operating-system/" style="font-size: 0.6em;">内核（操作系统）</a> <a href="/tags/Functional-requirement/" style="font-size: 0.68em;">功能需求</a> <a href="/tags/Blog/" style="font-size: 0.68em;">博客</a>
+      </div>
+  </aside>
+
+            
+                
+  <aside id="krw-posts" class="widget widget-kratos-posts">
+  <h4 class="widget-title"><i class="fa fa-file"></i>最新文章</h4>
+  <div class="tab-content">
+      <ul class="list-group">
+        
+        
+          
+          
+            <a class="list-group-item" href="/zh/post/%E3%80%90%E7%A4%BE%E4%BC%9A%E3%80%91%E3%80%90%E8%81%8C%E4%B8%9A%E3%80%91%E8%81%8C%E5%9C%BA%E8%AE%B0%E5%BD%95-%E6%9D%82%E5%BD%95/"><i class="fa  fa-book"></i> 【社会】【职业】职场记录-杂录</a>
+            
+          
+        
+          
+          
+            <a class="list-group-item" href="/zh/post/%E8%BD%AF%E4%BB%B6%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F-Software-design-pattern/"><i class="fa  fa-book"></i> 软件设计模式(Software design pattern)</a>
+            
+          
+        
+          
+          
+            <a class="list-group-item" href="/zh/post/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%EF%BC%88%E5%8F%AF%E5%A4%8D%E7%94%A8%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E8%BD%AF%E4%BB%B6%E7%9A%84%E5%9F%BA%E7%A1%80%EF%BC%89/"><i class="fa  fa-book"></i> 设计模式（可复用面向对象软件的基础）</a>
+            
+          
+        
+          
+          
+            <a class="list-group-item" href="/zh/post/%E6%9E%B6%E6%9E%84%E6%A8%A1%E5%BC%8F-Architectural-pattern/"><i class="fa  fa-book"></i> 架构模式(Architectural pattern)</a>
+            
+          
+        
+          
+          
+            <a class="list-group-item" href="/zh/post/%E8%84%9A%E6%9C%AC%E8%AF%AD%E8%A8%80-Scripting-language/"><i class="fa  fa-book"></i> 脚本语言(Scripting language)</a>
+            
+          
+        
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+      </ul>
+  </div>
+  </aside>
+
+            
+    </div>
+</section>
+        
+        </div>
+    </div>
+</div>
+<footer>
+    <div id="footer"  class="ap-lrc"  >
+        <div class="kr-tool text-center">
+            <div class="tool">
+                
+                    <div class="box search-box">
+                        <a href="/search/">
+                            <span class="fa fa-search"></span>
+                        </a>
+                    </div>
+                
+                
+                    <div class="box theme-box" id="darkmode-switch">
+                        <span class="fa fa-adjust"></span>
+                    </div>
+                
+                
+            </div>
+            <div class="box gotop-box">
+                <span class="fa fa-chevron-up"></span>
+            </div>
+        </div>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6 col-md-offset-3 footer-list text-center">
+                    <ul class="kratos-social-icons">
+                        
+                        
+                        <li><a target="_blank" rel="nofollow" href="https://t.me/SuiteLHY"><i class="fa fa-telegram"></i></a></li>
+                        
+                        
+                        
+                        
+                        <li><a target="_blank" rel="nofollow" href="https://github.com/SuiteLHY"><i class="fa fa-github"></i></a></li>
+                        
+                    </ul>
+                    <ul class="kratos-copyright">
+                        <div>
+                            <li>&copy; 2021 夜与花海 版权所有.</li>
+                            <li>本站已运行<span id="span_dt">Loading...</span></li>
+                        </div>
+                        <div>
+                            <li>Theme <a href="https://github.com/Candinya/Kratos-Rebirth" target="_blank">Kratos:Rebirth</a></li>
+                            <li>Site built with&nbsp;<i class="fa fa-heart throb" style="color:#d43f57"></i>&nbsp;by Suite.</li>
+                        </div>
+                        <div>
+                            <li>Powered by <a href="https://hexo.io" target="_blank" rel="nofollow">Hexo</a></li>
+                            <li>Hosted on <a href="https://github.io" target="_blank">Github Pages</a></li>
+                        </div>
+                        <div>
+                            
+                            
+                        </div>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+</div>
+</div>
+
+        <script defer src="https://cdn.jsdelivr.net/npm/bootstrap@3.3.4/dist/js/bootstrap.min.js"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.js"></script>
+<script>const notMobile = (!(navigator.userAgent.match(/(phone|pad|pod|iPhone|iPod|ios|iPad|Android|Mobile|BlackBerry|IEMobile|MQQBrowser|JUC|Fennec|wOSBrowser|BrowserNG|WebOS|Symbian|Windows Phone)/i)));</script>
+
+    <div>
+        <canvas id="snow"></canvas>
+        <script async type="text/javascript" src="/js/snow.min.js"></script>
+    </div>
+
+<script async src="/js/candy.min.js"></script>
+
+    <script defer src="https://cdn.jsdelivr.net/npm/aplayer@1.10.1/dist/APlayer.min.js"></script>
+    
+    <script defer src="https://cdn.jsdelivr.net/npm/meting@2/dist/Meting.min.js"></script>
+    <meting-js
+        server="netease"
+        type="playlist"
+        id="900328786"
+        order="random"
+        fixed="true"
+    >
+    </meting-js>
+
+
+
+    <script defer src="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script>
+
+<script defer src="https://cdn.jsdelivr.net/npm/clipboard@2.0.6/dist/clipboard.min.js"></script>
+<script defer src="/js/kratosr.min.js"></script>
+<script defer src="/js/pjax.min.js"></script>
+
+
+    <script defer src="/js/kr-dark.min.js"></script>
+
+
+
+<!-- Extra support for third-party plguins  -->
+
+
+    </body>
+</html>
