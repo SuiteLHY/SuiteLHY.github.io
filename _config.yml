@@ -121,15 +121,19 @@ tag_map:
   IT: Information_Technology
   MyBatis: MyBatis
   ORM: Object_Relational_Mapping
+  SSO: Single_sign-on
   Tomcat: Apache-Tomcat
   Wiki: wiki
   wiki: wiki
   ZooKeeper: Apache_ZooKeeper
   编程语言: Programming_language
   博客: Blog
+  贝塞尔曲线: Bézier_curve
   程序员: Programmer
   操作系统: Operating_system
   道德: Moral
+  单点登录: Single_sign-on
+  单点登录（SSO）: Single_sign-on
   道德学: Ethics
   道德哲学: Ethics
   地区: Region
