@@ -114,13 +114,14 @@ category_map:
   站点记录: SiteRecord
   知识: Knowledge
 tag_map:
-  Apache Tomcat: Apache_Tomcat
-  Apache ZooKeeper: Apache_ZooKeeper
+  Apache_Tomcat: Apache_Tomcat
+  Apache_ZooKeeper: Apache_ZooKeeper
   Elasticsearch: Elasticsearch
   HelloWorld🐣: HelloWorld
   IT: Information_Technology
   MyBatis: MyBatis
   ORM: Object_Relational_Mapping
+  Spring_MVC: Spring-MVC
   SSO: Single_sign-on
   Tomcat: Apache-Tomcat
   Wiki: wiki
@@ -198,7 +199,7 @@ tag_map:
   职业生涯管理: Career_management
   政治: Politics
   【密码散列函数】bcrypt: bcrypt
-  【Java】Spring Framework: Spring_Framework
+  【Java】Spring_Framework: Spring_Framework
   【Java】Spring: Spring_Framework
 
 # Metadata elements
