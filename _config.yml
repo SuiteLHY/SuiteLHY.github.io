@@ -116,7 +116,10 @@ category_map:
 tag_map:
   Apache_Tomcat: Apache_Tomcat
   Apache_ZooKeeper: Apache_ZooKeeper
+  Browser/Server: Browser/Server
+  B/S: Browser/Server
   Elasticsearch: Elasticsearch
+  FTP: File_Transfer_Protocol
   HelloWorld🐣: HelloWorld
   IT: Information_Technology
   MyBatis: MyBatis
@@ -151,11 +154,13 @@ tag_map:
   计算机语言: Computer_language
   伦理: Ethics
   伦理学: Ethics
+  浏览器-服务器: Browser/Server
   理论手册: Theory_Handbook
   良心: Conscience
   良知: Conscience
   美国: United_States_of_America
   密码散列函数: Cryptographic_hash_function
+  面试: Interview
   内核（操作系统）: Kernel_(operating_system)
   日常记录: Daily_Record
   软件: Software
@@ -166,6 +171,7 @@ tag_map:
   软件设计模式: Software_design_pattern
   手册: Handbook
   算法效率: Algorithmic_efficiency
+  数据结构: Data_structure
   数据库: Database
   实践手册: Practice_Manual
   设计模式（可复用面向对象软件的基础）: Design_Patterns_(Elements_of_Reusable_Object-Oriented_Software)
@@ -185,6 +191,7 @@ tag_map:
   互联网社区: Online_Community
   在线社区: Online_Community
   网络营销: Digital_marketing
+  文件传输协议: File_Transfer_Protocol
   文件数据转换: Data_conversion
   心理学: Psychology
   信息技术(IT): Information_Technology
