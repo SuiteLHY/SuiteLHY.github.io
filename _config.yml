@@ -120,10 +120,16 @@ tag_map:
   B/S: Browser/Server
   Elasticsearch: Elasticsearch
   FTP: File_Transfer_Protocol
+  Go: Go_(programming_language)
+  Golang: Go_(programming_language)
   HelloWorld🐣: HelloWorld
   IT: Information_Technology
   MyBatis: MyBatis
+  MySQL: MySQL
   ORM: Object_Relational_Mapping
+  Spring: Spring
+  Spring_Cloud: Spring-Cloud
+  Spring_Framework: Spring_Framework
   Spring_MVC: Spring-MVC
   SSO: Single_sign-on
   Tomcat: Apache-Tomcat
@@ -131,6 +137,7 @@ tag_map:
   wiki: wiki
   ZooKeeper: Apache_ZooKeeper
   编程语言: Programming_language
+  并发计算: Concurrent_computing
   博客: Blog
   贝塞尔曲线: Bézier_curve
   程序员: Programmer
@@ -206,8 +213,6 @@ tag_map:
   职业生涯管理: Career_management
   政治: Politics
   【密码散列函数】bcrypt: bcrypt
-  【Java】Spring_Framework: Spring_Framework
-  【Java】Spring: Spring_Framework
 
 # Metadata elements
 ## https://developer.mozilla.org/en-US/docs/Web/HTML/Element/meta
