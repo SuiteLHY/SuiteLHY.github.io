@@ -39,7 +39,7 @@ only:
 
 {% collapse "分类：工具🧰&ensp;|&ensp;查阅🔍" %}
 
-* [calc\(\) \- CSS（层叠样式表） | MDN](https://developer.mozilla.org/zh-CN/docs/Web/CSS/calc())
+* [calc\(\) \- CSS（层叠样式表） | MDN](https:\/\/developer\.mozilla\.org\/zh\-CN\/docs\/Web\/CSS\/calc\(\))
 * [fit\-content\(\) \- CSS（层叠样式表） | MDN](https://developer.mozilla.org/zh-CN/docs/Web/CSS/fit-content)
 * 【★】【GFM】[GitHub Flavored Markdown Spec \- github\.github\.com](https://github.github.com/gfm/)
 * [HTML Color Picker](https://www.w3schools.com/colors/colors_picker.asp)
@@ -51,7 +51,7 @@ only:
     + <font style="color:#4343FF;font-weight:bold;">『&thinsp;蓝&thinsp;』</font>&ensp;`#4343FF`
     + <font style="color:#9900FF;font-weight:bold;">『&thinsp;紫&thinsp;』</font>&ensp;`#9900FF`
     + <font style="color:#808080;font-weight:bold;">『&thinsp;灰&thinsp;』</font>&ensp;`#808080`
-* [HTML中\&nbsp; \&ensp; \&emsp; \&thinsp;等6种空白空格的区别_电脑小技巧_上网技巧_QQ地带](http://www.oicqzone.com/pc/2015083122336.html)
+* [HTML中\&nbsp; \&ensp; \&emsp; \&thinsp;等6种空白空格的区别\_电脑小技巧\_上网技巧\_QQ地带](http://www.oicqzone.com/pc/2015083122336.html)
 * [Markdown 教程 | 菜鸟教程](https://www.runoob.com/markdown/md-tutorial.html)
 * [👆 \- 白色指向反手指数 表情符号: U\+1F446 \- Unicode 字符百科](https://unicode-table.com/cn/1F446/)
 * [📖 \- 打开书 表情符号: U\+1F4D6 \- Unicode 字符百科](https://unicode-table.com/cn/1F4D6/)
@@ -73,6 +73,8 @@ only:
 * [⇒ \- 向右双箭头: U\+21D2 rArr \- Unicode 字符百科](https://unicode-table.com/cn/21D2/)
 * [— \- Em 长划: U\+2014 mdash \- Unicode 字符百科](https://unicode-table.com/cn/2014/)
 * [👍 \- 竖起大拇指 表情符号: U\+1F44D \- Unicode 字符百科](https://unicode-table.com/cn/1F44D/)
+* [❮ \- 粗左指尖引号装饰: U\+276E \- Unicode 字符百科](https://unicode-table.com/cn/276E/)
+* [❯ \- 粗右指尖引号装饰: U\+276F \- Unicode 字符百科](https://unicode-table.com/cn/276F/)
 * [标点符号 \- 维基百科，自由的百科全书](https://zh.wikipedia.org/wiki/%E6%A0%87%E7%82%B9%E7%AC%A6%E5%8F%B7)
 * [连接号 \- 维基百科，自由的百科全书](https://zh.wikipedia.org/wiki/%E8%BF%9E%E6%8E%A5%E5%8F%B7)
 
