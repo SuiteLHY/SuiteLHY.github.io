@@ -118,12 +118,18 @@ tag_map:
   Apache_ZooKeeper: Apache_ZooKeeper
   Browser/Server: Browser/Server
   B/S: Browser/Server
+  CAS: Compare-and-swap
   Elasticsearch: Elasticsearch
   FTP: File_Transfer_Protocol
   Go: Go_(programming_language)
   Golang: Go_(programming_language)
   HelloWorld🐣: HelloWorld
+  IDE: IDE
+  IntelliJ_IDEA: IntelliJ-IDEA
+  IntelliJ-IDEA: IntelliJ-IDEA
   IT: Information_Technology
+  Java: Java
+  JDK: Java-Development-Kit
   MyBatis: MyBatis
   MySQL: MySQL
   ORM: Object_Relational_Mapping
@@ -138,6 +144,9 @@ tag_map:
   ZooKeeper: Apache_ZooKeeper
   编程语言: Programming_language
   并发计算: Concurrent_computing
+  悲观并发控制: Pessimistic_Concurrency_Control
+  悲观锁: Pessimistic_Concurrency_Control
+  比较并交换: Compare-and-swap
   博客: Blog
   贝塞尔曲线: Bézier_curve
   程序员: Programmer
@@ -159,6 +168,8 @@ tag_map:
   计算机工程: Computer_Engineering
   计算机科学: Computer_Science
   计算机语言: Computer_language
+  乐观并发控制: Optimistic_Concurrency_Control
+  乐观锁: Optimistic_Concurrency_Control
   伦理: Ethics
   伦理学: Ethics
   浏览器-服务器: Browser/Server
