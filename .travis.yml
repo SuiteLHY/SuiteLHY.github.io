@@ -14,7 +14,6 @@ git:
 before_install:
   - echo -e "\n\nmachine github.com\n login $GH_TOKEN\n" >~/.netrc
   - git submodule update --init --recursive
-  - /dev/null 2> &1
 #=== 【Travis CI】 private-dependencies → api-token === (end)
 
 script:
