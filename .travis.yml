@@ -34,4 +34,6 @@ deploy:
 ## [Cache - config.travis-ci.com)](https://config.travis-ci.com/ref/job/cache)
 cache:
   directories:
-  - $HOME/.m2
+  - "./log"
+  apt: true
+  bundler: true
