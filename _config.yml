@@ -123,7 +123,9 @@ tag_map:
   FTP: File_Transfer_Protocol
   Go: Go_(programming_language)
   Golang: Go_(programming_language)
+  Docker: Docker
   HelloWorld🐣: HelloWorld
+  Hibernate: Hibernate
   IDE: IDE
   IntelliJ_IDEA: IntelliJ-IDEA
   IntelliJ-IDEA: IntelliJ-IDEA
@@ -133,6 +135,7 @@ tag_map:
   MyBatis: MyBatis
   MySQL: MySQL
   ORM: Object_Relational_Mapping
+  RabbitMQ: RabbitMQ
   Spring: Spring
   Spring_Cloud: Spring-Cloud
   Spring_Framework: Spring_Framework
@@ -188,6 +191,7 @@ tag_map:
   软件设计: Software_design
   软件设计模式: Software_design_pattern
   手册: Handbook
+  算法: Algorithm
   算法效率: Algorithmic_efficiency
   数据结构: Data_structure
   数据库: Database
@@ -212,6 +216,7 @@ tag_map:
   文件传输协议: File_Transfer_Protocol
   文件数据转换: Data_conversion
   心理学: Psychology
+  消息代理: Message_broker
   信息技术(IT): Information_Technology
   信息技术: Information_Technology
   艺术: Art
