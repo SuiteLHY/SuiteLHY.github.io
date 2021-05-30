@@ -57,6 +57,7 @@ only:
 * [📖 \- 打开书 表情符号: U\+1F4D6 \- Unicode 字符百科](https://unicode-table.com/cn/1F4D6/)
 * [🔗 \- 链接符号 表情符号: U\+1F517 \- Unicode 字符百科](https://unicode-table.com/cn/1F517/)
 * [🖇 \- 链接回形针 表情符号: U\+1F587 \- Unicode 字符百科](https://unicode-table.com/cn/1F587/)
+* [⚓ \- 锚 表情符号: U\+2693 \- Unicode 字符百科](https://unicode-table.com/cn/2693/)
 * [🗎 \- 文献: U\+1F5CE \- Unicode 字符百科](https://unicode-table.com/cn/1F5CE/)
 * [※ \- 参考标志: U\+203B \- Unicode 字符百科](https://unicode-table.com/cn/203B/)
 * [☌ \- 关联: U\+260C \- Unicode 字符百科](https://unicode-table.com/cn/260C/)
