@@ -132,6 +132,7 @@ tag_map:
   IT: Information_Technology
   Java: Java
   Javadoc: Javadoc
+  Java注解: Java_annotation
   JDK: Java-Development-Kit
   MyBatis: MyBatis
   MySQL: MySQL
@@ -155,6 +156,7 @@ tag_map:
   比较并交换: Compare-and-swap
   博客: Blog
   贝塞尔曲线: Bézier_curve
+  初等代数: Elementary_algebra
   除法: Division_(mathematics)
   程序员: Programmer
   操作系统: Operating_system
@@ -164,6 +166,7 @@ tag_map:
   道德学: Ethics
   道德哲学: Ethics
   地区: Region
+  代数: Algebra
   对象关系映射: Object_Relational_Mapping
   法律: Law
   广告: Advertising
