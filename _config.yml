@@ -119,13 +119,15 @@ tag_map:
   Browser/Server: Browser/Server
   B/S: Browser/Server
   CAS: Compare-and-swap
+  Docker: Docker
   Elasticsearch: Elasticsearch
   FTP: File_Transfer_Protocol
   Go: Go_(programming_language)
   Golang: Go_(programming_language)
-  Docker: Docker
   HelloWorld🐣: HelloWorld
   Hibernate: Hibernate
+  HTML: HTML
+  HTML5: HTML5
   IDE: IDE
   IntelliJ_IDEA: IntelliJ-IDEA
   IntelliJ-IDEA: IntelliJ-IDEA
@@ -139,6 +141,7 @@ tag_map:
   ORM: Object_Relational_Mapping
   PostgreSQL: PostgreSQL
   RabbitMQ: RabbitMQ
+  SGML: SGML
   Spring: Spring
   Spring_Cloud: Spring-Cloud
   Spring_Framework: Spring_Framework
@@ -155,6 +158,7 @@ tag_map:
   悲观锁: Pessimistic_Concurrency_Control
   比较并交换: Compare-and-swap
   博客: Blog
+  标准通用标记语言: SGML
   贝塞尔曲线: Bézier_curve
   初等代数: Elementary_algebra
   除法: Division_(mathematics)
@@ -236,6 +240,7 @@ tag_map:
   职业: Career
   职业生涯规划: Career_planning
   职业生涯管理: Career_management
+  转义字符: Escape_character
   政治: Politics
   【密码散列函数】bcrypt: bcrypt
 
