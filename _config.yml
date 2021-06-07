@@ -146,6 +146,7 @@ tag_map:
   Spring_Cloud: Spring-Cloud
   Spring_Framework: Spring_Framework
   Spring_MVC: Spring-MVC
+  SQL: SQL
   SSO: Single_sign-on
   Tomcat: Apache-Tomcat
   Wiki: wiki
