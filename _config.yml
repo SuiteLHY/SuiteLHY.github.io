@@ -119,6 +119,7 @@ tag_map:
   Browser/Server: Browser/Server
   B/S: Browser/Server
   CAS: Compare-and-swap
+  Cron: Cron
   Docker: Docker
   Elasticsearch: Elasticsearch
   FTP: File_Transfer_Protocol
