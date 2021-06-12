@@ -116,6 +116,7 @@ category_map:
 tag_map:
   Apache_Tomcat: Apache_Tomcat
   Apache_ZooKeeper: Apache_ZooKeeper
+  API: API
   Browser/Server: Browser/Server
   B/S: Browser/Server
   CAS: Compare-and-swap
@@ -150,6 +151,8 @@ tag_map:
   SQL: SQL
   SSO: Single_sign-on
   Tomcat: Apache-Tomcat
+  UI: User_interface_design
+  UUID: Universally_unique_identifier
   Wiki: wiki
   wiki: wiki
   XXL-JOB: XXL-JOB
@@ -223,7 +226,9 @@ tag_map:
   图像文件格式: Image_File_Format
   图片文件格式: Image_File_Format
   图形文件格式: Image_File_Format
+  通用唯一识别码: Universally_unique_identifier
   外包: Outsourcing
+  网关: Gateway_(telecommunications)
   文化: Culture
   网络社区: Online_Community
   互联网社区: Online_Community
@@ -235,8 +240,10 @@ tag_map:
   消息代理: Message_broker
   信息技术(IT): Information_Technology
   信息技术: Information_Technology
+  用户界面设计: User_interface_design
   艺术: Art
   艺术家: Artist
+  应用程序接口: API
   站点记录: Site_Record
   知识: Knowledge
   在线工具类网站: Online_tool_website
