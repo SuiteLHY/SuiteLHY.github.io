@@ -182,6 +182,7 @@ tag_map:
   国家: Country
   功能需求: Functional_requirement
   雇佣: Employment
+  故障容许度: Fault_tolerance
   互联网: Internet
   脚本语言: Scripting_language
   拒绝服务攻击: Denial-of-service_attack
@@ -201,6 +202,7 @@ tag_map:
   面试: Interview
   内核（操作系统）: Kernel_(operating_system)
   日常记录: Daily_Record
+  容错性: Fault_tolerance
   软件: Software
   软件工程师: Software_Engineer
   软件架构: Software_architecture
