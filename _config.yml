@@ -34,6 +34,7 @@ code_dir: downloads/code
 i18n_dir: :lang
 skip_render:
   - _posts/README.md # Git子模块 → 博文管理 → 项目说明文件
+  - _partial/*.html # 局部模板文件夹下的HTML文件
 
 # Writing
 ## Docs: https://hexo.io/zh-cn/docs/configuration.html#%E6%96%87%E7%AB%A0
@@ -174,6 +175,8 @@ tag_map:
   单点登录（SSO）: Single_sign-on
   道德学: Ethics
   道德哲学: Ethics
+  大鳳: 大鳳(Taihō)
+  大凤: 大鳳(Taihō)
   地区: Region
   代数: Algebra
   对象关系映射: Object_Relational_Mapping
@@ -282,6 +285,7 @@ pagination_dir: page
 ## include:/exclude: options only apply to the 'source/' folder
 ## Docs: https://hexo.io/zh-cn/docs/configuration.html#%E5%8C%85%E6%8B%AC%E6%88%96%E4%B8%8D%E5%8C%85%E6%8B%AC%E7%9B%AE%E5%BD%95%E5%92%8C%E6%96%87%E4%BB%B6
 include:
+  - _partial/*.html # 局部模板文件夹下的HTML文件
 exclude:
 ignore:
 
