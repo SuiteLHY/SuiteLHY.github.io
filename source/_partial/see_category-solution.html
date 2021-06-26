@@ -1,0 +1,320 @@
+<html>
+<head>
+	<script>
+	/**
+	 * 显示模型-配置项
+	 * 
+	 * @return {Object} 配置项集成对象
+	 * <p></p>
+	 * <p>配置项-属性说明：</p>
+	 * <ul>
+	 *     <li>
+	 *         <p>key值：<code>localStorage-key</code>，类型：String</p>
+	 *         <ul>
+	 *             <li>调用示例：<code>displayModel_configurationItem()['localStorage-key']</code></li>
+	 *         </u>
+	 *     </li>
+	 *     <li>
+	 *         <p>key值：<code>DOM-node_displayModel-attributeName</code>，类型：String</p>
+	 *         <ul>
+	 *             <li>调用示例：<code>displayModel_configurationItem()['DOM-node_displayModel-attributeName']</code></li>
+	 *         </u>
+	 *     </li>
+	 
+	 *     <li>
+	 *         <p>key值：<code>DOM-node_displayModel-attributeName</code>，类型：String</p>
+	 *         <ul>
+	 *             <li>调用示例：<code>displayModel_configurationItem()['DOM-node_displayModel-attributeName']</code></li>
+	 *         </u>
+	 *     </li>
+	 *     <li>
+	 *         <p>key值：<code>DOM-node_displayModel-attributeName</code>，类型：String</p>
+	 *         <ul>
+	 *             <li>调用示例：<code>displayModel_configurationItem()['DOM-node_displayModel-attributeName']</code></li>
+	 *         </u>
+	 *     </li>
+	 * </ul>
+	 */
+	let displayModel_configurationItem = function () {
+		
+		return {
+			'localStorage-key': 'user-color-scheme', 
+			'DOM-node_displayModel-attributeName': 'data-user-color-scheme',
+			'displayModelNode': document.documentElement,
+			'parentDomain_displayModelNode': window.parent.document.documentElement,
+		};
+	};
+	
+	/**
+	 * HTML&thinsp;样式同步
+	 */
+	function initStyle() {
+		
+		var head = document.getElementsByTagName("head").item(0);
+		
+		//===== 外联样式移植 =====//
+		
+		// 获取父域的link标签对象列表
+		let parent_linkList = window.parent.document.getElementsByTagName("link");
+		
+		for(var i = 0, len = parent_linkList.length; i < len; i ++) {
+			
+			let each_link = parent_linkList[i];
+			
+			if ('stylesheet' !== each_link['rel']) {
+				continue;
+			}
+			
+			head.appendChild(each_link.cloneNode(true));
+		}
+		
+		//===== 内联样式移植 =====//
+		
+		// 获取父域的style标签对象列表
+		let parent_styleList = window.parent.document.getElementsByTagName("style");
+		
+		for(var i = 0, len = parent_styleList.length; i < len; i ++) {
+			
+			let each_style = parent_styleList[i];
+			
+			head.appendChild(each_style.cloneNode(true));
+		}
+		
+		//==========//
+	}
+	
+	/**
+	 * 显示模型同步
+	 * <p></p>
+	 * <p>业务设计说明：</p>
+	 * <ul>
+	 * 	   <li>
+	 * 	       <p>显示模型：</p>
+	 *         <ul>
+	 *             <li>深色模式</li>
+	 *             <li>浅色模式</li>
+	 *         </ul>
+	 *     </li>
+	 * </ul>
+	 */
+	function displayModelSynchronization() {
+		
+		//===== 同步&thinsp;显示模式（深色/浅色）对应的样式 =====//
+		
+		//FIXME: 明确 <code>localStorage</code> 的 key（仅声明，不对其进行处理）
+		let displayModel_localStorageKey = displayModel_configurationItem()['localStorage-key'];
+		// 显示模式🡆DOM节点-属性名称
+		let displayModelNode_displayModelAttributeName = displayModel_configurationItem()['DOM-node_displayModel-attributeName'];
+		
+		// 父域的显示模式🡆DOM节点（父域的<code><html></code>）
+		//const parentDomain_displayModelNode = window.parent.document.documentElement;
+		const parentDomain_displayModelNode = window.parent.document.documentElement;
+		// 当前域的显示模式🡆DOM节点（当前域的<code><html></code>）
+		const displayModelNode = document.documentElement;
+		
+		if (parentDomain_displayModelNode.hasAttribute(displayModelNode_displayModelAttributeName)) {
+			
+			displayModelNode.setAttribute(displayModelNode_displayModelAttributeName, parentDomain_displayModelNode.getAttribute(displayModelNode_displayModelAttributeName));
+		} else {
+			
+			displayModelNode.removeAttribute(displayModelNode_displayModelAttributeName);
+		}
+		
+		//==========//
+	}
+	
+	/**
+	 * 配置&thinsp;显示模型同步&thinsp;事件
+	 * <p></p>
+	 * <p>业务设计说明：</p>
+	 * <ul>
+	 * 	   <li>
+	 * 	       <p>显示模型：</p>
+	 *         <ul>
+	 *             <li>深色模式</li>
+	 *             <li>浅色模式</li>
+	 *         </ul>
+	 *     </li>
+	 * </ul>
+	 * <p></p>
+	 * <p>逻辑说明：</p>
+	 * <ul>
+	 * 	   <li>[&thinsp;显示模型同步&thinsp;事件&thinsp;]&thinsp;绑定到&thinsp;当前域的根节点(<code><html></code>)上</li>
+	 * </ul>
+	 */
+	function displayModelSynchronizationEventBinding() {
+		
+		//===== 同步&thinsp;显示模式（深色/浅色）对应的样式 =====//
+		
+		// 父域的<html></html>
+		const parentDomain_rootElement = window.parent.document.documentElement;
+		// 当前域的<html></html>
+		const rootElement = document.documentElement;
+		//FIXME: 明确 <code>localStorage</code> 的 key（仅声明，不对其进行处理）
+		const darkModeStorageKey = 'user-color-scheme';
+		// 深色模式-属性名称
+		const rootElementDarkModeAttributeName = 'data-user-color-scheme';
+		
+		// 选择需要观察变动的节点（目标节点）
+		const parentDomain_displayModelNode = parentDomain_rootElement;
+		// 选择需要调整的节点 —— 当前域的显示模式🡆DOM节点
+		const displayModelNode = rootElement;
+		
+		// 观察器的配置（需要观察什么变动）
+		const config = { attributes: true };
+		
+		// 当观察到变动时🡆执行的回调函数
+		const callback = function(mutationsList, observer) {
+			// (Use traditional 'for loops' for IE 11)
+			
+			for(let mutation of mutationsList) {
+				
+				if (mutation.type === 'attributes' 
+						&& mutation.attributeName === rootElementDarkModeAttributeName) {
+					
+					let each_attributeName = mutation.attributeName;
+					
+					//console.log('===== The <code>parentDomain_displayModelNode[\'' + each_attributeName + '\']</code> is ' + parentDomain_displayModelNode.getAttribute(each_attributeName) + ' =====');
+					
+					if (parentDomain_displayModelNode.hasAttribute(each_attributeName)) {
+						
+						displayModelNode.setAttribute(each_attributeName, parentDomain_displayModelNode.getAttribute(each_attributeName));
+					} else {
+						
+						displayModelNode.removeAttribute(each_attributeName);
+					}
+					
+					//console.log('===== The ' + each_attributeName + ' attribute of <code>displayModelNode</code> was change into <code>' + displayModelNode.getAttribute(each_attributeName) + '</code>. =====');
+				}
+			}
+		};
+		
+		// 创建一个观察器实例并传入回调函数
+		const observer = new MutationObserver(callback);
+		
+		// 以上述配置开始观察目标节点
+		observer.observe(parentDomain_displayModelNode, config);
+		
+		//==========//
+	}
+	
+	window.onload = function() {
+		
+		// HTML&thinsp;样式同步
+		initStyle();
+		
+		// 显示模型同步
+		displayModelSynchronization();
+		
+		// 配置&thinsp;显示模型同步&thinsp;事件
+		displayModelSynchronizationEventBinding();
+	}
+	
+	/**
+	 * 设置 LocalStorage 的指定属性
+	 */
+    const setLS = (k, v) => {
+		
+        try {
+            localStorage.setItem(k, v);
+        } catch (e) {
+			// (此处不进行处理)
+		}
+    };
+	
+	/**
+	 * 移除 LocalStorage 的指定属性
+	 */
+    const removeLS = (k) => {
+		
+        try {
+            localStorage.removeItem(k);
+        } catch (e) {
+			// (此处不进行处理)
+		}
+    };
+	
+	/**
+	 * 获取 LocalStorage 的指定属性
+	 */
+    const getLS = (k) => {
+		
+        try {
+            return localStorage.getItem(k);
+        } catch (e) {
+			// 与 localStorage 中没有找到对应 key 的行为一致
+            return null;
+        }
+    };
+	
+	/**
+	 * 获取当前生效的显示模式（深色/浅色）名称
+	 * 
+	 * @return 显示模式名称
+	 */
+    const getModeFromCSSMediaQuery = () => {
+		
+        return window.matchMedia('(prefers-color-scheme: dark)').matches 
+				? 'dark' 
+				: 'light'
+    };
+	
+	/**
+	 * 初始化 DOM根节点 以及 LocalStorage 的显示模式对应的属性
+	 */
+    const resetRootDarkModeAttributeAndLS = () => {
+		
+        rootElement.removeAttribute(rootElementDarkModeAttributeName);
+		
+        removeLS(darkModeStorageKey);
+    };
+	
+	/**
+	 * 校验key
+	 */
+    const validColorModeKeys = {
+        'dark': true,
+        'light': true
+    };
+	
+	/**
+	 * 提交指定的深色/浅色显示模式的设置
+	 */
+    const applyCustomDarkModeSettings = (mode) => {
+        // 接受从「开关」处传来的模式，或者从 localStorage 读取
+        const currentSetting = mode || getLS(darkModeStorageKey);
+		
+        if (currentSetting === getModeFromCSSMediaQuery()) {
+            // 当用户自定义的显示模式和 prefers-color-scheme 相同时重置，恢复到自动模式
+			
+            resetRootDarkModeAttributeAndLS();
+        } else if (validColorModeKeys[currentSetting]) {
+			// (相比 <code>Array#indexOf</code>，这种写法 Uglify 后字节数更少)
+			
+            rootElement.setAttribute(rootElementDarkModeAttributeName, currentSetting);
+        } else {
+            // 首次访问或从未使用过开关、localStorage 中没有存储的值，currentSetting 是 null
+            //⤷ 或者 localStorage 被篡改，currentSetting 不是合法值
+			
+            resetRootDarkModeAttributeAndLS();
+        }
+    };
+	</script>
+</head>
+<body style="background-color:transparent !important;">
+	<ul>
+		<li><a target="_blank" rel="noopener" href="https://blog.csdn.net/heimu24/article/details/81189700">Markdown进阶（更改字体、颜色、大小，设置文字背景色，调整图片大小设置居中）_heimu24的博客-CSDN博客_markdown 颜色</a></li>
+		<li><a target="_blank" rel="noopener" href="https://segmentfault.com/q/1010000019710978">inline-block的元素垂直居中的问题 - SegmentFault 思否</a></li>
+		<li><a target="_blank" rel="noopener" href="https://www.itranslater.com/qa/details/2117469006360740864">如何在GitHub风格的Markdown中添加脚注？ - ITranslater</a></li>
+		<li><a target="_blank" rel="noopener" href="https://blog.csdn.net/judas_jia/article/details/51166406">阻止a标签默认行为的几种简单方法_judas_jia的博客-CSDN博客</a></li>
+		<li><a target="_blank" rel="noopener" href="https://yaojiaxinpc.github.io/12hottoaddhtml/">Markdown内嵌html文件 | Yao's Blog</a></li>
+		<li><a target="_blank" rel="noopener" href="https://www.runoob.com/tags/tag-iframe.html">HTML &lt;iframe&gt; 标签 | 菜鸟教程</a></li>
+		<li><a target="_blank" rel="noopener" href="https://www.coder.work/article/1118882">javascript - 使用JavaScript复制元素(及其样式) - IT工具网</a></li>
+		<li><a target="_blank" rel="noopener" href="https://blog.csdn.net/baokx/article/details/9128877">html，body设置背景色透明_baokx的专栏-CSDN博客_body背景透明</a></li>
+		<li><a target="_blank" rel="noopener" href="https://hijiangtao.github.io/2017/08/03/How-to-Manipulate-DOM-Effectively/">如何监听页面 DOM 变动并高效响应 - Joe’s Blog</a></li>
+		<li><a target="_blank" rel="noopener" href="https://developer.mozilla.org/zh-CN/docs/Web/API/MutationObserver">MutationObserver - Web API 接口参考 | MDN</a></li>
+		<li><a target="_blank" rel="noopener" href="https://blog.skk.moe/post/hello-darkmode-my-old-friend/">你好黑暗，我的老朋友 —— 为网站添加用户友好的深色模式支持 | Sukka's Blog</a></li>
+		<li><a target="_blank" rel="noopener" href="https://jason-memo.dev/posts/dark-mode-tips/">網頁黑暗模式 Dark Mode 設計技巧</a></li>
+	</ul>
+</body>
+</html>
