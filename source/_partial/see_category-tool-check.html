@@ -1,0 +1,857 @@
+<html>
+<head>
+	<script>
+	/**
+	 * 显示模型-配置项
+	 * 
+	 * @return {Object} 配置项集成对象
+	 * <p></p>
+	 * <p>配置项-属性说明：</p>
+	 * <ul>
+	 *     <li>
+	 *         <p>key值：<code>localStorage-key</code>，类型：String</p>
+	 *         <ul>
+	 *             <li>调用示例：<code>displayModel_configurationItem()['localStorage-key']</code></li>
+	 *         </u>
+	 *     </li>
+	 *     <li>
+	 *         <p>key值：<code>DOM-node_displayModel-attributeName</code>，类型：String</p>
+	 *         <ul>
+	 *             <li>调用示例：<code>displayModel_configurationItem()['DOM-node_displayModel-attributeName']</code></li>
+	 *         </u>
+	 *     </li>
+	 
+	 *     <li>
+	 *         <p>key值：<code>DOM-node_displayModel-attributeName</code>，类型：String</p>
+	 *         <ul>
+	 *             <li>调用示例：<code>displayModel_configurationItem()['DOM-node_displayModel-attributeName']</code></li>
+	 *         </u>
+	 *     </li>
+	 *     <li>
+	 *         <p>key值：<code>DOM-node_displayModel-attributeName</code>，类型：String</p>
+	 *         <ul>
+	 *             <li>调用示例：<code>displayModel_configurationItem()['DOM-node_displayModel-attributeName']</code></li>
+	 *         </u>
+	 *     </li>
+	 * </ul>
+	 */
+	let displayModel_configurationItem = function () {
+		
+		return {
+			'localStorage-key': 'user-color-scheme', 
+			'DOM-node_displayModel-attributeName': 'data-user-color-scheme',
+			'displayModelNode': document.documentElement,
+			'parentDomain_displayModelNode': window.parent.document.documentElement,
+		};
+	};
+	
+	/**
+	 * HTML&thinsp;样式同步
+	 */
+	function initStyle() {
+		
+		var head = document.getElementsByTagName("head").item(0);
+		
+		//===== 外联样式移植 =====//
+		
+		// 获取父域的link标签对象列表
+		let parent_linkList = window.parent.document.getElementsByTagName("link");
+		
+		for(var i = 0, len = parent_linkList.length; i < len; i ++) {
+			
+			let each_link = parent_linkList[i];
+			
+			if ('stylesheet' !== each_link['rel']) {
+				continue;
+			}
+			
+			head.appendChild(each_link.cloneNode(true));
+		}
+		
+		//===== 内联样式移植 =====//
+		
+		// 获取父域的style标签对象列表
+		let parent_styleList = window.parent.document.getElementsByTagName("style");
+		
+		for(var i = 0, len = parent_styleList.length; i < len; i ++) {
+			
+			let each_style = parent_styleList[i];
+			
+			head.appendChild(each_style.cloneNode(true));
+		}
+		
+		//==========//
+	}
+	
+	/**
+	 * 显示模型同步
+	 * <p></p>
+	 * <p>业务设计说明：</p>
+	 * <ul>
+	 * 	   <li>
+	 * 	       <p>显示模型：</p>
+	 *         <ul>
+	 *             <li>深色模式</li>
+	 *             <li>浅色模式</li>
+	 *         </ul>
+	 *     </li>
+	 * </ul>
+	 */
+	function displayModelSynchronization() {
+		
+		//===== 同步&thinsp;显示模式（深色/浅色）对应的样式 =====//
+		
+		//FIXME: 明确 <code>localStorage</code> 的 key（仅声明，不对其进行处理）
+		let displayModel_localStorageKey = displayModel_configurationItem()['localStorage-key'];
+		// 显示模式🡆DOM节点-属性名称
+		let displayModelNode_displayModelAttributeName = displayModel_configurationItem()['DOM-node_displayModel-attributeName'];
+		
+		// 父域的显示模式🡆DOM节点（父域的<code><html></code>）
+		//const parentDomain_displayModelNode = window.parent.document.documentElement;
+		const parentDomain_displayModelNode = window.parent.document.documentElement;
+		// 当前域的显示模式🡆DOM节点（当前域的<code><html></code>）
+		const displayModelNode = document.documentElement;
+		
+		if (parentDomain_displayModelNode.hasAttribute(displayModelNode_displayModelAttributeName)) {
+			
+			displayModelNode.setAttribute(displayModelNode_displayModelAttributeName, parentDomain_displayModelNode.getAttribute(displayModelNode_displayModelAttributeName));
+		} else {
+			
+			displayModelNode.removeAttribute(displayModelNode_displayModelAttributeName);
+		}
+		
+		//==========//
+	}
+	
+	/**
+	 * 配置&thinsp;显示模型同步&thinsp;事件
+	 * <p></p>
+	 * <p>业务设计说明：</p>
+	 * <ul>
+	 * 	   <li>
+	 * 	       <p>显示模型：</p>
+	 *         <ul>
+	 *             <li>深色模式</li>
+	 *             <li>浅色模式</li>
+	 *         </ul>
+	 *     </li>
+	 * </ul>
+	 * <p></p>
+	 * <p>逻辑说明：</p>
+	 * <ul>
+	 * 	   <li>[&thinsp;显示模型同步&thinsp;事件&thinsp;]&thinsp;绑定到&thinsp;当前域的根节点(<code><html></code>)上</li>
+	 * </ul>
+	 */
+	function displayModelSynchronizationEventBinding() {
+		
+		//===== 同步&thinsp;显示模式（深色/浅色）对应的样式 =====//
+		
+		// 父域的<html></html>
+		const parentDomain_rootElement = window.parent.document.documentElement;
+		// 当前域的<html></html>
+		const rootElement = document.documentElement;
+		//FIXME: 明确 <code>localStorage</code> 的 key（仅声明，不对其进行处理）
+		const darkModeStorageKey = 'user-color-scheme';
+		// 深色模式-属性名称
+		const rootElementDarkModeAttributeName = 'data-user-color-scheme';
+		
+		// 选择需要观察变动的节点（目标节点）
+		const parentDomain_displayModelNode = parentDomain_rootElement;
+		// 选择需要调整的节点 —— 当前域的显示模式🡆DOM节点
+		const displayModelNode = rootElement;
+		
+		// 观察器的配置（需要观察什么变动）
+		const config = { attributes: true };
+		
+		// 当观察到变动时🡆执行的回调函数
+		const callback = function(mutationsList, observer) {
+			// (Use traditional 'for loops' for IE 11)
+			
+			for(let mutation of mutationsList) {
+				
+				if (mutation.type === 'attributes' 
+						&& mutation.attributeName === rootElementDarkModeAttributeName) {
+					
+					let each_attributeName = mutation.attributeName;
+					
+					//console.log('===== The <code>parentDomain_displayModelNode[\'' + each_attributeName + '\']</code> is ' + parentDomain_displayModelNode.getAttribute(each_attributeName) + ' =====');
+					
+					if (parentDomain_displayModelNode.hasAttribute(each_attributeName)) {
+						
+						displayModelNode.setAttribute(each_attributeName, parentDomain_displayModelNode.getAttribute(each_attributeName));
+					} else {
+						
+						displayModelNode.removeAttribute(each_attributeName);
+					}
+					
+					//console.log('===== The ' + each_attributeName + ' attribute of <code>displayModelNode</code> was change into <code>' + displayModelNode.getAttribute(each_attributeName) + '</code>. =====');
+				}
+			}
+		};
+		
+		// 创建一个观察器实例并传入回调函数
+		const observer = new MutationObserver(callback);
+		
+		// 以上述配置开始观察目标节点
+		observer.observe(parentDomain_displayModelNode, config);
+		
+		//==========//
+	}
+	
+	window.onload = function() {
+		
+		// HTML&thinsp;样式同步
+		initStyle();
+		
+		// 显示模型同步
+		displayModelSynchronization();
+		
+		// 配置&thinsp;显示模型同步&thinsp;事件
+		displayModelSynchronizationEventBinding();
+	}
+	
+	/**
+	 * 设置 LocalStorage 的指定属性
+	 */
+    const setLS = (k, v) => {
+		
+        try {
+            localStorage.setItem(k, v);
+        } catch (e) {
+			// (此处不进行处理)
+		}
+    };
+	
+	/**
+	 * 移除 LocalStorage 的指定属性
+	 */
+    const removeLS = (k) => {
+		
+        try {
+            localStorage.removeItem(k);
+        } catch (e) {
+			// (此处不进行处理)
+		}
+    };
+	
+	/**
+	 * 获取 LocalStorage 的指定属性
+	 */
+    const getLS = (k) => {
+		
+        try {
+            return localStorage.getItem(k);
+        } catch (e) {
+			// 与 localStorage 中没有找到对应 key 的行为一致
+            return null;
+        }
+    };
+	
+	/**
+	 * 获取当前生效的显示模式（深色/浅色）名称
+	 * 
+	 * @return 显示模式名称
+	 */
+    const getModeFromCSSMediaQuery = () => {
+		
+        return window.matchMedia('(prefers-color-scheme: dark)').matches 
+				? 'dark' 
+				: 'light'
+    };
+	
+	/**
+	 * 初始化 DOM根节点 以及 LocalStorage 的显示模式对应的属性
+	 */
+    const resetRootDarkModeAttributeAndLS = () => {
+		
+        rootElement.removeAttribute(rootElementDarkModeAttributeName);
+		
+        removeLS(darkModeStorageKey);
+    };
+	
+	/**
+	 * 校验key
+	 */
+    const validColorModeKeys = {
+        'dark': true,
+        'light': true
+    };
+	
+	/**
+	 * 提交指定的深色/浅色显示模式的设置
+	 */
+    const applyCustomDarkModeSettings = (mode) => {
+        // 接受从「开关」处传来的模式，或者从 localStorage 读取
+        const currentSetting = mode || getLS(darkModeStorageKey);
+		
+        if (currentSetting === getModeFromCSSMediaQuery()) {
+            // 当用户自定义的显示模式和 prefers-color-scheme 相同时重置，恢复到自动模式
+			
+            resetRootDarkModeAttributeAndLS();
+        } else if (validColorModeKeys[currentSetting]) {
+			// (相比 <code>Array#indexOf</code>，这种写法 Uglify 后字节数更少)
+			
+            rootElement.setAttribute(rootElementDarkModeAttributeName, currentSetting);
+        } else {
+            // 首次访问或从未使用过开关、localStorage 中没有存储的值，currentSetting 是 null
+            //⤷ 或者 localStorage 被篡改，currentSetting 不是合法值
+			
+            resetRootDarkModeAttributeAndLS();
+        }
+    };
+	</script>
+</head>
+<body style="background-color:transparent !important;">
+	<ul>
+		<li>
+			<font style="font-style:italic;"><b>「</b>本站_标准颜色<b>」</b></font>&ensp;⤵
+			<ul>
+				<li><font style="color:#CC0000;font-weight:bold;">『&thinsp;红&thinsp;』</font>&ensp;<code>#CC0000</code></li>
+				<li><font style="color:#FF6699;font-weight:bold;">『&thinsp;粉&thinsp;』</font>&ensp;<code>#FF6699</code></li>
+				<li><font style="color:#FCC000;font-weight:bold;">『&thinsp;橙&thinsp;』</font>&ensp;<code>#FCC000</code></li>
+				<li><font style="color:#6AA84F;font-weight:bold;">『&thinsp;绿&thinsp;』</font>&ensp;<code>#6AA84F</code></li>
+				<li><font style="color:#4343FF;font-weight:bold;">『&thinsp;蓝&thinsp;』</font>&ensp;<code>#4343FF</code></li>
+				<li><font style="color:#9900FF;font-weight:bold;">『&thinsp;紫&thinsp;』</font>&ensp;<code>#9900FF</code></li>
+				<li><font style="color:#808080;font-weight:bold;">『&thinsp;灰&thinsp;』</font>&ensp;<code>#808080</code></li>
+			</ul>
+		</li>
+		<li><a target="_blank" rel="noopener" href="https://developer.mozilla.org/zh-CN/docs/Web/CSS/calc()">calc() - CSS（层叠样式表） | MDN</a></li>
+		<li><a target="_blank" rel="noopener" href="https://developer.mozilla.org/zh-CN/docs/Web/CSS/fit-content">fit-content() - CSS（层叠样式表） | MDN</a></li>
+		<li>
+			<a target="_blank" rel="noopener" href="https://www.w3schools.com/tags/tag_a.asp">HTML a tag - w3schools.com</a>
+			<ul>
+				<li><a target="_blank" rel="noopener" href="https://www.w3schools.com/tags/att_a_rel.asp">HTML a rel Attribute - w3schools.com</a></li>
+			</ul>
+		</li>
+		<li>
+			<a target="_blank" rel="noopener" href="https://developer.mozilla.org/zh-CN/docs/Web/HTML/Element/a">&lt;a&gt; - HTML（超文本标记语言） | MDN</a>
+			<ul>
+				<li><a target="_blank" rel="noopener" href="https://developer.mozilla.org/zh-CN/docs/Web/HTML/Link_types">链接类型 - HTML（超文本标记语言） | MDN</a></li>
+			</ul>
+		</li>
+		<li><a target="_blank" rel="noopener" href="https://www.w3school.com.cn/cssref/pr_class_cursor.asp">CSS cursor 属性 - w3school.com.cn</a></li>
+		<li><a target="_blank" rel="noopener" href="https://developer.mozilla.org/zh-CN/docs/Web/CSS/cursor">cursor - CSS（层叠样式表） | MDN</a></li>
+		<li><a target="_blank" rel="noopener" href="https://www.cnblogs.com/xcsn/p/3559624.html">HTML转义字符大全 - 心存善念 - 博客园 - cnblogs.com</a></li>
+		<li>【★】【GFM】<a target="_blank" rel="noopener" href="https://github.github.com/gfm/">GitHub Flavored Markdown Spec - github.github.com</a></li>
+		<li><a target="_blank" rel="noopener" href="https://www.w3schools.com/colors/colors_picker.asp">HTML Color Picker</a></li>
+		<li><a target="_blank" rel="noopener" href="http://www.oicqzone.com/pc/2015083122336.html">HTML中&amp;nbsp; &amp;ensp; &amp;emsp; &amp;thinsp;等6种空白空格的区别_电脑小技巧_上网技巧_QQ地带</a></li>
+		<li><a target="_blank" rel="noopener" href="https://www.runoob.com/markdown/md-tutorial.html">Markdown 教程 | 菜鸟教程</a></li>
+		<li>
+			<a target="_blank" rel="noopener" href="https://zh.wikipedia.org/wiki/%E7%B9%AA%E6%96%87%E5%AD%97">表情符号 - 维基百科，自由的百科全书</a>
+			<ul>
+				<li><a target="_blank" rel="noopener" href="https://unicode-table.com/cn/1F446/">👆 - 白色指向反手指数 表情符号: U+1F446 - Unicode 字符百科</a></li>
+				<li><a target="_blank" rel="noopener" href="https://unicode-table.com/cn/1F4D6/">📖 - 打开书 表情符号: U+1F4D6 - Unicode 字符百科</a></li>
+				<li><a target="_blank" rel="noopener" href="https://unicode-table.com/cn/1F517/">🔗 - 链接符号 表情符号: U+1F517 - Unicode 字符百科</a></li>
+				<li><a target="_blank" rel="noopener" href="https://unicode-table.com/cn/1F587/">🖇 - 链接回形针 表情符号: U+1F587 - Unicode 字符百科</a></li>
+				<li><a target="_blank" rel="noopener" href="https://unicode-table.com/cn/2693/">⚓ - 锚 表情符号: U+2693 - Unicode 字符百科</a></li>
+				<li><a target="_blank" rel="noopener" href="https://unicode-table.com/cn/1F5CE/">🗎 - 文献: U+1F5CE - Unicode 字符百科</a></li>
+				<li><a target="_blank" rel="noopener" href="https://unicode-table.com/cn/203B/">※ - 参考标志: U+203B - Unicode 字符百科</a></li>
+				<li><a target="_blank" rel="noopener" href="https://unicode-table.com/cn/260C/">☌ - 关联: U+260C - Unicode 字符百科</a></li>
+				<li><a target="_blank" rel="noopener" href="https://unicode-table.com/cn/1F845/">🡅 - 向上重箭头: U+1F845 - Unicode 字符百科</a></li>
+				<li><a target="_blank" rel="noopener" href="https://unicode-table.com/cn/1F846/">🡆 - 向右重箭头: U+1F846 - Unicode 字符百科</a></li>
+				<li><a target="_blank" rel="noopener" href="https://unicode-table.com/cn/1F847/">🡇 - 向下重箭头: U+1F847 - Unicode 字符百科</a></li>
+				<li><a target="_blank" rel="noopener" href="https://unicode-table.com/cn/1F844/">🡄 - 向左重箭: U+1F844 - Unicode 字符百科</a></li>
+				<li><a target="_blank" rel="noopener" href="https://unicode-table.com/cn/2B0C/">⬌ - 左右黑箭: U+2B0C - Unicode 字符百科</a></li>
+				<li><a target="_blank" rel="noopener" href="https://unicode-table.com/cn/2B04/">⬄ - 左右白箭頭: U+2B04 - Unicode 字符百科</a></li>
+				<li><a target="_blank" rel="noopener" href="https://unicode-table.com/cn/1F858/">🡘 - 左右Sans-Serif箭头: U+1F858 - Unicode 字符百科</a></li>
+				<li><a target="_blank" rel="noopener" href="https://unicode-table.com/cn/2194/">↔ - 左右箭头 表情符号: U+2194 - Unicode 字符百科</a></li>
+				<li><a target="_blank" rel="noopener" href="https://unicode-table.com/cn/2934/">⤴ - 指向右侧然后向上弯曲的箭头 表情符号: U+2934 - Unicode 字符百科</a></li>
+				<li><a target="_blank" rel="noopener" href="https://unicode-table.com/cn/2935/">⤵ - 指向右侧然后向下弯曲的箭头 表情符号: U+2935 cudarrr - Unicode 字符百科</a></li>
+				<li><a target="_blank" rel="noopener" href="https://unicode-table.com/cn/2936/">⤶ - 指向下侧然后向左弯曲的箭头: U+2936 ldca - Unicode 字符百科</a></li>
+				<li><a target="_blank" rel="noopener" href="https://unicode-table.com/cn/2937/">⤷ - 指向下侧然后向右弯曲的箭头: U+2937 rdca - Unicode 字符百科</a></li>
+				<li><a target="_blank" rel="noopener" href="https://unicode-table.com/cn/2705/">✅ - 空心勾 表情符号: U+2705 - Unicode 字符百科</a></li>
+				<li><a target="_blank" rel="noopener" href="https://unicode-table.com/cn/274E/">❎ - 負方形十字標記 表情符号: U+274E - Unicode 字符百科</a></li>
+				<li><a target="_blank" rel="noopener" href="https://unicode-table.com/cn/21D4/">⇔ - 左右双箭头: U+21D4 hArr - Unicode 字符百科</a></li>
+				<li><a target="_blank" rel="noopener" href="https://unicode-table.com/cn/21D0/">⇐ - 向左双箭头: U+21D0 lArr - Unicode 字符百科</a></li>
+				<li><a target="_blank" rel="noopener" href="https://unicode-table.com/cn/21D2/">⇒ - 向右双箭头: U+21D2 rArr - Unicode 字符百科</a></li>
+				<li><a target="_blank" rel="noopener" href="https://unicode-table.com/cn/1F44D/">👍 - 竖起大拇指 表情符号: U+1F44D - Unicode 字符百科</a></li>
+				<li><a target="_blank" rel="noopener" href="https://unicode-table.com/cn/276E/">❮ - 粗左指尖引号装饰: U+276E - Unicode 字符百科</a></li>
+				<li><a target="_blank" rel="noopener" href="https://unicode-table.com/cn/276F/">❯ - 粗右指尖引号装饰: U+276F - Unicode 字符百科</a></li>
+				<li><a target="_blank" rel="noopener" href="https://unicode-table.com/cn/1F6C7/">🛇 - 禁止标志: U+1F6C7 - Unicode 字符百科</a></li>
+				<li><a target="_blank" rel="noopener" href="https://unicode-table.com/cn/1F6AB/">🚫 - 禁止通行 表情符号: U+1F6AB - Unicode 字符百科</a></li>
+				<li><a target="_blank" rel="noopener" href="https://unicode-table.com/cn/26A0/">⚠ - 警告符号 表情符号: U+26A0 - Unicode 字符百科</a></li>
+				<li><a target="_blank" rel="noopener" href="https://unicode-table.com/cn/1F6A8/">🚨 - 警灯 表情符号: U+1F6A8 - Unicode 字符百科</a></li>
+				<li><a target="_blank" rel="noopener" href="https://unicode-table.com/cn/1F6A7/">🚧 - 施工标志 表情符号: U+1F6A7 - Unicode 字符百科</a></li>
+				<li><a target="_blank" rel="noopener" href="https://unicode-table.com/cn/1F6AA/">🚪 - 门 表情符号: U+1F6AA - Unicode 字符百科</a></li>
+				<li><a target="_blank" rel="noopener" href="https://unicode-table.com/cn/1F6A5/">🚥 - 横排红绿灯 表情符号: U+1F6A5 - Unicode 字符百科</a></li>
+				<li><a target="_blank" rel="noopener" href="https://unicode-table.com/cn/1F6A6/">🚦 - 竖排红绿灯 表情符号: U+1F6A6 - Unicode 字符百科</a></li>
+				<li><a target="_blank" rel="noopener" href="https://unicode-table.com/cn/2B50/">⭐ - 白色中星 表情符号: U+2B50 - Unicode 字符百科</a></li>
+				<li>
+					<font style="font-style:italic;"><b>「</b>符号：AV符号<b>」</b></font>&ensp;⤵
+					<ul>
+						<li><a target="_blank" rel="noopener" href="https://unicode-table.com/cn/23E9/">⏩ - 黑色右指向雙三角形 表情符号: U+23E9 - Unicode 字符百科</a></li>
+						<li><a target="_blank" rel="noopener" href="https://unicode-table.com/cn/23EA/">⏪ - 黑色左指向雙三角 表情符号: U+23EA - Unicode 字符百科</a></li>
+						<li><a target="_blank" rel="noopener" href="https://unicode-table.com/cn/23EB/">⏫ - 黑色朝上雙三角 表情符号: U+23EB - Unicode 字符百科</a></li>
+						<li><a target="_blank" rel="noopener" href="https://unicode-table.com/cn/23EC/">⏬ - 黑色朝下的雙三角 表情符号: U+23EC - Unicode 字符百科</a></li>
+						<li><a target="_blank" rel="noopener" href="https://unicode-table.com/cn/23ED/">⏭ - 帶豎線的黑色右指向雙三角形 表情符号: U+23ED - Unicode 字符百科</a></li>
+						<li><a target="_blank" rel="noopener" href="https://unicode-table.com/cn/23EE/">⏮ - 帶豎線的黑色左指向雙三角形 表情符号: U+23EE - Unicode 字符百科</a></li>
+						<li><a target="_blank" rel="noopener" href="https://unicode-table.com/cn/23EF/">⏯ - 帶雙豎線的黑色右指向三角形 表情符号: U+23EF - Unicode 字符百科</a></li>
+						<li><a target="_blank" rel="noopener" href="https://unicode-table.com/cn/23F8/">⏸ - 雙豎線 表情符号: U+23F8 - Unicode 字符百科</a></li>
+						<li><a target="_blank" rel="noopener" href="https://unicode-table.com/cn/23F9/">⏹ - 正方形/停止 表情符号: U+23F9 - Unicode 字符百科</a></li>
+						<li><a target="_blank" rel="noopener" href="https://unicode-table.com/cn/23FA/">⏺ - 圆形/录制 表情符号: U+23FA - Unicode 字符百科</a></li>
+						<li><a target="_blank" rel="noopener" href="https://unicode-table.com/cn/25B6/">▶ - 实心右指三角 表情符号: U+25B6 - Unicode 字符百科</a></li>
+						<li><a target="_blank" rel="noopener" href="https://unicode-table.com/cn/25C0/">◀ - 实心左指三角 表情符号: U+25C0 - Unicode 字符百科</a></li>
+						<li><a target="_blank" rel="noopener" href="https://unicode-table.com/cn/1F4F3/">📳 - 振动模式 表情符号: U+1F4F3 - Unicode 字符百科</a></li>
+						<li><a target="_blank" rel="noopener" href="https://unicode-table.com/cn/1F4F4/">📴 - 手机关机 表情符号: U+1F4F4 - Unicode 字符百科</a></li>
+						<li><a target="_blank" rel="noopener" href="https://unicode-table.com/cn/1F505/">🔅 - 低亮度符号 表情符号: U+1F505 - Unicode 字符百科</a></li>
+						<li><a target="_blank" rel="noopener" href="https://unicode-table.com/cn/1F506/">🔆 - 高亮度符号 表情符号: U+1F506 - Unicode 字符百科</a></li>
+						<li><a target="_blank" rel="noopener" href="https://unicode-table.com/cn/1F501/">🔁 - 顺时针向右和向左打开圆形箭头 表情符号: U+1F501 - Unicode 字符百科</a></li>
+						<li><a target="_blank" rel="noopener" href="https://unicode-table.com/cn/1F502/">🔂 - 顺时针向右和向左打开带有圆圈一个叠加的圆形箭头 表情符号: U+1F502 - Unicode 字符百科</a></li>
+						<li><a target="_blank" rel="noopener" href="https://unicode-table.com/cn/1F3A6/">🎦 - 电影 表情符号: U+1F3A6 - Unicode 字符百科</a></li>
+						<li><a target="_blank" rel="noopener" href="https://unicode-table.com/cn/1F500/">🔀 - 向右扭曲的箭头 表情符号: U+1F500 - Unicode 字符百科</a></li>
+						<li><a target="_blank" rel="noopener" href="https://unicode-table.com/cn/1F53C/">🔼 - 向上指向小红三角 表情符号: U+1F53C - Unicode 字符百科</a></li>
+						<li><a target="_blank" rel="noopener" href="https://unicode-table.com/cn/1F53D/">🔽 - 向下指向小红三角 表情符号: U+1F53D - Unicode 字符百科</a></li>
+						<li><a target="_blank" rel="noopener" href="https://unicode-table.com/cn/23CF/">⏏ - 弹出符号 表情符号: U+23CF - Unicode 字符百科</a></li>
+						<li><a target="_blank" rel="noopener" href="https://unicode-table.com/cn/1F4F6/">📶 - 有酒吧的天线 表情符号: U+1F4F6 - Unicode 字符百科</a></li>
+					</ul>
+				</li>
+				<li>
+					<font style="font-style:italic;"><b>「</b>符号：货币<b>」</b></font>&ensp;⤵
+					<ul>
+						<li><a target="_blank" rel="noopener" href="https://unicode-table.com/cn/20B3/">₳ - 澳大利亚货币符号: U+20B3 - Unicode 字符百科</a></li>
+						<li><a target="_blank" rel="noopener" href="https://unicode-table.com/cn/20AC/">€ - 欧元符号: U+20AC - Unicode 字符百科</a></li>
+						<li><a target="_blank" rel="noopener" href="https://unicode-table.com/cn/FFE1/">￡ - 全形英镑标记: U+FFE1 - Unicode 字符百科</a></li>
+						<li><a target="_blank" rel="noopener" href="https://unicode-table.com/cn/00A3/">£ - 英镑标记: U+00A3 pound - Unicode 字符百科</a></li>
+						<li><a target="_blank" rel="noopener" href="https://unicode-table.com/cn/20A3/">₣ - 法国法郎符号: U+20A3 - Unicode 字符百科</a></li>
+						<li><a target="_blank" rel="noopener" href="https://unicode-table.com/cn/FF04/">＄ - 全形美元标记: U+FF04 - Unicode 字符百科</a></li>
+						<li><a target="_blank" rel="noopener" href="https://unicode-table.com/cn/0024/">$ - 美元标记: U+0024 dollar - Unicode 字符百科</a></li>
+						<li><a target="_blank" rel="noopener" href="https://unicode-table.com/cn/20A9/">₩ - 韩元符号: U+20A9 - Unicode 字符百科</a></li>
+						<li><a target="_blank" rel="noopener" href="https://unicode-table.com/cn/FFE6/">￦ - 全形韩元标记: U+FFE6 - Unicode 字符百科</a></li>
+						<li><a target="_blank" rel="noopener" href="https://unicode-table.com/cn/00A5/">¥ - 日元标记: U+00A5 yen - Unicode 字符百科</a></li>
+						<li><a target="_blank" rel="noopener" href="https://unicode-table.com/cn/FFE5/">￥ - 全形日元标记: U+FFE5 - Unicode 字符百科</a></li>
+						<li><a target="_blank" rel="noopener" href="https://unicode-table.com/cn/20B0/">₰ - 德国便士符号: U+20B0 - Unicode 字符百科</a></li>
+						<li><a target="_blank" rel="noopener" href="https://unicode-table.com/cn/20A0/">₠ - 欧洲货币符号: U+20A0 - Unicode 字符百科</a></li>
+						<li><a target="_blank" rel="noopener" href="https://unicode-table.com/cn/20B9/">₹ - 印度卢比符号: U+20B9 - Unicode 字符百科</a></li>
+						<li><a target="_blank" rel="noopener" href="https://unicode-table.com/cn/20A8/">₨ - 卢比符号: U+20A8 - Unicode 字符百科</a></li>
+					</ul>
+				</li>
+				<li>
+					<font style="font-style:italic;"><b>「</b>符号：商业<b>」</b></font>&ensp;⤵
+					<ul>
+						<li><a target="_blank" rel="noopener" href="https://unicode-table.com/cn/2122/">™ - 商标标记 表情符号: U+2122 trade - Unicode 字符百科</a></li>
+					</ul>
+				</li>
+				<li>
+					<font style="font-style:italic;"><b>「</b>符号：手指<b>」</b></font>&ensp;⤵
+					<ul>
+						<li><a target="_blank" rel="noopener" href="https://unicode-table.com/cn/261A/">☚ - 实心左指索引: U+261A - Unicode 字符百科</a></li>
+						<li><a target="_blank" rel="noopener" href="https://unicode-table.com/cn/261B/">☛ - 实心右指索引: U+261B - Unicode 字符百科</a></li>
+						<li><a target="_blank" rel="noopener" href="https://unicode-table.com/cn/261C/">☜ - 空心左指索引: U+261C - Unicode 字符百科</a></li>
+						<li><a target="_blank" rel="noopener" href="https://unicode-table.com/cn/261D/">☝ - 空心上指索引 表情符号: U+261D - Unicode 字符百科</a></li>
+						<li><a target="_blank" rel="noopener" href="https://unicode-table.com/cn/261E/">☞ - 空心右指索引: U+261E - Unicode 字符百科</a></li>
+						<li><a target="_blank" rel="noopener" href="https://unicode-table.com/cn/261F/">☟ - 空心下指索引: U+261F - Unicode 字符百科</a></li>
+					</ul>
+				</li>
+				<li>
+					<font style="font-style:italic;"><b>「</b>符号：心<b>」</b></font>&ensp;⤵
+					<ul>
+						<li><a target="_blank" rel="noopener" href="https://unicode-table.com/cn/1F49F/">💟 - 心装饰 表情符号: U+1F49F - Unicode 字符百科</a></li>
+						<li><a target="_blank" rel="noopener" href="https://unicode-table.com/cn/2764/">❤ - 粗实心心 表情符号: U+2764 - Unicode 字符百科</a></li>
+						<li><a target="_blank" rel="noopener" href="https://unicode-table.com/cn/1F497/">💗 - 成长的心 表情符号: U+1F497 - Unicode 字符百科</a></li>
+					</ul>
+				</li>
+				<li>
+					<font style="font-style:italic;"><b>「</b>符号：性别<b>」</b></font>&ensp;⤵
+					<ul>
+						<li><a target="_blank" rel="noopener" href="https://unicode-table.com/cn/26A2/">⚢ - 双雌性标记: U+26A2 - Unicode 字符百科</a></li>
+						<li><a target="_blank" rel="noopener" href="https://unicode-table.com/cn/26A3/">⚣ - 双雄性标记: U+26A3 - Unicode 字符百科</a></li>
+						<li><a target="_blank" rel="noopener" href="https://unicode-table.com/cn/26A4/">⚤ - 雌雄互锁标记: U+26A4 - Unicode 字符百科</a></li>
+						<li><a target="_blank" rel="noopener" href="https://unicode-table.com/cn/26A5/">⚥ - 雌雄标记: U+26A5 - Unicode 字符百科</a></li>
+						<li><a target="_blank" rel="noopener" href="https://unicode-table.com/cn/26A6/">⚦ - 带粗线的雄性标记: U+26A6 - Unicode 字符百科</a></li>
+						<li><a target="_blank" rel="noopener" href="https://unicode-table.com/cn/26A7/">⚧ - 带粗线的雄性与雌雄标记 表情符号: U+26A7 - Unicode 字符百科</a></li>
+						<li><a target="_blank" rel="noopener" href="https://unicode-table.com/cn/26A8/">⚨ - 带粗线的竖直雄性标记: U+26A8 - Unicode 字符百科</a></li>
+						<li><a target="_blank" rel="noopener" href="https://unicode-table.com/cn/26A9/">⚩ - 带粗线的水平雄性标记: U+26A9 - Unicode 字符百科</a></li>
+					</ul>
+				</li>
+				<li>
+					<font style="font-style:italic;"><b>「</b>符号：星座<b>」</b></font>&ensp;⤵
+					<ul>
+						<li><a target="_blank" rel="noopener" href="https://unicode-table.com/cn/2648/">♈ - 白羊座 表情符号: U+2648 - Unicode 字符百科</a></li>
+						<li><a target="_blank" rel="noopener" href="https://unicode-table.com/cn/2649/">♉ - 金牛座 表情符号: U+2649 - Unicode 字符百科</a></li>
+						<li><a target="_blank" rel="noopener" href="https://unicode-table.com/cn/264A/">♊ - 双子座 表情符号: U+264A - Unicode 字符百科</a></li>
+						<li><a target="_blank" rel="noopener" href="https://unicode-table.com/cn/264B/">♋ - 巨蟹座 表情符号: U+264B - Unicode 字符百科</a></li>
+						<li><a target="_blank" rel="noopener" href="https://unicode-table.com/cn/264C/">♌ - 狮子座 表情符号: U+264C - Unicode 字符百科</a></li>
+						<li><a target="_blank" rel="noopener" href="https://unicode-table.com/cn/264D/">♍ - 室女座 表情符号: U+264D - Unicode 字符百科</a></li>
+						<li><a target="_blank" rel="noopener" href="https://unicode-table.com/cn/264E/">♎ - 天秤座 表情符号: U+264E - Unicode 字符百科</a></li>
+						<li><a target="_blank" rel="noopener" href="https://unicode-table.com/cn/264F/">♏ - 天蝎座 表情符号: U+264F - Unicode 字符百科</a></li>
+						<li><a target="_blank" rel="noopener" href="https://unicode-table.com/cn/2650/">♐ - 人马座 表情符号: U+2650 - Unicode 字符百科</a></li>
+						<li><a target="_blank" rel="noopener" href="https://unicode-table.com/cn/2651/">♑ - 摩羯座 表情符号: U+2651 - Unicode 字符百科</a></li>
+						<li><a target="_blank" rel="noopener" href="https://unicode-table.com/cn/2652/">♒ - 宝瓶座 表情符号: U+2652 - Unicode 字符百科</a></li>
+						<li><a target="_blank" rel="noopener" href="https://unicode-table.com/cn/2653/">♓ - 双鱼座 表情符号: U+2653 - Unicode 字符百科</a></li>
+						<li><a target="_blank" rel="noopener" href="https://unicode-table.com/cn/26CE/">⛎ - 蛇夫座 表情符号: U+26CE - Unicode 字符百科</a></li>
+					</ul>
+				</li>
+				<li>
+					<font style="font-style:italic;"><b>「</b>分类：餐饮<b>」</b></font>&ensp;⤵
+					<ul>
+						<li><a target="_blank" rel="noopener" href="https://unicode-table.com/cn/1F351/">🍑 - 桃子 表情符号: U+1F351 - Unicode 字符百科</a></li>
+						<li><a target="_blank" rel="noopener" href="https://unicode-table.com/cn/1F352/">🍒 - 樱桃 表情符号: U+1F352 - Unicode 字符百科</a></li>
+						<li><a target="_blank" rel="noopener" href="https://unicode-table.com/cn/1F353/">🍓 - 草莓 表情符号: U+1F353 - Unicode 字符百科</a></li>
+						<li><a target="_blank" rel="noopener" href="https://unicode-table.com/cn/1F354/">🍔 - 汉堡 表情符号: U+1F354 - Unicode 字符百科</a></li>
+						<li><a target="_blank" rel="noopener" href="https://unicode-table.com/cn/1F355/">🍕 - 一块比萨 表情符号: U+1F355 - Unicode 字符百科</a></li>
+						<li><a target="_blank" rel="noopener" href="https://unicode-table.com/cn/1F356/">🍖 - 骨头上的肉 表情符号: U+1F356 - Unicode 字符百科</a></li>
+						<li><a target="_blank" rel="noopener" href="https://unicode-table.com/cn/1F357/">🍗 - 鸡腿 表情符号: U+1F357 - Unicode 字符百科</a></li>
+						<li><a target="_blank" rel="noopener" href="https://unicode-table.com/cn/1F358/">🍘 - 米饼 表情符号: U+1F358 - Unicode 字符百科</a></li>
+						<li><a target="_blank" rel="noopener" href="https://unicode-table.com/cn/1F359/">🍙 - 汤圆 表情符号: U+1F359 - Unicode 字符百科</a></li>
+						<li><a target="_blank" rel="noopener" href="https://unicode-table.com/cn/1F35A/">🍚 - 干饭 表情符号: U+1F35A - Unicode 字符百科</a></li>
+						<li><a target="_blank" rel="noopener" href="https://unicode-table.com/cn/1F35B/">🍛 - 咖喱饭 表情符号: U+1F35B - Unicode 字符百科</a></li>
+						<li><a target="_blank" rel="noopener" href="https://unicode-table.com/cn/1F35C/">🍜 - 蒸碗 表情符号: U+1F35C - Unicode 字符百科</a></li>
+						<li><a target="_blank" rel="noopener" href="https://unicode-table.com/cn/1F35D/">🍝 - 意大利面 表情符号: U+1F35D - Unicode 字符百科</a></li>
+						<li><a target="_blank" rel="noopener" href="https://unicode-table.com/cn/1F35E/">🍞 - 面包 表情符号: U+1F35E - Unicode 字符百科</a></li>
+						<li><a target="_blank" rel="noopener" href="https://unicode-table.com/cn/1F35F/">🍟 - 薯条 表情符号: U+1F35F - Unicode 字符百科</a></li>
+						<li><a target="_blank" rel="noopener" href="https://unicode-table.com/cn/1F360/">🍠 - 烤红薯 表情符号: U+1F360 - Unicode 字符百科</a></li>
+						<li><a target="_blank" rel="noopener" href="https://unicode-table.com/cn/1F361/">🍡 - 日本团子 表情符号: U+1F361 - Unicode 字符百科</a></li>
+						<li><a target="_blank" rel="noopener" href="https://unicode-table.com/cn/1F362/">🍢 - 关东煮 表情符号: U+1F362 - Unicode 字符百科</a></li>
+						<li><a target="_blank" rel="noopener" href="https://unicode-table.com/cn/1F363/">🍣 - 寿司 表情符号: U+1F363 - Unicode 字符百科</a></li>
+						<li><a target="_blank" rel="noopener" href="https://unicode-table.com/cn/1F364/">🍤 - 炸虾 表情符号: U+1F364 - Unicode 字符百科</a></li>
+						<li><a target="_blank" rel="noopener" href="https://unicode-table.com/cn/1F365/">🍥 - 涡流设计的鱼肉饼 表情符号: U+1F365 - Unicode 字符百科</a></li>
+						<li><a target="_blank" rel="noopener" href="https://unicode-table.com/cn/1F366/">🍦 - 软冰淇淋 表情符号: U+1F366 - Unicode 字符百科</a></li>
+						<li><a target="_blank" rel="noopener" href="https://unicode-table.com/cn/1F367/">🍧 - 刨冰 表情符号: U+1F367 - Unicode 字符百科</a></li>
+						<li><a target="_blank" rel="noopener" href="https://unicode-table.com/cn/1F368/">🍨 - 冰淇淋 表情符号: U+1F368 - Unicode 字符百科</a></li>
+						<li><a target="_blank" rel="noopener" href="https://unicode-table.com/cn/1F369/">🍩 - 甜甜圈 表情符号: U+1F369 - Unicode 字符百科</a></li>
+						<li><a target="_blank" rel="noopener" href="https://unicode-table.com/cn/1F36A/">🍪 - 曲奇 表情符号: U+1F36A - Unicode 字符百科</a></li>
+						<li><a target="_blank" rel="noopener" href="https://unicode-table.com/cn/1F36B/">🍫 - 巧克力条 表情符号: U+1F36B - Unicode 字符百科</a></li>
+						<li><a target="_blank" rel="noopener" href="https://unicode-table.com/cn/1F36C/">🍬 - 糖果 表情符号: U+1F36C - Unicode 字符百科</a></li>
+						<li><a target="_blank" rel="noopener" href="https://unicode-table.com/cn/1F36D/">🍭 - 棒棒糖 表情符号: U+1F36D - Unicode 字符百科</a></li>
+						<li><a target="_blank" rel="noopener" href="https://unicode-table.com/cn/1F36E/">🍮 - 蛋奶糊 表情符号: U+1F36E - Unicode 字符百科</a></li>
+						<li><a target="_blank" rel="noopener" href="https://unicode-table.com/cn/1F36F/">🍯 - 蜜罐 表情符号: U+1F36F - Unicode 字符百科</a></li>
+						<li><a target="_blank" rel="noopener" href="https://unicode-table.com/cn/1F370/">🍰 - 酥饼 表情符号: U+1F370 - Unicode 字符百科</a></li>
+						<li><a target="_blank" rel="noopener" href="https://unicode-table.com/cn/1F371/">🍱 - 便当 表情符号: U+1F371 - Unicode 字符百科</a></li>
+						<li><a target="_blank" rel="noopener" href="https://unicode-table.com/cn/1F372/">🍲 - 一锅食物 表情符号: U+1F372 - Unicode 字符百科</a></li>
+						<li><a target="_blank" rel="noopener" href="https://unicode-table.com/cn/1F373/">🍳 - 煎锅 表情符号: U+1F373 - Unicode 字符百科</a></li>
+						<li><a target="_blank" rel="noopener" href="https://unicode-table.com/cn/1F374/">🍴 - 刀叉 表情符号: U+1F374 - Unicode 字符百科</a></li>
+						<li><a target="_blank" rel="noopener" href="https://unicode-table.com/cn/1F375/">🍵 - 无柄茶杯 表情符号: U+1F375 - Unicode 字符百科</a></li>
+					</ul>
+				</li>
+				<li>
+					<font style="font-style:italic;"><b>「</b>分类：灯光与影像<b>」</b></font>&ensp;⤵
+					<ul>
+						<li><a target="_blank" rel="noopener" href="https://unicode-table.com/cn/1F4F9/">📹 - 摄像机 表情符号: U+1F4F9 - Unicode 字符百科</a></li>
+						<li><a target="_blank" rel="noopener" href="https://unicode-table.com/cn/1F4F7/">📷 - 相机 表情符号: U+1F4F7 - Unicode 字符百科</a></li>
+						<li><a target="_blank" rel="noopener" href="https://unicode-table.com/cn/1F4A1/">💡 - 电灯泡 表情符号: U+1F4A1 - Unicode 字符百科</a></li>
+						<li><a target="_blank" rel="noopener" href="https://unicode-table.com/cn/1F3AC/">🎬 - 场记板 表情符号: U+1F3AC - Unicode 字符百科</a></li>
+						<li><a target="_blank" rel="noopener" href="https://unicode-table.com/cn/1F3EE/">🏮 - 居酒屋 表情符号: U+1F3EE - Unicode 字符百科</a></li>
+						<li><a target="_blank" rel="noopener" href="https://unicode-table.com/cn/1F4FA/">📺 - 电视 表情符号: U+1F4FA - Unicode 字符百科</a></li>
+						<li><a target="_blank" rel="noopener" href="https://unicode-table.com/cn/1F56F/">🕯 - 蜡烛 表情符号: U+1F56F - Unicode 字符百科</a></li>
+						<li><a target="_blank" rel="noopener" href="https://unicode-table.com/cn/1F50D/">🔍 - 左指放大镜 表情符号: U+1F50D - Unicode 字符百科</a></li>
+						<li><a target="_blank" rel="noopener" href="https://unicode-table.com/cn/1F50E/">🔎 - 右指放大镜 表情符号: U+1F50E - Unicode 字符百科</a></li>
+						<li><a target="_blank" rel="noopener" href="https://unicode-table.com/cn/1F39E/">🎞 - 视频胶片 表情符号: U+1F39E - Unicode 字符百科</a></li>
+						<li><a target="_blank" rel="noopener" href="https://unicode-table.com/cn/1F526/">🔦 - 手电筒 表情符号: U+1F526 - Unicode 字符百科</a></li>
+						<li><a target="_blank" rel="noopener" href="https://unicode-table.com/cn/1F4FD/">📽 - 电影放映机 表情符号: U+1F4FD - Unicode 字符百科</a></li>
+					</ul>
+				</li>
+				<li>
+					<font style="font-style:italic;"><b>「</b>分类：地理<b>」</b></font>&ensp;⤵
+					<ul>
+						<li><a target="_blank" rel="noopener" href="https://unicode-table.com/cn/1F9ED/">🧭 - 罗盘 表情符号: U+1F9ED - Unicode 字符百科</a></li>
+						<li><a target="_blank" rel="noopener" href="https://unicode-table.com/cn/1F310/">🌐 - 经纬线的地球仪 表情符号: U+1F310 - Unicode 字符百科</a></li>
+						<li><a target="_blank" rel="noopener" href="https://unicode-table.com/cn/1F30F/">🌏 - 亚澳洲 表情符号: U+1F30F - Unicode 字符百科</a></li>
+						<li><a target="_blank" rel="noopener" href="https://unicode-table.com/cn/1F30E/">🌎 - 南北美洲 表情符号: U+1F30E - Unicode 字符百科</a></li>
+						<li><a target="_blank" rel="noopener" href="https://unicode-table.com/cn/1F30D/">🌍 - 欧非洲 表情符号: U+1F30D - Unicode 字符百科</a></li>
+						<li><a target="_blank" rel="noopener" href="https://unicode-table.com/cn/1F5FA/">🗺 - 世界地图 表情符号: U+1F5FA - Unicode 字符百科</a></li>
+						<li><a target="_blank" rel="noopener" href="https://unicode-table.com/cn/1F5FE/">🗾 - 日本的剪影 表情符号: U+1F5FE - Unicode 字符百科</a></li>
+					</ul>
+				</li>
+				<li>
+					<font style="font-style:italic;"><b>「</b>分类：服装<b>」</b></font>&ensp;⤵
+					<ul>
+						<li><a target="_blank" rel="noopener" href="https://unicode-table.com/cn/1F393/">🎓 - 毕业帽 表情符号: U+1F393 - Unicode 字符百科</a></li>
+						<li><a target="_blank" rel="noopener" href="https://unicode-table.com/cn/1F457/">👗 - 连衣裙 表情符号: U+1F457 - Unicode 字符百科</a></li>
+						<li><a target="_blank" rel="noopener" href="https://unicode-table.com/cn/1F459/">👙 - 比基尼泳装 表情符号: U+1F459 - Unicode 字符百科</a></li>
+						<li><a target="_blank" rel="noopener" href="https://unicode-table.com/cn/1F9E2/">🧢 - 收费上限 表情符号: U+1F9E2 - Unicode 字符百科</a></li>
+						<li><a target="_blank" rel="noopener" href="https://unicode-table.com/cn/1F45E/">👞 - 勒芒鞋 表情符号: U+1F45E - Unicode 字符百科</a></li>
+						<li><a target="_blank" rel="noopener" href="https://unicode-table.com/cn/1F45F/">👟 - 运动鞋 表情符号: U+1F45F - Unicode 字符百科</a></li>
+						<li><a target="_blank" rel="noopener" href="https://unicode-table.com/cn/1F45C/">👜 - 手提包 表情符号: U+1F45C - Unicode 字符百科</a></li>
+						<li><a target="_blank" rel="noopener" href="https://unicode-table.com/cn/1F9E3/">🧣 - 围巾 表情符号: U+1F9E3 - Unicode 字符百科</a></li>
+						<li><a target="_blank" rel="noopener" href="https://unicode-table.com/cn/1F455/">👕 - T恤 表情符号: U+1F455 - Unicode 字符百科</a></li>
+						<li><a target="_blank" rel="noopener" href="https://unicode-table.com/cn/1F461/">👡 - 女人凉鞋 表情符号: U+1F461 - Unicode 字符百科</a></li>
+						<li><a target="_blank" rel="noopener" href="https://unicode-table.com/cn/1F451/">👑 - 王冠 表情符号: U+1F451 - Unicode 字符百科</a></li>
+						<li><a target="_blank" rel="noopener" href="https://unicode-table.com/cn/1F45A/">👚 - 女人的衣服 表情符号: U+1F45A - Unicode 字符百科</a></li>
+						<li><a target="_blank" rel="noopener" href="https://unicode-table.com/cn/1F462/">👢 - 女人靴子 表情符号: U+1F462 - Unicode 字符百科</a></li>
+						<li><a target="_blank" rel="noopener" href="https://unicode-table.com/cn/1F48D/">💍 - 环 表情符号: U+1F48D - Unicode 字符百科</a></li>
+						<li><a target="_blank" rel="noopener" href="https://unicode-table.com/cn/1F458/">👘 - 和服 表情符号: U+1F458 - Unicode 字符百科</a></li>
+						<li><a target="_blank" rel="noopener" href="https://unicode-table.com/cn/1F48E/">💎 - 宝石 表情符号: U+1F48E - Unicode 字符百科</a></li>
+						<li><a target="_blank" rel="noopener" href="https://unicode-table.com/cn/1F9E6/">🧦 - 袜子 表情符号: U+1F9E6 - Unicode 字符百科</a></li>
+						<li><a target="_blank" rel="noopener" href="https://unicode-table.com/cn/1F576/">🕶 - 黑暗太阳镜 表情符号: U+1F576 - Unicode 字符百科</a></li>
+						<li><a target="_blank" rel="noopener" href="https://unicode-table.com/cn/1F453/">👓 - 眼镜 表情符号: U+1F453 - Unicode 字符百科</a></li>
+						<li><a target="_blank" rel="noopener" href="https://unicode-table.com/cn/1F3A9/">🎩 - 大礼帽 表情符号: U+1F3A9 - Unicode 字符百科</a></li>
+						<li><a target="_blank" rel="noopener" href="https://unicode-table.com/cn/1F456/">👖 - 牛仔裤 表情符号: U+1F456 - Unicode 字符百科</a></li>
+						<li><a target="_blank" rel="noopener" href="https://unicode-table.com/cn/1F6CD/">🛍 - 购物袋 表情符号: U+1F6CD - Unicode 字符百科</a></li>
+						<li><a target="_blank" rel="noopener" href="https://unicode-table.com/cn/1F392/">🎒 - 书包 表情符号: U+1F392 - Unicode 字符百科</a></li>
+						<li><a target="_blank" rel="noopener" href="https://unicode-table.com/cn/1F97E/">🥾 - 远足靴 表情符号: U+1F97E - Unicode 字符百科</a></li>
+						<li><a target="_blank" rel="noopener" href="https://unicode-table.com/cn/1FA71/">🩱 - 一件式泳衣表情符号 表情符号: U+1FA71 - Unicode 字符百科</a></li>
+						<li><a target="_blank" rel="noopener" href="https://unicode-table.com/cn/1F454/">👔 - 领带 表情符号: U+1F454 - Unicode 字符百科</a></li>
+						<li><a target="_blank" rel="noopener" href="https://unicode-table.com/cn/1F97C/">🥼 - 实验工作服 表情符号: U+1F97C - Unicode 字符百科</a></li>
+						<li><a target="_blank" rel="noopener" href="https://unicode-table.com/cn/1FA72/">🩲 - 内裤表情符号 表情符号: U+1FA72 - Unicode 字符百科</a></li>
+						<li><a target="_blank" rel="noopener" href="https://unicode-table.com/cn/1FA73/">🩳 - 短裤表情符号 表情符号: U+1FA73 - Unicode 字符百科</a></li>
+						<li><a target="_blank" rel="noopener" href="https://unicode-table.com/cn/1F460/">👠 - 高跟鞋 表情符号: U+1F460 - Unicode 字符百科</a></li>
+						<li><a target="_blank" rel="noopener" href="https://unicode-table.com/cn/1F452/">👒 - 女人的帽子 表情符号: U+1F452 - Unicode 字符百科</a></li>
+					</ul>
+				</li>
+				<li>
+					<font style="font-style:italic;"><b>「</b>分类：活动项目<b>」</b></font>&ensp;⤵
+					<ol>
+						<li>
+							<font style="font-style:italic;"><b>「</b>分类：活动项目🡆事件<b>」</b></font>&ensp;⤵
+							<ul>
+								<li><a target="_blank" rel="noopener" href="https://unicode-table.com/cn/1F386/">🎆 - 焰火 表情符号: U+1F386 - Unicode 字符百科</a></li>
+								<li><a target="_blank" rel="noopener" href="https://unicode-table.com/cn/1F381/">🎁 - 包装的礼物 表情符号: U+1F381 - Unicode 字符百科</a></li>
+								<li><a target="_blank" rel="noopener" href="https://unicode-table.com/cn/1F383/">🎃 - 南瓜灯 表情符号: U+1F383 - Unicode 字符百科</a></li>
+								<li><a target="_blank" rel="noopener" href="https://unicode-table.com/cn/2728/">✨ - Sparkles 表情符号: U+2728 - Unicode 字符百科</a></li>
+								<li><a target="_blank" rel="noopener" href="https://unicode-table.com/cn/1F387/">🎇 - 电光花 表情符号: U+1F387 - Unicode 字符百科</a></li>
+								<li><a target="_blank" rel="noopener" href="https://unicode-table.com/cn/1F380/">🎀 - 绶带 表情符号: U+1F380 - Unicode 字符百科</a></li>
+								<li><a target="_blank" rel="noopener" href="https://unicode-table.com/cn/1F389/">🎉 - 爆竹 表情符号: U+1F389 - Unicode 字符百科</a></li>
+								<li><a target="_blank" rel="noopener" href="https://unicode-table.com/cn/1F388/">🎈 - 气球 表情符号: U+1F388 - Unicode 字符百科</a></li>
+								<li><a target="_blank" rel="noopener" href="https://unicode-table.com/cn/1F38B/">🎋 - 七夕树 表情符号: U+1F38B - Unicode 字符百科</a></li>
+								<li><a target="_blank" rel="noopener" href="https://unicode-table.com/cn/1F38A/">🎊 - 五彩纸屑 表情符号: U+1F38A - Unicode 字符百科</a></li>
+								<li><a target="_blank" rel="noopener" href="https://unicode-table.com/cn/1F397/">🎗 - 丝带 表情符号: U+1F397 - Unicode 字符百科</a></li>
+								<li><a target="_blank" rel="noopener" href="https://unicode-table.com/cn/1F3AB/">🎫 - 票 表情符号: U+1F3AB - Unicode 字符百科</a></li>
+								<li><a target="_blank" rel="noopener" href="https://unicode-table.com/cn/1F391/">🎑 - 日本八月十五夜 表情符号: U+1F391 - Unicode 字符百科</a></li>
+								<li><a target="_blank" rel="noopener" href="https://unicode-table.com/cn/1F38F/">🎏 - 鲤鱼旗子 表情符号: U+1F38F - Unicode 字符百科</a></li>
+								<li><a target="_blank" rel="noopener" href="https://unicode-table.com/cn/1F9E7/">🧧 - 红色礼品字母封 表情符号: U+1F9E7 - Unicode 字符百科</a></li>
+								<li><a target="_blank" rel="noopener" href="https://unicode-table.com/cn/1F390/">🎐 - 风铃 表情符号: U+1F390 - Unicode 字符百科</a></li>
+								<li><a target="_blank" rel="noopener" href="https://unicode-table.com/cn/1F384/">🎄 - 圣诞树 表情符号: U+1F384 - Unicode 字符百科</a></li>
+								<li><a target="_blank" rel="noopener" href="https://unicode-table.com/cn/1F9E8/">🧨 - 鞭炮 表情符号: U+1F9E8 - Unicode 字符百科</a></li>
+							</ul>
+						</li>
+						<li>
+							<font style="font-style:italic;"><b>「</b>分类：活动项目🡆奖章和奖项 <b>」</b></font>&ensp;⤵
+							<ul>
+								<li><a target="_blank" rel="noopener" href="https://unicode-table.com/cn/1F3C6/">🏆 - 锦杯 表情符号: U+1F3C6 - Unicode 字符百科</a></li>
+								<li><a target="_blank" rel="noopener" href="https://unicode-table.com/cn/1F3C5/">🏅 - 运动奖章 表情符号: U+1F3C5 - Unicode 字符百科</a></li>
+								<li><a target="_blank" rel="noopener" href="https://unicode-table.com/cn/1F947/">🥇 - 第一名奖牌 表情符号: U+1F947 - Unicode 字符百科</a></li>
+								<li><a target="_blank" rel="noopener" href="https://unicode-table.com/cn/1F948/">🥈 - 第二名奖牌 表情符号: U+1F948 - Unicode 字符百科</a></li>
+								<li><a target="_blank" rel="noopener" href="https://unicode-table.com/cn/1F949/">🥉 - 第三名奖牌 表情符号: U+1F949 - Unicode 字符百科</a></li>
+							</ul>
+						</li>
+						<li>
+							<font style="font-style:italic;"><b>「</b>分类：活动项目🡆运动<b>」</b></font>&ensp;⤵
+							<ul>
+								<li><a target="_blank" rel="noopener" href="https://unicode-table.com/cn/1F3C0/">🏀 - 篮球和篮球筐 表情符号: U+1F3C0 - Unicode 字符百科</a></li>
+								<li><a target="_blank" rel="noopener" href="https://unicode-table.com/cn/1F3D3/">🏓 - 乒乓球拍和乒乓球 表情符号: U+1F3D3 - Unicode 字符百科</a></li>
+								<li><a target="_blank" rel="noopener" href="https://unicode-table.com/cn/1F3A3/">🎣 - 钓鱼竿和鱼 表情符号: U+1F3A3 - Unicode 字符百科</a></li>
+								<li><a target="_blank" rel="noopener" href="https://unicode-table.com/cn/1F3D1/">🏑 - 曲棍和曲棍球 表情符号: U+1F3D1 - Unicode 字符百科</a></li>
+								<li><a target="_blank" rel="noopener" href="https://unicode-table.com/cn/1F3D0/">🏐 - 排球 表情符号: U+1F3D0 - Unicode 字符百科</a></li>
+								<li><a target="_blank" rel="noopener" href="https://unicode-table.com/cn/1F3BD/">🎽 - 带带子的跑步背心 表情符号: U+1F3BD - Unicode 字符百科</a></li>
+								<li><a target="_blank" rel="noopener" href="https://unicode-table.com/cn/1F3BE/">🎾 - 网球拍和网球 表情符号: U+1F3BE - Unicode 字符百科</a></li>
+								<li><a target="_blank" rel="noopener" href="https://unicode-table.com/cn/1F3BF/">🎿 - 滑雪板和滑雪靴 表情符号: U+1F3BF - Unicode 字符百科</a></li>
+								<li><a target="_blank" rel="noopener" href="https://unicode-table.com/cn/26BD/">⚽ - 足球 表情符号: U+26BD - Unicode 字符百科</a></li>
+								<li><a target="_blank" rel="noopener" href="https://unicode-table.com/cn/1F3D2/">🏒 - 冰球棍和冰球 表情符号: U+1F3D2 - Unicode 字符百科</a></li>
+								<li><a target="_blank" rel="noopener" href="https://unicode-table.com/cn/1F94E/">🥎 - 垒球 表情符号: U+1F94E - Unicode 字符百科</a></li>
+								<li><a target="_blank" rel="noopener" href="https://unicode-table.com/cn/26F8/">⛸ - 滑冰場 表情符号: U+26F8 - Unicode 字符百科</a></li>
+								<li><a target="_blank" rel="noopener" href="https://unicode-table.com/cn/1F94F/">🥏 - 飞盘 表情符号: U+1F94F - Unicode 字符百科</a></li>
+								<li><a target="_blank" rel="noopener" href="https://unicode-table.com/cn/26BE/">⚾ - 棒球 表情符号: U+26BE - Unicode 字符百科</a></li>
+								<li><a target="_blank" rel="noopener" href="https://unicode-table.com/cn/1F94A/">🥊 - 拳击手套 表情符号: U+1F94A - Unicode 字符百科</a></li>
+								<li><a target="_blank" rel="noopener" href="https://unicode-table.com/cn/1F3C8/">🏈 - 美式足球 表情符号: U+1F3C8 - Unicode 字符百科</a></li>
+								<li><a target="_blank" rel="noopener" href="https://unicode-table.com/cn/1F94B/">🥋 - 武术制服 表情符号: U+1F94B - Unicode 字符百科</a></li>
+								<li><a target="_blank" rel="noopener" href="https://unicode-table.com/cn/1F3CF/">🏏 - 板球棒和板球 表情符号: U+1F3CF - Unicode 字符百科</a></li>
+								<li><a target="_blank" rel="noopener" href="https://unicode-table.com/cn/1F3C9/">🏉 - 橄榄球 表情符号: U+1F3C9 - Unicode 字符百科</a></li>
+								<li><a target="_blank" rel="noopener" href="https://unicode-table.com/cn/1F3B3/">🎳 - 保龄球 表情符号: U+1F3B3 - Unicode 字符百科</a></li>
+								<li><a target="_blank" rel="noopener" href="https://unicode-table.com/cn/1F3F8/">🏸 - 羽毛球拍和羽毛球 表情符号: U+1F3F8 - Unicode 字符百科</a></li>
+							</ul>
+						</li>
+						<li>
+							<font style="font-style:italic;"><b>「</b>分类：活动项目🡆游戏<b>」</b></font>&ensp;⤵
+							<ul>
+								<li><a target="_blank" rel="noopener" href="https://unicode-table.com/cn/1F579/">🕹 - 游戏杆 表情符号: U+1F579 - Unicode 字符百科</a></li>
+								<li><a target="_blank" rel="noopener" href="https://unicode-table.com/cn/265F/">♟ - 国际象棋中黑色棋子的兵 表情符号: U+265F - Unicode 字符百科</a></li>
+								<li><a target="_blank" rel="noopener" href="https://unicode-table.com/cn/1F52E/">🔮 - 水晶球 表情符号: U+1F52E - Unicode 字符百科</a></li>
+								<li><a target="_blank" rel="noopener" href="https://unicode-table.com/cn/1F9E9/">🧩 - 拼图块 表情符号: U+1F9E9 - Unicode 字符百科</a></li>
+								<li><a target="_blank" rel="noopener" href="https://unicode-table.com/cn/1F0CF/">🃏 - 扑克牌黑色小丑 表情符号: U+1F0CF - Unicode 字符百科</a></li>
+								<li><a target="_blank" rel="noopener" href="https://unicode-table.com/cn/1F3B4/">🎴 - 花牌 表情符号: U+1F3B4 - Unicode 字符百科</a></li>
+								<li><a target="_blank" rel="noopener" href="https://unicode-table.com/cn/1F004/">🀄 - 麻将牌红龙 表情符号: U+1F004 - Unicode 字符百科</a></li>
+								<li><a target="_blank" rel="noopener" href="https://unicode-table.com/cn/1F3B1/">🎱 - 台球 表情符号: U+1F3B1 - Unicode 字符百科</a></li>
+								<li><a target="_blank" rel="noopener" href="https://unicode-table.com/cn/1F3B2/">🎲 - 骰子 表情符号: U+1F3B2 - Unicode 字符百科</a></li>
+								<li><a target="_blank" rel="noopener" href="https://unicode-table.com/cn/1F3B0/">🎰 - 老虎机 表情符号: U+1F3B0 - Unicode 字符百科</a></li>
+								<li><a target="_blank" rel="noopener" href="https://unicode-table.com/cn/1FA86/">🪆 - 嵌套娃娃 表情符号: U+1FA86 - Unicode 字符百科</a></li>
+								<li><a target="_blank" rel="noopener" href="https://unicode-table.com/cn/1FA85/">🪅 - 皮納塔 表情符号: U+1FA85 - Unicode 字符百科</a></li>
+								<li><a target="_blank" rel="noopener" href="https://unicode-table.com/cn/1F3AE/">🎮 - 游戏控制器 表情符号: U+1F3AE - Unicode 字符百科</a></li>
+								<li><a target="_blank" rel="noopener" href="https://unicode-table.com/cn/1FA81/">🪁 - 風箏 表情符号: U+1FA81 - Unicode 字符百科</a></li>
+								<li><a target="_blank" rel="noopener" href="https://unicode-table.com/cn/1FA84/">🪄 - 魔法棒 表情符号: U+1FA84 - Unicode 字符百科</a></li>
+								<li><a target="_blank" rel="noopener" href="https://unicode-table.com/cn/1FA80/">🪀 - 悠悠球 表情符号: U+1FA80 - Unicode 字符百科</a></li>
+								<li><a target="_blank" rel="noopener" href="https://unicode-table.com/cn/1F9F8/">🧸 - 泰迪熊 表情符号: U+1F9F8 - Unicode 字符百科</a></li>
+								<li><a target="_blank" rel="noopener" href="https://unicode-table.com/cn/1F3AF/">🎯 - 直接命中 表情符号: U+1F3AF - Unicode 字符百科</a></li>
+							</ul>
+						</li>
+						<li>
+							<font style="font-style:italic;"><b>「</b>分类：活动项目🡆工艺品<b>」</b></font>&ensp;⤵
+							<ul>
+								<li><a target="_blank" rel="noopener" href="https://unicode-table.com/cn/1F3A8/">🎨 - 画家调色板 表情符号: U+1F3A8 - Unicode 字符百科</a></li>
+								<li><a target="_blank" rel="noopener" href="https://unicode-table.com/cn/1FAA2/">🪢 - 結 表情符号: U+1FAA2 - Unicode 字符百科</a></li>
+								<li><a target="_blank" rel="noopener" href="https://unicode-table.com/cn/1F5BC/">🖼 - 框架与图片 表情符号: U+1F5BC - Unicode 字符百科</a></li>
+								<li><a target="_blank" rel="noopener" href="https://unicode-table.com/cn/1F9F6/">🧶 - 纱球 表情符号: U+1F9F6 - Unicode 字符百科</a></li>
+								<li><a target="_blank" rel="noopener" href="https://unicode-table.com/cn/1FAA1/">🪡 - 縫紉針 表情符号: U+1FAA1 - Unicode 字符百科</a></li>
+							</ul>
+						</li>
+					</ol>
+				</li>
+				<li>
+					<font style="font-style:italic;"><b>「</b>分类：旅游与地方<b>」</b></font>&ensp;⤵
+					<ol>
+						<li>
+							<font style="font-style:italic;"><b>「</b>分类：旅游与地方🡆航空运输<b>」</b></font>&ensp;⤵
+							<ul>
+								<li><a target="_blank" rel="noopener" href="https://unicode-table.com/cn/1F680/">🚀 - 火箭 表情符号: U+1F680 - Unicode 字符百科</a></li>
+								<li><a target="_blank" rel="noopener" href="https://unicode-table.com/cn/1F6F0/">🛰 - 卫星 表情符号: U+1F6F0 - Unicode 字符百科</a></li>
+								<li><a target="_blank" rel="noopener" href="https://unicode-table.com/cn/2708/">✈ - 飞机 表情符号: U+2708 - Unicode 字符百科</a></li>
+								<li><a target="_blank" rel="noopener" href="https://unicode-table.com/cn/1F6E9/">🛩 - 小型飞机 表情符号: U+1F6E9 - Unicode 字符百科</a></li>
+								<li><a target="_blank" rel="noopener" href="https://unicode-table.com/cn/1F6EB/">🛫 - 机场出发 表情符号: U+1F6EB - Unicode 字符百科</a></li>
+								<li><a target="_blank" rel="noopener" href="https://unicode-table.com/cn/1F6EC/">🛬 - 机场到达 表情符号: U+1F6EC - Unicode 字符百科</a></li>
+							</ul>
+						</li>
+					</ol>
+				</li>
+				<li>
+					<font style="font-style:italic;"><b>「</b>分类：面部表情<b>」</b></font>&ensp;⤵
+					<ul>
+						<li><a target="_blank" rel="noopener" href="https://unicode-table.com/cn/1F602/">😂 - 喜极而泣 表情符号: U+1F602 - Unicode 字符百科</a></li>
+						<li><a target="_blank" rel="noopener" href="https://unicode-table.com/cn/1F60D/">😍 - 心花怒放 表情符号: U+1F60D - Unicode 字符百科</a></li>
+						<li><a target="_blank" rel="noopener" href="https://unicode-table.com/cn/1F923/">🤣 - 在地板上滚动笑 表情符号: U+1F923 - Unicode 字符百科</a></li>
+						<li><a target="_blank" rel="noopener" href="https://unicode-table.com/cn/1F60A/">😊 - 满脸堆笑 表情符号: U+1F60A - Unicode 字符百科</a></li>
+						<li><a target="_blank" rel="noopener" href="https://unicode-table.com/cn/1F62D/">😭 - 大声哭 表情符号: U+1F62D - Unicode 字符百科</a></li>
+						<li><a target="_blank" rel="noopener" href="https://unicode-table.com/cn/1F618/">😘 - 飞吻 表情符号: U+1F618 - Unicode 字符百科</a></li>
+						<li><a target="_blank" rel="noopener" href="https://unicode-table.com/cn/1F60E/">😎 - 酷 表情符号: U+1F60E - Unicode 字符百科</a></li>
+						<li><a target="_blank" rel="noopener" href="https://unicode-table.com/cn/1F606/">😆 - 闭眼睛的笑脸 表情符号: U+1F606 - Unicode 字符百科</a></li>
+						<li><a target="_blank" rel="noopener" href="https://unicode-table.com/cn/1F601/">😁 - 笑嘻嘻 表情符号: U+1F601 - Unicode 字符百科</a></li>
+						<li><a target="_blank" rel="noopener" href="https://unicode-table.com/cn/1F609/">😉 - 眨眼 表情符号: U+1F609 - Unicode 字符百科</a></li>
+						<li><a target="_blank" rel="noopener" href="https://unicode-table.com/cn/1F914/">🤔 - 思维面孔 表情符号: U+1F914 - Unicode 字符百科</a></li>
+						<li><a target="_blank" rel="noopener" href="https://unicode-table.com/cn/1F605/">😅 - 苦笑 表情符号: U+1F605 - Unicode 字符百科</a></li>
+						<li><a target="_blank" rel="noopener" href="https://unicode-table.com/cn/1F614/">😔 - 沮丧 表情符号: U+1F614 - Unicode 字符百科</a></li>
+						<li><a target="_blank" rel="noopener" href="https://unicode-table.com/cn/1F61C/">😜 - 俏皮 表情符号: U+1F61C - Unicode 字符百科</a></li>
+						<li><a target="_blank" rel="noopener" href="https://unicode-table.com/cn/1F612/">😒 - 不爽 表情符号: U+1F612 - Unicode 字符百科</a></li>
+						<li><a target="_blank" rel="noopener" href="https://unicode-table.com/cn/263A/">☺ - 空心笑脸 表情符号: U+263A - Unicode 字符百科</a></li>
+						<li><a target="_blank" rel="noopener" href="https://unicode-table.com/cn/1F601/">😁 - 笑嘻嘻 表情符号: U+1F601 - Unicode 字符百科</a></li>
+						<li><a target="_blank" rel="noopener" href="https://unicode-table.com/cn/1F622/">😢 - 哭泣 表情符号: U+1F622 - Unicode 字符百科</a></li>
+						<li><a target="_blank" rel="noopener" href="https://unicode-table.com/cn/1F917/">🤗 - 拥抱面孔 表情符号: U+1F917 - Unicode 字符百科</a></li>
+						<li><a target="_blank" rel="noopener" href="https://unicode-table.com/cn/1F60E/">😎 - 酷 表情符号: U+1F60E - Unicode 字符百科</a></li>
+						<li><a target="_blank" rel="noopener" href="https://unicode-table.com/cn/1F607/">😇 - 天真 表情符号: U+1F607 - Unicode 字符百科</a></li>
+						<li><a target="_blank" rel="noopener" href="https://unicode-table.com/cn/1F631/">😱 - 面對恐懼尖叫 表情符号: U+1F631 - Unicode 字符百科</a></li>
+						<li><a target="_blank" rel="noopener" href="https://unicode-table.com/cn/1F60C/">😌 - 如释重负 表情符号: U+1F60C - Unicode 字符百科</a></li>
+						<li><a target="_blank" rel="noopener" href="https://unicode-table.com/cn/1F60B/">😋 - 好吃 表情符号: U+1F60B - Unicode 字符百科</a></li>
+					</ul>
+				</li>
+				<li>
+					<font style="font-style:italic;"><b>「</b>分类：钱<b>」</b></font>&ensp;⤵
+					<ul>
+						<li><a target="_blank" rel="noopener" href="https://unicode-table.com/cn/1F4B0/">💰 - 钱袋子 表情符号: U+1F4B0 - Unicode 字符百科</a></li>
+						<li><a target="_blank" rel="noopener" href="https://unicode-table.com/cn/1F4B3/">💳 - 字母用卡 表情符号: U+1F4B3 - Unicode 字符百科</a></li>
+						<li><a target="_blank" rel="noopener" href="https://unicode-table.com/cn/1F9FE/">🧾 - 收据 表情符号: U+1F9FE - Unicode 字符百科</a></li>
+					</ul>
+				</li>
+				<li>
+					<font style="font-style:italic;"><b>「</b>分类：时间<b>」</b></font>&ensp;⤵
+					<ul>
+						<li><a target="_blank" rel="noopener" href="https://unicode-table.com/cn/231B/">⌛ - 沙漏 表情符号: U+231B - Unicode 字符百科</a></li>
+						<li><a target="_blank" rel="noopener" href="https://unicode-table.com/cn/23F3/">⏳ - 沙漏流沙 表情符号: U+23F3 - Unicode 字符百科</a></li>
+					</ul>
+				</li>
+				<li>
+					<font style="font-style:italic;"><b>「</b>分类：声音<b>」</b></font>&ensp;⤵
+					<ul>
+						<li><a target="_blank" rel="noopener" href="https://unicode-table.com/cn/1F507/">🔇 - 扬声器与取消行程 表情符号: U+1F507 - Unicode 字符百科</a></li>
+						<li><a target="_blank" rel="noopener" href="https://unicode-table.com/cn/1F508/">🔈 - 扬声器 表情符号: U+1F508 - Unicode 字符百科</a></li>
+						<li><a target="_blank" rel="noopener" href="https://unicode-table.com/cn/1F509/">🔉 - 扬声器有一个声波 表情符号: U+1F509 - Unicode 字符百科</a></li>
+						<li><a target="_blank" rel="noopener" href="https://unicode-table.com/cn/1F50A/">🔊 - 扬声器有三个声波 表情符号: U+1F50A - Unicode 字符百科</a></li>
+						<li><a target="_blank" rel="noopener" href="https://unicode-table.com/cn/1F514/">🔔 - 钟 表情符号: U+1F514 - Unicode 字符百科</a></li>
+						<li><a target="_blank" rel="noopener" href="https://unicode-table.com/cn/1F515/">🔕 - 贝尔与取消中风 表情符号: U+1F515 - Unicode 字符百科</a></li>
+					</ul>
+				</li>
+				<li>
+					<font style="font-style:italic;"><b>「</b>分类：通讯<b>」</b></font>&ensp;⤵
+					<ul>
+						<li><a target="_blank" rel="noopener" href="https://unicode-table.com/cn/1F4DE/">📞 - 电话听筒 表情符号: U+1F4DE - Unicode 字符百科</a></li>
+						<li><a target="_blank" rel="noopener" href="https://unicode-table.com/cn/260E/">☎ - 实心电话 表情符号: U+260E phone - Unicode 字符百科</a></li>
+						<li><a target="_blank" rel="noopener" href="https://unicode-table.com/cn/1F4E7/">📧 - 电子邮件符号 表情符号: U+1F4E7 - Unicode 字符百科</a></li>
+					</ul>
+				</li>
+				<li>
+					<font style="font-style:italic;"><b>「</b>分类：序号<b>」</b></font>&ensp;⤵
+					<ul>
+						<li><a target="_blank" rel="noopener" href="https://unicode-table.com/cn/2460/">① - 带圆圈数字一: U+2460 - Unicode 字符百科</a></li>
+						<li><a target="_blank" rel="noopener" href="https://unicode-table.com/cn/2461/">② - 带圆圈数字二: U+2461 - Unicode 字符百科</a></li>
+						<li><a target="_blank" rel="noopener" href="https://unicode-table.com/cn/2462/">③ - 带圆圈数字三: U+2462 - Unicode 字符百科</a></li>
+						<li><a target="_blank" rel="noopener" href="https://unicode-table.com/cn/2463/">④ - 带圆圈数字四: U+2463 - Unicode 字符百科</a></li>
+						<li><a target="_blank" rel="noopener" href="https://unicode-table.com/cn/2464/">⑤ - 带圆圈数字五: U+2464 - Unicode 字符百科</a></li>
+						<li><a target="_blank" rel="noopener" href="https://unicode-table.com/cn/2465/">⑥ - 带圆圈数字六: U+2465 - Unicode 字符百科</a></li>
+						<li><a target="_blank" rel="noopener" href="https://unicode-table.com/cn/2466/">⑦ - 带圆圈数字七: U+2466 - Unicode 字符百科</a></li>
+						<li><a target="_blank" rel="noopener" href="https://unicode-table.com/cn/2467/">⑧ - 带圆圈数字八: U+2467 - Unicode 字符百科</a></li>
+						<li><a target="_blank" rel="noopener" href="https://unicode-table.com/cn/2468/">⑨ - 带圆圈数字九: U+2468 - Unicode 字符百科</a></li>
+						<li><a target="_blank" rel="noopener" href="https://unicode-table.com/cn/2469/">⑩ - 带圆圈数字十: U+2469 - Unicode 字符百科</a></li>
+						<li><a target="_blank" rel="noopener" href="https://unicode-table.com/cn/246A/">⑪ - 带圆圈数字十一: U+246A - Unicode 字符百科</a></li>
+						<li><a target="_blank" rel="noopener" href="https://unicode-table.com/cn/246B/">⑫ - 带圆圈数字十二: U+246B - Unicode 字符百科</a></li>
+						<li><a target="_blank" rel="noopener" href="https://unicode-table.com/cn/246C/">⑬ - 带圆圈数字十三: U+246C - Unicode 字符百科</a></li>
+						<li><a target="_blank" rel="noopener" href="https://unicode-table.com/cn/246D/">⑭ - 带圆圈数字十四: U+246D - Unicode 字符百科</a></li>
+						<li><a target="_blank" rel="noopener" href="https://unicode-table.com/cn/246E/">⑮ - 带圆圈数字十五: U+246E - Unicode 字符百科</a></li>
+						<li><a target="_blank" rel="noopener" href="https://unicode-table.com/cn/246F/">⑯ - 带圆圈数字十六: U+246F - Unicode 字符百科</a></li>
+						<li><a target="_blank" rel="noopener" href="https://unicode-table.com/cn/2470/">⑰ - 带圆圈数字十七: U+2470 - Unicode 字符百科</a></li>
+						<li><a target="_blank" rel="noopener" href="https://unicode-table.com/cn/2471/">⑱ - 带圆圈数字十八: U+2471 - Unicode 字符百科</a></li>
+						<li><a target="_blank" rel="noopener" href="https://unicode-table.com/cn/2472/">⑲ - 带圆圈数字十九: U+2472 - Unicode 字符百科</a></li>
+						<li><a target="_blank" rel="noopener" href="https://unicode-table.com/cn/2473/">⑳ - 带圆圈数字二十: U+2473 - Unicode 字符百科</a></li>
+					</ul>
+				</li>
+				<li>
+					<font style="font-style:italic;"><b>「</b>分类：音乐<b>」</b></font>&ensp;⤵
+					<ul>
+						<li><a target="_blank" rel="noopener" href="https://unicode-table.com/cn/2669/">♩ - 四分音符: U+2669 - Unicode 字符百科</a></li>
+						<li><a target="_blank" rel="noopener" href="https://unicode-table.com/cn/266A/">♪ - 八分音符: U+266A sung - Unicode 字符百科</a></li>
+						<li><a target="_blank" rel="noopener" href="https://unicode-table.com/cn/266B/">♫ - 带梁的八分音符: U+266B - Unicode 字符百科</a></li>
+						<li><a target="_blank" rel="noopener" href="https://unicode-table.com/cn/266C/">♬ - 带梁的十六分音符: U+266C - Unicode 字符百科</a></li>
+						<li><a target="_blank" rel="noopener" href="https://unicode-table.com/cn/1F3B5/">🎵 - 快乐的音符 表情符号: U+1F3B5 - Unicode 字符百科</a></li>
+						<li><a target="_blank" rel="noopener" href="https://unicode-table.com/cn/1F3B6/">🎶 - 几个音符 表情符号: U+1F3B6 - Unicode 字符百科</a></li>
+						<li><a target="_blank" rel="noopener" href="https://unicode-table.com/cn/1F3BC/">🎼 - 乐谱 表情符号: U+1F3BC - Unicode 字符百科</a></li>
+						<li><a target="_blank" rel="noopener" href="https://unicode-table.com/cn/1F399/">🎙 - 录音棚的麦克风 表情符号: U+1F399 - Unicode 字符百科</a></li>
+						<li><a target="_blank" rel="noopener" href="https://unicode-table.com/cn/1F3A4/">🎤 - 麦克风 表情符号: U+1F3A4 - Unicode 字符百科</a></li>
+						<li><a target="_blank" rel="noopener" href="https://unicode-table.com/cn/1F3A7/">🎧 - 耳机 表情符号: U+1F3A7 - Unicode 字符百科</a></li>
+					</ul>
+				</li>
+				<li>
+					<font style="font-style:italic;"><b>「</b>分类：纸书<b>」</b></font>&ensp;⤵
+					<ul>
+						<li><a target="_blank" rel="noopener" href="https://unicode-table.com/cn/1F3F7/">🏷 - 标签 表情符号: U+1F3F7 - Unicode 字符百科</a></li>
+						<li><a target="_blank" rel="noopener" href="https://unicode-table.com/cn/1F4D1/">📑 - 书签标签 表情符号: U+1F4D1 - Unicode 字符百科</a></li>
+						<li><a target="_blank" rel="noopener" href="https://unicode-table.com/cn/1F4D3/">📓 - 笔记本 表情符号: U+1F4D3 - Unicode 字符百科</a></li>
+						<li><a target="_blank" rel="noopener" href="https://unicode-table.com/cn/1F4C3/">📃 - 卷曲页面 表情符号: U+1F4C3 - Unicode 字符百科</a></li>
+						<li><a target="_blank" rel="noopener" href="https://unicode-table.com/cn/1F4D5/">📕 - 已关闭的书 表情符号: U+1F4D5 - Unicode 字符百科</a></li>
+						<li><a target="_blank" rel="noopener" href="https://unicode-table.com/cn/1F4D2/">📒 - 莱杰 表情符号: U+1F4D2 - Unicode 字符百科</a></li>
+						<li><a target="_blank" rel="noopener" href="https://unicode-table.com/cn/1F4D7/">📗 - 绿皮书 表情符号: U+1F4D7 - Unicode 字符百科</a></li>
+						<li><a target="_blank" rel="noopener" href="https://unicode-table.com/cn/1F4D4/">📔 - 有装饰盖子的笔记本 表情符号: U+1F4D4 - Unicode 字符百科</a></li>
+						<li><a target="_blank" rel="noopener" href="https://unicode-table.com/cn/1F4D9/">📙 - 橙皮书 表情符号: U+1F4D9 - Unicode 字符百科</a></li>
+						<li><a target="_blank" rel="noopener" href="https://unicode-table.com/cn/1F4D6/">📖 - 打开书 表情符号: U+1F4D6 - Unicode 字符百科</a></li>
+						<li><a target="_blank" rel="noopener" href="https://unicode-table.com/cn/1F516/">🔖 - 书签 表情符号: U+1F516 - Unicode 字符百科</a></li>
+						<li><a target="_blank" rel="noopener" href="https://unicode-table.com/cn/1F4D8/">📘 - 蓝皮书 表情符号: U+1F4D8 - Unicode 字符百科</a></li>
+						<li><a target="_blank" rel="noopener" href="https://unicode-table.com/cn/1F4DC/">📜 - 滚动 表情符号: U+1F4DC - Unicode 字符百科</a></li>
+						<li><a target="_blank" rel="noopener" href="https://unicode-table.com/cn/1F4DA/">📚 - 图书 表情符号: U+1F4DA - Unicode 字符百科</a></li>
+						<li><a target="_blank" rel="noopener" href="https://unicode-table.com/cn/1F4C4/">📄 - 页面朝上 表情符号: U+1F4C4 - Unicode 字符百科</a></li>
+						<li><a target="_blank" rel="noopener" href="https://unicode-table.com/cn/1F5DE/">🗞 - 卷起的报纸 表情符号: U+1F5DE - Unicode 字符百科</a></li>
+						<li><a target="_blank" rel="noopener" href="https://unicode-table.com/cn/1F4F0/">📰 - 报纸 表情符号: U+1F4F0 - Unicode 字符百科</a></li>
+					</ul>
+				</li>
+				<li>
+					<font style="font-style:italic;"><b>「</b>分类：植物🡆花卉<b>」</b></font>&ensp;⤵
+					<ul>
+						<li><a target="_blank" rel="noopener" href="https://unicode-table.com/cn/1F339/">🌹 - 玫瑰 表情符号: U+1F339 - Unicode 字符百科</a></li>
+						<li><a target="_blank" rel="noopener" href="https://unicode-table.com/cn/1F338/">🌸 - 樱花 表情符号: U+1F338 - Unicode 字符百科</a></li>
+						<li><a target="_blank" rel="noopener" href="https://unicode-table.com/cn/1F337/">🌷 - 郁金香 表情符号: U+1F337 - Unicode 字符百科</a></li>
+					</ul>
+				</li>
+				<li>
+					<font style="font-style:italic;"><b>「</b>分类：站点🡆备用<b>」</b></font>&ensp;⤵
+					<ul>
+						<li><a target="_blank" rel="noopener" href="https://unicode-table.com/cn/2744/">❄ - 雪花 表情符号: U+2744 - Unicode 字符百科</a></li>
+						<li><a target="_blank" rel="noopener" href="https://unicode-table.com/cn/1F440/">👀 - 眼睛 表情符号: U+1F440 - Unicode 字符百科</a></li>
+						<li><a target="_blank" rel="noopener" href="https://unicode-table.com/cn/1F463/">👣 - 足迹 表情符号: U+1F463 - Unicode 字符百科</a></li>
+						<li><a target="_blank" rel="noopener" href="https://unicode-table.com/cn/1F6A9/">🚩 - 三角旗 表情符号: U+1F6A9 - Unicode 字符百科</a></li>
+					</ul>
+				</li>
+			</ul>
+		</li>
+		<li>
+			<a target="_blank" rel="noopener" href="https://zh.wikipedia.org/wiki/%E6%A0%87%E7%82%B9%E7%AC%A6%E5%8F%B7">标点符号 - 维基百科，自由的百科全书</a>
+			<ul>
+				<li><a target="_blank" rel="noopener" href="https://unicode-table.com/cn/2014/">— - Em 长划: U+2014 mdash - Unicode 字符百科</a></li>
+				<li><a target="_blank" rel="noopener" href="https://zh.wikipedia.org/wiki/%E8%BF%9E%E6%8E%A5%E5%8F%B7">连接号 - 维基百科，自由的百科全书</a></li>
+			</ul>
+		</li>
+	</ul>
+</body>
+</html>
