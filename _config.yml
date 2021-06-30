@@ -122,7 +122,9 @@ tag_map:
   B/S: Browser/Server
   CAS: Compare-and-swap
   Cron: Cron
+  CSS: Cascading_Style_Sheets
   Docker: Docker
+  DOM: Document_Object_Model
   Elasticsearch: Elasticsearch
   FTP: File_Transfer_Protocol
   Go: Go_(programming_language)
@@ -144,6 +146,7 @@ tag_map:
   ORM: Object_Relational_Mapping
   PostgreSQL: PostgreSQL
   RabbitMQ: RabbitMQ
+  Sass: Sass_(stylesheet_language)
   SGML: SGML
   Spring: Spring
   Spring_Cloud: Spring-Cloud
@@ -167,6 +170,7 @@ tag_map:
   标准通用标记语言: SGML
   贝塞尔曲线: Bézier_curve
   初等代数: Elementary_algebra
+  层叠样式表: Cascading_Style_Sheets
   除法: Division_(mathematics)
   程序员: Programmer
   操作系统: Operating_system
@@ -235,6 +239,7 @@ tag_map:
   通用唯一识别码: Universally_unique_identifier
   外包: Outsourcing
   网关: Gateway_(telecommunications)
+  文档对象模型: Document_Object_Model
   文化: Culture
   网络社区: Online_Community
   互联网社区: Online_Community
