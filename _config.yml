@@ -222,6 +222,7 @@ tag_map:
   算法: Algorithm
   算法效率: Algorithmic_efficiency
   数据结构: Data_structure
+  数据模型: Data_model
   数据库: Database
   数据映射器模式: Data_mapper_pattern
   实践手册: Practice_Manual
