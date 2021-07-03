@@ -134,6 +134,7 @@ tag_map:
   Hibernate: Hibernate
   HTML: HTML
   HTML5: HTML5
+  LCDP: Low-code_development_platform
   IDE: IDE
   IntelliJ_IDEA: IntelliJ-IDEA
   IntelliJ-IDEA: IntelliJ-IDEA
@@ -144,6 +145,7 @@ tag_map:
   JDK: Java-Development-Kit
   MyBatis: MyBatis
   MySQL: MySQL
+  NCDP: No-code_development_platform
   ORM: Object_Relational_Mapping
   PostgreSQL: PostgreSQL
   RabbitMQ: RabbitMQ
@@ -157,9 +159,13 @@ tag_map:
   SSO: Single_sign-on
   Tomcat: Apache-Tomcat
   UI: User_interface_design
+  URI: Uniform_Resource_Identifier
+  URL: Uniform_Resource_Locator
   UUID: Universally_unique_identifier
+  Web_API: Web_API
   Wiki: wiki
   wiki: wiki
+  Wikipedia: Wikipedia
   XXL-JOB: XXL-JOB
   ZooKeeper: Apache_ZooKeeper
   编程语言: Programming_language
@@ -178,6 +184,7 @@ tag_map:
   道德: Moral
   单点登录: Single_sign-on
   单点登录（SSO）: Single_sign-on
+  低代码开发平台: Low-code_development_platform
   道德学: Ethics
   道德哲学: Ethics
   大鳳: 大鳳(Taihō)
@@ -239,14 +246,18 @@ tag_map:
   图片文件格式: Image_File_Format
   图形文件格式: Image_File_Format
   通用唯一识别码: Universally_unique_identifier
+  统一资源标志符: Uniform_Resource_Identifier
+  统一资源定位符: Uniform_Resource_Locator
   外包: Outsourcing
   网关: Gateway_(telecommunications)
   文档对象模型: Document_Object_Model
+  无代码开发平台: No-code_development_platform
   文化: Culture
   网络社区: Online_Community
   互联网社区: Online_Community
   在线社区: Online_Community
   网络营销: Digital_marketing
+  维基百科: Wikipedia
   文件传输协议: File_Transfer_Protocol
   文件数据转换: Data_conversion
   心理学: Psychology
