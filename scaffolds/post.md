@@ -31,6 +31,12 @@ only:
 
 {% endcollapse %}
 
+<!-- {% collapse "📖主要参看（站内资源）<sup>🔖</sup>" open %}
+
+* {% post_link "Wikipedia" %}<sup>🖇</sup>
+
+{% endcollapse %} -->
+
 {% collapse "分类：解决问题✅" %}
 
 {% raw %}<iframe allowtransparency="true" importance="low" seamless src="/_partial/see_category-solution.html" style="width:100%;height:256px;border:0 !important;"></iframe>{% endraw %}
@@ -46,6 +52,10 @@ only:
 {% collapse "分类：其他（二度及以上关联）<sup>☌</sup>" %}
 
 {% endcollapse %}
+
+<!-- {% collapse "更多<sup>📜</sup>" %}
+
+{% endcollapse %} -->
 
 ---
 
