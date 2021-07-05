@@ -159,6 +159,7 @@ tag_map:
   SSO: Single_sign-on
   Tomcat: Apache-Tomcat
   UI: User_interface_design
+  Unicode: Unicode
   URI: Uniform_Resource_Identifier
   URL: Uniform_Resource_Locator
   UUID: Universally_unique_identifier
@@ -245,6 +246,7 @@ tag_map:
   图像文件格式: Image_File_Format
   图片文件格式: Image_File_Format
   图形文件格式: Image_File_Format
+  统一码: Unicode
   通用唯一识别码: Universally_unique_identifier
   统一资源标志符: Uniform_Resource_Identifier
   统一资源定位符: Uniform_Resource_Locator
