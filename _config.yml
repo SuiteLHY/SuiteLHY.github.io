@@ -128,6 +128,7 @@ tag_map:
   Docker: Docker
   DOM: Document_Object_Model
   Elasticsearch: Elasticsearch
+  Emoji: Emoji
   FTP: File_Transfer_Protocol
   Go: Go_(programming_language)
   Golang: Go_(programming_language)
@@ -180,8 +181,9 @@ tag_map:
   悲观锁: Pessimistic_Concurrency_Control
   比较并交换: Compare-and-swap
   博客: Blog
-  标准通用标记语言: SGML
+  表情符号: Emoji
   贝塞尔曲线: Bézier_curve
+  标准通用标记语言: SGML
   初等代数: Elementary_algebra
   层叠样式表: Cascading_Style_Sheets
   除法: Division_(mathematics)
