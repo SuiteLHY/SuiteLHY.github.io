@@ -33,7 +33,7 @@ only:
 
 <!-- {% collapse "📖主要参看（站内资源）<sup>🔖</sup>" open %}
 
-* {% post_link "Wikipedia" %}<sup>🖇</sup>
+* {% post_link "Wikipedia" "Wikipedia" %}<sup>🖇</sup>
 
 {% endcollapse %} -->
 
