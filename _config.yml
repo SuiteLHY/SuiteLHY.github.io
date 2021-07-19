@@ -224,6 +224,7 @@ tag_map:
   密码散列函数: Cryptographic_hash_function
   面试: Interview
   内核（操作系统）: Kernel_(operating_system)
+  人: Human
   日常记录: Daily_Record
   容错性: Fault_tolerance
   软件: Software
@@ -233,6 +234,7 @@ tag_map:
   软件设计: Software_design
   软件设计模式: Software_design_pattern
   日语: Japanese_language
+  书: Book
   手册: Handbook
   算法: Algorithm
   算法效率: Algorithmic_efficiency
@@ -247,6 +249,7 @@ tag_map:
   使用手册: Tutorial
   社会: Society
   生命: Life
+  图书: Book
   图像处理: Digital_Image_Processing
   图像格式: Image_File_Format
   图片格式: Image_File_Format
