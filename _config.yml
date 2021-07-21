@@ -163,6 +163,7 @@ tag_map:
   Spring_MVC: Spring-MVC
   SQL: SQL
   SSO: Single_sign-on
+  Thinking_in_Java: Thinking_in_Java
   Tomcat: Apache-Tomcat
   UI: User_interface_design
   Unicode: Unicode
@@ -238,6 +239,7 @@ tag_map:
   手册: Handbook
   算法: Algorithm
   算法效率: Algorithmic_efficiency
+  时间: Time
   数据结构: Data_structure
   数据模型: Data_model
   数据库: Database
