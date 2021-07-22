@@ -141,6 +141,7 @@ tag_map:
   IDE: IDE
   IntelliJ_IDEA: IntelliJ-IDEA
   IntelliJ-IDEA: IntelliJ-IDEA
+  ISO: International_Organization_for_Standardization
   IT: Information_Technology
   Java: Java
   Javadoc: Javadoc
@@ -204,6 +205,7 @@ tag_map:
   法律: Law
   广告: Advertising
   国家: Country
+  国际标准化组织: International_Organization_for_Standardization
   功能需求: Functional_requirement
   雇佣: Employment
   故障容许度: Fault_tolerance
