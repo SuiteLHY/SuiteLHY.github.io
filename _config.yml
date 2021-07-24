@@ -121,6 +121,7 @@ tag_map:
   Bilibili: Bilibili
   bilibili: Bilibili
   Browser/Server: Browser/Server
+  Business_process: Business_process
   B/S: Browser/Server
   CAS: Compare-and-swap
   Cron: Cron
@@ -157,6 +158,7 @@ tag_map:
   PostgreSQL: PostgreSQL
   RabbitMQ: RabbitMQ
   Sass: Sass_(stylesheet_language)
+  SCD: System_context_diagram
   SGML: SGML
   Spring: Spring
   Spring_Cloud: Spring-Cloud
@@ -278,6 +280,7 @@ tag_map:
   文件传输协议: File_Transfer_Protocol
   文件数据转换: Data_conversion
   心理学: Psychology
+  系统关系图: System_context_diagram
   信息安全: Information_security
   消息代理: Message_broker
   信息技术(IT): Information_Technology
@@ -285,6 +288,8 @@ tag_map:
   用户界面设计: User_interface_design
   艺术: Art
   艺术家: Artist
+  业务过程: Business_process
+  业务流程: Business_process
   应用程序接口: API
   站点记录: Site_Record
   知识: Knowledge
