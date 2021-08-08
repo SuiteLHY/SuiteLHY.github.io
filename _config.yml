@@ -115,6 +115,7 @@ category_map:
   站点记录: SiteRecord
   知识: Knowledge
 tag_map:
+  ACG: ACG_(subculture)
   Apache_Tomcat: Apache_Tomcat
   Apache_ZooKeeper: Apache_ZooKeeper
   API: API
@@ -205,6 +206,7 @@ tag_map:
   地区: Region
   代数: Algebra
   对象关系映射: Object_Relational_Mapping
+  二次元: ACG_(subculture)
   法律: Law
   广告: Advertising
   国家: Country
@@ -291,6 +293,7 @@ tag_map:
   消息代理: Message_broker
   信息技术(IT): Information_Technology
   信息技术: Information_Technology
+  信息系统: Information_system
   用户界面设计: User_interface_design
   艺术: Art
   艺术家: Artist
