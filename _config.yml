@@ -149,6 +149,7 @@ tag_map:
   Javadoc: Javadoc
   Java注解: Java_annotation
   JDK: Java-Development-Kit
+  Markdown: Markdown
   MyBatis: MyBatis
   MySQL: MySQL
   NCDP: No-code_development_platform
