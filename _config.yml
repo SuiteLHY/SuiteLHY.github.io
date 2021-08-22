@@ -216,6 +216,8 @@ tag_map:
   功能需求: Functional_requirement
   雇佣: Employment
   故障容许度: Fault_tolerance
+  核安全: Nuclear_safety_and_security
+  核电厂: Nuclear_power_plant
   互联网: Internet
   黑名单: Blacklisting
   黑名单（计算）: Blacklist_(computing)
