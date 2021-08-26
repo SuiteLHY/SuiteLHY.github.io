@@ -127,6 +127,7 @@ tag_map:
   CAS: Compare-and-swap
   Cron: Cron
   CSS: Cascading_Style_Sheets
+  CSV: Comma-separated_values
   Docker: Docker
   DOM: Document_Object_Model
   Elasticsearch: Elasticsearch
@@ -205,6 +206,7 @@ tag_map:
   道德哲学: Ethics
   大鳳: 大鳳(Taihō)
   大凤: 大鳳(Taihō)
+  逗号分隔值: Comma-separated_values
   地区: Region
   代数: Algebra
   对象关系映射: Object_Relational_Mapping
