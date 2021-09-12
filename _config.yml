@@ -6,7 +6,7 @@
 ## Docs: https://hexo.io/zh-cn/docs/configuration.html#%E7%BD%91%E7%AB%99
 title: '夜与花海'
 subtitle: '我写下的——是世界'
-description: '青春倚靠着时光，轻快的脚步在世间流韵； 云上光华从指间绽放，地上人们自由而幸福。'
+description: '青春倚靠着时光，轻快的步伐在世间流韵； 云上光华从指间绽放，地上人们自由而幸福。'
 keywords: hexo,blog,Suite,SuiteLHY,夜与花海
 author: Suite
 language: zh
@@ -144,6 +144,7 @@ tag_map:
   IDE: IDE
   IntelliJ_IDEA: IntelliJ-IDEA
   IntelliJ-IDEA: IntelliJ-IDEA
+  iOS: iOS
   ISO: International_Organization_for_Standardization
   IT: Information_Technology
   Java: Java
@@ -221,6 +222,7 @@ tag_map:
   核安全: Nuclear_safety_and_security
   核电厂: Nuclear_power_plant
   互联网: Internet
+  互联网档案馆: Internet_Archive
   黑名单: Blacklisting
   黑名单（计算）: Blacklist_(computing)
   脚本语言: Scripting_language
@@ -292,6 +294,7 @@ tag_map:
   维基百科: Wikipedia
   文件传输协议: File_Transfer_Protocol
   文件数据转换: Data_conversion
+  网站时光机: Wayback_Machine
   心理学: Psychology
   性能分析: Profiling_(computer_programming)
   系统关系图: System_context_diagram
