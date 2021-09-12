@@ -53,7 +53,15 @@ only:
 
 {% endcollapse %}
 
+<!-- {% collapse "分类：其他（二度及以上关联）<sup>☌</sup>（站内资源）<sup>🔖</sup>" %}
+
+{% endcollapse %} -->
+
 <!-- {% collapse "更多<sup>📜</sup>" %}
+
+{% endcollapse %} -->
+
+<!-- {% collapse "更多<sup>📜</sup>（站内资源）<sup>🔖</sup>" %}
 
 {% endcollapse %} -->
 
@@ -61,7 +69,7 @@ only:
 
 # ※参考和引用
 
-1. <a id="cite_note-1" href="#cite_ref-1" aria-label="跳转" title="跳转">^</a>&ensp;[维基百科，自由的百科全书](https://zh.wikipedia.org/)
+<!-- 1. <a id="cite_note-1" href="#cite_ref-1" aria-label="跳转" title="跳转">^</a>&ensp;[维基百科，自由的百科全书](https://zh.wikipedia.org/) -->
 
 ---
 
