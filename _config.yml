@@ -164,7 +164,6 @@ tag_map:
   Sass: Sass_(stylesheet_language)
   SCD: System_context_diagram
   SGML: SGML
-  Spring: Spring
   Spring_Cloud: Spring-Cloud
   Spring_Framework: Spring_Framework
   Spring_MVC: Spring-MVC
@@ -263,6 +262,7 @@ tag_map:
   数据库: Database
   实践手册: Practice_Manual
   设计模式（可复用面向对象软件的基础）: Design_Patterns_(Elements_of_Reusable_Object-Oriented_Software)
+  社交网络服务: Social_networking_service
   数据映射器模式: Data_mapper_pattern
   数据字典: Data_dictionary
   视频分享网站: Online_video_platform
