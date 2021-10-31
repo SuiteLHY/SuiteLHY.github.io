@@ -136,6 +136,8 @@ tag_map:
   Go: Go_(programming_language)
   Golang: Go_(programming_language)
   Google: Google
+  Google_Chrome: Google_Chrome
+  Google_Chrome扩展程序: Google_Chrome_extensions
   HelloWorld🐣: HelloWorld
   Hibernate: Hibernate
   HTML: HTML
@@ -206,9 +208,11 @@ tag_map:
   道德哲学: Ethics
   大鳳: 大鳳(Taihō)
   大凤: 大鳳(Taihō)
+  东方Project: Touhou_Project
   逗号分隔值: Comma-separated_values
   地区: Region
   代数: Algebra
+  地下城与勇士: Dungeon_Fighter_Online
   对象关系映射: Object_Relational_Mapping
   二次元: ACG_(subculture)
   法律: Law
