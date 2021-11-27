@@ -45,7 +45,7 @@ only:
 
 {% collapse "分类：工具🧰&ensp;|&ensp;查阅🔍" %}
 
-{% raw %}<iframe allowtransparency="true" importance="low" seamless src="/_partial/see_category-tool-check.html" style="width:100%;height:256px;border:0 !important;"></iframe>{% endraw %}
+{% raw %}<iframe allowtransparency="true" importance="low" seamless src="/_partial/see_category-tool-check.html" style="width:100%;height:32em;border:0 !important;"></iframe>{% endraw %}
 
 {% endcollapse %}
 
