@@ -220,6 +220,7 @@ tag_map:
   国家: Country
   国际标准化组织: International_Organization_for_Standardization
   功能需求: Functional_requirement
+  公司: Company
   雇佣: Employment
   故障容许度: Fault_tolerance
   核安全: Nuclear_safety_and_security
