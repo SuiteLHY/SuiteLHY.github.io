@@ -142,6 +142,7 @@ tag_map:
   Hibernate: Hibernate
   HTML: HTML
   HTML5: HTML5
+  Human_rights: 人权
   LCDP: Low-code_development_platform
   IDE: IDE
   IntelliJ_IDEA: IntelliJ-IDEA
@@ -252,6 +253,7 @@ tag_map:
   面试: Interview
   内核（操作系统）: Kernel_(operating_system)
   人: Human
+  人权: Human_rights
   日常记录: Daily_Record
   容错性: Fault_tolerance
   软件: Software
