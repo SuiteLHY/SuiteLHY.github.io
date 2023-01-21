@@ -86,6 +86,7 @@ index_generator:
 ## Reference: https://zhuanlan.zhihu.com/p/77481557
 default_category: uncategorized
 category_map:
+  AI: Artificial_intelligence
   Hello World: HelloWorld
   Hello World!: HelloWorld
   Hello,World: HelloWorld
