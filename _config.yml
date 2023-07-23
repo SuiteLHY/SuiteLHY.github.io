@@ -116,6 +116,7 @@ category_map:
   站点记录: SiteRecord
   知识: Knowledge
 tag_map:
+  【密码散列函数】bcrypt: bcrypt
   ACG: ACG_(subculture)
   Apache_Tomcat: Apache_Tomcat
   Apache_ZooKeeper: Apache_ZooKeeper
@@ -213,6 +214,7 @@ tag_map:
   大鳳: 大鳳(Taihō)
   大凤: 大鳳(Taihō)
   东方Project: Touhou_Project
+  德国: Germany
   逗号分隔值: Comma-separated_values
   地区: Region
   代数: Algebra
@@ -346,7 +348,7 @@ tag_map:
   职业生涯管理: Career_management
   转义字符: Escape_character
   政治: Politics
-  【密码散列函数】bcrypt: bcrypt
+  最终幻想XIV: Final_Fantasy_XIV
 
 # Metadata elements
 ## https://developer.mozilla.org/en-US/docs/Web/HTML/Element/meta
