@@ -223,6 +223,7 @@ tag_map:
   对象关系映射: Object_Relational_Mapping
   反共: Anti-communism
   二次元: ACG_(subculture)
+  法国: France
   法律: Law
   广告: Advertising
   国家: Country
@@ -254,6 +255,8 @@ tag_map:
   历史: History
   良心: Conscience
   良知: Conscience
+  旅游: Tourism
+  旅游行程: Travel_itinerary
   经济: Economy
   美国: United_States_of_America
   漫画: Comics
@@ -277,6 +280,7 @@ tag_map:
   手册: Handbook
   算法: Algorithm
   算法效率: Algorithmic_efficiency
+  申根签证: Visa_policy_of_the_Schengen_Area
   时间: Time
   数据结构: Data_structure
   数据模型: Data_model
@@ -289,10 +293,10 @@ tag_map:
   深空之眼: Aether_Gazer
   视频分享网站: Online_video_platform
   数学: Math
-  使用手册: Tutorial
   上海: ShangHai
   社会: Society
   生命: Life
+  使用手册: Tutorial
   图书: Book
   图像处理: Digital_Image_Processing
   图像格式: Image_File_Format
