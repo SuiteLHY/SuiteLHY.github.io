@@ -192,6 +192,7 @@ tag_map:
   ZooKeeper: Apache_ZooKeeper
   编程语言: Programming_language
   并发计算: Concurrent_computing
+  庇护权: Right_of_asylum
   悲观并发控制: Pessimistic_Concurrency_Control
   悲观锁: Pessimistic_Concurrency_Control
   比较并交换: Compare-and-swap
