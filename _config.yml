@@ -116,6 +116,7 @@ category_map:
   站点记录: SiteRecord
   知识: Knowledge
 tag_map:
+  2022年上海封城: 2022_lockdown_in_Shanghai
   【密码散列函数】bcrypt: bcrypt
   ACG: ACG_(subculture)
   Apache_Tomcat: Apache_Tomcat
@@ -224,8 +225,10 @@ tag_map:
   对象关系映射: Object_Relational_Mapping
   反共: Anti-communism
   二次元: ACG_(subculture)
+  非法移民: Illegal_immigration
   法国: France
   法律: Law
+  服装: Clothing
   广告: Advertising
   国家: Country
   国际标准化组织: International_Organization_for_Standardization
@@ -264,6 +267,10 @@ tag_map:
   密码散列函数: Cryptographic_hash_function
   面试: Interview
   内核（操作系统）: Kernel_(operating_system)
+  难民: Refugee
+  男性服装: Men's_clothing
+  女性服装: Women's_clothing
+  欧洲联盟: European_Union
   全球化: Globalization
   人: Human
   人权: Human_rights
@@ -277,10 +284,12 @@ tag_map:
   软件设计模式: Software_design_pattern
   日本: Japan
   日语: Japanese_language
+  人质外交: Hostage_diplomacy
   书: Book
   手册: Handbook
   算法: Algorithm
   算法效率: Algorithmic_efficiency
+  申根区: Schengen_Area
   申根签证: Visa_policy_of_the_Schengen_Area
   时间: Time
   数据结构: Data_structure
@@ -310,6 +319,7 @@ tag_map:
   通用唯一识别码: Universally_unique_identifier
   统一资源标志符: Uniform_Resource_Identifier
   统一资源定位符: Uniform_Resource_Locator
+  寻求庇护者: Asylum_seeker
   外包: Outsourcing
   网关: Gateway_(telecommunications)
   文档对象模型: Document_Object_Model
@@ -326,8 +336,13 @@ tag_map:
   文件数据转换: Data_conversion
   网站时光机: Wayback_Machine
   香港: Hong_Kong
+  新加坡: Singapore
   心理学: Psychology
   性能分析: Profiling_(computer_programming)
+  虚拟YouTuber: VTuber
+  虚拟主播: VTuber
+  虚拟歌手: Virtual_singer
+  虚拟偶像: Virtual_band
   系统关系图: System_context_diagram
   系统平台: Computing_platform
   小说: Novel
