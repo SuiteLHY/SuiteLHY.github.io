@@ -19,7 +19,7 @@ only:
 > <!-- more -->
 >
 > - - -
-> 👆←🗎<sup id="cite_ref-1">*<font color="#808080">\[</font>[1](#cite_note-1)<font color="#808080">\]</font>*</sup>
+> 👆←🗎<sup id="cite_ref-1"><font color="#808080">\[</font>[1](#cite_note-1)<font color="#808080">\]</font></sup>
 
 ---
 
