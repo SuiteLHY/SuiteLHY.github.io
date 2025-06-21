@@ -4,10 +4,10 @@
 
 # Site
 ## Docs: https://hexo.io/zh-cn/docs/configuration.html#%E7%BD%91%E7%AB%99
-title: '夜与花海'
-subtitle: '我写下的——是世界'
-description: '青春倚靠着时光，轻快的步伐在世间流韵； 云上光华从指间绽放，地上人们自由而幸福。'
-keywords: hexo,blog,Suite,SuiteLHY,夜与花海
+title: '夜與花海'
+subtitle: '我寫下的——是世界'
+description: '青春倚靠着時光，輕快的步伐在世間流韻； 雲上光華從指間綻放，地上人們自由而幸福。'
+keywords: hexo,blog,Suite,SuiteLHY,夜與花海
 author: Suite
 language: zh
 timezone: ''
@@ -32,9 +32,15 @@ archive_dir: archives
 category_dir: categories
 code_dir: downloads/code
 i18n_dir: :lang
-skip_render:
+skip_render: # 禁用 post/template 過度干涉 raw HTML 的行為
   - _posts/README.md # Git子模块 → 博文管理 → 项目说明文件
   - _partial/*.html # 局部模板文件夹下的HTML文件
+  - '**/*.js'
+  - '**/*.m3u8'
+  - '**/*.ts'
+  - '**/*.mp4'
+  - '**/*.json'
+  - '**/*.html'  # 如果你在 source 中手動寫了 HTML 片段，也建議加入
 
 # Writing
 ## Docs: https://hexo.io/zh-cn/docs/configuration.html#%E6%96%87%E7%AB%A0
@@ -86,303 +92,244 @@ index_generator:
 ## Reference: https://zhuanlan.zhihu.com/p/77481557
 default_category: uncategorized
 category_map:
-  AI: Artificial_intelligence
-  Hello World: HelloWorld
-  Hello World!: HelloWorld
-  Hello,World: HelloWorld
-  Hello,World!: HelloWorld
-  Hello, World: HelloWorld
-  Hello, World!: HelloWorld
   HelloWorld🐣: HelloWorld
-  Hello World🐣: HelloWorld
-  Hello World!🐣: HelloWorld
-  Hello,World🐣: HelloWorld
-  Hello,World!🐣: HelloWorld
-  Hello, World🐣: HelloWorld
-  Hello, World!🐣: HelloWorld
-  IT: InformationTechnology
   博客: Blog
-  计算机工程: ComputerEngineering
-  计算机科学: ComputerScience
-  其他: Other
+  計算機工程: ComputerEngineering
+  計算機科學: ComputerScience
   其他🗒: Other
-  其他(暂未分类): Other
-  日常记录: DailyRecord
-  手册: Handbook
-  社会: Society
+  日常記録: DailyRecord
+  手冊: Handbook
+  社會: Society
   生命: Life
-  信息技术(IT): InformationTechnology
-  信息技术: InformationTechnology
-  站点记录: SiteRecord
-  知识: Knowledge
+  信息技術: InformationTechnology
+  站點記録: SiteRecord
+  知識: Knowledge
 tag_map:
   2022年上海封城: 2022_lockdown_in_Shanghai
-  【密码散列函数】bcrypt: bcrypt
-  ACG: ACG_(subculture)
   Apache_Tomcat: Apache_Tomcat
   Apache_ZooKeeper: Apache_ZooKeeper
   API: API
+  bcrypt: bcrypt
   Bilibili: Bilibili
-  bilibili: Bilibili
-  Browser/Server: Browser/Server
-  Business_process: Business_process
-  B/S: Browser/Server
-  CAS: Compare-and-swap
   Cron: Cron
-  CSS: Cascading_Style_Sheets
-  CSV: Comma-separated_values
   Docker: Docker
-  DOM: Document_Object_Model
   Elasticsearch: Elasticsearch
-  Emoji: Emoji
-  FTP: File_Transfer_Protocol
   Go: Go_(programming_language)
-  Golang: Go_(programming_language)
   Google: Google
   Google_Chrome: Google_Chrome
-  Google_Chrome扩展程序: Google_Chrome_extensions
+  Google_Chrome擴展程序: Google_Chrome_extensions
   HelloWorld🐣: HelloWorld
   Hibernate: Hibernate
   HTML: HTML
   HTML5: HTML5
-  Human_rights: 人权
-  LCDP: Low-code_development_platform
   IDE: IDE
   IntelliJ_IDEA: IntelliJ-IDEA
-  IntelliJ-IDEA: IntelliJ-IDEA
   iOS: iOS
-  ISO: International_Organization_for_Standardization
-  IT: Information_Technology
   Java: Java
   Javadoc: Javadoc
-  Java注解: Java_annotation
+  Java註解: Java_annotation
   JDK: Java-Development-Kit
   Markdown: Markdown
   MyBatis: MyBatis
   MySQL: MySQL
-  NCDP: No-code_development_platform
   Node.js: Node.js
   NSFW: Not_safe_for_work
   npm: npm
-  ORM: Object_Relational_Mapping
-  OVP: Online_video_platform
   PostgreSQL: PostgreSQL
   RabbitMQ: RabbitMQ
   R18: 🔞
   Sass: Sass_(stylesheet_language)
-  SCD: System_context_diagram
-  SGML: SGML
   Spring_Cloud: Spring-Cloud
   Spring_Framework: Spring_Framework
   Spring_MVC: Spring-MVC
   SQL: SQL
-  SSO: Single_sign-on
   Thinking_in_Java: Thinking_in_Java
   Tomcat: Apache-Tomcat
-  UI: User_interface_design
-  Unicode: Unicode
-  URI: Uniform_Resource_Identifier
-  URL: Uniform_Resource_Locator
-  UUID: Universally_unique_identifier
   Web_API: Web_API
   Wiki: wiki
-  wiki: wiki
-  Wikipedia: Wikipedia
   XXL-JOB: XXL-JOB
   YouTube: YouTube
-  ZooKeeper: Apache_ZooKeeper
-  编程语言: Programming_language
-  并发计算: Concurrent_computing
-  庇护权: Right_of_asylum
-  悲观并发控制: Pessimistic_Concurrency_Control
-  悲观锁: Pessimistic_Concurrency_Control
-  比较并交换: Compare-and-swap
+  編程語言: Programming_language
+  并發計算: Concurrent_computing
+  庇護權: Right_of_asylum
+  悲觀并發控制: Pessimistic_Concurrency_Control
+  悲觀鎖: Pessimistic_Concurrency_Control
+  比較並交換: Compare-and-swap
   博客: Blog
-  表情符号: Emoji
-  贝塞尔曲线: Bézier_curve
-  标准通用标记语言: SGML
-  初等代数: Elementary_algebra
-  层叠样式表: Cascading_Style_Sheets
+  表情符號: Emoji
+  貝塞爾曲綫: Bézier_curve
+  標準通用標記語言: SGML
+  初等代數: Elementary_algebra
+  層疊樣式表: Cascading_Style_Sheets
   除法: Division_(mathematics)
   城市: City
-  朝鲜语: Korean_language
-  程序员: Programmer
-  操作系统: Operating_system
+  朝鮮語: Korean_language
+  程序員: Programmer
+  操作系統: Operating_system
   道德: Moral
-  单点登录: Single_sign-on
-  单点登录（SSO）: Single_sign-on
-  低代码开发平台: Low-code_development_platform
-  道德学: Ethics
-  道德哲学: Ethics
-  大凤: 大鳳(Taihō)
-  东方Project: Touhou_Project
-  德国: Germany
-  德语: German_language
-  逗号分隔值: Comma-separated_values
-  大韩民国: Republic_of_Korea
-  地区: Region
-  代数: Algebra
-  地下城与勇士: Dungeon_Fighter_Online
-  对象关系映射: Object_Relational_Mapping
+  單點登録（SSO）: Single_sign-on
+  低代碼開發平臺: Low-code_development_platform
+  大鳳: 大鳳(Taihō)
+  東方Project: Touhou_Project
+  德國: Germany
+  德語: German_language
+  逗號分隔值: Comma-separated_values
+  大韓民國: Republic_of_Korea
+  地區: Region
+  代數: Algebra
+  地下城與勇士: Dungeon_Fighter_Online
+  對象關係映射: Object_Relational_Mapping
   反共: Anti-communism
   二次元: ACG_(subculture)
   非法移民: Illegal_immigration
-  法国: France
+  法國: France
+  符號: Symbol
   法律: Law
-  服装: Clothing
-  广告: Advertising
-  国家: Country
-  国际标准化组织: International_Organization_for_Standardization
+  服裝: Clothing
+  廣告: Advertising
+  國家: Country
+  國際標準化組織: International_Organization_for_Standardization
   功能需求: Functional_requirement
   公司: Company
-  雇佣: Employment
-  故障容许度: Fault_tolerance
+  「怪物獵人：世界」: 「Monster_Hunter:_World」
+  僱傭: Employment
+  故障容許度: Fault_tolerance
   核安全: Nuclear_safety_and_security
-  核电厂: Nuclear_power_plant
-  互联网: Internet
-  互联网档案馆: Internet_Archive
-  黑名单: Blacklisting
-  黑名单（计算）: Blacklist_(computing)
-  黄明志: Namewee
+  核電廠: Nuclear_power_plant
+  互聯網: Internet
+  互聯網檔案館: Internet_Archive
+  黑名單: Blacklisting
+  黑名單（計算）: Blacklist_(computing)
+  黃明志: Namewee
   黑客: Hacker
-  脚本语言: Scripting_language
-  拒绝服务攻击: Denial-of-service_attack
-  计算机工程: Computer_Engineering
-  计算机科学: Computer_Science
-  计算机语言: Computer_language
-  流程图: Flowchart
-  乐观并发控制: Optimistic_Concurrency_Control
-  乐观锁: Optimistic_Concurrency_Control
-  伦理: Ethics
-  伦理学: Ethics
-  浏览器-服务器: Browser/Server
-  理论手册: Theory_Handbook
-  历史: History
-  良心: Conscience
+  腳本語言: Scripting_language
+  拒絶服務攻擊: Denial-of-service_attack
+  計算機工程: Computer_Engineering
+  計算機科學: Computer_Science
+  計算機語言: Computer_language
+  流程圖: Flowchart
+  樂觀并發控制: Optimistic_Concurrency_Control
+  倫理學: Ethics
+  瀏覽器-服務器: Browser/Server
+  理論手冊: Theory_Handbook
+  歷史: History
   良知: Conscience
-  旅游: Tourism
-  旅游行程: Travel_itinerary
-  经济: Economy
-  经济学: Economics
-  美国: United_States_of_America
-  漫画: Comics
-  密码散列函数: Cryptographic_hash_function
-  面试: Interview
-  内核（操作系统）: Kernel_(operating_system)
-  难民: Refugee
-  男性服装: Men's_clothing
-  女性服装: Women's_clothing
-  欧洲联盟: European_Union
+  旅遊: Tourism
+  旅遊行程: Travel_itinerary
+  經濟: Economy
+  經濟學: Economics
+  美國: United_States_of_America
+  漫畫: Comics
+  密碼散列函數: Cryptographic_hash_function
+  面試: Interview
+  內核（操作系統）: Kernel_(operating_system)
+  難民: Refugee
+  男性服裝: Men's_clothing
+  女性服裝: Women's_clothing
+  歐洲聯盟: European_Union
   全球化: Globalization
   人: Human
-  人权: Human_rights
-  日常记录: Daily_Record
-  容错性: Fault_tolerance
-  软件: Software
-  软件工程师: Software_Engineer
-  软件架构: Software_architecture
-  软件框架: Software_framework
-  软件设计: Software_design
-  软件设计模式: Software_design_pattern
+  人工智能: Artificial_intelligence
+  人權: Human_rights
+  日常記録: Daily_Record
+  容錯性: Fault_tolerance
+  軟件: Software
+  軟件工程師: Software_Engineer
+  軟件架構: Software_architecture
+  軟件框架: Software_framework
+  軟件設計: Software_design
+  軟件設計模式: Software_design_pattern
   日本: Japan
-  日语: Japanese_language
-  人质外交: Hostage_diplomacy
-  书: Book
-  手册: Handbook
+  日語: Japanese_language
+  人質外交: Hostage_diplomacy
+  書: Book
+  手冊: Handbook
   算法: Algorithm
   算法效率: Algorithmic_efficiency
-  申根区: Schengen_Area
-  申根签证: Visa_policy_of_the_Schengen_Area
-  时间: Time
-  数据结构: Data_structure
-  数据模型: Data_model
-  数据库: Database
-  实践手册: Practice_Manual
-  设计模式（可复用面向对象软件的基础）: Design_Patterns_(Elements_of_Reusable_Object-Oriented_Software)
-  社交网络服务: Social_networking_service
-  数据映射器模式: Data_mapper_pattern
-  数据字典: Data_dictionary
+  申根區: Schengen_Area
+  申根簽證: Visa_policy_of_the_Schengen_Area
+  時間: Time
+  數據結構: Data_structure
+  數據模型: Data_model
+  數據庫: Database
+  實踐手冊: Practice_Manual
+  設計模式（可複用面向對象軟件的基礎）: Design_Patterns_(Elements_of_Reusable_Object-Oriented_Software)
+  社交網絡服務: Social_networking_service
+  數據映射器模式: Data_mapper_pattern
+  數據字典: Data_dictionary
   深空之眼: Aether_Gazer
-  视频分享网站: Online_video_platform
-  深伪技术: Deepfake
-  数学: Math
+  視頻分享網站: Online_video_platform
+  深僞技術: Deepfake
+  數學: Math
   上海: ShangHai
-  上海独立运动: Shanghai_independence_movement
-  社会: Society
+  上海獨立運動: Shanghai_independence_movement
+  社會: Society
   生命: Life
-  使用手册: Tutorial
-  图书: Book
-  台湾: Taiwan
-  腾讯: Tencent
-  图像处理: Digital_Image_Processing
-  图像格式: Image_File_Format
-  图片格式: Image_File_Format
+  使用手冊: Tutorial
+  圖書: Book
+  臺灣: Taiwan
+  騰訊: Tencent
+  圖像處理: Digital_Image_Processing
   图像分析: Image_analysis
-  图像文件格式: Image_File_Format
-  图片文件格式: Image_File_Format
-  图形文件格式: Image_File_Format
-  统一码: Unicode
-  通用唯一识别码: Universally_unique_identifier
-  统一资源标志符: Uniform_Resource_Identifier
-  统一资源定位符: Uniform_Resource_Locator
-  寻求庇护者: Asylum_seeker
+  圖形文件格式: Image_file_format
+  統一碼: Unicode
+  通用唯一識別碼: Universally_unique_identifier
+  統一資源標誌符: Uniform_Resource_Identifier
+  統一資源定位符: Uniform_Resource_Locator
+  尋求庇護者: Asylum_seeker
   外包: Outsourcing
-  网关: Gateway_(telecommunications)
-  文档对象模型: Document_Object_Model
-  无代码开发平台: No-code_development_platform
+  網關: Gateway_(telecommunications)
+  文檔對象模型: Document_Object_Model
+  無代碼開發平臺: No-code_development_platform
   文化: Culture
-  网络社区: Online_Community
-  互联网社区: Online_Community
-  在线社区: Online_Community
-  武汉病毒: COVID-19
-  网络营销: Digital_marketing
-  外来移民: Immigration
+  網絡社區: Online_Community
+  武漢病毒: COVID-19
+  網絡營銷: Digital_marketing
+  外來移民: Immigration
   文明: Civilization
-  维基百科: Wikipedia
-  文件传输协议: File_Transfer_Protocol
-  文件数据转换: Data_conversion
-  网站时光机: Wayback_Machine
+  維基百科: Wikipedia
+  文件傳輸協議: File_Transfer_Protocol
+  文件數據轉換: Data_conversion
+  網站時光機: Wayback_Machine
   香港: Hong_Kong
   新加坡: Singapore
-  心理学: Psychology
+  心理學: Psychology
   性能分析: Profiling_(computer_programming)
-  虚拟YouTuber: VTuber
-  虚拟主播: VTuber
-  虚拟歌手: Virtual_singer
-  虚拟偶像: Virtual_band
-  系统关系图: System_context_diagram
-  系统平台: Computing_platform
-  小说: Novel
+  虛擬YouTuber: VTuber
+  虛擬主播: VTuber
+  虛擬歌手: Virtual_singer
+  虛擬偶像: Virtual_band
+  系統關係圖: System_context_diagram
+  系統平臺: Computing_platform
+  小說: Novel
   信息安全: Information_security
   消息代理: Message_broker
-  信息技术(IT): Information_Technology
-  信息技术: Information_Technology
-  信息系统: Information_system
-  银行: Bank
-  用户界面设计: User_interface_design
-  艺术: Art
+  信息技術: Information_Technology
+  信息系統: Information_system
+  銀行: Bank
+  用戶界面設計: User_interface_design
+  藝術: Art
   以色列: Israel
-  艺术家: Artist
-  游戏: Game
-  业务过程: Business_process
-  业务流程: Business_process
-  游戏王: Yu-Gi-Oh!
-  音乐: Music
-  应用程序接口: API
-  站点记录: Site_Record
-  中华民国: Republic_of_China
+  藝術家: Artist
+  遊戲: Game
+  業務流程: Business_process
+  遊戲王: Yu-Gi-Oh!
+  音樂: Music
+  應用程序接口: API
+  站點記録: Site_Record
+  中華民國: Republic_of_China
   宗教: Religion
-  赵家人: 趙家人
-  知识: Knowledge
-  注释: Comment_(computer programming)
-  注释_(计算机语言): Comment_(computer programming)
-  在线工具类网站: Online_tool_website
-  职业: Career
-  职业生涯规划: Career_planning
-  职业生涯管理: Career_management
-  转义字符: Escape_character
+  趙家人: Zhao_family_(Internet_slang)
+  知識: Knowledge
+  註釋: Comment_(computer programming)
+  註釋_(計算機語言): Comment_(computer programming)
+  在綫工具類網站: Online_tool_website
+  職業: Career
+  職業生涯規劃: Career_planning
+  職業生涯管理: Career_management
+  轉義字符: Escape_character
   政治: Politics
-  最终幻想XIV: Final_Fantasy_XIV
+  最終幻想XIV: Final_Fantasy_XIV
 
 # Metadata elements
 ## https://developer.mozilla.org/en-US/docs/Web/HTML/Element/meta
@@ -427,3 +374,16 @@ deploy:
   repository: https://github.com/SuiteLHY/SuiteLHY.github.io
   branch: gh-pages
   message: 【hexo-deployer-git】【one-command-deployment】Site updated on {{ now('YYYY-MM-DD HH:mm:ss') }}.
+
+# hexo-renderer-markdown-it
+markdown:
+  render:
+    html: true       # 允許 HTML（非常重要）
+    breaks: false
+    linkify: true
+  plugins:
+    - markdown-it-container
+  anchors:
+    level: 2
+    collisionSuffix: ''
+    permalink: false
