@@ -1,0 +1,15 @@
+.DS_Store
+Thumbs.db
+db.json
+*.log
+node_modules/
+public/
+.deploy*/
+
+# IDEA工程文件
+.idea/
+
+# (自定义)备份文件夹
+_backup/
+# (自定义)部署相关的文件夹
+_deploy/

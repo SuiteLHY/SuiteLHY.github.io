@@ -1,0 +1,428 @@
+# Hexo Configuration
+## Docs: https://hexo.io/docs/configuration.html
+## Source: https://github.com/hexojs/hexo/
+
+# Site
+## Docs: https://hexo.io/zh-cn/docs/configuration.html#%E7%BD%91%E7%AB%99
+title: '夜與花海'
+subtitle: '我寫下的——是世界'
+description: '青春倚靠着時光，輕快的步伐在世間流韻； 雲上光華從指間綻放，地上人們自由而幸福。'
+keywords: hexo,blog,Suite,SuiteLHY,夜與花海
+author: Suite
+language: 
+  - de
+  - en
+  - uk-UA
+  - zh
+timezone: ''
+
+# URL
+## Set your site url here. For example, if you use GitHub Page, set url as 'https://username.github.io/project'
+## Docs: https://hexo.io/zh-cn/docs/configuration.html#%E7%BD%91%E5%9D%80
+url: https://suitelhy.github.io/
+permalink: :lang/:layout/:title/
+permalink_defaults:
+  lang: zh
+pretty_urls:
+  trailing_index: true # Set to false to remove trailing 'index.html' from permalinks
+  trailing_html: true # Set to false to remove trailing '.html' from permalinks
+
+# Directory
+## Docs: https://hexo.io/zh-cn/docs/configuration.html#%E7%9B%AE%E5%BD%95
+source_dir: source
+public_dir: public
+tag_dir: tags
+archive_dir: archives
+category_dir: categories
+code_dir: downloads/code
+i18n_dir: :lang
+skip_render: # 禁用 post/template 過度干涉 raw HTML 的行為
+  - '_posts/README.md' # Git子模块 → 博文管理 → 项目说明文件
+  - '_partial/*.html' # 局部模板文件夹下的HTML文件
+  - '**/*.html' # 如果你在 source 中手動寫了 HTML 片段，也建議加入
+
+# Writing
+## Docs: https://hexo.io/zh-cn/docs/configuration.html#%E6%96%87%E7%AB%A0
+new_post_name: :title.md # File name of new posts
+default_layout: post
+titlecase: false # Transform title into titlecase
+external_link:
+  enable: true # Open external links in new tab
+  field: site # Apply to the whole site
+  exclude: ''
+filename_case: 0
+render_drafts: true
+post_asset_folder: true
+relative_link: false
+future: true
+highlight:
+  enable: true
+  line_number: true
+  auto_detect: false
+  tab_replace: ''
+  wrap: true
+  hljs: false
+prismjs:
+  enable: false
+  preprocess: true
+  line_number: true
+  tab_replace: ''
+
+# Home page setting
+#
+# path: Root path for your blogs index page. (default = '')
+# per_page: Posts displayed per page. (0 = disable pagination)
+# order_by: Posts order. (Order by date descending by default)
+## Docs: https://github.com/hexojs/hexo-generator-index#options
+#
+# yearly: Generate yearly archive.
+# monthly: Generate monthly archive.
+# daily: Generate daily archive.
+## Docs: https://www.npmjs.com/package/hexo-generator-archive#options
+index_generator:
+  path: ''
+  per_page: 10
+  order_by: -date
+
+# Category & Tag
+## Docs: https://hexo.io/zh-cn/docs/configuration.html#%E5%88%86%E7%B1%BB-amp-%E6%A0%87%E7%AD%BE
+## Reference: https://ijiaober.github.io/2014/08/05/hexo/hexo-04/
+## Reference: https://www.cnblogs.com/holbrook/archive/2012/11/05/2755268.html
+## Reference: https://zhuanlan.zhihu.com/p/77481557
+default_category: uncategorized
+category_map:
+  HelloWorld🐣: HelloWorld
+  博客: Blog
+  計算機工程: ComputerEngineering
+  計算機科學: ComputerScience
+  其他🗒: Other
+  日常記録: DailyRecord
+  手冊: Handbook
+  社會: Society
+  生命: Life
+  信息技術: InformationTechnology
+  站點記録: SiteRecord
+  知識: Knowledge
+tag_map:
+  【碧藍航線】大鳳: 【Azur_Lane】Taihou
+  【德語學習】《Nicos_Weg》: 【German_Learning】《Nicos_Weg》
+  2022年上海封城: 2022_lockdown_in_Shanghai
+  Apache_Tomcat: Apache_Tomcat
+  Apache_ZooKeeper: Apache_ZooKeeper
+  API: API
+  bcrypt: bcrypt
+  Bilibili: Bilibili
+  Blender: Blender
+  Cron: Cron
+  CSS屬性: CSS_properties
+  Docker: Docker
+  Elasticsearch: Elasticsearch
+  Fate/Grand_Order: Fate/Grand_Order
+  Fate/stay_night: Fate/stay_night
+  Fate系列: Fate_Series
+  Go: Go_(programming_language)
+  Google: Google
+  Google_Chrome: Google_Chrome
+  Google_Chrome擴展程序: Google_Chrome_extensions
+  HelloWorld🐣: HelloWorld
+  Hibernate: Hibernate
+  HTML: HTML
+  HTML5: HTML5
+  IDE: IDE
+  IntelliJ_IDEA: IntelliJ-IDEA
+  iOS: iOS
+  Java: Java
+  Javadoc: Javadoc
+  Java註解: Java_annotation
+  JDK: Java-Development-Kit
+  Markdown: Markdown
+  MyBatis: MyBatis
+  MySQL: MySQL
+  Node.js: Node.js
+  NSFW: Not_safe_for_work
+  npm: npm
+  PostgreSQL: PostgreSQL
+  PDF: Portable_Document_Format
+  RabbitMQ: RabbitMQ
+  R18: 🔞
+  Sass: Sass_(stylesheet_language)
+  Spring_Cloud: Spring-Cloud
+  Spring_Framework: Spring_Framework
+  Spring_MVC: Spring-MVC
+  SQL: SQL
+  Thinking_in_Java: Thinking_in_Java
+  Tomcat: Apache-Tomcat
+  VOCALOID: VOCALOID
+  Web_API: Web_API
+  Wiki: wiki
+  XXL-JOB: XXL-JOB
+  YouTube: YouTube
+  編程語言: Programming_language
+  并發計算: Concurrent_computing
+  庇護權: Right_of_asylum
+  悲觀并發控制: Pessimistic_Concurrency_Control
+  悲觀鎖: Pessimistic_Concurrency_Control
+  崩壞：星穹鐵道: Honkai-_Star_Rail
+  比較並交換: Compare-and-swap
+  博客: Blog
+  碧藍航線: Azur_Lane
+  表情符號: Emoji
+  貝塞爾曲線: Bézier_curve
+  標準通用標記語言: SGML
+  初等代數: Elementary_algebra
+  層疊樣式表: Cascading_Style_Sheets
+  除法: Division_(mathematics)
+  成人節目: Pornographic_television_shows
+  城市: City
+  朝鮮語: Korean_language
+  程序員: Programmer
+  操作系統: Operating_system
+  道德: Moral
+  單點登録（SSO）: Single_sign-on
+  低代碼開發平臺: Low-code_development_platform
+  東方Project: Touhou_Project
+  德國: Germany
+  德國聯邦內政部: Bundesministerium_des_Innern
+  德國聯邦移民和難民局: Bundesamt_für_Migration_und_Flüchtlinge
+  逗號分隔值: Comma-separated_values
+  大韓民國: Republic_of_Korea
+  地區: Region
+  代數: Algebra
+  地下城與勇士: Dungeon_Fighter_Online
+  對象關係映射: Object_Relational_Mapping
+  電影: Film
+  德語: German_language
+  反共: Anti-communism
+  二次元: ACG_(subculture)
+  非法移民: Illegal_immigration
+  法國: France
+  符號: Symbol
+  法律: Law
+  法語: French_language
+  服裝: Clothing
+  廣告: Advertising
+  國家: Country
+  國際標準化組織: International_Organization_for_Standardization
+  歌曲: Song
+  功能需求: Functional_requirement
+  公司: Company
+  「怪物獵人：世界」: 「Monster_Hunter:_World」
+  僱傭: Employment
+  故障容許度: Fault_tolerance
+  核安全: Nuclear_safety_and_security
+  核電廠: Nuclear_power_plant
+  互聯網: Internet
+  互聯網檔案館: Internet_Archive
+  黑名單: Blacklisting
+  黑名單（計算）: Blacklist_(computing)
+  黃明志: Namewee
+  黑客: Hacker
+  腳本語言: Scripting_language
+  基督宗教: Christianity
+  經濟: Economy
+  經濟學: Economics
+  拒絶服務攻擊: Denial-of-service_attack
+  加密代理服務器: Encrypted_Proxy_server
+  絕區零: Zenless_Zone_Zero
+  計算機工程: Computer_Engineering
+  計算機科學: Computer_Science
+  計算機語言: Computer_language
+  流程圖: Flowchart
+  樂觀并發控制: Optimistic_Concurrency_Control
+  倫理學: Ethics
+  瀏覽器-服務器: Browser/Server
+  理論手冊: Theory_Handbook
+  歷史: History
+  良知: Conscience
+  旅遊: Tourism
+  旅遊行程: Travel_itinerary
+  靈知主義: Gnosticism
+  美國: United_States_of_America
+  漫畫: Comics
+  密碼散列函數: Cryptographic_hash_function
+  面試: Interview
+  內核（操作系統）: Kernel_(operating_system)
+  難民: Refugee
+  男性服裝: Men's_clothing
+  女性服裝: Women's_clothing
+  歐洲聯盟: European_Union
+  全球化: Globalization
+  人: Human
+  人工智能: Artificial_intelligence
+  人權: Human_rights
+  日常記録: Daily_Record
+  容錯性: Fault_tolerance
+  軟件: Software
+  軟件工程師: Software_Engineer
+  軟件架構: Software_architecture
+  軟件框架: Software_framework
+  軟件設計: Software_design
+  軟件設計模式: Software_design_pattern
+  日本: Japan
+  日語: Japanese_language
+  人質外交: Hostage_diplomacy
+  書: Book
+  手冊: Handbook
+  算法: Algorithm
+  算法效率: Algorithmic_efficiency
+  申根區: Schengen_Area
+  申根簽證: Visa_policy_of_the_Schengen_Area
+  死或生（遊戲）: Dead_or_Alive_(video_game)
+  時間: Time
+  數據結構: Data_structure
+  數據模型: Data_model
+  數據庫: Database
+  實踐手冊: Practice_Manual
+  設計模式（可複用面向對象軟件的基礎）: Design_Patterns_(Elements_of_Reusable_Object-Oriented_Software)
+  社交網絡服務: Social_networking_service
+  數據映射器模式: Data_mapper_pattern
+  數據字典: Data_dictionary
+  勝利女神：妮姬: 「Goddess_of_Victory:_Nikke」
+  深空之眼: Aether_Gazer
+  少女前線: "Girls'_Frontline"
+  少女前線2：追放: "Girls'_Frontline_2:_Exilium"
+  視頻分享網站: Online_video_platform
+  色情: Pornography
+  三維模型: 3D_modeling
+  深僞技術: Deepfake
+  三維角色建模: Character_Modeling
+  數學: Math
+  上海: ShangHai
+  上海獨立運動: Shanghai_independence_movement
+  社會: Society
+  生命: Life
+  視頻文件格式: Video_file_format
+  使用手冊: Tutorial
+  提阿瑪特: Tiamat
+  圖書: Book
+  臺灣: Taiwan
+  騰訊: Tencent
+  圖像處理: Digital_Image_Processing
+  圖像分析: Image_analysis
+  圖形文件格式: Image_file_format
+  統一碼: Unicode
+  通用唯一識別碼: Universally_unique_identifier
+  統一資源標誌符: Uniform_Resource_Identifier
+  統一資源定位符: Uniform_Resource_Locator
+  尋求庇護者: Asylum_seeker
+  外包: Outsourcing
+  網關: Gateway_(telecommunications)
+  文檔對象模型: Document_Object_Model
+  無代碼開發平臺: No-code_development_platform
+  文化: Culture
+  網絡社區: Online_Community
+  武漢病毒: COVID-19
+  網絡營銷: Digital_marketing
+  外來移民: Immigration
+  文明: Civilization
+  維基百科: Wikipedia
+  文件傳輸協議: File_Transfer_Protocol
+  文件數據轉換: Data_conversion
+  蔚藍檔案: Blue_Archive
+  網站時光機: Wayback_Machine
+  香港: Hong_Kong
+  新加坡: Singapore
+  心理學: Psychology
+  性能分析: Profiling_(computer_programming)
+  虛擬YouTuber: VTuber
+  虛擬主播: VTuber
+  虛擬歌手: Virtual_singer
+  虛擬偶像: Virtual_band
+  新世紀福音戰士: Neon_Genesis_Evangelion
+  系統關係圖: System_context_diagram
+  系統平臺: Computing_platform
+  小說: Novel
+  信息安全: Information_security
+  消息代理: Message_broker
+  信息技術: Information_Technology
+  信息系統: Information_system
+  銀行: Bank
+  用戶界面設計: User_interface_design
+  藝術: Art
+  以色列: Israel
+  藝術家: Artist
+  原神: Genshin_Impact
+  遊戲: Game
+  業務流程: Business_process
+  遊戲王: Yu-Gi-Oh!
+  音樂: Music
+  應用程序接口: API
+  語言: Language
+  站點記録: Site_Record
+  中華民國: Republic_of_China
+  宗教: Religion
+  趙家人: Zhao_family_(Internet_slang)
+  知識: Knowledge
+  註釋: Comment_(computer programming)
+  註釋_(計算機語言): Comment_(computer programming)
+  葬送的芙莉蓮: Frieren-_Beyond_Journey-s_End
+  在線工具類網站: Online_tool_website
+  職業: Career
+  職業生涯規劃: Career_planning
+  職業生涯管理: Career_management
+  轉義字符: Escape_character
+  政治: Politics
+  最終幻想XIV: Final_Fantasy_XIV
+
+# Metadata elements
+## https://developer.mozilla.org/en-US/docs/Web/HTML/Element/meta
+## Docs: https://hexo.io/zh-cn/docs/configuration.html#%E6%89%A9%E5%B1%95
+meta_generator: true
+
+# Date / Time format
+## Hexo uses Moment.js to parse and display date
+## You can customize the date format as defined in
+## http://momentjs.com/docs/#/displaying/format/
+## Docs: https://hexo.io/zh-cn/docs/configuration.html#%E6%97%A5%E6%9C%9F-%E6%97%B6%E9%97%B4%E6%A0%BC%E5%BC%8F
+date_format: YYYY-MM-DD
+time_format: HH:mm:ss
+## updated_option supports 'mtime', 'date', 'empty'
+updated_option: 'mtime'
+
+# Pagination
+## Set per_page to 0 to disable pagination
+## Docs: https://hexo.io/zh-cn/docs/configuration.html#%E5%88%86%E9%A1%B5
+per_page: 10
+pagination_dir: page
+
+# Include / Exclude file(s)
+## include:/exclude: options only apply to the 'source/' folder
+## Docs: https://hexo.io/zh-cn/docs/configuration.html#%E5%8C%85%E6%8B%AC%E6%88%96%E4%B8%8D%E5%8C%85%E6%8B%AC%E7%9B%AE%E5%BD%95%E5%92%8C%E6%96%87%E4%BB%B6
+include:
+  - _partial/*.html # 局部模板文件夹下的HTML文件
+exclude:
+ignore:
+
+# Extensions
+## Plugins: https://hexo.io/plugins/
+## Themes: https://hexo.io/themes/
+## Docs: https://hexo.io/zh-cn/docs/configuration.html#%E6%89%A9%E5%B1%95
+theme: Kratos-Rebirth
+
+# Deployment
+## Docs: https://hexo.io/docs/one-command-deployment
+## Docs: https://hexo.io/zh-cn/docs/configuration.html#%E6%89%A9%E5%B1%95
+deploy:
+  type: git
+  repository: https://github.com/SuiteLHY/SuiteLHY.github.io
+  branch: gh-pages
+  message: 【hexo-deployer-git】【one-command-deployment】Site updated on {{ now('YYYY-MM-DD HH:mm:ss') }}.
+
+# hexo-renderer-markdown-it
+markdown:
+  render:
+    html: true       # 允許 HTML（非常重要）
+    breaks: false
+    linkify: true
+  plugins:
+    - markdown-it-container
+  anchors:
+    level: 2
+    collisionSuffix: ''
+    permalink: false
+
+# My Configuration
+## 自定義配置
+static_folders:
+  - static
+  - img
