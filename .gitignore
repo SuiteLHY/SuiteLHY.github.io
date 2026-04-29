@@ -9,6 +9,9 @@ public/
 # IDEA工程文件
 .idea/
 
+# 包含私有密鑰的文件
+themes/Kratos-Rebirth/source/vendors/twikoo*
+
 # (自定义)备份文件夹
 _backup/
 # (自定义)部署相关的文件夹
