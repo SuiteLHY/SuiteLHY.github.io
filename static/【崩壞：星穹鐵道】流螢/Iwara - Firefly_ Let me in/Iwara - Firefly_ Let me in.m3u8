@@ -1,0 +1,37 @@
+#EXTM3U
+#EXT-X-VERSION:7
+#EXT-X-TARGETDURATION:21
+#EXT-X-MEDIA-SEQUENCE:0
+#EXT-X-PLAYLIST-TYPE:VOD
+#EXT-X-MAP:URI="Iwara - Firefly_ Let me in_init.mp4"
+#EXTINF:21.400000,
+Iwara - Firefly_ Let me in_000.m4s
+#EXTINF:21.400000,
+Iwara - Firefly_ Let me in_001.m4s
+#EXTINF:21.400000,
+Iwara - Firefly_ Let me in_002.m4s
+#EXTINF:16.050000,
+Iwara - Firefly_ Let me in_003.m4s
+#EXTINF:21.400000,
+Iwara - Firefly_ Let me in_004.m4s
+#EXTINF:21.400000,
+Iwara - Firefly_ Let me in_005.m4s
+#EXTINF:21.400000,
+Iwara - Firefly_ Let me in_006.m4s
+#EXTINF:16.050000,
+Iwara - Firefly_ Let me in_007.m4s
+#EXTINF:21.400000,
+Iwara - Firefly_ Let me in_008.m4s
+#EXTINF:21.400000,
+Iwara - Firefly_ Let me in_009.m4s
+#EXTINF:21.400000,
+Iwara - Firefly_ Let me in_010.m4s
+#EXTINF:16.050000,
+Iwara - Firefly_ Let me in_011.m4s
+#EXTINF:21.400000,
+Iwara - Firefly_ Let me in_012.m4s
+#EXTINF:21.400000,
+Iwara - Firefly_ Let me in_013.m4s
+#EXTINF:10.000000,
+Iwara - Firefly_ Let me in_014.m4s
+#EXT-X-ENDLIST
