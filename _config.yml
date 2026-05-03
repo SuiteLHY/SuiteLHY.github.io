@@ -12,7 +12,7 @@ author: Suite
 language: 
   - de
   - en
-  - uk-UA
+  - ja
   - zh
 timezone: ''
 
@@ -93,14 +93,12 @@ default_category: uncategorized
 category_map:
   HelloWorld🐣: HelloWorld
   博客: Blog
-  計算機工程: ComputerEngineering
-  計算機科學: ComputerScience
   其他🗒: Other
   日常記録: DailyRecord
   手冊: Handbook
   社會: Society
   生命: Life
-  信息技術: InformationTechnology
+  計算技術: Computing
   站點記録: SiteRecord
   知識: Knowledge
 tag_map:
@@ -208,6 +206,7 @@ tag_map:
   公司: Company
   「怪物獵人：世界」: 「Monster_Hunter:_World」
   僱傭: Employment
+  規則驅動的通用代理客戶端: Rule-based_universal_proxy_client
   故障容許度: Fault_tolerance
   核安全: Nuclear_safety_and_security
   核電廠: Nuclear_power_plant
