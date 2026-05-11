@@ -91,7 +91,6 @@ index_generator:
 ## Reference: https://zhuanlan.zhihu.com/p/77481557
 default_category: uncategorized
 category_map:
-  HelloWorld🐣: HelloWorld
   博客: Blog
   其他🗒: Other
   日常記録: DailyRecord
@@ -122,7 +121,6 @@ tag_map:
   Google: Google
   Google_Chrome: Google_Chrome
   Google_Chrome擴展程序: Google_Chrome_extensions
-  HelloWorld🐣: HelloWorld
   Hibernate: Hibernate
   HTML: HTML
   HTML5: HTML5
@@ -130,6 +128,7 @@ tag_map:
   IntelliJ_IDEA: IntelliJ-IDEA
   iOS: iOS
   Java: Java
+  Java集合框架: Java_collections_framework
   Javadoc: Javadoc
   Java註解: Java_annotation
   JDK: Java-Development-Kit
@@ -172,6 +171,7 @@ tag_map:
   除法: Division_(mathematics)
   成人節目: Pornographic_television_shows
   城市: City
+  抽象數據類型: Abstract_data_type
   朝鮮語: Korean_language
   程序員: Programmer
   操作系統: Operating_system
@@ -215,7 +215,7 @@ tag_map:
   黑名單: Blacklisting
   黑名單（計算）: Blacklist_(computing)
   黃明志: Namewee
-  黑客: Hacker
+  駭客: Hacker
   腳本語言: Scripting_language
   基督宗教: Christianity
   經濟: Economy
@@ -240,6 +240,7 @@ tag_map:
   漫畫: Comics
   密碼散列函數: Cryptographic_hash_function
   面試: Interview
+  面向對象程序設計: Object-oriented_programming
   內核（操作系統）: Kernel_(operating_system)
   難民: Refugee
   男性服裝: Men's_clothing
@@ -269,6 +270,7 @@ tag_map:
   死或生（遊戲）: Dead_or_Alive_(video_game)
   時間: Time
   數據結構: Data_structure
+  數據類型: Data_type
   數據模型: Data_model
   數據庫: Database
   實踐手冊: Practice_Manual
