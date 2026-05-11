@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 490 380">
+    <style>
+        .label { text-anchor: middle; font-family: monospace; font-size: 12px; }
+        .legend { text-anchor: middle; font-family: monospace; font-size: 10px; }
+        .class { fill: #e1d5e7; stroke: #9673a6; }
+        .abstract { fill: #dae8fc; stroke: #6c8ebf; }
+        .interface { fill: #fff2cc; stroke: #d6b656; }
+        .arrow { stroke: black; fill: none; marker-end: url(#arrow); }
+    </style>
+    <defs>
+        <marker id="arrow" viewBox="0 0 16 16" refX="16" refY="8" markerWidth="10" markerHeight="10" orient="auto-start-reverse">
+            <path d="M 0 0 L 16 8 L 0 16 Z" />
+        </marker>
+    </defs>
+    <title>java.util.Map class hierarchy</title>
+    <text text-anchor="middle" font-family="monospace" font-size="16">
+        <tspan x="85" y="30">java.util.Map</tspan>
+        <tspan x="85" y="50">class hierarchy</tspan>
+    </text>
+    <g>
+        <ellipse cx="240" cy="40" rx="60" ry="20" class="interface"/>
+        <text x="241" y="44" class="label">Map</text>
+    </g>
+    <g>
+        <ellipse cx="80" cy="90" rx="60" ry="20" class="interface"/>
+        <text x="81" y="94" class="label">SequencedMap</text>
+        <line x1="95" y1="70" x2="202" y2="56" class="arrow" /><!-- Map -->
+    </g>
+    <g>
+        <ellipse cx="80" cy="150" rx="60" ry="20" class="interface"/>
+        <text x="81" y="154" class="label">SortedMap</text>
+        <line x1="80" y1="130" x2="80" y2="110" class="arrow" /><!-- SequencedMap -->
+    </g>
+    <g>
+        <ellipse cx="80" cy="210" rx="60" ry="20" class="interface"/>
+        <text x="81" y="214" class="label">NavigableMap</text>
+        <line x1="80" y1="190" x2="80" y2="170" class="arrow" /><!-- SortedMap -->
+    </g>
+    <g>
+        <rect x="190" y="170" width="100" height="40" rx="6" ry="6" class="abstract"/>
+        <text x="240" y="195" class="label">AbstractMap</text>
+        <line x1="240" y1="170" x2="240" y2="60" class="arrow" /><!-- Map -->
+    </g>
+    <g>
+        <rect x="90" y="260" width="80" height="40" class="class"/>
+        <text x="131" y="284" class="label">TreeMap</text>
+        <line x1="130" y1="260" x2="80" y2="230" class="arrow" /><!-- NavigableMap -->
+        <line x1="130" y1="260" x2="230" y2="210" class="arrow" /><!-- AbstractMap -->
+    </g>
+    <g>
+        <rect x="200" y="260" width="80" height="40" class="class"/>
+        <text x="241" y="284" class="label">HashMap</text>
+        <line x1="240" y1="260" x2="240" y2="210" class="arrow" /><!-- AbstractMap -->
+    </g>
+    <g>
+        <rect x="180" y="330" width="120" height="40" class="class"/>
+        <text x="241" y="354" class="label">LinkedHashMap</text>
+        <line x1="240" y1="330" x2="240" y2="300" class="arrow" /><!-- HashMap -->
+        <line x1="200" y1="330" x2="130" y2="102" class="arrow" /><!-- SequencedMap -->
+    </g>
+
+    <g>
+        <rect x="340" y="170" width="100" height="40" rx="6" ry="6" class="abstract"/>
+        <text x="391" y="194" class="label">Dictionary</text>
+    </g>
+    <g>
+        <rect x="340" y="260" width="100" height="40" class="class"/>
+        <text x="391" y="284" class="label">Hashtable</text>
+        <line x1="350" y1="260" x2="285" y2="54" class="arrow" /><!-- Map -->
+        <line x1="390" y1="260" x2="390" y2="210" class="arrow" /><!-- Dictionary -->
+    </g>
+    <g>
+        <rect x="340" y="330" width="100" height="40" class="class"/>
+        <text x="391" y="354" class="label">Properties</text>
+        <line x1="390" y1="330" x2="390" y2="300" class="arrow" /><!-- Hashtable -->
+    </g>
+
+    <svg x="330" y="0">
+        <rect x="10" y="10" width="140" height="120" fill="none" stroke="black"/>
+        <g>
+            <ellipse cx="80" cy="30" rx="50" ry="12" class="interface"/>
+            <text x="81" y="34" class="legend">Interface</text>
+        </g>
+        <g>
+            <rect x="30" y="55" width="100" height="24" rx="4" ry="4" class="abstract"/>
+            <text x="81" y="70" class="legend">Abstract class</text>
+        </g>
+        <g>
+            <rect x="30" y="95" width="100" height="24" class="class"/>
+            <text x="81" y="111" class="legend">Class</text>
+        </g>
+    </svg>
+</svg>
