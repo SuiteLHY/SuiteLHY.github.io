@@ -132,6 +132,7 @@ tag_map:
   Javadoc: Javadoc
   Java註解: Java_annotation
   JDK: Java-Development-Kit
+  Lambda表達式: Lambda_function
   Markdown: Markdown
   MyBatis: MyBatis
   MySQL: MySQL
@@ -190,7 +191,9 @@ tag_map:
   對象關係映射: Object_Relational_Mapping
   電影: Film
   德語: German_language
+  分層架構: Layered_Architecture
   反共: Anti-communism
+  複雜度: Complexity
   二次元: ACG_(subculture)
   非法移民: Illegal_immigration
   法國: France
@@ -216,6 +219,7 @@ tag_map:
   黑名單（計算）: Blacklist_(computing)
   黃明志: Namewee
   駭客: Hacker
+  函數式編程: Functional_programming
   腳本語言: Scripting_language
   基督宗教: Christianity
   經濟: Economy
@@ -223,15 +227,19 @@ tag_map:
   拒絶服務攻擊: Denial-of-service_attack
   加密代理服務器: Encrypted_Proxy_server
   絕區零: Zenless_Zone_Zero
+  計算複雜度: Computational_complexity
   計算機工程: Computer_Engineering
   計算機科學: Computer_Science
   計算機語言: Computer_language
+  空間複雜度: Space_complexity
+  流（抽象數據類型）: Stream_-abstract_data_type-
   流程圖: Flowchart
   樂觀并發控制: Optimistic_Concurrency_Control
   倫理學: Ethics
   瀏覽器-服務器: Browser/Server
   理論手冊: Theory_Handbook
   歷史: History
+  領域驅動設計: Domain-driven_design
   良知: Conscience
   旅遊: Tourism
   旅遊行程: Travel_itinerary
@@ -253,8 +261,10 @@ tag_map:
   日常記録: Daily_Record
   容錯性: Fault_tolerance
   軟件: Software
+  軟件工程: Software_engineering
   軟件工程師: Software_Engineer
   軟件架構: Software_architecture
+  軟件開發: Software_development
   軟件框架: Software_framework
   軟件設計: Software_design
   軟件設計模式: Software_design_pattern
@@ -269,6 +279,7 @@ tag_map:
   申根簽證: Visa_policy_of_the_Schengen_Area
   死或生（遊戲）: Dead_or_Alive_(video_game)
   時間: Time
+  時間複雜度: Time_complexity
   數據結構: Data_structure
   數據類型: Data_type
   數據模型: Data_model
@@ -347,7 +358,7 @@ tag_map:
   業務流程: Business_process
   遊戲王: Yu-Gi-Oh!
   音樂: Music
-  應用程序接口: API
+  應用程序編程接口: API
   語言: Language
   站點記録: Site_Record
   中華民國: Republic_of_China
