@@ -103,6 +103,7 @@ category_map:
 tag_map:
   【碧藍航線】大鳳: 【Azur_Lane】Taihou
   【德語學習】《Nicos_Weg》: 【German_Learning】《Nicos_Weg》
+  「怪物獵人：世界」: Monster_Hunter-_World
   2022年上海封城: 2022_lockdown_in_Shanghai
   Apache_Tomcat: Apache_Tomcat
   Apache_ZooKeeper: Apache_ZooKeeper
@@ -157,6 +158,7 @@ tag_map:
   YouTube: YouTube
   編程語言: Programming_language
   并發計算: Concurrent_computing
+  並發控制: Concurrency_control
   庇護權: Right_of_asylum
   悲觀并發控制: Pessimistic_Concurrency_Control
   悲觀鎖: Pessimistic_Concurrency_Control
@@ -207,7 +209,7 @@ tag_map:
   歌曲: Song
   功能需求: Functional_requirement
   公司: Company
-  「怪物獵人：世界」: 「Monster_Hunter:_World」
+  關係型數據庫: Relational_database
   僱傭: Employment
   規則驅動的通用代理客戶端: Rule-based_universal_proxy_client
   故障容許度: Fault_tolerance
@@ -231,7 +233,9 @@ tag_map:
   計算機工程: Computer_Engineering
   計算機科學: Computer_Science
   計算機語言: Computer_language
+  科德十二定律: Codd-s_12_rules
   空間複雜度: Space_complexity
+  快照隔離: Snapshot_isolation
   流（抽象數據類型）: Stream_-abstract_data_type-
   流程圖: Flowchart
   樂觀并發控制: Optimistic_Concurrency_Control
@@ -284,6 +288,7 @@ tag_map:
   數據類型: Data_type
   數據模型: Data_model
   數據庫: Database
+  數據庫索引: Database_index
   實踐手冊: Practice_Manual
   設計模式（可複用面向對象軟件的基礎）: Design_Patterns_(Elements_of_Reusable_Object-Oriented_Software)
   社交網絡服務: Social_networking_service
@@ -295,6 +300,9 @@ tag_map:
   少女前線2：追放: "Girls'_Frontline_2:_Exilium"
   視頻分享網站: Online_video_platform
   色情: Pornography
+  事務處理: Transaction_processing
+  事務調度: Transaction_schedule
+  事務隔離: Isolation_(database_systems)
   三維模型: 3D_modeling
   深僞技術: Deepfake
   三維角色建模: Character_Modeling
@@ -304,6 +312,7 @@ tag_map:
   社會: Society
   生命: Life
   視頻文件格式: Video_file_format
+  實體關係模型: Entity–relationship_model
   使用手冊: Tutorial
   提阿瑪特: Tiamat
   圖書: Book
@@ -368,6 +377,7 @@ tag_map:
   註釋: Comment_(computer programming)
   註釋_(計算機語言): Comment_(computer programming)
   葬送的芙莉蓮: Frieren-_Beyond_Journey-s_End
+  知識組織: Knowledge_organization
   在線工具類網站: Online_tool_website
   職業: Career
   職業生涯規劃: Career_planning
