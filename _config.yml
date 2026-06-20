@@ -125,6 +125,7 @@ tag_map:
   Hibernate: Hibernate
   HTML: HTML
   HTML5: HTML5
+  HTML元素: HTML_elements
   IDE: IDE
   IntelliJ_IDEA: IntelliJ-IDEA
   iOS: iOS
@@ -157,10 +158,11 @@ tag_map:
   XXL-JOB: XXL-JOB
   YouTube: YouTube
   編程語言: Programming_language
-  并發計算: Concurrent_computing
-  並發控制: Concurrency_control
+  併發: Concurrency
+  併發計算: Concurrent_computing
+  併發控制: Concurrency_control
   庇護權: Right_of_asylum
-  悲觀并發控制: Pessimistic_Concurrency_Control
+  悲觀併發控制: Pessimistic_Concurrency_Control
   悲觀鎖: Pessimistic_Concurrency_Control
   崩壞：星穹鐵道: Honkai-_Star_Rail
   比較並交換: Compare-and-swap
@@ -178,6 +180,7 @@ tag_map:
   朝鮮語: Korean_language
   程序員: Programmer
   操作系統: Operating_system
+  多版本併發控制: Multiversion_concurrency_control
   道德: Moral
   單點登録（SSO）: Single_sign-on
   低代碼開發平臺: Low-code_development_platform
@@ -238,7 +241,7 @@ tag_map:
   快照隔離: Snapshot_isolation
   流（抽象數據類型）: Stream_-abstract_data_type-
   流程圖: Flowchart
-  樂觀并發控制: Optimistic_Concurrency_Control
+  樂觀併發控制: Optimistic_Concurrency_Control
   倫理學: Ethics
   瀏覽器-服務器: Browser/Server
   理論手冊: Theory_Handbook
@@ -288,6 +291,7 @@ tag_map:
   數據類型: Data_type
   數據模型: Data_model
   數據庫: Database
+  數據庫事務異常: Database_transaction_anomalies
   數據庫索引: Database_index
   實踐手冊: Practice_Manual
   設計模式（可複用面向對象軟件的基礎）: Design_Patterns_(Elements_of_Reusable_Object-Oriented_Software)
