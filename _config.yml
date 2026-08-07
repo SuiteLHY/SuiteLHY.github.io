@@ -146,6 +146,7 @@ tag_map:
   RabbitMQ: RabbitMQ
   R18: 🔞
   Sass: Sass_(stylesheet_language)
+  SOLID（面向對象程序設計）: SOLID_(object-oriented_design)
   Spring_Cloud: Spring-Cloud
   Spring_Framework: Spring_Framework
   Spring_MVC: Spring-MVC
@@ -236,6 +237,7 @@ tag_map:
   計算機工程: Computer_Engineering
   計算機科學: Computer_Science
   計算機語言: Computer_language
+  開閉原則: Open–closed_principle
   科德十二定律: Codd-s_12_rules
   空間複雜度: Space_complexity
   快照隔離: Snapshot_isolation
