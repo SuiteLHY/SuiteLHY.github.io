@@ -111,6 +111,7 @@ tag_map:
   bcrypt: bcrypt
   Bilibili: Bilibili
   Blender: Blender
+  C4模型: C4_Model
   Cron: Cron
   CSS屬性: CSS_properties
   Docker: Docker
@@ -171,6 +172,8 @@ tag_map:
   碧藍航線: Azur_Lane
   表情符號: Emoji
   貝塞爾曲線: Bézier_curve
+  本體（信息科學）: Ontology_-information_science-
+  本體驅動開發: Ontology-driven_development
   標準通用標記語言: SGML
   初等代數: Elementary_algebra
   層疊樣式表: Cascading_Style_Sheets
@@ -219,8 +222,10 @@ tag_map:
   故障容許度: Fault_tolerance
   核安全: Nuclear_safety_and_security
   核電廠: Nuclear_power_plant
+  互動式語音應答: Interactive_voice_response
   互聯網: Internet
   互聯網檔案館: Internet_Archive
+  呼叫中心: Call_centre
   黑名單: Blacklisting
   黑名單（計算）: Blacklist_(computing)
   黃明志: Namewee
@@ -258,6 +263,7 @@ tag_map:
   密碼散列函數: Cryptographic_hash_function
   面試: Interview
   面向對象程序設計: Object-oriented_programming
+  模型驅動工程: Model-driven_engineering
   內核（操作系統）: Kernel_(operating_system)
   難民: Refugee
   男性服裝: Men's_clothing
@@ -266,6 +272,7 @@ tag_map:
   全球化: Globalization
   人: Human
   人工智能: Artificial_intelligence
+  人工智能藝術: Artificial_intelligence_art
   人權: Human_rights
   日常記録: Daily_Record
   容錯性: Fault_tolerance
@@ -289,8 +296,10 @@ tag_map:
   死或生（遊戲）: Dead_or_Alive_(video_game)
   時間: Time
   時間複雜度: Time_complexity
+  時序圖: Sequence_diagram
   數據結構: Data_structure
   數據類型: Data_type
+  數據流向圖: Data-flow_diagram
   數據模型: Data_model
   數據庫: Database
   數據庫事務異常: Database_transaction_anomalies
@@ -319,6 +328,7 @@ tag_map:
   生命: Life
   視頻文件格式: Video_file_format
   實體關係模型: Entity–relationship_model
+  實體關聯圖: Entity–Relationship_Diagram
   使用手冊: Tutorial
   提阿瑪特: Tiamat
   圖書: Book
@@ -371,11 +381,13 @@ tag_map:
   原神: Genshin_Impact
   遊戲: Game
   業務流程: Business_process
+  業務流程圖: Business_flow_diagram
   遊戲王: Yu-Gi-Oh!
   音樂: Music
   應用程序編程接口: API
   語言: Language
   站點記録: Site_Record
+  自動外呼: Automated_outbound_calling
   中華民國: Republic_of_China
   宗教: Religion
   趙家人: Zhao_family_(Internet_slang)
@@ -384,6 +396,8 @@ tag_map:
   註釋_(計算機語言): Comment_(computer programming)
   葬送的芙莉蓮: Frieren-_Beyond_Journey-s_End
   知識組織: Knowledge_organization
+  智能代理: Intelligent_agent
+  狀態圖: UML_state_machine_diagram
   在線工具類網站: Online_tool_website
   職業: Career
   職業生涯規劃: Career_planning
