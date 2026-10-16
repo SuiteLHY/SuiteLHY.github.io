@@ -198,6 +198,7 @@ tag_map:
   代數: Algebra
   地下城與勇士: Dungeon_Fighter_Online
   對象關係映射: Object_Relational_Mapping
+  大型語言模型: Large_language_model
   電影: Film
   德語: German_language
   分層架構: Layered_Architecture
@@ -255,6 +256,7 @@ tag_map:
   歷史: History
   領域驅動設計: Domain-driven_design
   良知: Conscience
+  柳州: Liuzhou
   旅遊: Tourism
   旅遊行程: Travel_itinerary
   靈知主義: Gnosticism
@@ -264,6 +266,7 @@ tag_map:
   面試: Interview
   面向對象程序設計: Object-oriented_programming
   模型驅動工程: Model-driven_engineering
+  模型上下文協定: Model_Context_Protocol
   內核（操作系統）: Kernel_(operating_system)
   難民: Refugee
   男性服裝: Men's_clothing
@@ -272,6 +275,7 @@ tag_map:
   全球化: Globalization
   人: Human
   人工智能: Artificial_intelligence
+  人工智能代理: AI_agent
   人工智能藝術: Artificial_intelligence_art
   人權: Human_rights
   日常記録: Daily_Record
