@@ -105,6 +105,7 @@ tag_map:
   【德語學習】《Nicos_Weg》: 【German_Learning】《Nicos_Weg》
   「怪物獵人：世界」: Monster_Hunter-_World
   2022年上海封城: 2022_lockdown_in_Shanghai
+  3D資產市場: 3D_Asset_Marketplace
   Apache_Tomcat: Apache_Tomcat
   Apache_ZooKeeper: Apache_ZooKeeper
   API: API
@@ -114,6 +115,7 @@ tag_map:
   C4模型: C4_Model
   Cron: Cron
   CSS屬性: CSS_properties
+  Daz_3D: Daz_3D
   Docker: Docker
   Elasticsearch: Elasticsearch
   Fate/Grand_Order: Fate/Grand_Order
@@ -180,6 +182,7 @@ tag_map:
   除法: Division_(mathematics)
   成人節目: Pornographic_television_shows
   城市: City
+  程序化建模: Procedural_modeling
   抽象數據類型: Abstract_data_type
   朝鮮語: Korean_language
   程序員: Programmer
@@ -200,6 +203,8 @@ tag_map:
   對象關係映射: Object_Relational_Mapping
   大型語言模型: Large_language_model
   電影: Film
+  電子遊戲: Video_game
+  電子遊戲設計: Video_game_art_design
   德語: German_language
   分層架構: Layered_Architecture
   反共: Anti-communism
@@ -283,6 +288,7 @@ tag_map:
   軟件: Software
   軟件工程: Software_engineering
   軟件工程師: Software_Engineer
+  軟件工程文檔: Software_engineering_documentation
   軟件架構: Software_architecture
   軟件開發: Software_development
   軟件框架: Software_framework
