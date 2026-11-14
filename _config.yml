@@ -475,6 +475,18 @@ markdown:
     collisionSuffix: ''
     permalink: false
 
+# PlantUML
+plantuml:
+  # 使用本地渲染
+  render: "Local"
+  # PlantUML JAR 路徑
+  PlantJar: "E:\\Computer Programming\\Git\\Git Repositories\\SuiteLHY.github.io\\PlantUML\\plantuml-1.2026.10.jar"
+  # 輸出 SVG
+  outputFormat: "svg"
+  # 圖片嵌入方式
+  link: "inline"
+  className: "plantuml"
+
 # My Configuration
 ## 自定義配置
 static_folders:
