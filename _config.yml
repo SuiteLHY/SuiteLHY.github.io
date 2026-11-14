@@ -116,6 +116,7 @@ tag_map:
   Cron: Cron
   CSS屬性: CSS_properties
   Daz_3D: Daz_3D
+  Daz_3D官方文檔: Daz_3D_Official_Documentation
   Docker: Docker
   Elasticsearch: Elasticsearch
   Fate/Grand_Order: Fate/Grand_Order
@@ -340,6 +341,7 @@ tag_map:
   實體關係模型: Entity–relationship_model
   實體關聯圖: Entity–Relationship_Diagram
   使用手冊: Tutorial
+  數字資產: Digital_asset
   提阿瑪特: Tiamat
   圖書: Book
   臺灣: Taiwan
