@@ -105,6 +105,8 @@ tag_map:
   【德語學習】《Nicos_Weg》: 【German_Learning】《Nicos_Weg》
   「怪物獵人：世界」: Monster_Hunter-_World
   2022年上海封城: 2022_lockdown_in_Shanghai
+  3D髮型設計: 3D_Hair_Design
+  3D髮型造型設計: 3D_Hairstyle_Styling_Design
   3D資產市場: 3D_Asset_Marketplace
   Apache_Tomcat: Apache_Tomcat
   Apache_ZooKeeper: Apache_ZooKeeper
@@ -484,7 +486,7 @@ plantuml:
   # 輸出 SVG
   outputFormat: "svg"
   # 圖片嵌入方式
-  link: "inline"
+  link: "inlineBase64"
   className: "plantuml"
 
 # My Configuration
